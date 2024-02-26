@@ -1,0 +1,362 @@
+:root {
+  --primary-bg: #3d3f41;
+  --secondary-bg: #f4f6f8;
+  --primary-header-color: #555555;
+  --secondary-header-color: rgb(112, 119, 126);
+  --icon-primary: #b68ce0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/**
+ * Enable smooth scrolling on the whole document
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/**
+ * Add .section to every anchored element for scroll margin
+ */
+.section {
+  scroll-margin-top: 2rem;
+}
+
+/* Header */
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 3rem;
+  text-decoration: none;
+}
+
+@media (min-width: 48em) {
+  .site-title {
+    float: left;
+  }
+}
+
+.nav-link {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.social-nav .nav-link {
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.active .nav-link {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Hero (intro) section */
+.intro-title {
+  font-weight: 800;
+}
+
+.bg-home {
+  display: block;
+  height: 220px;
+  width: 100%;
+  min-width: 600px;
+  transform-origin: top;
+  -webkit-animation: animateWave 2000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation: animateWave 2000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  background-image: url("../images//background/wave-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes animateWave {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes animateWave {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+
+
+/*nav items hover effect*/
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+/*About Section*/
+.avatar {
+  border: 1px solid var(--primary-bg);
+  border-radius: 30px;
+  background-color: var(--secondary-bg);
+  padding: 10px;
+  transition: all 0.50s ease;
+}
+
+.avatar:hover {
+  border: 1px solid var(--primary-bg);
+  box-shadow: 0 0 5px var(--secondary-bg);
+  transform: translateY(-5px) scale(1.10);
+}
+
+/* Masonary grid for portfolio */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Grid Item */
+.grid-sizer,
+.grid-item {
+  width: 100%;
+}
+
+.grid-item {
+  padding-bottom: 12px;
+}
+
+@media (min-width: 48em) {
+  .grid-sizer,
+  .grid-item {
+    width: 25%;
+  }
+  .grid-item {
+    float: left;
+    padding: 6px;
+  }
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/*Service section*/
+.service-elements img {
+  width: 96px;
+  height: 96px;
+}
+
+
+/*New Portfolio section*/
+.portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 4.2rem;
+  margin-left: 0rem;
+}
+
+.row-port img {
+  height: auto;
+  width: 100%;
+  border-radius: 28px;
+  margin-bottom: 1.5rem;
+  background-color: var(--secondary-bg);
+}
+
+.row-port {
+  background-color: var(--secondary-bg);
+  border-radius: 28px;
+  border: 1px solid transparent;
+  box-shadow: 0 0 5px var(--primary-bg);
+  padding: 20px;
+  transition: all 0.5s ease;
+}
+
+.main-row-port {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.row-port h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-header-color);
+}
+
+.row-port h6 {
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+  line-height: 1.4rem;
+  color: var(--secondary-header-color);
+}
+
+
+.row-port i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  border-radius: 50%;
+  background-color: var(--icon-primary);
+}
+
+.row-port:hover {
+  border: 1px solid var(--primary-bg);
+  transform: translateY(-5px) scale(1.05);
+  cursor: pointer;
+}
+
+.project-tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, auto));
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.2rem;
+  font-size: smaller;
+  line-height: 5px;
+}
+
+/*Experience Section - Secondary [Priamry -> bootstrap.css]*/
+.experience-section img{
+  width: 48px;
+  height: 48px;
+}
+
+/* Footer section */
+footer a:not(.nav-link) {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Scroll Top */
+#scrolltop {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease-in;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#scrolltop .btn {
+  padding: 3px 11px;
+  border-radius: 50%;
+}
+
+/* Additional utility styles */
+.container-narrow {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.text-small {
+  font-size: 0.875rem;
+}
+
+.text-uppercase {
+  letter-spacing: 0.05em;
+}
+
+.hover-effect {
+  transition: transform 0.18s ease-in-out;
+}
+
+.hover-effect:hover {
+  transform: translateY(-2px);
+}
+
+.marker {
+  position: relative;
+  display: inline;
+  width: auto;
+}
+
+.marker-center {
+  padding-right: 0;
+}
+
+.marker:after {
+  content: "";
+  width: 125px;
+  height: 30px;
+  position: absolute;
+  bottom: -25px;
+  right: -30px;
+  background-image: url("../images/marker.svg");
+  background-repeat: no-repeat;
+}
+
+.marker-center:after {
+  bottom: -30px;
+  left: 50%;
+  margin-left: -60px;
+}
+
+@media (max-width: 575.98px) {
+  .marker {
+    padding-right: 0;
+  }
+  .marker:after {
+    bottom: -30px;
+    left: 50%;
+    margin-left: -60px;
+  }
+}
+
+.entry-title a {
+  text-decoration: none;
+}
+
+
+
+
