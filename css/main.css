@@ -269,6 +269,11 @@ html {
   height: 48px;
 }
 
+.education-section img{
+  width: 48px;
+  height: 48px;
+}
+
 /* Footer section */
 footer a:not(.nav-link) {
   color: inherit;

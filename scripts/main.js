@@ -91,7 +91,7 @@
     });
   });
 
-  // Add your javascript here
+
   // Auto writing function
   function autoWrite(element, text, speed) {
     let i = 0;
@@ -109,7 +109,7 @@
   const introTitle = document.querySelector(".intro-title");
 
   // Call autoWrite with your text and speed (adjust as needed)
-  autoWrite(introTitle, "I’m Saidur Rahman", 50);
+  autoWrite(introTitle, "I’m Saidur Rahman Sujon", 50);
 
   // Initialize AOS
   AOS.init();
