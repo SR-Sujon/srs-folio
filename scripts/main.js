@@ -40,6 +40,8 @@
     }
   };
 */
+
+  /* Navbar effects and scrolltop buttons upon scrolling on mobile browser Incompatibility issue fixed */
   const navbar = document.getElementById("header-nav");
   var body = document.getElementsByTagName("body")[0];
   const scrollTop = document.getElementById("scrolltop");
@@ -50,7 +52,7 @@
       scrollTop.style.visibility = "visible";
       scrollTop.style.opacity = 1;
       return;
-    } // exit if width less than 1200px
+    } // exit if width less than
 
     if (window.scrollY > 0) {
       navbar.classList.add("fixed-top", "shadow-sm");
