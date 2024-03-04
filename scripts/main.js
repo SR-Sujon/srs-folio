@@ -45,6 +45,14 @@
   const navbar = document.getElementById("header-nav");
   var body = document.getElementsByTagName("body")[0];
   const scrollTop = document.getElementById("scrolltop");
+
+  window.onload = () => {
+    if (window.innerWidth < 1200) {
+      navbar.classList.add("fixed-top", "shadow-sm");
+      body.style.paddingTop = navbar.offsetHeight + "px";
+    }
+  };
+
   window.onscroll = () => {
     if (window.innerWidth < 992) {
       navbar.classList.add("fixed-top", "shadow-sm");
