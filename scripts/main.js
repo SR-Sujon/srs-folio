@@ -50,16 +50,14 @@
   window.onload = () => {
     if (window.innerWidth < 1200) {
       navbar.classList.add("fixed-top", "shadow-sm");
-      body.style.paddingTop = navbar.offsetHeight + "px";
+      body.style.position = "absolute";
     }
   };
 
   window.onscroll = () => {
     if (window.innerWidth < 1200) {
       navbar.classList.add("fixed-top", "shadow-sm");
-      body.style.paddingTop = navbar.offsetHeight + "px";
-      scrollTop.style.visibility = "visible";
-      scrollTop.style.opacity = 1;
+      body.style.position = "absolute";
       return;
     } else {
       if (window.scrollY > 0) {
