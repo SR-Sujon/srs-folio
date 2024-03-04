@@ -206,6 +206,7 @@ html {
 }
 
 .row-port {
+  min-height: 36.5rem;
   background-color: var(--secondary-bg);
   border-radius: 28px;
   border: 1px solid transparent;
@@ -264,10 +265,12 @@ html {
 }
 
 /*Experience Section - Secondary [Priamry -> bootstrap.css]*/
+
 .experience-section img{
   width: 48px;
   height: 48px;
 }
+
 
 .education-section img{
   width: 48px;
