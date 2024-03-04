@@ -58,7 +58,6 @@
     if (window.innerWidth < 1200) {
       navbar.classList.add("fixed-top", "shadow-sm");
       body.style.position = "absolute";
-      return;
     } else {
       if (window.scrollY > 0) {
         navbar.classList.add("fixed-top", "shadow-sm");
