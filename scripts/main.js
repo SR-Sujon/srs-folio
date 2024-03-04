@@ -41,11 +41,12 @@
   };
 */
 
-  /* Navbar effects and scrolltop buttons upon scrolling on mobile browser Incompatibility issue fixed */
+  /* Navbar effects and scrolltop buttons upon scrolling */
   const navbar = document.getElementById("header-nav");
   var body = document.getElementsByTagName("body")[0];
   const scrollTop = document.getElementById("scrolltop");
 
+  /* Mobile browser glitches due to navigation animation, tried to fix it */
   window.onload = () => {
     if (window.innerWidth < 1200) {
       navbar.classList.add("fixed-top", "shadow-sm");
@@ -54,24 +55,24 @@
   };
 
   window.onscroll = () => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 1200) {
       navbar.classList.add("fixed-top", "shadow-sm");
       body.style.paddingTop = navbar.offsetHeight + "px";
       scrollTop.style.visibility = "visible";
       scrollTop.style.opacity = 1;
       return;
-    } // exit if width less than
-
-    if (window.scrollY > 0) {
-      navbar.classList.add("fixed-top", "shadow-sm");
-      body.style.paddingTop = navbar.offsetHeight + "px";
-      scrollTop.style.visibility = "visible";
-      scrollTop.style.opacity = 1;
     } else {
-      navbar.classList.remove("fixed-top", "shadow-sm");
-      body.style.paddingTop = "0px";
-      scrollTop.style.visibility = "hidden";
-      scrollTop.style.opacity = 0;
+      if (window.scrollY > 0) {
+        navbar.classList.add("fixed-top", "shadow-sm");
+        body.style.paddingTop = navbar.offsetHeight + "px";
+        scrollTop.style.visibility = "visible";
+        scrollTop.style.opacity = 1;
+      } else {
+        navbar.classList.remove("fixed-top", "shadow-sm");
+        body.style.paddingTop = "0px";
+        scrollTop.style.visibility = "hidden";
+        scrollTop.style.opacity = 0;
+      }
     }
   };
 
