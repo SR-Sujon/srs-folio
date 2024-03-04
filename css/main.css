@@ -110,6 +110,31 @@ html {
   color: #0087ca;
 }
 
+.marker-secondary{
+  color: #3d3f41;
+  position: relative;
+  
+}
+
+.underline-part {
+  position: relative;
+}
+
+.underline-part .underline-text {
+  position: relative;
+  z-index: 1;
+}
+
+.underline-part .underline-text:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2.5px;
+  background-color: #0087ca;
+  z-index: -1;
+}
 
 .hover-underline-animation::after {
   content: '';
