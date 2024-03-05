@@ -75,7 +75,7 @@
 
   /**
    * Masonry Grid
-   */
+   
   var elem = document.querySelector(".grid");
   if (elem) {
     imagesLoaded(elem, function () {
@@ -86,10 +86,10 @@
       });
     });
   }
-
+*/
   /**
    * Big Picture Popup for images and videos
-   */
+   
   document.querySelectorAll("[data-bigpicture]").forEach(function (e) {
     e.addEventListener("click", function (t) {
       t.preventDefault();
@@ -100,10 +100,10 @@
       });
     });
   });
-
+*/
   /**
    * Big Picture Popup for Photo Gallary
-   */
+   
   document.querySelectorAll(".bp-gallery a").forEach(function (e) {
     var caption = e.querySelector("figcaption");
     var img = e.querySelector("img");
@@ -123,6 +123,7 @@
       });
     });
   });
+*/
 
   // Auto writing function
   function autoWrite(element, text, speed) {

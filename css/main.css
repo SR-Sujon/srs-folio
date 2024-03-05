@@ -59,6 +59,12 @@ html {
   line-height: 2.5rem;
 }
 
+.research-nav .res-nav-link {
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+  line-height: 0.75rem;
+}
+
 .nav-link:hover,
 .nav-link:focus,
 .active .nav-link {
@@ -289,6 +295,7 @@ html {
   line-height: 5px;
 }
 
+
 /*Experience Section - Secondary [Priamry -> bootstrap.css]*/
 
 .experience-section img{
@@ -300,6 +307,26 @@ html {
 .education-section img{
   width: 48px;
   height: 48px;
+}
+
+/*Research Section*/
+
+.res-port {
+  background-color: var(--secondary-bg);
+  border-radius: 28px;
+  border: 1px solid transparent;
+  box-shadow: 0 0 2.5px var(--primary-bg);
+  transition: all 0.5s ease;
+}
+
+.res-port:hover {
+  border: 1px solid var(--primary-bg);
+  transform: translateY(-5px) scale(1.05);
+  cursor: pointer;
+}
+
+.res-details {
+  border-radius: 48px;
 }
 
 /* Footer section */
