@@ -212,8 +212,8 @@ html {
 
 /*Service section*/
 .service-elements img {
-  width: 96px;
-  height: 96px;
+  width: 5.25rem;
+  height: auto;
 }
 
 
@@ -303,10 +303,28 @@ html {
   height: 48px;
 }
 
+.exp-port {
+  background-color: transparent;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 2.5px var(--primary-bg);
+  transition: all 0.5s ease;
+  margin: 1%;
+}
 
+/*Education Section*/
 .education-section img{
-  width: 48px;
-  height: 48px;
+  width: 5rem;
+  height: 5rem;
+}
+
+.edu-port {
+  background-color: var(--secondary-bg);
+  border-radius: 14px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 2.5px var(--primary-bg);
+  transition: all 0.5s ease;
+  margin: 1%;
 }
 
 /*Research Section*/
@@ -327,6 +345,7 @@ html {
 
 .res-details {
   border-radius: 48px;
+  margin-bottom: 0;
 }
 
 /* Footer section */

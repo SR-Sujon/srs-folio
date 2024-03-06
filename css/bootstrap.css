@@ -674,6 +674,29 @@ progress {
   margin-top: var(--bs-gutter-y);
 }
 
+/*
+.service-elements {
+  display: flex;
+  flex-wrap: wrap;
+}
+*/
+/* Optional: Adjust spacing if needed 
+.service-elements > div {
+  margin-bottom: 1rem;
+}
+*/
+/* Optional: Add media queries for additional adjustments 
+@media (max-width: 767px) {
+  .service-elements > div {
+    flex: 0 0 100%; /* Full width on small screens 
+    max-width: 100%;
+  }
+}
+
+*/
+
+
+
 .col {
   flex: 1 0 0%;
 }
