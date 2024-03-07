@@ -56,6 +56,7 @@
   window.onscroll = () => {
     if (window.innerWidth < 1200) {
       navbar.classList.add("fixed-top", "shadow-sm");
+      body.style.paddingTop =  "20px";
     } else {
       if (window.scrollY > 0) {
         navbar.classList.add("fixed-top", "shadow-sm");
