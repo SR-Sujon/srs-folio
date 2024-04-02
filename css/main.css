@@ -164,7 +164,13 @@ html {
 
 .research-nav .res-nav-link {
   padding: 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  line-height: 0.75rem;
+}
+
+.experience-nav .exp-nav-link {
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
   line-height: 0.75rem;
 }
 
@@ -546,7 +552,8 @@ footer a:not(.nav-link) {
 }
 
 .text-small {
-  font-size: 0.875rem;
+  font-size: 0.985rem;
+  margin-bottom: 0.5rem;
 }
 
 .text-uppercase {
