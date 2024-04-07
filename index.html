@@ -74,15 +74,14 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto me-2">
               <li class="nav-item hover-underline-animation">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item hover-underline-animation">
                 <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item hover-underline-animation">
-                <a class="nav-link" href="#services">Skills</a>
-              </li>
-              <!--
-              <li class="nav-item hover-underline-animation">
                 <a class="nav-link" href="#skills">Skills</a>
-              </li>-->
+              </li>
               <li class="nav-item hover-underline-animation">
                 <a class="nav-link" href="#portfolio">Portfolio</a>
               </li>
@@ -109,7 +108,7 @@
     <div class="page-content">
       <div id="content">
         <!--Header Section: Start-->
-        <header>
+        <header class="section" id="home">
           <div class="cover bg-light">
             <div class="container px-3">
               <div class="row">
@@ -174,7 +173,8 @@
                               class="nav-link"
                               href="https://leetcode.com/srsuj0n/"
                               title="Leetcode"
-                              ><i class="fa-solid fa-l"></i><span class="menu-title sr-only"
+                              ><i class="fa-solid fa-l"></i
+                              ><span class="menu-title sr-only"
                                 >Leetcode</span
                               ></a
                             >
@@ -261,22 +261,6 @@
                   <strong>NLP, Data Science, and Computer Vision</strong>, and I
                   have vision to continue my studies further in the future.
                 </p>
-                <!--<div class="row mt-3" style="display: none;"> 
-                  <div class="pb-1">Age: <strong>24</strong></div>
-                  <div class="pb-1">
-                    Email: <strong>sr.sujon.dev@gmail.com</strong>
-                  </div>
-                  <div class="pb-1">
-                    Skype: <strong>live:.cid.898ae0f212f36140</strong>
-                  </div>
-                  <div class="pb-1">
-                    Whatsapp: <strong>+880-1729-545654</strong>
-                  </div>
-                  <div class="pb-1">
-                    Address: <strong>Dhaka, Bangladesh</strong>
-                  </div>
-                  <div class="pb-1">Status: <strong>Available</strong></div>
-                </div>-->
               </div>
               <div
                 class="col-md-5 offset-md-1 about-image"
@@ -291,20 +275,19 @@
               </div>
             </div>
           </div>
-        </div>
-        <!--About Section: End-->
 
-        <!--Services Section: Start-->
-        <div class="section px-3 px-lg-4 pt-5" id="services">
-          <div class="container-narrow">
+          <!--Services Part: Start-->
+          <div class="container-narrow" style="margin-top: 9rem">
             <div class="text-center mb-5">
               <h2 class="marker marker-center">What I Do</h2>
             </div>
 
             <div class="text-center">
               <p class="mx-auto mb-3" style="max-width: 600px">
-                I offer services fit for any website or app. I can quickly
-                maximize timely deliverables for real-time schemas.
+                I design & build softwares from Front-end to Back-end,
+                especially MERN stack applications, with optimized code writing.
+                My strenght lies in developing AI applications as well as
+                integrate AI features with existing applications effectively.
               </p>
             </div>
             <div class="text-center mt-5 mb-3">
@@ -312,65 +295,7 @@
                 <span class="">Design and Development (D&D)</span>
               </h4>
             </div>
-            <!--
-            <div class="row py-3 service-elements">
-              <div
-                class="col-md-6 col-lg-3 text-center"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <img
-                  class="mb-2"
-                  src="images/services/programming.svg"
-                  alt="web design"
-                />
-                <div class="h5">
-                  Front-End <br />
-                  Development
-                </div>
-              </div>
-              <div
-                class="col-md-6 col-lg-3 text-center"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <img
-                  class="mb-2"
-                  src="images/services/back-end.svg"
-                  alt="graphic design"
-                />
-                <div class="h5">
-                  Back-End <br />
-                  Development
-                </div>
-              </div>
-              <div
-                class="col-md-6 col-lg-3 text-center"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <img
-                  class="mb-2"
-                  src="images/services/designer.svg"
-                  alt="ui-ux"
-                />
-                <div class="h5">UI/UX Design</div>
-              </div>
-              <div
-                class="col-md-6 col-lg-3 text-center"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <img
-                  class="mb-2"
-                  src="images/services/app.svg"
-                  alt="app development"
-                />
-                <div class="h5">App Development</div>
-              </div>
-            </div>
 
-            -->
             <div class="row py-3 service-elements">
               <div
                 class="col-md-3 text-center"
@@ -472,8 +397,9 @@
               </div>
             </div>
           </div>
+          <!--Services Part: End-->
         </div>
-        <!--Services Section: End-->
+        <!--About Section: End-->
 
         <!--Skills Section: Start-->
         <div class="section px-3 px-lg-4 pt-5" id="skills">
@@ -483,9 +409,11 @@
             </div>
             <div class="text-center">
               <p class="mx-auto mb-3" style="max-width: 600px">
-                I am a quick learner and specialize in multitude of skills
-                required for Web Application Development and Machine Learning
-                operations.
+                I am a fast learner, specialized in multitude of skills required
+                for Software Development and Machine Learning operations. From
+                design to development, research to deployment, my strenght in
+                multiple programming stack allows me to leverage the ability to
+                build innovative solutions.
               </p>
             </div>
             <div
@@ -553,15 +481,28 @@
         <!--Skills Section: End-->
 
         <!--Illustration - Portfolio-->
-        <div class = "section px-3 px-lg-4 pt-5 " >
+        <div class="section-false px-3 px-lg-4 pt-5">
           <div class="text-center">
-            <img src="/images/illustrations/portfolio.svg" style="height: auto; width: 30%; " alt="Portfolio Animation SVG">
+            <img
+              src="/images/illustrations/portfolio.svg"
+              style="height: auto; width: 30%"
+              alt="Portfolio Animation SVG"
+            />
           </div>
         </div>
 
         <!--Portfolio Section: Start-->
         <div class="portfolio-new section px-2 px-lg-4 pt-5" id="portfolio">
           <div class="container">
+            <div class="section-false px-3 px-lg-4 pt-5">
+              <div class="text-center">
+                <img
+                  src="/images/illustrations/portfolio.svg"
+                  style="height: auto; width: 30%"
+                  alt="Portfolio Animation SVG"
+                />
+              </div>
+            </div>
             <div class="text-center mb-5">
               <h2 class="marker marker-center">Portfolio</h2>
             </div>
@@ -579,11 +520,13 @@
                     </div>
                     <div class="row-icon">
                       <a
-                        href="https://github.com/SR-Sujon/University-Projects/tree/main/Weekend%20Music%20Store" title="See GitHub Repo"
+                        href="https://github.com/SR-Sujon/University-Projects/tree/main/Weekend%20Music%20Store"
+                        title="See GitHub Repo"
                         ><i class="fa-brands fa-square-github"></i
                       ></a>
                       <a
-                        href="https://www.youtube.com/watch?v=lYbzDvyyxwI&t=2s&ab_channel=AsifMamunHridoy" title="Watch on YouTube"
+                        href="https://www.youtube.com/watch?v=lYbzDvyyxwI&t=2s&ab_channel=AsifMamunHridoy"
+                        title="Watch on YouTube"
                         ><i class="fa-brands fa-youtube"></i
                       ></a>
                     </div>
@@ -618,10 +561,14 @@
                       <h5>Rubiks Realm</h5>
                     </div>
                     <div class="row-icon">
-                      <a href="https://github.com/SR-Sujon/Rubiks-Realm" title="See GitHub Repo"
+                      <a
+                        href="https://github.com/SR-Sujon/Rubiks-Realm"
+                        title="See GitHub Repo"
                         ><i class="fa-brands fa-square-github"></i
                       ></a>
-                      <a href="https://rubiksrealm.netlify.app/" title="Lets Play the Game!"
+                      <a
+                        href="https://rubiksrealm.netlify.app/"
+                        title="Lets Play the Game!"
                         ><i class="fa-solid fa-earth-americas"></i
                       ></a>
                     </div>
@@ -656,11 +603,13 @@
                     </div>
                     <div class="row-icon">
                       <a
-                        href="https://github.com/SR-Sujon/BharaDibo-1/tree/master" title="See GitHub Repo"
+                        href="https://github.com/SR-Sujon/BharaDibo-1/tree/master"
+                        title="See GitHub Repo"
                         ><i class="fa-brands fa-square-github"></i
                       ></a>
                       <a
-                        href="https://github.com/SR-Sujon/BharaDibo-1/tree/master" title="Watch on YouTube"
+                        href="https://github.com/SR-Sujon/BharaDibo-1/tree/master"
+                        title="Watch on YouTube"
                         ><i class="fa-solid fa-earth-americas"></i
                       ></a>
                     </div>
@@ -701,11 +650,13 @@
                     </div>
                     <div class="row-icon">
                       <a
-                        href="https://github.com/SR-Sujon/Fullmetal-Alchemist-Redemption" title="See GitHub Repo"
+                        href="https://github.com/SR-Sujon/Fullmetal-Alchemist-Redemption"
+                        title="See GitHub Repo"
                         ><i class="fa-brands fa-square-github"></i
                       ></a>
                       <a
-                        href="https://github.com/SR-Sujon/Fullmetal-Alchemist-Redemption" title="Watch on Youtube"
+                        href="https://github.com/SR-Sujon/Fullmetal-Alchemist-Redemption"
+                        title="Watch on Youtube"
                         ><i class="fa-brands fa-youtube"></i
                       ></a>
                     </div>
@@ -742,7 +693,9 @@
                       <h5>Job Lagbe</h5>
                     </div>
                     <div class="row-icon">
-                      <a href="https://github.com/SR-Sujon/Job-Lagbe/" title="See GitHub Repo"
+                      <a
+                        href="https://github.com/SR-Sujon/Job-Lagbe/"
+                        title="See GitHub Repo"
                         ><i class="fa-brands fa-square-github"></i
                       ></a>
                       <a href="https://joblagbe.netlify.app/" title="Live Site"
@@ -784,12 +737,15 @@
                     <div class="row-port-text">
                       <h5>RMA agro</h5>
                     </div>
-                    `
                     <div class="row-icon">
-                      <a href="https://github.com/SR-Sujon/RMA_agro" title="See GitHub Repo"
+                      <a
+                        href="https://github.com/SR-Sujon/RMA_agro"
+                        title="See GitHub Repo"
                         ><i class="fa-brands fa-square-github"></i
                       ></a>
-                      <a href="https://sr-sujon.github.io/RMA_agro/" title="Live Site"
+                      <a
+                        href="https://sr-sujon.github.io/RMA_agro/"
+                        title="Live Site"
                         ><i class="fa-solid fa-earth-americas"></i
                       ></a>
                     </div>
@@ -811,6 +767,7 @@
                 </div>
               </div>
 
+              <!--Third Row:  Projects 7-9-->
               <div data-aos="fade-up" data-aos-delay="700">
                 <div class="row-port">
                   <img
@@ -821,13 +778,15 @@
                     <div class="row-port-text">
                       <h5>EDA: US-based Retail Store</h5>
                     </div>
-                    `
                     <div class="row-icon">
-                      <a href="https://youtu.be/UzLW6n-iJvE" title="Watch on YouTube"
+                      <a
+                        href="https://youtu.be/UzLW6n-iJvE"
+                        title="Watch on YouTube"
                         ><i class="fa-brands fa-youtube"></i
                       ></a>
                       <a
-                        href="https://github.com/SR-Sujon/thesparksfoundation/tree/main/Data Science %26 Business Analytics" title="See GitHub Repo"
+                        href="https://github.com/SR-Sujon/thesparksfoundation/tree/main/Data Science %26 Business Analytics"
+                        title="See GitHub Repo"
                         ><i class="fa-brands fa-square-github"></i
                       ></a>
                     </div>
@@ -862,13 +821,15 @@
                     <div class="row-port-text">
                       <h5>ML: Stock Price Prediction</h5>
                     </div>
-                    `
                     <div class="row-icon">
-                      <a href="https://youtu.be/ifHkbfKj4C0" title="Watch on YouTube"
+                      <a
+                        href="https://youtu.be/ifHkbfKj4C0"
+                        title="Watch on YouTube"
                         ><i class="fa-brands fa-youtube"></i
                       ></a>
                       <a
-                        href="https://www.kaggle.com/code/srsujon/stock-market-price-prediction-based-on-news" title="Lets hover to Kaggle"
+                        href="https://www.kaggle.com/code/srsujon/stock-market-price-prediction-based-on-news"
+                        title="Lets hover to Kaggle"
                         ><i class="fa-sharp fa-solid fa-k"></i
                       ></a>
                     </div>
@@ -890,6 +851,53 @@
                       <li>Pandas</li>
                       <li>Seaborn</li>
                       <li>Matplotlib</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div data-aos="fade-up" data-aos-delay="700">
+                <div class="row-port">
+                  <img
+                    src="images/portfolio/ai/Chatter-Ai Thumbnail.png"
+                    alt="Chatter AI - Chat with websites"
+                  />
+                  <div class="main-row-port">
+                    <div class="row-port-text">
+                      <h5>
+                        Chatter AI: Chat with <br />
+                        website
+                      </h5>
+                    </div>
+                    <div class="row-icon">
+                      <a
+                        href="https://youtu.be/zPF2KedHxxU"
+                        title="Watch on YouTube"
+                        ><i class="fa-brands fa-youtube"></i
+                      ></a>
+                      <a
+                        href="https://github.com/SR-Sujon/Chatter-AI"
+                        title="See GitHub Repo"
+                        ><i class="fa-brands fa-square-github"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <h6>
+                    Chatter.AI is a web application that allows you to chat with
+                    websites and extract information from them. It uses the
+                    OpenAI API and LangChain library to process and understand
+                    the content of the website and allow users to interact with
+                    it on the Streamlit interface. It has two output formats:
+                    JSON and Q/A, including I/O configuration flexibility.
+                  </h6>
+                  <div class="project-tools-container">
+                    <ul class="project-tools">
+                      <li>Streamlit</li>
+                      <li>LangChain</li>
+                      <li>OpenAI</li>
+                      <li>ChromaDB</li>
+                      <li>Anaconda</li>
+                      <li>Python</li>
                     </ul>
                   </div>
                 </div>
@@ -918,9 +926,9 @@
                         <h3 class="h5 mb-1">
                           Data Science and Business Analytics Intern
                         </h3>
-                        <div class="text-muted text-small" >
-                          The Sparks Foundation | Singapore |
-                          Remote <br> <small>(Nov 2023-Dec 2023)</small>
+                        <div class="text-muted text-small">
+                          The Sparks Foundation | Singapore | Remote <br />
+                          <small>(Nov 2023-Dec 2023)</small>
                         </div>
                       </div>
                       <img
@@ -936,7 +944,10 @@
                               class="exp-nav-link"
                               href="https://links-truecertificates.s3.ap-south-1.amazonaws.com/published/2023-25-25/AYLXR32TXN.png"
                               title="Certificate of Selection"
-                              ><i class="fa-solid fa-stamp"></i><span class="menu-title sr-only">Certificate of selection</span></a
+                              ><i class="fa-solid fa-stamp"></i
+                              ><span class="menu-title sr-only"
+                                >Certificate of selection</span
+                              ></a
                             >
                           </li>
                           <li class="nav-item hover-effect">
@@ -944,7 +955,8 @@
                               class="exp-nav-link"
                               href="https://links-truecertificates.s3.ap-south-1.amazonaws.com/published/2024-33-02/5VJTFN32RT.png"
                               title="Certificate of Completion of the Internship program"
-                              ><i class="fa-solid fa-certificate"></i><span class="menu-title sr-only"
+                              ><i class="fa-solid fa-certificate"></i
+                              ><span class="menu-title sr-only"
                                 >Certificate of Completion</span
                               ></a
                             >
@@ -989,7 +1001,10 @@
                       />
                     </div>
                   </div>
-                  <div class="card-body px-3 py-3" style="margin-bottom: 1.25rem;">
+                  <div
+                    class="card-body px-3 py-3"
+                    style="margin-bottom: 1.25rem"
+                  >
                     <p>
                       As a full stack developer, I create personalized websites,
                       seamlessly integrating Front-end and Back-end
@@ -1134,15 +1149,18 @@
               </div>
             </div>
           </div>
-        </div>
-        <!--Education Section: End-->
-
-        <!--Illustration - Research-->
-        <div class = "section px-3 px-lg-4 pt-5 " >
-          <div class="text-center">
-            <img src="/images/illustrations/research.svg" style="height: auto; width: 25%; " alt="Research Animation SVG">
+          <!--Illustration - Research-->
+          <div class="section-false px-3 px-lg-4 pt-5">
+            <div class="text-center">
+              <img
+                src="/images/illustrations/research.svg"
+                style="height: auto; width: 25%"
+                alt="Research Animation SVG"
+              />
+            </div>
           </div>
         </div>
+        <!--Education Section: End-->
 
         <!--Research Section: Start-->
         <div class="section px-3 px-lg-4 pt-5" id="research">
@@ -1443,9 +1461,8 @@
                         class="nav-link"
                         href="https://leetcode.com/srsuj0n/"
                         title="Leetcode"
-                        ><i class="fa-solid fa-l"></i><span class="menu-title sr-only"
-                          >Leetcode</span
-                        ></a
+                        ><i class="fa-solid fa-l"></i
+                        ><span class="menu-title sr-only">Leetcode</span></a
                       >
                     </li>
                     <li class="nav-item hover-effect">

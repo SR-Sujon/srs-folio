@@ -137,6 +137,10 @@ html {
   scroll-margin-top: 2rem;
 }
 
+.section-false {
+  scroll-margin-top: 2rem;
+}
+
 /* Header */
 .site-title {
   font-size: 1.5rem;
@@ -330,6 +334,22 @@ progress:nth-child(5) {
 
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.active-nav {
+  color: #0087ca;
+}
+
+.active-nav::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(1);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
   transform-origin: bottom left;
 }
 
