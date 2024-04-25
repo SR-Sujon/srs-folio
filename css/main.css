@@ -551,6 +551,24 @@ progress:nth-child(5) {
   margin-bottom: 0;
 }
 
+.res-tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, auto));
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.2rem;
+  font-size: smaller;
+  line-height: 5px;
+  margin-bottom: 2.5rem;
+}
+
+.res-icons {
+  max-width: 5rem;
+  height: auto;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 /* Footer section */
 footer a:not(.nav-link) {
   color: inherit;
