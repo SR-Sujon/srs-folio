@@ -536,15 +536,17 @@ progress:nth-child(5) {
   background-color: var(--secondary-bg);
   border-radius: 28px;
   border: 1px solid transparent;
-  box-shadow: 0 0 2.5px var(--primary-bg);
+  box-shadow: 0 0 3.5px var(--primary-bg);
   transition: all 0.5s ease;
 }
 
+/*
 .res-port:hover {
   border: 1px solid var(--primary-bg);
   transform: translateY(-5px) scale(1.05);
   cursor: pointer;
 }
+*/
 
 .res-details {
   border-radius: 48px;
