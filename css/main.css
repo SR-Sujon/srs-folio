@@ -565,10 +565,11 @@ progress:nth-child(5) {
 }
 
 .res-icons {
-  max-width: 5rem;
-  height: auto;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  max-height: 7.5rem;
+  width: auto;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  border: 1px solid var(--primary-bg);
 }
 
 /* Footer section */
