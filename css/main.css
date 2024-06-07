@@ -437,10 +437,19 @@ progress:nth-child(5) {
   border-radius: 28px;
   margin-bottom: 1.5rem;
   background-color: var(--secondary-bg);
+  
+}
+
+.portfolio-content .row-port h6 {
+  font-weight: 500;
+}
+
+.project-tools {
+  font-weight: bolder;
 }
 
 .row-port {
-  min-height: 36.5rem;
+  min-height: 40.5rem;
   background-color: var(--secondary-bg);
   border-radius: 28px;
   border: 1px solid transparent;
