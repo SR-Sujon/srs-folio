@@ -658,6 +658,9 @@ footer a:not(.nav-link) {
     left: 50%;
     margin-left: -60px;
   }
+  .avatar {
+    margin-top: 4rem;
+  }
 }
 
 .entry-title a {
