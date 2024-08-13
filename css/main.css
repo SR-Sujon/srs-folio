@@ -670,6 +670,34 @@ footer a:not(.nav-link) {
   .avatar {
     margin-top: 4rem;
   }
+  .res-icons {
+    max-height: 3rem;
+    width: auto;
+    margin-left: 0.5rem;
+    margin-right: 0.2rem;
+    border: 1px solid var(--primary-bg);
+  }
+
+  .res-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60%, auto));
+    align-items: start;
+    justify-content: space-between;
+    gap: 1.2rem;
+    font-size: smaller;
+    line-height: 5px;
+    margin-bottom: 2.5rem;
+  }
+
+  .project-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60%, auto));
+    align-items: start;
+    justify-content: space-between;
+    gap: 1.2rem;
+    font-size: smaller;
+    line-height: 5px;
+  }
 }
 
 .entry-title a {
