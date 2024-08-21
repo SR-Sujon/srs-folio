@@ -162,7 +162,7 @@ html {
 
 .social-nav .nav-link {
   padding: 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 2rem;
   line-height: 2.5rem;
 }
 
@@ -183,6 +183,7 @@ html {
 .active .nav-link {
   color: rgba(0, 0, 0, 0.6) !important;
 }
+
 
 /* Hero (intro) section */
 .intro-title {
@@ -697,6 +698,10 @@ footer a:not(.nav-link) {
     gap: 1.2rem;
     font-size: smaller;
     line-height: 5px;
+  }
+
+  .social-nav .nav-link {
+    font-size: 1.5rem;
   }
 }
 
