@@ -9,6 +9,7 @@
 html,
 body {
   overflow-x: hidden;
+  font-family: Georgia, serif;
 }
 
 /**
@@ -45,7 +46,7 @@ html {
   color: #FFFFFF;
   cursor: pointer;
   display: inline-flex;
-  font-family: sans-serif;
+  font-family: Georgia, serif;
   font-size: 0.80rem;
   font-weight: bolder;
   height: auto;
@@ -94,7 +95,7 @@ html {
   color: #FFFFFF;
   cursor: pointer;
   display: inline-flex;
-  font-family: sans-serif;
+  font-family: Georgia, serif;
   font-size: 0.80rem;
   font-weight: bolder;
   height: auto;
@@ -449,8 +450,9 @@ progress:nth-child(5) {
   font-weight: bolder;
 }
 
+
 .row-port {
-  min-height: 40.5rem;
+  min-height: 42.5rem;
   background-color: var(--secondary-bg);
   border-radius: 28px;
   border: 1px solid transparent;
@@ -467,16 +469,20 @@ progress:nth-child(5) {
 }
 
 .row-port h5 {
+  font-family: Georgia, serif;
   font-size: 20px;
   font-weight: 900;
   color: var(--primary-header-color);
 }
 
 .row-port h6 {
-  font-size: 15px;
+  font-family: Cambria, serif;
+  font-size: 18px;
   font-weight: 300;
   margin-bottom: 1.2rem;
   line-height: 1.4rem;
+  justify-between: text-justify; 
+  text-align: justify;
   color: var(--secondary-header-color);
 }
 
@@ -523,6 +529,15 @@ progress:nth-child(5) {
   box-shadow: 0 0 2.5px var(--primary-bg);
   transition: all 0.5s ease;
   margin: 1%;
+}
+
+.exp-port p {
+  font-family: Cambria, serif;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.4rem;
+  justify-between: text-justify; 
+  text-align: justify;
 }
 
 /*Education Section*/
@@ -645,6 +660,7 @@ footer a:not(.nav-link) {
   position: relative;
   display: inline;
   width: auto;
+  font-family: Georgia, serif;
 }
 
 .marker-center {
@@ -666,6 +682,22 @@ footer a:not(.nav-link) {
   bottom: -30px;
   left: 50%;
   margin-left: -60px;
+}
+
+.subheader {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+
+.subsubheader {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+  text-decoration: none;
+  font-family: Georgia, serif;
 }
 
 @media (max-width: 575.98px) {
