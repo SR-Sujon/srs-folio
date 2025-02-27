@@ -1,31 +1,29 @@
-super-folio
-v1.2.0
-Update Date: July 8, 2021
+SRSFolio - Modified from Super-Folio
+Version: 1.0.0
+Update Date: 28 February 2025
 
-License - FREE
+License - Based on Super-Folio (Original License: Free)
 
 License Terms
 -------------
 
-Under free license, you can use the template in personal (non-commercial) projects with credit. For credit, you need to keep the link to templateflip.com in the site footer.
+SRSFolio is a heavily modified version of the Super-Folio template, originally created by TemplateFlip. This modified version includes unique changes that differentiate it significantly from the original template.
 
-You can buy a premium license to be allowed to remove the footer link and to use the item in commercial projects (or for clients).
+Usage Rights:
+- Under the original Super-Folio free license, credit to TemplateFlip.com must remain in the footer unless a premium license has been purchased.
+- If a premium license for Super-Folio is purchased, the footer credit can be removed.
+- SRSFolio can be used for personal and non-commercial projects in compliance with the original Super-Folio license terms.
 
-Download & Buy - https://templateflip.com/templates/super-folio/
-Demo - https://templateflip.com/demo/templates/super-folio/
+Prohibitions:
+- This repository does NOT grant any rights to sub-license, resell, or distribute the original Super-Folio template or its derivatives as standalone products.
+- Users must not use SRSFolio for unlawful content.
+- If promoting this repository, proper credit must be given to the original template source (TemplateFlip.com) and this modified version (SRSFolio).
 
-Compare licenses - https://templateflip.com/licenses/
-Terms - https://templateflip.com/terms/
-FAQ - https://templateflip.com/faq/
+Attribution:
+Original Template: Super-Folio by TemplateFlip - https://templateflip.com/templates/super-folio/
+Modified Version: SRSFolio by [Your Name or GitHub Handle] - [Your GitHub Repository URL]
 
+For any licensing questions, refer to TemplateFlip's license terms at:
+https://templateflip.com/licenses/
 
-Prohibitions
-------------
-
-You do not have the rights to sub-license, sell or distribute any of TemplateFlip item.
-If you wish to promote our resources on your site, you must link back to our item page,
-where users can find the download and not directly to the download file.
-You must NOT use any item from TemplateFlip for displaying unlawful content.
-For any further queries regarding terms of use and licensing feel free to contact us.
-
-*************
+By using SRSFolio, you agree to comply with the terms outlined above.
