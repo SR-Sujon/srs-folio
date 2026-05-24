@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Georgia, serif;
+}
+
+@layer components {
+  /* Custom Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-white font-bold text-sm rounded-full cursor-pointer transition-all duration-200 shadow-sm;
+    background-color: #3EB2FD;
+    background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+    background-size: calc(100% + 20px) calc(100% + 20px);
+    width: 10rem;
+  }
+
+  .btn-primary:hover {
+    @apply text-gray-800 font-bold;
+    background-position: -20px -20px;
+  }
+
+  .btn-primary:focus {
+    @apply outline-none;
+    box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 0.125em;
+  }
+
+  /* Hover Underline Animation */
+  .hover-underline-animation {
+    @apply relative;
+  }
+
+  .hover-underline-animation::after {
+    content: '';
+    @apply absolute w-full h-0.5 bg-gradient-to-r from-blue-500 to-blue-300 left-0 -bottom-1;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  /* Social Icon Hover Effect */
+  .social-icon {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .social-icon:hover {
+    @apply transform -translate-y-1 scale-110;
+    filter: brightness(1.2);
+  }
+
+  /* Background gradient */
+  .bg-home {
+    @apply absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none;
+  }
+}
+
+/* Prefers reduced motion */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

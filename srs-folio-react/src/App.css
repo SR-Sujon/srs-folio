@@ -1,0 +1,8 @@
+/* App-specific styles */
+.page-content {
+  min-height: 100vh;
+}
+
+#content {
+  width: 100%;
+}
