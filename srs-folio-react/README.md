@@ -100,6 +100,102 @@ srs-folio-react/
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
+## 🚀 Deployment
+
+This project is ready to deploy on Vercel! 
+
+### Quick Deploy to Vercel:
+
+1. Push your code to GitHub
+2. Visit [vercel.com](https://vercel.com) and sign in
+3. Click "Add New Project" → Import your repository
+4. Set **Root Directory** to `srs-folio-react`
+5. Click "Deploy"
+
+**That's it!** Your site will be live in 1-2 minutes.
+
+📖 **For detailed deployment instructions**, see [DEPLOYMENT.md](./DEPLOYMENT.md)
+
+### Project Configuration for Vercel
+
+The project includes:
+- ✅ `vercel.json` - Vercel configuration
+- ✅ Optimized build settings
+- ✅ SPA routing configuration
+- ✅ All dependencies properly defined
+
+## 🎯 Features Implemented
+
+✅ Responsive Navbar with active section highlighting
+✅ Hero/Home section with typing animation
+✅ About section with services
+✅ Skills section with progress bars and animations
+✅ Education section with timeline
+✅ Portfolio section with project showcase
+✅ Experience section with company history
+✅ Certifications section (Exam, Training, Coursera)
+✅ Research publications section
+✅ Contact form with Formspree integration
+✅ Footer with social links
+
+## 🎨 Customization
+
+### Update Personal Information
+
+1. **Social Links**: Edit `src/components/SocialLinks.jsx`
+2. **Resume/CV**: Replace files in `public/files/CV/`
+3. **Images**: Add your images to `public/images/`
+4. **Contact Form**: Update Formspree endpoint in `src/components/Contact.jsx`
+
+### Styling
+
+- **Colors**: Edit theme colors in `tailwind.config.js`
+- **Fonts**: Update in `index.css` and Tailwind config
+- **Animations**: Modify Framer Motion settings in component files
+
+## 📦 Building for Production
+
+```bash
+# Build the project
+npm run build
+
+# Preview the production build locally
+npm run preview
+```
+
+The build output will be in the `dist/` folder.
+
+## 🐛 Troubleshooting
+
+**Development server won't start?**
+- Delete `node_modules` and run `npm install` again
+- Make sure you're using Node.js 18 or higher
+
+**Build fails?**
+- Check for any import errors
+- Ensure all images are in the `public/` folder
+- Run `npm run lint` to check for code issues
+
+**Images not showing?**
+- Use absolute paths: `/images/your-image.png`
+- Make sure images are in the `public/` folder
+
+## 📄 License
+
+This project is based on the original HTML template and converted to React.
+
+## 👨‍💻 Author
+
+**Saidur Rahman Sujon**
+- Portfolio: [Your Vercel URL]
+- LinkedIn: [Your LinkedIn]
+- GitHub: [Your GitHub]
+
+---
+
+Built with ❤️ using React, Vite, and Tailwind CSS
+- `npm run lint` - Run ESLint
+
 ## 🎨 Customization
 
 ### Colors
