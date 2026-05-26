@@ -6,6 +6,7 @@ import Education from './components/Education'
 import Portfolio from './components/Portfolio'
 import Experience from './components/Experience'
 import Certifications from './components/Certifications'
+import Research from './components/Research'
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Portfolio />
           <Experience />
           <Certifications />
+          <Research />
           {/* Other sections will be added here */}
         </div>
       </main>
