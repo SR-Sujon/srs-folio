@@ -1,47 +1,99 @@
-# SRS-FOLIO
+# SR Sujon - Portfolio Website
 
-This repository contains the source code for my personal portfolio website, 'SRS-Folio'. This website is designed to showcase my skills, projects, and other relevant experiences and achievements. Thank you for visiting.
+This repository contains the source code for my personal portfolio website, showcasing my skills, projects, research, and professional experience. The portfolio is built with modern web technologies and deployed at **[sr-sujon.com](https://sr-sujon.com)**.
 
-## Table of Contents
+## 🌐 Live Site
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Usage](#usage)
-- [License](#license)
+Visit the portfolio at: **[https://sr-sujon.com](https://sr-sujon.com)**
 
-## Introduction
+## 📁 Repository Structure
 
-'srs-folio' is my personal portfolio website, providing an overview of my professional background, skills, and projects. It serves as a platform to connect with others and showcase my work.
+This repository contains two versions of the portfolio:
 
-## Features
+- **`/` (root)** - Original HTML/CSS/JavaScript version
+- **`/srs-folio-react`** - Modern React version (actively maintained and deployed)
 
-1. **About:** Brief introduction about myself.
-2. **Services:** Overview of the services I offer.
-3. **Skills:** List of skills and technologies I am proficient in.
-4. **Portfolio:** Showcase of my notable projects with descriptions.
-5. **Experience:** Information about my professional experience.
-6. **Education:** Details about my educational background.
-7. **Certification:** Details about my certifications.
-8. **Research:** Information about my research experience.
-9. **Snapshots:** Information about my life acheivements and other.
-10. **Contact:** Information on how to get in touch with me.
+## 🚀 React Version (Current)
 
-## Technologies Used
+The React version is the actively maintained and deployed version, featuring a modern tech stack and improved performance.
+
+### Technologies Used
+
+- **React 19.2.6** - Component-based UI library
+- **Vite 8.0.14** - Fast build tool and dev server
+- **Tailwind CSS 3.4.17** - Utility-first CSS framework
+- **Framer Motion 12.40.0** - Animation library for smooth interactions
+- **React Type Animation** - Dynamic typing animations
+- **Formspree** - Contact form backend
+
+### Features
+
+1. **Hero Section** - Dynamic introduction with typing animation
+2. **About** - Professional background and personal introduction
+3. **Skills** - Technical skills with animated progress bars
+4. **Education** - Academic qualifications and achievements
+5. **Portfolio** - Showcase of notable projects with filtering
+6. **Experience** - Professional work history and roles
+7. **Certifications** - Professional certifications and credentials
+8. **Research** - Academic research and publications
+9. **Contact** - Get in touch form with social links
+10. **Responsive Design** - Optimized for all screen sizes
+11. **Active Section Highlighting** - Smart navbar with scroll detection
+
+### Quick Start
+
+```bash
+# Navigate to React project
+cd srs-folio-react
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Deployment
+
+The React version is deployed on **Vercel** with automatic deployments on push to the repository. For detailed deployment instructions, see [`srs-folio-react/DEPLOYMENT.md`](srs-folio-react/DEPLOYMENT.md).
+
+## 📂 Original HTML Version
+
+The original HTML/CSS/JavaScript version is maintained in the root directory for reference. It uses:
 
 - HTML5
-- CSS3
-- JavaScript
+- CSS3 (Bootstrap, custom SCSS)
+- Vanilla JavaScript
+- Font Awesome & Bootstrap Icons
+- AOS (Animate On Scroll)
 
-## Usage
+To view the original version:
+```bash
+# Open index.html in your browser
+open index.html
+```
 
-Feel free to use 'srs-folio' as a template for your own portfolio website. Customize the content, add your projects, and tailor it to suit your needs. But don't forget to give credit.
-1. Clone the repository: `git clone https://github.com/your-username/srs-folio.git`
-2. Open the `index.html` file in your web browser.
+## 📝 License
 
-## License
+This project is licensed under the [MIT License](LICENSE-free.txt) - see the [LICENSE-free.txt](LICENSE-free.txt) file for details.
 
-This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+## 🤝 Contributing
+
+Feel free to use this portfolio as inspiration for your own projects. If you use substantial portions of the code, attribution is appreciated but not required.
+
+## 📧 Contact
+
+For inquiries or collaborations, visit [sr-sujon.com](https://sr-sujon.com) and use the contact form.
+
+---
+
+**Note:** The React version (`/srs-folio-react`) is the actively maintained version and powers the live site at [sr-sujon.com](https://sr-sujon.com).
 
 
 
