@@ -65,8 +65,8 @@ const Navbar = () => {
       <nav className="container mx-auto px-4" role="navigation">
         <div className="flex items-center justify-center lg:justify-between py-4">
           {/* Logo */}
-          <a href="#" className="text-gray-800 text-xl font-bold hover:text-gray-600 transition-colors lg:flex-shrink-0">
-            SRS Folio
+          <a href="#" className="text-gray-800 text-xl font-bold hover:text-gray-600 transition-colors lg:flex-shrink-0 lg:border-r-2 lg:border-gray-300 lg:pr-8 lg:mr-4">
+            SR Sujon
           </a>
 
           {/* Mobile Menu Button */}
