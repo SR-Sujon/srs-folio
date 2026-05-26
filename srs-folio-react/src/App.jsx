@@ -7,6 +7,8 @@ import Portfolio from './components/Portfolio'
 import Experience from './components/Experience'
 import Certifications from './components/Certifications'
 import Research from './components/Research'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {
@@ -23,9 +25,11 @@ function App() {
           <Experience />
           <Certifications />
           <Research />
+          <Contact />
           {/* Other sections will be added here */}
         </div>
       </main>
+      <Footer />
     </div>
   )
 }
