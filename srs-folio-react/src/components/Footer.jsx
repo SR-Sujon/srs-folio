@@ -169,9 +169,9 @@ const Footer = () => {
             className="text-gray-400 text-sm"
           >
             <p className="flex items-center justify-center gap-2">
-              Copyright © {currentYear}, SRS. All rights reserved.
+              Copyright © {currentYear}, SR Sujon. All rights reserved.
               <span className="inline-flex items-center gap-1">
-                Made with <FaHeart className="text-red-500 text-xs animate-pulse" /> by SRS
+                Made with <FaHeart className="text-red-500 text-xs animate-pulse" /> by SR Sujon
               </span>
             </p>
           </motion.div>
