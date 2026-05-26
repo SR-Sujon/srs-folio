@@ -44,7 +44,7 @@ const Certifications = () => {
         certificates: [
           { title: 'Certificate of Completion', url: 'https://drive.google.com/open?id=1x-V-zQe5LnwtL-n6AGP6Ti44l8u8XXZT&usp=drive_fs', color: '#1278c7' },
           { title: 'Achievement & Attendance', url: 'https://drive.google.com/open?id=1wsLJOWurhBIjiZhLIwUXBedKkltYOwBY&usp=drive_fs', color: '#be4820' },
-          { title: 'High Performance Award', url: 'https://drive.google.com/open?id=1x3L_MzQlBnP492MJhwqXSdAmVEc0JinW&usp=drive_fs', color: '#ecc32e' },
+          { title: 'High Performance Award', url: 'https://drive.google.com/open?id=1x3L_MzQlBnP492MJhwqXSdAmVEc0JinW&usp=drive_fs', color: '#D97706' },
           { title: 'Perfect Attendance (100%)', url: 'https://drive.google.com/open?id=1x09AdXIFZpaxZ-AtYI-XwtBDaZ9Oc1dJ&usp=drive_fs', color: '#2f8d09' }
         ],
         description: 'N4 to N3 (partial) level Japanese Language Proficiency, Japanese Traditions and Business Ethics, IT skills including Design Pattern Techniques, Cloud computing, CI/CD pipelines. Created video contents introducing Bangladeshi culture, Developed Nihongo project with Takachiho High School students.'
