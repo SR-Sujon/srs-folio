@@ -11,9 +11,16 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'animation-vendor': ['framer-motion', 'react-type-animation'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('framer-motion') || id.includes('react-type-animation')) {
+              return 'animation-vendor';
+            }
+            return 'vendor';
+          }
         }
       }
     }
