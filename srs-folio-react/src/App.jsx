@@ -1,6 +1,8 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Skills from './components/Skills'
+import Education from './components/Education'
 import Portfolio from './components/Portfolio'
 import Experience from './components/Experience'
 import './App.css'
@@ -13,6 +15,8 @@ function App() {
         <div id="content">
           <Hero />
           <About />
+          <Skills />
+          <Education />
           <Portfolio />
           <Experience />
           {/* Other sections will be added here */}
