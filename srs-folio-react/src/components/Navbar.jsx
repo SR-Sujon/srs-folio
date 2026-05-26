@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,32 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, []);
 
   const navLinks = [
@@ -23,7 +50,6 @@ const Navbar = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Certifications', href: '#certificate' },
     { name: 'Research', href: '#research' },
-    { name: 'Snapshots', href: '#snapshots' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -37,15 +63,15 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <nav className="container mx-auto px-4" role="navigation">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-center lg:justify-between py-4">
           {/* Logo */}
-          <a href="#" className="text-gray-800 text-xl font-bold hover:text-gray-600 transition-colors">
+          <a href="#" className="text-gray-800 text-xl font-bold hover:text-gray-600 transition-colors lg:flex-shrink-0">
             SRS Folio
           </a>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-md hover:bg-gray-200 transition-colors"
+            className="lg:hidden p-2 rounded-md hover:bg-gray-200 transition-colors absolute right-4"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation"
           >
@@ -57,18 +83,25 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex space-x-6 items-center">
-            {navLinks.map((link, index) => (
-              <li key={index} className="hover-underline-animation">
-                <a
-                  href={link.href}
-                  className="text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
+          <ul className="hidden lg:flex lg:space-x-8 items-center lg:flex-1 lg:justify-center lg:ml-12">
+            {navLinks.map((link, index) => {
+              const isActive = `#${activeSection}` === link.href;
+              return (
+                <li key={index} className="hover-underline-animation">
+                  <a
+                    href={link.href}
+                    className={`transition-colors text-sm font-medium ${
+                      isActive
+                        ? 'text-blue-600 font-extrabold underline underline-offset-4 decoration-2'
+                        : 'text-gray-700 hover:text-gray-900'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -78,18 +111,25 @@ const Navbar = () => {
             isMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
           }`}
         >
-          <ul className="flex flex-col space-y-3">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <a
-                  href={link.href}
-                  className="block text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
+          <ul className="flex flex-col space-y-3 items-center">
+            {navLinks.map((link, index) => {
+              const isActive = `#${activeSection}` === link.href;
+              return (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className={`block transition-colors text-sm font-medium py-2 ${
+                      isActive
+                        ? 'text-blue-600 font-extrabold underline underline-offset-4 decoration-2'
+                        : 'text-gray-700 hover:text-gray-900'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </nav>
