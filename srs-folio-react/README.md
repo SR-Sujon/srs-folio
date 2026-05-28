@@ -99,6 +99,36 @@ srs-folio-react/
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
+- `npm run version:patch` - Bump patch version (bug fixes)
+- `npm run version:minor` - Bump minor version (new features)
+- `npm run version:major` - Bump major version (breaking changes)
+
+## 📌 Version Management
+
+Current Version: **v1.0.0**
+
+This project follows [Semantic Versioning](https://semver.org/). The version is displayed in the website footer and managed through `package.json`.
+
+### Quick Version Update
+
+```bash
+# For bug fixes (1.0.0 → 1.0.1)
+npm run version:patch
+
+# For new features (1.0.0 → 1.1.0)
+npm run version:minor
+
+# For breaking changes (1.0.0 → 2.0.0)
+npm run version:major
+```
+
+### Documentation
+
+- **VERSION.md** - Complete versioning guide with examples
+- **CHANGELOG.md** - Detailed change history
+- **Git Tags** - All releases are tagged in Git
+
+For detailed instructions, see [VERSION.md](./VERSION.md)
 
 ## 🚀 Deployment
 

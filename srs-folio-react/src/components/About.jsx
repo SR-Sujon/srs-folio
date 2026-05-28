@@ -65,10 +65,10 @@ const About = () => {
             <p className="text-justify text-lg leading-relaxed text-gray-700">
               As a <strong>B.Sc. in Computer Science and Engineering (CSE) graduate</strong>, my professional journey
               has been focused on the roles of a <strong>full-stack developer & AI engineer</strong>. My expertise
-              lies in building full-stack web applications with <strong>MERN framework</strong>. Also integrating the
+              lies in building full-stack web applications primarily with <strong>MERN and PERN Stack (with Rust or C#)</strong>. Also integrating the
               latest AI technologies, such as <strong>generative AI and applied machine learning</strong>, with
-              existing frameworks. Being also proficient in data science, I design optimized <strong>ML
-              algorithms </strong>for extracting actionable insights from data. My portfolio spans diverse projects,
+              existing systems. Being also proficient in data science, I design and optimize <strong>ML
+              algorithms and pipelines</strong>, for extracting actionable insights from data. My portfolio spans diverse projects,
               including e-commerce web apps, gen-ai apps and immersive 3D games. My research interest area currently lies
               in <strong>GenAI, NLP, computer vision, and data science.</strong>
             </p>

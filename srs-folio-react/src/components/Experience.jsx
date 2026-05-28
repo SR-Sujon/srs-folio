@@ -11,11 +11,11 @@ const Experience = () => {
       year: '2025',
       isPresent: true,
       position: 'Software Engineer',
-      company: 'MASS HOLDINGS CO. LTD',
+      company: 'MASS HOLDINGS CO., LTD',
       location: 'Tokyo, Japan',
       duration: '2025 - Present',
       image: '/images/experience/exp_mass_holdings.png',
-      description: 'Working as a Software Engineer in the IT Department at MASS HOLDINGS headquarters, developing and maintaining warehouse management systems. Contributing to solutions that handle daily order processing, integrating frontend interfaces with backend systems and automated label printing functionality.',
+      description: 'Working as a Software Engineer in the IT Solution and Development Department at the MASS HOLDINGS CO., LTD head office, developing and maintaining company\'s warehouse management systems. Contributing to solutions that handle daily order processing, integrating frontend interfaces with backend systems and automated label printing functionality.',
       responsibilities: [
         {
           title: 'Full Stack Development',

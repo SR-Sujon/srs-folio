@@ -42,7 +42,7 @@ const Contact = () => {
     {
       icon: FaMapMarkerAlt,
       label: 'Location',
-      value: 'Tokyo, Japan | Dhaka, Bangladesh',
+      value: 'Tokyo, Japan',
       link: 'https://maps.google.com/?q=Tokyo,Japan',
       color: '#EA4335'
     }
