@@ -132,10 +132,14 @@ const Footer = () => {
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
+                    transition={{ 
+                      default: { duration: 0.3, delay: 0.4 + index * 0.05 },
+                      scale: { duration: 0.15 },
+                      y: { duration: 0.15 }
+                    }}
                     whileHover={{ scale: 1.15, y: -3 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg hover:shadow-2xl transition-all duration-300 group relative"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg hover:shadow-2xl transition-shadow duration-150 group relative"
                     style={{ backgroundColor: social.color }}
                     title={social.name}
                   >
@@ -143,7 +147,7 @@ const Footer = () => {
                     <motion.div
                       className="absolute inset-0 bg-white rounded-xl opacity-0 group-hover:opacity-20"
                       whileHover={{ opacity: 0.2 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.15 }}
                     />
                   </motion.a>
                 );
