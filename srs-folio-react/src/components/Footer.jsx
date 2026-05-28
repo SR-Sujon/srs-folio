@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaHeart
 } from 'react-icons/fa';
+import packageJson from '../../package.json';
 import { 
   SiLeetcode,
   SiKaggle,
@@ -172,11 +173,14 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-gray-400 text-sm"
           >
-            <p className="flex items-center justify-center gap-2">
+            <p className="flex items-center justify-center gap-2 flex-wrap">
               Copyright © {currentYear}, SR Sujon. All rights reserved.
               <span className="inline-flex items-center gap-1">
                 Made with <FaHeart className="text-red-500 text-xs animate-pulse" /> by SR Sujon
               </span>
+            </p>
+            <p className="text-gray-500 text-xs mt-2">
+              v{packageJson.version}
             </p>
           </motion.div>
         </motion.div>
