@@ -15,7 +15,7 @@ const Experience = () => {
       location: 'Tokyo, Japan',
       duration: '2025 - Present',
       image: '/images/experience/exp_mass_holdings.png',
-      description: 'Working as a Software Engineer in the IT Solution and Development Department at MASS HOLDINGS CO., LTD headquarters in the heart of Tokyo, developing and maintaining the warehouse management systems. Contributing to solutions that handle daily order processing, integrating frontend interfaces with backend systems and automated label printing functionality.',
+      description: 'Working as a Software Engineer in the IT Solution and Development Department at the MASS HOLDINGS CO., LTD head office, developing and maintaining company\'s warehouse management systems. Contributing to solutions that handle daily order processing, integrating frontend interfaces with backend systems and automated label printing functionality.',
       responsibilities: [
         {
           title: 'Full Stack Development',
