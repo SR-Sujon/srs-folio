@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   FaCertificate, 
-  FaBriefcase 
+  FaBriefcase,
+  FaArrowRight
 } from 'react-icons/fa';
 
-const Experience = () => {
+const Experience = ({ featured = false }) => {
   const experiences = [
     {
       id: 1,
@@ -105,7 +107,7 @@ const Experience = () => {
 
         {/* Experience Content */}
         <div className="space-y-12">
-          {experiences.map((exp, index) => (
+          {(featured ? experiences.slice(0, 3) : experiences).map((exp, index) => (
             <div key={exp.id} className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start relative">
               {/* Left Side - Year Badge with Connector Line */}
               <div className="lg:w-32 flex flex-col items-center shrink-0 self-stretch">
@@ -297,6 +299,31 @@ const Experience = () => {
               </motion.div>
             </div>
           ))}
+
+          {/* View All Button - Only shown in featured mode */}
+          {featured && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center pt-8"
+            >
+              <Link to="/experience">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  View All Experience
+                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </Link>
+              <p className="text-gray-500 mt-3 text-sm">
+                Showing {Math.min(3, experiences.length)} of {experiences.length} experiences
+              </p>
+            </motion.div>
+          )}
         </div>
 
         {/* Decorative Elements */}
