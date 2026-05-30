@@ -1,36 +1,30 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Education from './components/Education'
-import Portfolio from './components/Portfolio'
-import Experience from './components/Experience'
-import Certifications from './components/Certifications'
-import Research from './components/Research'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import PortfolioPage from './pages/PortfolioPage'
+import ExperiencePage from './pages/ExperiencePage'
+import CertificationsPage from './pages/CertificationsPage'
+import ResearchPage from './pages/ResearchPage'
 import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main className="page-content">
-        <div id="content">
-          <Hero />
-          <About />
-          <Skills />
-          <Education />
-          <Portfolio />
-          <Experience />
-          <Certifications />
-          <Research />
-          <Contact />
-          {/* Other sections will be added here */}
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <main className="page-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/certifications" element={<CertificationsPage />} />
+            <Route path="/research" element={<ResearchPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 

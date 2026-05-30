@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { FaCertificate, FaExternalLinkAlt, FaAward, FaUniversity, FaTrophy } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaCertificate, FaExternalLinkAlt, FaAward, FaUniversity, FaTrophy, FaArrowRight } from 'react-icons/fa';
 
-const Certifications = () => {
+const Certifications = ({ featured = false }) => {
   const certifications = {
     exam: [
       {
@@ -285,7 +286,7 @@ const Certifications = () => {
             <h3 className="text-2xl font-bold text-gray-800">Professional Exam Certifications</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {certifications.exam.map((cert, index) => (
+            {(featured ? certifications.exam.slice(0, 1) : certifications.exam).map((cert, index) => (
               <CertificateCard key={cert.id} cert={cert} index={index} category="exam" />
             ))}
           </div>
@@ -303,7 +304,7 @@ const Certifications = () => {
             <h3 className="text-2xl font-bold text-gray-800">Professional Training Certifications</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {certifications.training.map((cert, index) => (
+            {(featured ? certifications.training.slice(0, 2) : certifications.training).map((cert, index) => (
               <CertificateCard key={cert.id} cert={cert} index={index} category="training" />
             ))}
           </div>
@@ -320,11 +321,36 @@ const Certifications = () => {
             <h3 className="text-2xl font-bold text-gray-800">Online Course Certifications</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certifications.coursera.map((cert, index) => (
+            {(featured ? certifications.coursera.slice(0, 3) : certifications.coursera).map((cert, index) => (
               <CertificateCard key={cert.id} cert={cert} index={index} category="coursera" />
             ))}
           </div>
         </motion.div>
+
+        {/* View All Button - Only shown in featured mode */}
+        {featured && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center pt-16"
+          >
+            <Link to="/certifications">
+              <motion.button
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                View All Certifications
+                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
+            <p className="text-gray-500 mt-3 text-sm">
+              Showing {Math.min(6, certifications.exam.length + certifications.training.length + certifications.coursera.length)} of {certifications.exam.length + certifications.training.length + certifications.coursera.length} certifications
+            </p>
+          </motion.div>
+        )}
       </div>
 
       <style jsx>{`

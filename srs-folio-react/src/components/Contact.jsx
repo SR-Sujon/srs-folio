@@ -4,7 +4,6 @@ import {
   FaEnvelope, 
   FaMapMarkerAlt, 
   FaPaperPlane,
-  FaSkype,
   FaWhatsapp
 } from 'react-icons/fa';
 
@@ -24,13 +23,6 @@ const Contact = () => {
       value: 'sr.sujon.cyb@gmail.com',
       link: 'mailto:sr.sujon.cyb@gmail.com',
       color: '#EA4335'
-    },
-    {
-      icon: FaSkype,
-      label: 'Skype',
-      value: 'live:.cid.898ae0f212f36140',
-      link: 'skype:live:.cid.898ae0f212f36140?chat',
-      color: '#00AFF0'
     },
     {
       icon: FaWhatsapp,
@@ -259,7 +251,7 @@ const Contact = () => {
                   If you like my work and want to avail my services then drop me a message using the contact form.
                 </p>
                 <p>
-                  Or get in touch using my email, Skype or WhatsApp number.
+                  Or get in touch using my email or WhatsApp number.
                 </p>
                 <p className="font-semibold text-blue-600">See you! 👋</p>
               </div>

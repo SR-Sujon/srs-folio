@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   FaBookOpen, 
   FaDatabase, 
@@ -6,7 +7,8 @@ import {
   FaYoutube, 
   FaExternalLinkAlt,
   FaQuoteLeft,
-  FaAward
+  FaAward,
+  FaArrowRight
 } from 'react-icons/fa';
 import { 
   SiResearchgate, 
@@ -16,7 +18,7 @@ import {
   SiMendeley
 } from 'react-icons/si';
 
-const Research = () => {
+const Research = ({ featured = false }) => {
   const publications = [
     {
       id: 1,
@@ -116,7 +118,7 @@ const Research = () => {
 
         {/* Publications Grid */}
         <div className="space-y-16">
-          {publications.map((pub, index) => (
+          {(featured ? publications.slice(0, 2) : publications).map((pub, index) => (
             <motion.article
               key={pub.id}
               initial={{ opacity: 0, y: 60 }}
@@ -294,6 +296,31 @@ const Research = () => {
               />
             </motion.article>
           ))}
+
+          {/* View All Button - Only shown in featured mode */}
+          {featured && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-center pt-8"
+            >
+              <Link to="/research">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  View All Publications
+                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </Link>
+              <p className="text-gray-500 mt-3 text-sm">
+                Showing {Math.min(2, publications.length)} of {publications.length} publications
+              </p>
+            </motion.div>
+          )}
         </div>
 
         {/* Impact Statement */}

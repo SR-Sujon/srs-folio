@@ -5,7 +5,8 @@ import {
   FaHackerrank,
   FaMedium,
   FaYoutube,
-  FaHeart
+  FaHeart,
+  FaRocket
 } from 'react-icons/fa';
 import packageJson from '../../package.json';
 import { 
@@ -74,6 +75,13 @@ const Footer = () => {
   ];
 
   const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-12 pb-8 relative overflow-hidden">
@@ -185,6 +193,26 @@ const Footer = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <motion.button
+        onClick={scrollToTop}
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        whileHover={{ scale: 1.15, y: -3 }}
+        whileTap={{ scale: 0.9 }}
+        className="absolute bottom-6 right-6 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer z-20"
+        title="Back to Top"
+      >
+        <FaRocket className="transform group-hover:-translate-y-1 transition-transform duration-300" />
+        <motion.div
+          className="absolute inset-0 bg-white rounded-full opacity-0 group-hover:opacity-20"
+          whileHover={{ opacity: 0.2 }}
+          transition={{ duration: 0.3 }}
+        />
+      </motion.button>
 
       <style jsx>{`
         .animation-delay-2000 {

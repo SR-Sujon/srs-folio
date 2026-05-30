@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +19,9 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    // Only set up intersection observer on homepage
+    if (!isHomePage) return;
+
     const observerOptions = {
       root: null,
       rootMargin: '-20% 0px -70% 0px',
@@ -39,19 +45,29 @@ const Navbar = () => {
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
-  }, []);
+  }, [isHomePage]);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Education', href: '#education' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Certifications', href: '#certificate' },
-    { name: 'Research', href: '#research' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home', isSection: true },
+    { name: 'About', href: '#about', isSection: true },
+    { name: 'Skills', href: '#skills', isSection: true },
+    { name: 'Education', href: '#education', isSection: true },
+    { name: 'Portfolio', href: '/portfolio', isSection: false },
+    { name: 'Experience', href: '/experience', isSection: false },
+    { name: 'Certifications', href: '/certifications', isSection: false },
+    { name: 'Research', href: '/research', isSection: false },
+    { name: 'Contact', href: '#contact', isSection: true },
   ];
+
+  const isLinkActive = (link) => {
+    if (link.isSection) {
+      // For sections, check if we're on homepage and if the section is active
+      return isHomePage && `#${activeSection}` === link.href;
+    } else {
+      // For pages, check if the current route matches
+      return location.pathname === link.href;
+    }
+  };
 
   return (
     <motion.header
@@ -65,9 +81,9 @@ const Navbar = () => {
       <nav className="container mx-auto px-4" role="navigation">
         <div className="flex items-center justify-center lg:justify-between py-4">
           {/* Logo */}
-          <a href="#" className="text-gray-800 text-xl font-bold hover:text-gray-600 transition-colors lg:flex-shrink-0 lg:border-r-2 lg:border-gray-300 lg:pr-8 lg:mr-4">
+          <Link to="/" className="text-gray-800 text-xl font-bold hover:text-gray-600 transition-colors lg:flex-shrink-0 lg:border-r-2 lg:border-gray-300 lg:pr-8 lg:mr-4">
             SR Sujon
-          </a>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -85,20 +101,32 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex lg:space-x-8 items-center lg:flex-1 lg:justify-center lg:ml-12">
             {navLinks.map((link, index) => {
-              const isActive = `#${activeSection}` === link.href;
+              const isActive = isLinkActive(link);
+              const linkClasses = `transition-colors text-sm font-medium ${
+                isActive
+                  ? 'text-blue-600 font-extrabold underline underline-offset-4 decoration-2'
+                  : 'text-gray-700 hover:text-gray-900'
+              }`;
+              
               return (
                 <li key={index} className="hover-underline-animation">
-                  <a
-                    href={link.href}
-                    className={`transition-colors text-sm font-medium ${
-                      isActive
-                        ? 'text-blue-600 font-extrabold underline underline-offset-4 decoration-2'
-                        : 'text-gray-700 hover:text-gray-900'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
+                  {link.isSection ? (
+                    <a
+                      href={link.href}
+                      className={linkClasses}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className={linkClasses}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               );
             })}
@@ -113,20 +141,32 @@ const Navbar = () => {
         >
           <ul className="flex flex-col space-y-3 items-center">
             {navLinks.map((link, index) => {
-              const isActive = `#${activeSection}` === link.href;
+              const isActive = isLinkActive(link);
+              const linkClasses = `block transition-colors text-sm font-medium py-2 ${
+                isActive
+                  ? 'text-blue-600 font-extrabold underline underline-offset-4 decoration-2'
+                  : 'text-gray-700 hover:text-gray-900'
+              }`;
+              
               return (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className={`block transition-colors text-sm font-medium py-2 ${
-                      isActive
-                        ? 'text-blue-600 font-extrabold underline underline-offset-4 decoration-2'
-                        : 'text-gray-700 hover:text-gray-900'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
+                  {link.isSection ? (
+                    <a
+                      href={link.href}
+                      className={linkClasses}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className={linkClasses}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               );
             })}
