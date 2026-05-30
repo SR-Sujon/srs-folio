@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
@@ -69,6 +70,29 @@ const Navbar = () => {
     }
   };
 
+  const handleSectionClick = (e, href) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    if (isHomePage) {
+      // If on homepage, just scroll to section
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If on another page, navigate to homepage then scroll to section
+      navigate('/' + href);
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <motion.header
       className={`bg-gray-50 transition-all duration-300 ${
@@ -114,7 +138,7 @@ const Navbar = () => {
                     <a
                       href={link.href}
                       className={linkClasses}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => handleSectionClick(e, link.href)}
                     >
                       {link.name}
                     </a>
@@ -154,7 +178,7 @@ const Navbar = () => {
                     <a
                       href={link.href}
                       className={linkClasses}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => handleSectionClick(e, link.href)}
                     >
                       {link.name}
                     </a>
