@@ -1,4 +1,4 @@
-// Debug endpoint to check IP detection and geolocation
+// Debug endpoint to check IP detection and all geolocation APIs
 export default async function handler(req, res) {
   // Get visitor's IP address
   const ip = 
@@ -7,25 +7,49 @@ export default async function handler(req, res) {
     req.socket.remoteAddress ||
     'unknown';
 
-  // Try to get country from ipapi.co
-  let ipApiResponse = null;
-  let ipApiError = null;
-  let countryResult = 'Unknown';
+  // Test all three geolocation APIs
+  const apiTests = {};
   
+  // Test 1: ipapi.co
   try {
     const response = await fetch(`https://ipapi.co/${ip}/json/`);
     const data = await response.json();
-    ipApiResponse = {
+    apiTests.ipapi_co = {
       status: response.status,
       ok: response.ok,
-      statusText: response.statusText,
-      data: data
+      country: data.country_name || null,
+      error: data.error ? data.reason : null
     };
-    
-    // Extract country just like track-visitor does
-    countryResult = data.country_name || 'Unknown';
   } catch (error) {
-    ipApiError = error.message;
+    apiTests.ipapi_co = { error: error.message };
+  }
+  
+  // Test 2: ip-api.com
+  try {
+    const response = await fetch(`http://ip-api.com/json/${ip}`);
+    const data = await response.json();
+    apiTests.ip_api_com = {
+      status: response.status,
+      ok: response.ok,
+      country: data.country || null,
+      apiStatus: data.status
+    };
+  } catch (error) {
+    apiTests.ip_api_com = { error: error.message };
+  }
+  
+  // Test 3: ipwhois.io
+  try {
+    const response = await fetch(`https://ipwhois.app/json/${ip}`);
+    const data = await response.json();
+    apiTests.ipwhois_io = {
+      status: response.status,
+      ok: response.ok,
+      country: data.country || null,
+      success: data.success
+    };
+  } catch (error) {
+    apiTests.ipwhois_io = { error: error.message };
   }
 
   // Check if IP is private/local
@@ -52,12 +76,23 @@ export default async function handler(req, res) {
     ip.startsWith('172.30.') ||
     ip.startsWith('172.31.');
 
+  // Determine best result
+  const bestCountry = 
+    apiTests.ipapi_co?.country ||
+    apiTests.ip_api_com?.country ||
+    apiTests.ipwhois_io?.country ||
+    'Unknown';
+
   return res.status(200).json({
     summary: {
       detectedIP: ip,
       isPrivateIP: isPrivateIP,
-      countryResult: countryResult,
-      status: ipApiResponse ? 'success' : 'error'
+      resolvedCountry: bestCountry,
+      workingAPIs: [
+        apiTests.ipapi_co?.country ? 'ipapi.co' : null,
+        apiTests.ip_api_com?.country ? 'ip-api.com' : null,
+        apiTests.ipwhois_io?.country ? 'ipwhois.io' : null
+      ].filter(Boolean)
     },
     headers: {
       'x-forwarded-for': req.headers['x-forwarded-for'],
@@ -65,16 +100,11 @@ export default async function handler(req, res) {
       'cf-connecting-ip': req.headers['cf-connecting-ip'],
       'x-vercel-forwarded-for': req.headers['x-vercel-forwarded-for']
     },
-    ipApiResponse,
-    ipApiError,
+    apiTests,
     diagnosis: isPrivateIP 
       ? '⚠️ Private/Local IP detected - cannot geolocate'
-      : ipApiError 
-        ? '❌ Error calling ipapi.co'
-        : ipApiResponse && !ipApiResponse.ok
-          ? '❌ ipapi.co returned error status'
-          : ipApiResponse && !ipApiResponse.data.country_name
-            ? '⚠️ ipapi.co returned data but no country_name field'
-            : '✅ Geolocation working correctly'
+      : bestCountry === 'Unknown'
+        ? '❌ All geolocation APIs failed'
+        : '✅ Geolocation working with fallback support'
   });
 }

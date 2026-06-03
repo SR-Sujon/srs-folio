@@ -3,31 +3,65 @@ import { Redis } from '@upstash/redis';
 // Rate limiting cache (in-memory for serverless)
 const rateLimitCache = new Map();
 
-// Function to get country from IP
+// Function to get country from IP with fallback APIs
 async function getCountryFromIP(ip) {
+  console.log('🌍 Attempting geolocation for IP:', ip);
+  
+  // Try ipapi.co first (free tier: 1000 requests/day)
   try {
-    console.log('🌍 Attempting geolocation for IP:', ip);
-    
-    // Use ipapi.co for geolocation (free tier: 1000 requests/day)
     const response = await fetch(`https://ipapi.co/${ip}/json/`);
     console.log('📡 ipapi.co response status:', response.status);
     
-    if (!response.ok) {
-      console.error('❌ ipapi.co returned error status:', response.status, response.statusText);
-      return 'Unknown';
+    if (response.ok) {
+      const data = await response.json();
+      const country = data.country_name;
+      if (country) {
+        console.log('✅ Resolved country from ipapi.co:', country);
+        return country;
+      }
+    } else if (response.status === 429) {
+      console.warn('⚠️ ipapi.co rate limit exceeded, trying fallback...');
     }
-    
-    const data = await response.json();
-    console.log('📊 ipapi.co data:', JSON.stringify(data, null, 2));
-    
-    const country = data.country_name || 'Unknown';
-    console.log('✅ Resolved country:', country);
-    
-    return country;
   } catch (error) {
-    console.error('❌ Error fetching country:', error.message, error);
-    return 'Unknown';
+    console.warn('⚠️ ipapi.co failed:', error.message, '- trying fallback...');
   }
+  
+  // Fallback 1: ip-api.com (unlimited for non-commercial)
+  try {
+    const response = await fetch(`http://ip-api.com/json/${ip}`);
+    console.log('📡 ip-api.com response status:', response.status);
+    
+    if (response.ok) {
+      const data = await response.json();
+      const country = data.country;
+      if (country && data.status === 'success') {
+        console.log('✅ Resolved country from ip-api.com:', country);
+        return country;
+      }
+    }
+  } catch (error) {
+    console.warn('⚠️ ip-api.com failed:', error.message, '- trying next fallback...');
+  }
+  
+  // Fallback 2: ipwhois.io (10K requests/month free)
+  try {
+    const response = await fetch(`https://ipwhois.app/json/${ip}`);
+    console.log('📡 ipwhois.io response status:', response.status);
+    
+    if (response.ok) {
+      const data = await response.json();
+      const country = data.country;
+      if (country && data.success) {
+        console.log('✅ Resolved country from ipwhois.io:', country);
+        return country;
+      }
+    }
+  } catch (error) {
+    console.warn('⚠️ ipwhois.io failed:', error.message);
+  }
+  
+  console.error('❌ All geolocation services failed, returning Unknown');
+  return 'Unknown';
 }
 
 // Rate limiting function (prevent spam)
