@@ -151,7 +151,7 @@ const Portfolio = ({ featured = false }) => {
     {
       id: 1,
       title: 'Fullmetal Alchemist Redemption',
-      image: '/images/portfolio/fmar.bmp',
+      image: '/images/portfolio/fmar.jpg',
       duration: '2021.6-2021.8 (3 months)',
       description: 'A 2D Shooting game inspired by the anime Fullmetal, made with igraphics engine using OpenGL library in C and C++. Intuitive keyboard-controlled aiming and movement, firing bullets towards ground and sky enemy fleet, that add a unique challenge, multiple levels, each with different enemy adversaries, health points availability, immersive soundtracks and visuals, easy controls and score board.',
       technologies: ['C#', 'C++', 'iGraphics', 'OpenGL', 'MS Visual Studio'],
