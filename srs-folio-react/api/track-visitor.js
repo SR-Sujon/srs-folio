@@ -6,15 +6,26 @@ const rateLimitCache = new Map();
 // Function to get country from IP
 async function getCountryFromIP(ip) {
   try {
+    console.log('🌍 Attempting geolocation for IP:', ip);
+    
     // Use ipapi.co for geolocation (free tier: 1000 requests/day)
     const response = await fetch(`https://ipapi.co/${ip}/json/`);
+    console.log('📡 ipapi.co response status:', response.status);
+    
     if (!response.ok) {
+      console.error('❌ ipapi.co returned error status:', response.status, response.statusText);
       return 'Unknown';
     }
+    
     const data = await response.json();
-    return data.country_name || 'Unknown';
+    console.log('📊 ipapi.co data:', JSON.stringify(data, null, 2));
+    
+    const country = data.country_name || 'Unknown';
+    console.log('✅ Resolved country:', country);
+    
+    return country;
   } catch (error) {
-    console.error('Error fetching country:', error);
+    console.error('❌ Error fetching country:', error.message, error);
     return 'Unknown';
   }
 }
