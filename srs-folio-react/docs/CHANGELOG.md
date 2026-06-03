@@ -5,7 +5,65 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.2.0] - 2026-05-29
+## [3.2.1] - 2026-06-03
+
+### Added
+- **Fallback Geolocation APIs**: Multi-API cascading system to prevent "Unknown" countries
+  - Primary: ipapi.co (1K requests/day)
+  - Fallback 1: ip-api.com (unlimited for non-commercial)
+  - Fallback 2: ipwhois.io (10K requests/month)
+  - Automatic failover when one API is rate-limited or unavailable
+- **Debug Endpoint**: `/api/debug-visitor` for troubleshooting IP detection and geolocation
+  - Tests all three geolocation APIs simultaneously
+  - Shows detected IP address and headers
+  - Identifies private/local IPs
+  - Provides diagnostic messages
+- **Environment Validation**: API endpoints now validate Redis credentials before initialization
+  - Prevents crashes from undefined environment variables
+  - Returns helpful error messages when credentials are missing
+  - Improved error handling in serverless functions
+
+### Changed
+- **Documentation Consolidation**:
+  - Merged `TROUBLESHOOTING_VISITOR_TRACKING.md` into `VISITOR_TRACKING_SETUP.md`
+  - Merged `QUICK_VERSION_GUIDE.md` into `VERSION.md`
+  - Single comprehensive guide for each topic
+  - Updated documentation index in `docs/README.md`
+- **Enhanced Logging**: Added detailed console logs in API routes for debugging
+  - IP detection logging
+  - Geolocation API response tracking
+  - Redis operation logging
+- **Improved Error Handling**: Better error messages in visitor tracking APIs
+  - Clear indication of which service failed
+  - Fallback service selection logged
+
+### Fixed
+- **Critical**: Fixed API crash when Redis credentials are undefined
+  - Moved Redis client initialization from module level to inside handler
+  - Added validation checks before creating Redis client
+  - Prevents 500 FUNCTION_INVOCATION_FAILED errors
+- **429 Rate Limit**: Resolved "Unknown" country issue caused by ipapi.co rate limiting
+  - Automatic failover to alternative geolocation services
+  - No more "Unknown" countries during high traffic or testing
+- **Environment Variables**: Fixed missing credential detection in Vercel deployments
+  - Added test endpoint for environment variable verification
+  - Clear error messages guide users to configure variables
+
+### Documentation
+- Updated `VISITOR_TRACKING_SETUP.md` with 8-step detailed troubleshooting guide
+- Added fallback API information to all relevant documentation
+- Updated `VERSION.md` with quick reference at the top
+- Enhanced troubleshooting steps with common solutions
+- Added diagnostic command examples
+- Included environment-specific behavior tables (dev/preview/production)
+
+### Technical
+- Redis client now initialized per-request instead of module-level
+- Environment variable validation added to all API endpoints
+- Improved error response structure for easier debugging
+- Added IP header inspection for better geolocation accuracy
+
+## [3.2.0] - 2026-06-03
 
 ### Added
 - **Visitor Tracking System**: Real-time visitor analytics by country
