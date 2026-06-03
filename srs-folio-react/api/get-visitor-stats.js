@@ -1,16 +1,31 @@
 import { Redis } from '@upstash/redis';
 
-// Initialize Redis client
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-});
-
 export default async function handler(req, res) {
   // Only allow GET requests
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  // Check if environment variables are configured
+  const redisUrl = process.env.UPSTASH_REDIS_REST_URL;
+  const redisToken = process.env.UPSTASH_REDIS_REST_TOKEN;
+
+  if (!redisUrl || !redisToken) {
+    return res.status(500).json({
+      error: 'Redis configuration missing',
+      details: {
+        hasUrl: !!redisUrl,
+        hasToken: !!redisToken,
+        message: 'Please configure UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN in Vercel environment variables'
+      }
+    });
+  }
+
+  // Initialize Redis client with validated credentials
+  const redis = new Redis({
+    url: redisUrl,
+    token: redisToken,
+  });
 
   try {
     // Get all countries with their visit counts (sorted by count, descending)
