@@ -4,9 +4,17 @@ This document explains how to manage versions for the SR Sujon Portfolio project
 
 ## Current Version
 
-**v1.0.0** - Initial Production Release
+**v3.2.0** - Visitor Analytics Release
 
 The version is displayed in the footer of the website and stored in `package.json`.
+
+### Latest Changes (v3.2.0)
+- Added real-time visitor tracking by country
+- Integrated Upstash Redis for serverless data storage
+- Implemented API routes for visitor analytics
+- Added visitor statistics display in footer with country flags
+- Created comprehensive environment variable system
+- Added local development mode with mock data
 
 ---
 

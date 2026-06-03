@@ -4,6 +4,16 @@ This folder contains additional documentation for the SRS Folio React project.
 
 ## 📋 Available Documents
 
+### Setup & Configuration
+- **[VISITOR_TRACKING_SETUP.md](./VISITOR_TRACKING_SETUP.md)**  
+  Complete guide for setting up visitor tracking with Upstash Redis
+  
+- **[ENV_VARIABLES_GUIDE.md](./ENV_VARIABLES_GUIDE.md)**  
+  Environment variables reference and configuration guide
+  
+- **[LOCAL_DEVELOPMENT.md](./LOCAL_DEVELOPMENT.md)**  
+  Local development guide explaining mock data vs. production mode
+
 ### Pre-Deployment & Deployment
 - **[PRE-DEPLOYMENT-CHECKLIST.md](./PRE-DEPLOYMENT-CHECKLIST.md)**  
   Comprehensive checklist to verify before deploying to production
@@ -35,4 +45,4 @@ See the [main README](../README.md) for project overview, features, and setup in
 
 ---
 
-**SRS Folio v2.1.1** | Built with React + Vite + Tailwind CSS
+**SRS Folio v3.2.0** | Built with React + Vite + Tailwind CSS

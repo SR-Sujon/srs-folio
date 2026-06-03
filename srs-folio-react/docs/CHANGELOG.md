@@ -5,6 +5,49 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0] - 2026-05-29
+
+### Added
+- **Visitor Tracking System**: Real-time visitor analytics by country
+  - Serverless API routes: `/api/track-visitor` and `/api/get-visitor-stats`
+  - Upstash Redis integration for data storage
+  - IP geolocation using ipapi.co (1K requests/day free tier)
+  - Top 10 countries displayed in footer with country flags
+  - Total visitor count display
+  - Rate limiting: 30 minutes per IP address
+  - Privacy-friendly: Only stores country, not IP addresses
+- **Custom React Hook**: `useVisitorStats()` with automatic dev/prod detection
+  - Mock data for local development (7 countries, 42 visitors)
+  - Production mode calls real API endpoints
+  - Automatic mode detection via `import.meta.env.DEV`
+- **Country Data Utilities**: 
+  - Country code mapping (50+ countries)
+  - Flag display using flagcdn.com CDN
+  - Number formatting utilities
+- **Environment Variables**: 
+  - Comprehensive `.env` template with 10+ categories
+  - Support for analytics, auth, databases, email, storage, AI services
+  - Server-side and client-side variable handling
+- **New Documentation**:
+  - `VISITOR_TRACKING_SETUP.md` - Complete setup guide
+  - `ENV_VARIABLES_GUIDE.md` - Environment variables reference
+  - `LOCAL_DEVELOPMENT.md` - Development modes guide
+- **Footer Enhancements**:
+  - Visitor statistics section with responsive grid (1-5 columns)
+  - Country flags with fallback for unknown countries
+  - Loading animation for visitor stats
+  - Graceful error handling
+
+### Dependencies
+- Added `@upstash/redis` v1.34.3 - Serverless Redis client
+- Added `country-flag-icons` v1.5.15 - SVG country flag library
+
+### Technical
+- Vercel Serverless Functions for API routes
+- Redis sorted sets (ZINCRBY) for efficient counting
+- CORS headers configured for API endpoints
+- Mock data pattern for development UX
+
 ## [2.1.1] - 2026-05-28
 
 ### Changed

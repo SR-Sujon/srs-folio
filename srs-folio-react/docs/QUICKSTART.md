@@ -29,9 +29,16 @@ git push origin main
 5. Configure:
    - **Root Directory**: `srs-folio-react` ⚠️ Important!
    - Everything else auto-detected ✅
-6. Click **"Deploy"**
-7. Wait ~1 minute
-8. Done! 🎉
+6. **Environment Variables** (Optional - for visitor tracking):
+   - Click **"Environment Variables"**
+   - Add `UPSTASH_REDIS_REST_URL` (from Upstash console)
+   - Add `UPSTASH_REDIS_REST_TOKEN` (from Upstash console)
+   - See [VISITOR_TRACKING_SETUP.md](./VISITOR_TRACKING_SETUP.md) for details
+7. Click **"Deploy"**
+8. Wait ~1 minute
+9. Done! 🎉
+
+**Note**: Without Upstash credentials, visitor tracking won't work (but site will still function).
 
 ### Option B: Vercel CLI (Alternative)
 

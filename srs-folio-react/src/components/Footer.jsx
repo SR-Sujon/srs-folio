@@ -6,7 +6,8 @@ import {
   FaMedium,
   FaYoutube,
   FaHeart,
-  FaRocket
+  FaRocket,
+  FaGlobe
 } from 'react-icons/fa';
 import packageJson from '../../package.json';
 import { 
@@ -15,8 +16,12 @@ import {
   SiResearchgate,
   SiGooglescholar
 } from 'react-icons/si';
+import { useVisitorStats } from '../hooks/useVisitorStats';
+import { getCountryCode, formatNumber } from '../utils/countryData';
 
 const Footer = () => {
+  const { totalVisitors, countries, loading, error } = useVisitorStats();
+
   const socialLinks = [
     {
       name: 'LinkedIn',
@@ -170,6 +175,93 @@ const Footer = () => {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
+            className="w-full max-w-md mx-auto h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-8"
+          />
+
+          {/* Visitor Stats Section */}
+          {!error && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="mb-8 max-w-3xl mx-auto"
+            >
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <FaGlobe className="text-blue-400 text-xl" />
+                <h4 className="text-lg font-semibold text-gray-300">
+                  Visitors from Around the World
+                </h4>
+              </div>
+
+              {loading ? (
+                <div className="flex justify-center items-center py-4">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+                </div>
+              ) : (
+                <>
+                  {totalVisitors > 0 && (
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="text-center text-sm text-gray-400 mb-4"
+                    >
+                      Total Visitors: <span className="font-bold text-blue-400">{formatNumber(totalVisitors)}</span>
+                    </motion.p>
+                  )}
+
+                  {countries.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                      {countries.map((item, index) => {
+                        const countryCode = getCountryCode(item.country);
+                        return (
+                          <motion.div
+                            key={item.country}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ 
+                              duration: 0.3, 
+                              delay: 0.6 + index * 0.05 
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                            className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-3 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
+                          >
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-2xl" role="img" aria-label={item.country}>
+                                {countryCode !== 'XX' ? (
+                                  <img 
+                                    src={`https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`}
+                                    alt={item.country}
+                                    className="w-6 h-4 object-cover rounded"
+                                  />
+                                ) : (
+                                  <FaGlobe className="w-5 h-5 text-gray-400" />
+                                )}
+                              </span>
+                              <span className="text-xs font-semibold text-blue-400">
+                                {item.count}
+                              </span>
+                            </div>
+                            <p className="text-xs text-gray-300 truncate" title={item.country}>
+                              {item.country}
+                            </p>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </>
+              )}
+            </motion.div>
+          )}
+
+          {/* Divider */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.7 }}
             className="w-full max-w-md mx-auto h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-8"
           />
 

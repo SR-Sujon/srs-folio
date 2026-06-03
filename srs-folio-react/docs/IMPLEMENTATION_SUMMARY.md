@@ -59,7 +59,86 @@ Successfully recreated the home section of your HTML portfolio website using Rea
 - ✅ Copied `/images/illustrations/` folder to public directory
 - ✅ Copied `/files/CV/` folder to public directory
 
-### 5. Custom Styling
+### 5. Visitor Tracking System (v3.2.0)
+
+#### Backend Infrastructure
+- **Upstash Redis Integration**:
+  - Serverless Redis database for visitor data
+  - Free tier: 10,000 commands/day
+  - Zero maintenance, auto-scaling
+  - Geographic replication
+
+- **Vercel Serverless Functions**:
+  - `/api/track-visitor.js` - POST endpoint to track visitors
+    - IP geolocation via ipapi.co (1K requests/day free)
+    - Rate limiting: 30 minutes per IP
+    - Stores country and timestamp
+    - Returns success/error status
+  - `/api/get-visitor-stats.js` - GET endpoint for statistics
+    - Returns top 10 countries with counts
+    - Total visitor count
+    - Sorted in descending order
+
+#### Frontend Components
+- **Custom Hook**: `src/hooks/useVisitorStats.js`
+  - Automatic dev/prod mode detection
+  - Mock data for local development (7 countries, 42 visitors)
+  - Production mode calls real API endpoints
+  - Error handling and loading states
+  - React hooks: `useState`, `useEffect`
+
+- **Utility Functions**: `src/utils/countryData.js`
+  - Country name to ISO code mapping (50+ countries)
+  - `getCountryCode()` - Returns alpha-2 code or 'XX' for unknown
+  - `formatNumber()` - Adds comma separators to numbers
+
+- **Footer Enhancement**: `src/components/Footer.jsx`
+  - Visitor statistics section with responsive grid
+  - Country flags via flagcdn.com CDN
+  - 1-5 column grid based on screen size
+  - Loading spinner animation
+  - Graceful error handling (hides on error)
+  - Social links and version display
+
+#### Data Flow
+1. **User visits site** → Frontend calls `/api/track-visitor` (POST)
+2. **Serverless function** → Gets IP → Calls ipapi.co → Returns country
+3. **Redis operation** → ZINCRBY increments country count
+4. **Frontend fetches** → `/api/get-visitor-stats` (GET)
+5. **Display** → Footer shows top 10 countries with flags
+
+#### Development Features
+- **Local Development Mode**:
+  - Detects `import.meta.env.DEV`
+  - Uses mock data (no API calls)
+  - Console logs for debugging
+  - Immediate testing without Upstash setup
+
+- **Production Mode**:
+  - Real API calls to Vercel functions
+  - Live Redis data updates
+  - Rate limiting enforced
+  - Privacy-friendly (country only)
+
+#### Environment Configuration
+- **`.env` file**: Server-side Redis credentials
+- **`.env.example`**: Template with 10+ categories
+- Categories: Analytics, Auth, Database, Email, Storage, AI, Social, Monitoring
+
+#### Privacy & Performance
+- ✅ No personal data stored (country only)
+- ✅ No cookies or tracking scripts
+- ✅ Rate limiting prevents abuse
+- ✅ Free tier friendly (10K commands/day)
+- ✅ Fast Redis operations (<50ms)
+- ✅ CDN-hosted flags (flagcdn.com)
+
+#### Documentation Created
+- `docs/VISITOR_TRACKING_SETUP.md` - Complete setup guide
+- `docs/ENV_VARIABLES_GUIDE.md` - Environment variables reference
+- `docs/LOCAL_DEVELOPMENT.md` - Dev vs prod modes explained
+
+### 6. Custom Styling
 - Custom gradient button styles (`.btn-primary`)
 - Hover underline animation for nav links
 - Social icon hover effects
@@ -100,20 +179,30 @@ The React version faithfully recreates:
 ```json
 {
   "dependencies": {
-    "react": "^18.x",
-    "react-dom": "^18.x",
-    "framer-motion": "^11.x",
-    "react-icons": "^5.x",
-    "react-type-animation": "^3.x"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.16.0",
+    "framer-motion": "^12.40.0",
+    "react-icons": "^5.5.0",
+    "react-type-animation": "^3.3.0",
+    "@upstash/redis": "^1.34.3",
+    "country-flag-icons": "^1.5.15"
   },
   "devDependencies": {
-    "tailwindcss": "^3.x",
-    "postcss": "^8.x",
-    "autoprefixer": "^10.x",
-    "vite": "^8.x"
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.5.1",
+    "autoprefixer": "^10.4.20",
+    "vite": "^8.0.14",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.19.0",
+    "playwright": "^1.49.1"
   }
 }
 ```
+
+### New Dependencies (v3.2.0)
+- **@upstash/redis** (^1.34.3) - Serverless Redis client for visitor tracking
+- **country-flag-icons** (^1.5.15) - SVG country flag library for visitor stats display
 
 ## 🔮 Next Steps to Complete Full Website
 
