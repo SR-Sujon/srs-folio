@@ -110,13 +110,40 @@ npm run preview
 
 Visit `http://localhost:4173` to preview your production build.
 
-## 📝 Environment Variables (If Needed)
+## 📝 Environment Variables
 
-If you add environment variables later:
+### Required for Visitor Tracking
 
-1. Go to Vercel Dashboard → Your Project → **Settings** → **Environment Variables**
-2. Add your variables
-3. Redeploy or push a new commit
+The visitor tracking feature requires Upstash Redis credentials:
+
+1. **Get Upstash Credentials**:
+   - Go to [Upstash Console](https://console.upstash.com/)
+   - Create a new Redis database (or use existing)
+   - Copy the REST URL and REST Token from the database details
+
+2. **Add to Vercel**:
+   - Go to Vercel Dashboard → Your Project → **Settings** → **Environment Variables**
+   - Add the following variables:
+   
+   | Variable Name | Value | Description |
+   |--------------|-------|-------------|
+   | `UPSTASH_REDIS_REST_URL` | `https://your-db-name.upstash.io` | Upstash Redis REST endpoint |
+   | `UPSTASH_REDIS_REST_TOKEN` | `AXo...` | Upstash Redis REST token |
+   
+3. **Redeploy**:
+   - Click **"Redeploy"** in your latest deployment
+   - Or push a new commit to trigger automatic deployment
+
+### Optional Environment Variables
+
+For future features, you can add:
+- Analytics services (Google Analytics, Plausible, etc.)
+- Authentication providers (Auth0, Supabase, etc.)
+- Email services (SendGrid, Mailgun, etc.)
+
+**See also**: [ENV_VARIABLES_GUIDE.md](./ENV_VARIABLES_GUIDE.md) for complete environment variable documentation.
+
+**Without these variables**, the visitor tracking will not work in production. The app will still run, but visitor stats won't be displayed in the footer.
 
 ## 🎨 Optimization Tips
 

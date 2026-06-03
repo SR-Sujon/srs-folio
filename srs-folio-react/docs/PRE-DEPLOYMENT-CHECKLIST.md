@@ -69,6 +69,18 @@ Consider adding to `index.html`:
 - [ ] Output Directory: `dist`
 - [ ] Install Command: `npm install`
 
+## ✅ Environment Variables (Optional - For Visitor Tracking)
+
+- [ ] Created Upstash Redis database (free tier)
+- [ ] Copy `UPSTASH_REDIS_REST_URL` from Upstash console
+- [ ] Copy `UPSTASH_REDIS_REST_TOKEN` from Upstash console
+- [ ] Add environment variables in Vercel dashboard:
+  - `UPSTASH_REDIS_REST_URL`
+  - `UPSTASH_REDIS_REST_TOKEN`
+- [ ] See [VISITOR_TRACKING_SETUP.md](./VISITOR_TRACKING_SETUP.md) for details
+
+**Note**: Without these variables, visitor tracking won't work (but site will still deploy and function normally).
+
 ## 🎯 Quick Test Commands
 
 ```bash

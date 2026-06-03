@@ -26,12 +26,14 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 - **Client-Side Routing**: Seamless navigation with React Router DOM 7.16
 - **Hybrid Navigation**: Hash-based section links + route-based page navigation
 - **Dynamic SEO**: Meta tags update per route with unique titles/descriptions
+- **Visitor Analytics**: Real-time visitor tracking by country with Redis backend
 - **Smooth Animations**: Framer Motion for scroll effects and transitions
 - **Responsive Design**: Mobile-first approach with Tailwind CSS utilities
 - **Form Integration**: Contact form with Formspree backend
 - **Scroll-to-Top**: Animated rocket button for easy navigation
 
 ### Advanced Features
+- **Visitor Tracking**: Serverless visitor analytics with country detection and top 10 display
 - **Search & Filter**: Real-time filtering on Portfolio, Certifications, Research pages
 - **Category Filters**: Multi-category support with active state indicators
 - **Timeline Layout**: Professional experience with company logos and badges
@@ -50,6 +52,12 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 - **[Framer Motion 12.40.0](https://www.framer.com/motion/)** - Production-ready animation library
 - **[React Icons 5.5.0](https://react-icons.github.io/react-icons/)** - Icon library (Font Awesome, Simple Icons)
 - **[React Type Animation 3.3.0](https://www.npmjs.com/package/react-type-animation)** - Typing effect
+- **[Country Flag Icons](https://www.npmjs.com/package/country-flag-icons)** - SVG country flags
+
+### Backend & Infrastructure
+- **[Upstash Redis](https://upstash.com/)** - Serverless Redis for visitor tracking
+- **[Vercel Serverless Functions](https://vercel.com/docs/functions)** - API routes for visitor analytics
+- **[ipapi.co](https://ipapi.co/)** - IP geolocation service (free tier: 1K req/day)
 
 ### Testing & Quality
 - **[Playwright 1.50.3](https://playwright.dev/)** - End-to-end testing framework
@@ -83,23 +91,31 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
    npm install
    ```
 
-3. **Start development server**:
+3. **Configure environment variables** (optional for visitor tracking):
+   ```bash
+   cp .env.example .env
+   # Add your Upstash Redis credentials (see docs/VISITOR_TRACKING_SETUP.md)
+   ```
+
+4. **Start development server**:
    ```bash
    npm run dev
    ```
    Open [http://localhost:5173](http://localhost:5173) in your browser
+   
+   **Note**: Visitor tracking shows mock data in development. Real tracking requires Vercel deployment or `vercel dev`.
 
-4. **Run tests**:
+5. **Run tests**:
    ```bash
    npm test
    ```
 
-5. **Build for production**:
+6. **Build for production**:
    ```bash
    npm run build
    ```
 
-6. **Preview production build**:
+7. **Preview production build**:
    ```bash
    npm run preview
    ```
@@ -109,6 +125,9 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 
 ```
 srs-folio-react/
+├── api/                     # Vercel serverless functions
+│   ├── track-visitor.js     # Track visitor by IP and country
+│   └── get-visitor-stats.js # Fetch visitor statistics
 ├── public/
 │   ├── images/              # All images organized by section
 │   │   ├── about/
@@ -131,7 +150,7 @@ srs-folio-react/
 │   │   ├── Certifications.jsx # Certifications with featured mode
 │   │   ├── Research.jsx     # Research with featured mode
 │   │   ├── Contact.jsx      # Contact form
-│   │   ├── Footer.jsx       # Footer with scroll-to-top
+│   │   ├── Footer.jsx       # Footer with visitor stats
 │   │   └── SEO.jsx          # Dynamic SEO meta tags
 │   ├── pages/               # Route-based pages
 │   │   ├── HomePage.jsx     # Landing page (/)
@@ -139,6 +158,10 @@ srs-folio-react/
 │   │   ├── ExperiencePage.jsx # Full experience (/experience)
 │   │   ├── CertificationsPage.jsx # Full certifications (/certifications)
 │   │   └── ResearchPage.jsx # Full research (/research)
+│   ├── hooks/               # Custom React hooks
+│   │   └── useVisitorStats.js # Visitor tracking hook
+│   ├── utils/               # Utility functions
+│   │   └── countryData.js   # Country code mapping
 │   ├── App.jsx              # Main app with routing
 │   ├── App.css              # App-specific styles
 │   ├── index.css            # Global styles with Tailwind
@@ -149,6 +172,9 @@ srs-folio-react/
 │   ├── dedicated-pages.spec.js # Page functionality tests
 │   └── seo.spec.js          # SEO meta tag tests
 ├── docs/                    # Documentation files
+│   ├── VISITOR_TRACKING_SETUP.md # Visitor tracking setup guide
+│   ├── ENV_VARIABLES_GUIDE.md # Environment variables reference
+│   ├── LOCAL_DEVELOPMENT.md # Local development guide
 │   ├── PRE-DEPLOYMENT-CHECKLIST.md # Pre-deployment checklist
 │   ├── DEPLOYMENT.md        # Deployment guide
 │   ├── QUICKSTART.md        # Quick start guide
@@ -156,12 +182,15 @@ srs-folio-react/
 │   ├── CHANGELOG.md         # Version history
 │   ├── VERSION.md           # Version information
 │   └── QUICK_VERSION_GUIDE.md # Version reference
+├── .env                     # Environment variables (not in git)
+├── .env.example             # Environment template
 ├── playwright.config.js     # Playwright configuration
 ├── tailwind.config.js       # Tailwind CSS configuration
 ├── postcss.config.js        # PostCSS configuration
 ├── vite.config.js           # Vite configuration
 ├── eslint.config.js         # ESLint configuration
-├── package.json             # Dependencies (v2.1.1)
+├── vercel.json              # Vercel deployment config
+├── package.json             # Dependencies (v3.1.0)
 └── README.md                # This file
 ```
 
@@ -206,6 +235,32 @@ Uses `useLocation()` to detect current route and `IntersectionObserver` for acti
 - All images use absolute URLs with `sr-sujon.com` domain
 
 ### Key Components
+
+#### Footer (with Visitor Analytics)
+- Real-time visitor tracking by country
+- Top 10 countries displayed with flags
+- Total visitor count display
+- Mock data in development, live data in production
+- Rate limiting (30 min per IP)
+- Responsive grid layout (1-5 columns)
+- Social media links (9 platforms)
+- Scroll-to-top rocket button
+- Smooth animations with Framer Motion
+
+#### Visitor Tracking System
+**API Routes** (Vercel Serverless):
+- `/api/track-visitor` - Tracks visitor IP and country
+- `/api/get-visitor-stats` - Returns visitor statistics
+
+**Frontend Hook**:
+- `useVisitorStats()` - Custom hook with mock/live mode detection
+
+**Features**:
+- Automatic IP-based geolocation
+- Redis sorted set for efficient counting
+- Descending order display
+- Privacy-friendly (country only)
+- Free tier friendly (Upstash + ipapi.co)
 
 #### Navbar
 - Responsive with mobile hamburger menu
