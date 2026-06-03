@@ -32,12 +32,14 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 - **Client-Side Routing**: Seamless navigation with React Router DOM 7.16
 - **Hybrid Navigation**: Hash-based section links + route-based page navigation
 - **Dynamic SEO**: Meta tags update per route with unique titles/descriptions
+- **Visitor Analytics**: Real-time visitor tracking by country with serverless backend
 - **Smooth Animations**: Framer Motion for scroll effects and transitions
 - **Responsive Design**: Mobile-first approach with Tailwind CSS utilities
 - **Form Integration**: Contact form with Formspree backend
 - **Scroll-to-Top**: Animated rocket button for easy navigation
 
 ### Advanced Features
+- **Visitor Tracking**: Serverless analytics with country detection and top 10 display in footer
 - **Search & Filter**: Real-time filtering on Portfolio, Certifications, Research pages
 - **Category Filters**: Multi-category support with active state indicators
 - **Timeline Layout**: Professional experience with company logos and badges
@@ -56,6 +58,12 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 - **[Framer Motion 12.40.0](https://www.framer.com/motion/)** - Production-ready animation library
 - **[React Icons 5.5.0](https://react-icons.github.io/react-icons/)** - Icon library (Font Awesome, Simple Icons)
 - **[React Type Animation 3.3.0](https://www.npmjs.com/package/react-type-animation)** - Typing effect
+- **[Country Flag Icons](https://www.npmjs.com/package/country-flag-icons)** - SVG country flags
+
+### Backend & Infrastructure
+- **[Upstash Redis](https://upstash.com/)** - Serverless Redis for visitor tracking (10K commands/day free)
+- **[Vercel Serverless Functions](https://vercel.com/docs/functions)** - API routes for analytics
+- **[ipapi.co](https://ipapi.co/)** - IP geolocation service (1K requests/day free)
 
 ### Testing & Quality
 - **[Playwright 1.50.3](https://playwright.dev/)** - End-to-end testing framework
@@ -172,6 +180,8 @@ npm run test:report   # View HTML report
 - [x] Contact form with Formspree
 - [x] Footer with social links
 - [x] Scroll-to-top rocket button
+- [x] Real-time visitor tracking by country
+- [x] Visitor statistics display in footer
 
 ### ✅ Advanced Features
 - [x] React Router DOM integration (5 routes)
@@ -212,6 +222,9 @@ npm run test:report   # View HTML report
 
 Additional documentation is available in [`srs-folio-react/docs/`](./srs-folio-react/docs/):
 
+- **[VISITOR_TRACKING_SETUP.md](./srs-folio-react/docs/VISITOR_TRACKING_SETUP.md)** - Complete visitor tracking setup guide
+- **[ENV_VARIABLES_GUIDE.md](./srs-folio-react/docs/ENV_VARIABLES_GUIDE.md)** - Environment variables reference
+- **[LOCAL_DEVELOPMENT.md](./srs-folio-react/docs/LOCAL_DEVELOPMENT.md)** - Local development guide (mock vs real data)
 - **[PRE-DEPLOYMENT-CHECKLIST.md](./srs-folio-react/docs/PRE-DEPLOYMENT-CHECKLIST.md)** - Pre-deployment verification checklist
 - **[DEPLOYMENT.md](./srs-folio-react/docs/DEPLOYMENT.md)** - Deployment guide and instructions
 - **[QUICKSTART.md](./srs-folio-react/docs/QUICKSTART.md)** - Quick start guide for developers
@@ -231,9 +244,14 @@ This project is deployed on **Vercel** with automatic deployments.
 2. Visit [vercel.com](https://vercel.com) and sign in
 3. Click "Add New Project" → Import your repository
 4. Set **Root Directory** to `srs-folio-react`
-5. Click "Deploy"
+5. Add environment variables:
+   - `UPSTASH_REDIS_REST_URL` (from Upstash console)
+   - `UPSTASH_REDIS_REST_TOKEN` (from Upstash console)
+6. Click "Deploy"
 
-📖 For detailed deployment instructions, see [DEPLOYMENT.md](./srs-folio-react/docs/DEPLOYMENT.md)
+📖 For detailed deployment instructions and visitor tracking setup, see:
+- [DEPLOYMENT.md](./srs-folio-react/docs/DEPLOYMENT.md)
+- [VISITOR_TRACKING_SETUP.md](./srs-folio-react/docs/VISITOR_TRACKING_SETUP.md)
 
 ## 🔗 Links
 
