@@ -51,7 +51,7 @@ const About = () => {
     <section id="about" className="section pt-16 px-4 lg:px-8 bg-white">
       <div className="container-narrow max-w-6xl mx-auto">
         {/* About Me Section */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start mb-32">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center mb-32">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -62,16 +62,19 @@ const About = () => {
             <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-800">
               About Me
             </h2>
-            <p className="text-justify text-lg leading-relaxed text-gray-700">
-              As a <strong>B.Sc. in Computer Science and Engineering (CSE) graduate</strong>, my professional journey
-              has been focused on the roles of a <strong>full-stack developer & AI engineer</strong>. My expertise
-              lies in building full-stack web applications primarily with <strong>MERN and PERN Stack (with Rust or C#)</strong>. Also integrating the
-              latest AI technologies, such as <strong>generative AI and applied machine learning</strong>, with
-              existing systems. Being also proficient in data science, I design and optimize <strong>ML
-              algorithms and pipelines</strong>, for extracting actionable insights from data. My portfolio spans diverse projects,
-              including e-commerce web apps, gen-ai apps and immersive 3D games. My research interest area currently lies
-              in <strong>GenAI, NLP, computer vision, and data science.</strong>
-            </p>
+            <div className="relative pl-8 pb-8 border-l-4 border-gray-300 italic">
+              <span className="absolute -left-1 -top-4 text-7xl text-gray-300 font-serif leading-none">"</span>
+              <p className="text-justify text-lg leading-relaxed text-gray-700">
+                I'm a software engineer with 2+ years of experience building web applications end-to-end — from polished frontends to robust backend systems. I work primarily with React, Node.js, Java, and PostgreSQL, and I'm equally at home on both sides of the stack.
+              </p>
+              <p className="text-justify text-lg leading-relaxed text-gray-700 mt-4">
+                Currently, I'm based in Tokyo, building and maintaining full-stack solutions for a logistics company — where reliability, scalability, and maintainability aren't afterthoughts, they're the baseline.
+              </p>
+              <p className="text-justify text-lg leading-relaxed text-gray-700 mt-4">
+                Beyond my day job, I actively research AI — with a focus on NLP and generative AI. I've several publications in reputed journals & conferences and build AI-powered apps that go beyond demos into things that are actually useful. Ultimately, I believe technology has the power to reshape how humanity lives, works, and connects — and I want to be part of building that future.
+              </p>
+              <span className="absolute -right-5 -bottom-4 text-7xl text-gray-300 font-serif leading-none">"</span>
+            </div>
           </motion.div>
 
           {/* Profile Image */}
@@ -80,13 +83,21 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex justify-center md:justify-end"
+            className="flex justify-center"
           >
-            <img
-              className="rounded-lg shadow-lg w-full max-w-md object-cover"
-              src="/images/about/Latest.png"
-              alt="Saidur Rahman Sujon"
-            />
+            <div className="flex flex-col items-center">
+              <img
+                className="rounded-lg shadow-lg w-full max-w-md object-cover"
+                src="/images/about/Profile_1.png"
+                alt="Saidur Rahman Sujon"
+              />
+              <p className="mt-2 text-sm text-gray-500 italic flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                Mount Takao, Tokyo
+              </p>
+            </div>
           </motion.div>
         </div>
 
