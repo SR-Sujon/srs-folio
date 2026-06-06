@@ -18,9 +18,9 @@ const HomePage = () => {
   return (
     <>
       <SEO 
-        title="SR Sujon - Full Stack Developer | AI Engineer | Researcher"
-        description="Portfolio of Saidur Rahman Sujon - Full Stack Developer, AI Engineer, and Researcher specializing in React, Node.js, Machine Learning, and Data Analytics. View my projects, research publications, and professional experience."
-        keywords="Saidur Rahman Sujon, SR Sujon, Full Stack Developer, AI Engineer, Machine Learning, React Developer, Node.js, MERN Stack, Data Analytics, Researcher, Portfolio"
+        title="SR Sujon - Software Engineer | Full Stack Developer | AI Researcher"
+        description="Saidur Rahman Sujon - Software Engineer with 2+ years of experience building full-stack web applications. Based in Tokyo, specializing in React, Node.js, Java, PostgreSQL, NLP, and Generative AI. Published AI researcher with industry experience in logistics technology."
+        keywords="Saidur Rahman Sujon, SR Sujon, Software Engineer, Full Stack Developer, React, Node.js, Java, PostgreSQL, AI Researcher, NLP, Generative AI, Tokyo, Machine Learning, Web Development, MERN Stack, AI Engineer, Portfolio"
       />
       <Hero />
       <About />

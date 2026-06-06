@@ -48,11 +48,11 @@ const Hero = () => {
                       sequence={[
                         "I'm Saidur Rahman Sujon",
                         2000,
+                        "I'm a Software Engineer",
+                        2000,
                         "I'm a Full-Stack Developer",
                         2000,
-                        "I'm an AI Engineer",
-                        2000,
-                        "I'm a Researcher",
+                        "I'm an AI Researcher",
                         2000,
                       ]}
                       wrapper="span"
@@ -69,7 +69,7 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.6 }}
                 >
-                  <strong>Full-Stack Developer | AI Engineer | Researcher</strong>
+                  <strong>Software Engineer | Full-Stack Developer | AI Researcher</strong>
                 </motion.p>
 
                 {/* Social Links */}

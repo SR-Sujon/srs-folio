@@ -123,7 +123,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg font-semibold text-gray-300 mb-8"
           >
-            Full Stack Developer | AI Engineer | Researcher
+            Software Engineer | Full-Stack Developer | AI Researcher
           </motion.p>
 
           {/* Social Links */}
