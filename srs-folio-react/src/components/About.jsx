@@ -59,7 +59,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-800">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-gray-800">
               About Me
             </h2>
             <div className="relative pl-8 pb-8 border-l-4 border-gray-300 italic">
@@ -115,28 +115,25 @@ const About = () => {
               What I Do
             </h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-700">
-              I develop AI models & pipelines for industry level solution. I
-              also design systems & build softwares from Front-end to
-              Back-end, especially MERN stack applications, with optimized
-              code writing.
+              I build robust, full-stack web applications from end-to-end—specializing in the MERN stack, Java Spring Boot, and relational databases. Leveraging a strong background in AI research, I also design and implement intelligent machine learning pipelines and NLP solutions that bridge the gap between complex data and real-world utility.
             </p>
           </motion.div>
 
-          {/* Research and Development Section */}
+          {/* Full Stack Development Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mt-12 mb-8"
+            className="text-center mt-16 mb-8"
           >
             <h4 className="text-2xl lg:text-3xl font-semibold text-gray-800">
-              Research and Development (R&D)
+              Full Stack Development
             </h4>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8 justify-items-center">
-            {rdServices.map((service, index) => (
+            {ddServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -157,21 +154,21 @@ const About = () => {
             ))}
           </div>
 
-          {/* Design and Development Section */}
+          {/* Research and Development Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mt-16 mb-8"
+            className="text-center mt-12 mb-8"
           >
             <h4 className="text-2xl lg:text-3xl font-semibold text-gray-800">
-              Design and Development (D&D)
+              Research and Automation
             </h4>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8 justify-items-center">
-            {ddServices.map((service, index) => (
+            {rdServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
