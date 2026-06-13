@@ -1,9 +1,45 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaGithub, FaYoutube, FaAward, FaSearch } from 'react-icons/fa';
-import { SiResearchgate, SiGooglescholar, SiArxiv, SiElsevier, SiMendeley } from 'react-icons/si';
+import { FaArrowLeft, FaGithub, FaYoutube, FaAward, FaSearch, FaDatabase, FaBookOpen} from 'react-icons/fa';
+import {  
+  SiResearchgate, 
+  SiGooglescholar, 
+  SiArxiv,
+  SiElsevier,
+  SiMendeley,
+  SiIeee } from 'react-icons/si';
 import SEO from '../components/SEO';
+
+const getPublicationTypeMeta = (type) => {
+  const normalizedType = String(type || '').toLowerCase();
+
+  switch (normalizedType) {
+    case 'conference':
+      return {
+        label: 'Conference',
+        Icon: FaAward,
+        badgeClassName: 'bg-gradient-to-r from-green-600 to-emerald-600 text-white',
+      };
+    case 'dataset':
+      return {
+        label: 'Dataset',
+        Icon: FaDatabase,
+        badgeClassName: 'bg-gradient-to-r from-purple-600 to-pink-600 text-white',
+      };
+    case 'journal':
+      return {
+        label: 'Journal',
+        Icon: FaBookOpen,
+        badgeClassName: 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white',
+      };
+    default:
+      return {
+        label: type ? String(type) : 'Publication',
+        badgeClassName: 'bg-gradient-to-r from-gray-600 to-gray-700 text-white',
+      };
+  }
+};
 
 const ResearchPage = () => {
   const [filter, setFilter] = useState('All');
@@ -16,7 +52,21 @@ const ResearchPage = () => {
   const publications = [
     {
       id: 1,
-      type: 'Dataset',
+      type: 'conference',
+      title: 'MonBarta: Deep Dive into Psychological Diagnosis of Mental Health Conversations Using LLM',
+      venue: '2025 IEEE 9th International Conference on Software Engineering & Computer Systems (ICSECS) | IEEE',
+      date: 'Date of Conference: 15-16 October 2025 (Added to IEEE Xplore: 12 January 2026)',
+      image: '/images/publications/IEEE_Xplore_logo.png', 
+      description: 'To address the shortage of mental health professionals and cultural stigma in Bangladesh, this study introduces PsychAI, a Bengali-supported mental health assistant developed using Large Language Models (LLMs). The research presents MonBarta, a synthetic dataset comprising 200 validated Bengali mental health conversations generated via a few-shot approach and supervised by clinical psychologists. By fine-tuning LLMs, the authors developed the PsychAI Analyzer Model (PAM) to classify symptoms from client-assistant conversations—effectively identifying conditions like depression, anxiety, PTSD, and schizophrenia-related disorders with an accuracy of 86.84% and an Average Human Evaluation Score (AHES) of 4.34 out of 5.',
+      tags: ['LLMs', 'Fine-tuning', 'Mental Health', 'Bengali NLP', 'Few-shot Learning', 'Psychology', 'Dataset Generation', 'GenAI'],
+      links: [
+        { icon: SiIeee, title: 'IEEE Xplore', url: 'https://ieeexplore.ieee.org/document/11278934', color: '#00629B' }
+      ],
+      gradient: 'from-green-500 via-teal-500 to-emerald-500'
+    },
+    {
+      id: 2,
+      type: 'dataset',
       title: 'Bengali Social Media Depressive Dataset (BSMDD)',
       venue: 'Mendeley Data',
       date: 'Published: 14 October 2024',
@@ -35,8 +85,8 @@ const ResearchPage = () => {
       gradient: 'from-purple-500 via-pink-500 to-red-500'
     },
     {
-      id: 2,
-      type: 'Research Paper',
+      id: 3,
+      type: 'journal',
       title: 'Harnessing Large Language Models Over Transformer Models for Detecting Bengali Depressive Social Media Text: A Comprehensive Study',
       venue: 'Natural Language Processing Journal | ELSEVIER',
       date: 'Volume 7, June 2024, 100075',
@@ -56,10 +106,15 @@ const ResearchPage = () => {
     }
   ];
 
-  const types = ['All', 'Research Paper', 'Dataset'];
+  const types = [
+    { label: 'All', value: 'All' },
+    { label: 'Conference', value: 'conference' },
+    { label: 'Journal', value: 'journal' },
+    { label: 'Dataset', value: 'dataset' },
+  ];
 
   const filteredPublications = publications.filter(pub => {
-    const matchesType = filter === 'All' || pub.type === filter;
+    const matchesType = filter === 'All' || String(pub.type || '').toLowerCase() === filter;
     const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          pub.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          pub.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -117,17 +172,17 @@ const ResearchPage = () => {
             <div className="flex flex-wrap gap-3 justify-center">
               {types.map((type) => (
                 <motion.button
-                  key={type}
-                  onClick={() => setFilter(type)}
+                  key={type.value}
+                  onClick={() => setFilter(type.value)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                    filter === type
+                    filter === type.value
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                       : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-400'
                   }`}
                 >
-                  {type}
+                  {type.label}
                 </motion.button>
               ))}
             </div>
@@ -176,9 +231,16 @@ const ResearchPage = () => {
 
                       {/* Type Badge */}
                       <div className="mt-6 text-center">
-                        <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-semibold">
-                          {pub.type}
-                        </span>
+                        {(() => {
+                          const { label, Icon, badgeClassName } = getPublicationTypeMeta(pub.type);
+
+                          return (
+                            <span className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${badgeClassName}`}>
+                              {Icon ? <Icon className="inline mr-2" /> : null}
+                              {label}
+                            </span>
+                          );
+                        })()}
                       </div>
                     </div>
 

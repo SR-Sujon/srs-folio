@@ -182,7 +182,7 @@ const Education = () => {
                                 className="flex items-start gap-3 text-gray-600"
                               >
                                 <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${edu.color} mt-2 shrink-0`}></div>
-                                <span className="text-sm leading-relaxed">{achievement}</span>
+                                <span className="text-base leading-relaxed">{achievement}</span>
                               </motion.li>
                             ))}
                           </ul>
