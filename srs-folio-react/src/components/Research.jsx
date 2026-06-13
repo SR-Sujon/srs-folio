@@ -8,20 +8,83 @@ import {
   FaExternalLinkAlt,
   FaQuoteLeft,
   FaAward,
-  FaArrowRight
+  FaArrowRight,
+  FaArrowLeft
 } from 'react-icons/fa';
 import { 
   SiResearchgate, 
   SiGooglescholar, 
   SiArxiv,
   SiElsevier,
-  SiMendeley
+  SiMendeley,
+  SiIeee
 } from 'react-icons/si';
+
+const getPublicationTypeMeta = (type) => {
+  const normalizedType = String(type || '').toLowerCase();
+
+  switch (normalizedType) {
+    case 'conference':
+      return {
+        label: 'Conference',
+        Icon: FaAward,
+      };
+    case 'dataset':
+      return {
+        label: 'Dataset',
+        Icon: FaDatabase,
+      };
+    case 'journal':
+      return {
+        label: 'Journal',
+        Icon: FaBookOpen,
+      };
+    default:
+      return {
+        label: type ? String(type) : 'Publication',
+        Icon: FaBookOpen,
+      };
+  }
+};
 
 const Research = ({ featured = false }) => {
   const publications = [
     {
       id: 1,
+      type: 'conference',
+      title: 'MonBarta: Deep Dive into Psychological Diagnosis of Mental Health Conversations Using LLM',
+      venue: '2025 IEEE 9th International Conference on Software Engineering & Computer Systems (ICSECS) | IEEE',
+      date: 'Date of Conference: 15-16 October 2025 (Added to IEEE Xplore: 12 January 2026)',
+      image: '/images/publications/IEEE_Xplore_logo.png', 
+      description: 'To address the shortage of mental health professionals and cultural stigma in Bangladesh, this study introduces PsychAI, a Bengali-supported mental health assistant developed using Large Language Models (LLMs). The research presents MonBarta, a synthetic dataset comprising 200 validated Bengali mental health conversations generated via a few-shot approach and supervised by clinical psychologists. By fine-tuning LLMs, the authors developed the PsychAI Analyzer Model (PAM) to classify symptoms from client-assistant conversations—effectively identifying conditions like depression, anxiety, PTSD, and schizophrenia-related disorders with an accuracy of 86.84% and an Average Human Evaluation Score (AHES) of 4.34 out of 5.',
+      tags: ['LLMs', 'Fine-tuning', 'Mental Health', 'Bengali NLP', 'Few-shot Learning', 'Psychology', 'Dataset Generation', 'GenAI'],
+      links: [
+        { icon: SiIeee, title: 'IEEE Xplore', url: 'https://ieeexplore.ieee.org/document/11278934', color: '#00629B' }
+      ],
+      gradient: 'from-green-500 via-teal-500 to-emerald-500'
+    },
+    {
+      id: 2,
+      type: 'journal',
+      title: 'Harnessing Large Language Models Over Transformer Models for Detecting Bengali Depressive Social Media Text: A Comprehensive Study',
+      venue: 'Natural Language Processing Journal | ELSEVIER',
+      date: 'Volume 7, June 2024, 100075',
+      image: '/images/publications/ELSEVIER_NLP.png',
+      description: 'This study focuses on early detection of depression, particularly in extroverted social media users, using LLMs such as GPT 3.5, GPT 4 and our proposed GPT 3.5 fine-tuned model DepGPT, as well as advanced Deep learning models(LSTM, Bi-LSTM, GRU, BiGRU) and Transformer models(BERT, BanglaBERT, SahajBERT, BanglaBERT-Base). The study categorized Reddit and X datasets into "Depressive" and "Non-Depressive" segments, translated into Bengali by native speakers with expertise in mental health, resulting in the creation of the Bengali Social Media Depressive Dataset (BSMDD).',
+      tags: ['LLMs', 'Transformers', 'Deep Learning', 'Prompt Engineering', 'Fine-tuning', 'Explainable-AI', 'Psychology', 'GenAI'],
+      links: [
+        { icon: SiResearchgate, title: 'ResearchGate', url: 'https://www.researchgate.net/publication/380628761_Harnessing_large_language_models_over_transformer_models_for_detecting_Bengali_depressive_social_media_text_A_comprehensive_study', color: '#00796B' },
+        { icon: SiElsevier, title: 'ELSEVIER', url: 'https://www.sciencedirect.com/science/article/pii/S2949719124000232?via%3Dihub', color: '#FF6C00' },
+        { icon: SiGooglescholar, title: 'Google Scholar', url: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6_LoU_kAAAAJ&citation_for_view=6_LoU_kAAAAJ:d1gkVwhDpl0C', color: '#4285F4' },
+        { icon: SiArxiv, title: 'arXiv', url: 'https://arxiv.org/html/2401.07310v1', color: '#B31B1B' },
+        { icon: FaAward, title: 'Proof of Acceptance', url: 'https://drive.google.com/file/d/1cveaaJXQnT5mTy_pQ6J-c_jRw8dwj7Ij/view?usp=sharing', color: '#D97706' },
+        { icon: FaYoutube, title: 'Video Demo', url: 'https://youtu.be/re6NRP1HtE0', color: '#FF0000' },
+        { icon: FaGithub, title: 'GitHub', url: 'https://github.com/SR-Sujon/Harnessing-LLMs-over-transformer-models-for-detecting-Bengali-depressive-text-A-comprehensive-study', color: '#181717' }
+      ],
+      gradient: 'from-blue-500 via-cyan-500 to-teal-500'
+    },
+    {
+      id: 3,
       type: 'dataset',
       title: 'Bengali Social Media Depressive Dataset (BSMDD)',
       venue: 'Mendeley Data',
@@ -39,26 +102,6 @@ const Research = ({ featured = false }) => {
         { icon: FaGithub, title: 'GitHub', url: 'https://github.com/SR-Sujon/Harnessing-LLMs-over-transformer-models-for-detecting-Bengali-depressive-text-A-comprehensive-study', color: '#181717' }
       ],
       gradient: 'from-purple-500 via-pink-500 to-red-500'
-    },
-    {
-      id: 2,
-      type: 'paper',
-      title: 'Harnessing Large Language Models Over Transformer Models for Detecting Bengali Depressive Social Media Text: A Comprehensive Study',
-      venue: 'Natural Language Processing Journal | ELSEVIER',
-      date: 'Volume 7, June 2024, 100075',
-      image: '/images/publications/ELSEVIER_NLP.png',
-      description: 'This study focuses on early detection of depression, particularly in extroverted social media users, using LLMs such as GPT 3.5, GPT 4 and our proposed GPT 3.5 fine-tuned model DepGPT, as well as advanced Deep learning models(LSTM, Bi-LSTM, GRU, BiGRU) and Transformer models(BERT, BanglaBERT, SahajBERT, BanglaBERT-Base). The study categorized Reddit and X datasets into "Depressive" and "Non-Depressive" segments, translated into Bengali by native speakers with expertise in mental health, resulting in the creation of the Bengali Social Media Depressive Dataset (BSMDD).',
-      tags: ['LLMs', 'Transformers', 'Deep Learning', 'Prompt Engineering', 'Fine-tuning', 'Explainable-AI', 'Psychology', 'GenAI'],
-      links: [
-        { icon: SiResearchgate, title: 'ResearchGate', url: 'https://www.researchgate.net/publication/380628761_Harnessing_large_language_models_over_transformer_models_for_detecting_Bengali_depressive_social_media_text_A_comprehensive_study', color: '#00796B' },
-        { icon: SiElsevier, title: 'ELSEVIER', url: 'https://www.sciencedirect.com/science/article/pii/S2949719124000232?via%3Dihub', color: '#FF6C00' },
-        { icon: SiGooglescholar, title: 'Google Scholar', url: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6_LoU_kAAAAJ&citation_for_view=6_LoU_kAAAAJ:d1gkVwhDpl0C', color: '#4285F4' },
-        { icon: SiArxiv, title: 'arXiv', url: 'https://arxiv.org/html/2401.07310v1', color: '#B31B1B' },
-        { icon: FaAward, title: 'Proof of Acceptance', url: 'https://drive.google.com/file/d/1cveaaJXQnT5mTy_pQ6J-c_jRw8dwj7Ij/view?usp=sharing', color: '#D97706' },
-        { icon: FaYoutube, title: 'Video Demo', url: 'https://youtu.be/re6NRP1HtE0', color: '#FF0000' },
-        { icon: FaGithub, title: 'GitHub', url: 'https://github.com/SR-Sujon/Harnessing-LLMs-over-transformer-models-for-detecting-Bengali-depressive-text-A-comprehensive-study', color: '#181717' }
-      ],
-      gradient: 'from-blue-500 via-cyan-500 to-teal-500'
     }
   ];
 
@@ -162,11 +205,15 @@ const Research = ({ featured = false }) => {
                         transition={{ delay: index * 0.2 + 0.3 }}
                         className={`px-6 py-2 rounded-full bg-gradient-to-r ${pub.gradient} text-white font-semibold shadow-lg uppercase text-sm tracking-wide`}
                       >
-                        {pub.type === 'dataset' ? (
-                          <><FaDatabase className="inline mr-2" />Dataset</>
-                        ) : (
-                          <><FaBookOpen className="inline mr-2" />Journal</>
-                        )}
+                        {(() => {
+                          const { label, Icon } = getPublicationTypeMeta(pub.type);
+                          return (
+                            <>
+                              <Icon className="inline mr-2" />
+                              {label}
+                            </>
+                          );
+                        })()}
                       </motion.div>
                     </div>
 

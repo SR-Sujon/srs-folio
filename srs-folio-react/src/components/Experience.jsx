@@ -15,7 +15,8 @@ const Experience = ({ featured = false }) => {
       position: 'Software Engineer',
       company: 'MASS HOLDINGS CO., LTD',
       location: 'Tokyo, Japan',
-      duration: '2025 - Present',
+      duration: '2025.4 - Present (1 year+)',
+      jobType: 'Full-time',
       image: '/images/experience/exp_mass_holdings.png',
       description: 'Working as a Software Engineer in the IT Solution and Development Department at the MASS HOLDINGS CO., LTD head office, developing and maintaining company\'s warehouse management systems. Contributing to solutions that handle daily order processing, integrating frontend interfaces with backend systems and automated label printing functionality.',
       responsibilities: [
@@ -37,10 +38,45 @@ const Experience = ({ featured = false }) => {
       id: 2,
       year: '2024',
       isPresent: false,
+      position: 'Research Assistant',
+      company: 'Ahsanullah University of Science and Technology (AUST)',
+      location: 'Dhaka, Bangladesh',
+      duration: '2024.11 - 2025.9 (10 months)',
+      jobType: 'Contract',
+      image: '/images/experience/aust_logo.png',
+      description: 'Worked as a Research Assistant under the AUST Internal Research Grant (AIRG) project developing PsychAI, a Bengali-supported mental health assistant powered by large language models. Contributed to advancing NLP and culturally-grounded AI research addressing mental health accessibility in underserved Bengali-speaking communities.',
+      responsibilities: [
+        {
+          title: 'Chatbot Development & Mental Health Assessment',
+          details: 'Engineered a functional Bengali chatbot capable of analyzing text and audio input to detect signs of mental health conditions including depression, anxiety, PTSD, schizophrenia-related disorders, and trauma. Implemented conversational AI pipelines optimized for clinical relevance and user engagement.',
+        },
+        {
+          title: 'Clinical Decision Support System',
+          details: 'Developed the PsychAI Analyzer Model (PAM) to assist psychologists in identifying potential mental disorder cases by generating comprehensive summary reports and evidence-based talking points from user interactions. Achieved 86.84% accuracy in symptom classification with an Average Human Evaluation Score of 4.34/5.0 by clinical psychologists.',
+        },
+        {
+          title: 'Dataset Creation & Model Fine-tuning',
+          details: 'Created MonBarta, a synthetic dataset of 200 validated mental health conversations in Bengali using few-shot generation supervised by clinical psychologists. Fine-tuned large language models using methodologies optimized for low-resource languages and specialized mental health contexts.',
+        },
+        {
+          title: 'Research Publication',
+          details: 'Published peer-reviewed research on PsychAI framework demonstrating how linguistically and culturally grounded AI can enable early mental health assessment in under-resourced communities. Research validates the effectiveness of LLM-based approaches for accessible psychological support in Bengali.',
+        },
+      ],
+      closing: 'Delivered an end-to-end AI system bridging the mental health professional shortage in Bangladesh, combining rigorous clinical validation with practical chatbot deployment for early assessment and intervention.',
+      certificates: [],
+      side: 'left',
+      delay: 0.3,
+    },
+    {
+      id: 3,
+      year: '2024',
+      isPresent: false,
       position: 'Full Stack Developer & AI Engineer',
       company: 'Upwork',
       location: 'Freelancer',
-      duration: '2024 - 2025',
+      duration: '2024.01 - 2024.12 (1 year)',
+      jobType: 'Part-Time',
       image: '/images/experience/upwork.png',
       description: 'As a Freelance AI & Web Developer, I built high-performance websites and AI-driven solutions by integrating Front-end, Back-end, and Machine Learning technologies.',
       responsibilities: [
@@ -55,17 +91,18 @@ const Experience = ({ featured = false }) => {
       ],
       closing: 'Delivered efficient, client-focused solutions that enhanced user experience and streamlined operations.',
       certificates: [],
-      side: 'left',
-      delay: 0.3,
+      side: 'right',
+      delay: 0.4,
     },
     {
-      id: 3,
+      id: 4,
       year: '2023',
       isPresent: false,
       position: 'Data Science and Business Analytics Intern',
       company: 'The Sparks Foundation',
       location: 'Singapore | Remote',
-      duration: 'Nov 2023 - Dec 2023',
+      duration: '2023.11 - 2023.12 (1 month)',
+      jobType: 'Internship',
       image: '/images/experience/exp_tsf.jpg',
       description: 'As an Intern, I was assigned to various real-world projects to extract meaningful insights from data and develop machine learning models for efficient and accurate predictions and create interactive data visualization using Power BI.',
       responsibilities: [
@@ -86,8 +123,8 @@ const Experience = ({ featured = false }) => {
           color: '#1278c7',
         },
       ],
-      side: 'right',
-      delay: 0.4,
+      side: 'left',
+      delay: 0.5,
     },
   ];
 
@@ -107,7 +144,7 @@ const Experience = ({ featured = false }) => {
 
         {/* Experience Content */}
         <div className="space-y-12">
-          {(featured ? experiences.slice(0, 3) : experiences).map((exp, index) => (
+          {(featured ? experiences.slice(0, 2) : experiences).map((exp, index) => (
             <div key={exp.id} className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start relative">
               {/* Left Side - Year Badge with Connector Line */}
               <div className="lg:w-32 flex flex-col items-center shrink-0 self-stretch">
@@ -242,9 +279,16 @@ const Experience = ({ featured = false }) => {
                             <span>📍</span>
                             {exp.location}
                           </p>
-                          <p className="flex items-center gap-2">
+                          <p className="flex items-center gap-3">
                             <span>📅</span>
-                            {exp.duration}
+                            <span className="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-semibold border border-blue-100">
+                              {exp.duration}
+                            </span>
+                            {exp.jobType && (
+                              <span className="ml-2 inline-flex items-center px-2 py-0.5 bg-gray-100 text-xs rounded-full text-gray-700 font-semibold border border-gray-200">
+                                {exp.jobType}
+                              </span>
+                            )}
                           </p>
                         </div>
                         
@@ -270,7 +314,7 @@ const Experience = ({ featured = false }) => {
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-700 leading-relaxed mb-4 text-sm">
+                      <p className="text-gray-700 leading-relaxed mb-4 text-base">
                         {exp.description}
                       </p>
 
@@ -282,14 +326,14 @@ const Experience = ({ featured = false }) => {
                             className="border-l-4 border-blue-500 pl-4 py-2 bg-gradient-to-r from-blue-50/50 to-transparent rounded-r"
                           >
                             <h4 className="font-bold text-gray-800 text-sm mb-1">{resp.title}:</h4>
-                            <p className="text-gray-600 text-xs leading-relaxed">{resp.details}</p>
+                            <p className="text-gray-600 text-sm leading-relaxed">{resp.details}</p>
                           </div>
                         ))}
                       </div>
 
                       {/* Closing Statement */}
                       {exp.closing && (
-                        <p className="text-gray-600 text-sm leading-relaxed italic border-t pt-3 mt-auto">
+                        <p className="text-gray-600 text-base leading-relaxed italic border-t pt-3 mt-auto">
                           {exp.closing}
                         </p>
                       )}
@@ -320,7 +364,7 @@ const Experience = ({ featured = false }) => {
                 </motion.button>
               </Link>
               <p className="text-gray-500 mt-3 text-sm">
-                Showing {Math.min(3, experiences.length)} of {experiences.length} experiences
+                Showing {Math.min(2, experiences.length)} of {experiences.length} experiences
               </p>
             </motion.div>
           )}

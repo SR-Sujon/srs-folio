@@ -59,19 +59,6 @@ const Portfolio = ({ featured = false }) => {
       delay: 500,
     },
     {
-      id: 8,
-      title: 'RMA agro',
-      image: '/images/portfolio/rma_agro.PNG',
-      duration: '2024.1-2024.2 (1 month)',
-      description: 'RMA Agro is a modern and user-friendly agricultural website built with HTML5, CSS3, and a JavaScript framework, designed to connect consumers directly with farmers for fresh, organic, and high-quality products. This fully responsive platform ensures seamless browsing across all devices, featuring an intuitive UI, a well-organized product catalog, and a secure ordering system. Users can explore a variety of farm-fresh fruits, vegetables, and dairy products.',
-      technologies: ['HTML5', 'CSS3', 'JavaScript'],
-      links: [
-        { type: 'github', url: 'https://github.com/SR-Sujon/RMA_agro', icon: FaGithub, title: 'See GitHub Repo' },
-        { type: 'live', url: 'https://sr-sujon.github.io/RMA_agro/', icon: FaGlobe, title: 'Live Site' },
-      ],
-      delay: 600,
-    },
-    {
       id: 7,
       title: 'ML: Stock Market Price Prediction',
       image: '/images/portfolio/machine-learning/STMP.PNG',
@@ -161,6 +148,19 @@ const Portfolio = ({ featured = false }) => {
       ],
       delay: 700,
     },
+    {
+      id: 8,
+      title: 'RMA agro',
+      image: '/images/portfolio/rma_agro.PNG',
+      duration: '2024.1-2024.2 (1 month)',
+      description: 'RMA Agro is a modern and user-friendly agricultural website built with HTML5, CSS3, and a JavaScript framework, designed to connect consumers directly with farmers for fresh, organic, and high-quality products. This fully responsive platform ensures seamless browsing across all devices, featuring an intuitive UI, a well-organized product catalog, and a secure ordering system. Users can explore a variety of farm-fresh fruits, vegetables, and dairy products.',
+      technologies: ['HTML5', 'CSS3', 'JavaScript'],
+      links: [
+        { type: 'github', url: 'https://github.com/SR-Sujon/RMA_agro', icon: FaGithub, title: 'See GitHub Repo' },
+        { type: 'live', url: 'https://sr-sujon.github.io/RMA_agro/', icon: FaGlobe, title: 'Live Site' },
+      ],
+      delay: 600,
+    }
   ];
 
   return (
