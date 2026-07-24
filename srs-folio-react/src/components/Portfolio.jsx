@@ -6,6 +6,19 @@ import { SiStreamlit, SiKaggle } from 'react-icons/si';
 const Portfolio = ({ featured = false }) => {
   const projects = [
     {
+      id: 13,
+      title: 'Japan Bangladesh Advisory',
+      image: '/images/portfolio/freelance/japan_bd_advisory.png',
+      duration: '2025.5 - 2025.7',
+      description: 'Explore the official digital portal for Japan Bangladesh Advisory, built on a modern React component architecture that delivers a fast, seamless single-page application experience. Styled with Tailwind CSS, the site features a sleek, mobile-responsive user interface with tailored layouts for corporate services, interactive hero carousels, downloadable resources, and expand-on-click FAQ sections. Built-in Google Maps API integration provides instant location details for the main corporate branch in Gulshan, Dhaka, while streamlined contact forms and direct WhatsApp connectivity allow instant client inquiry submissions.',
+      technologies: ['React Js', 'Tailwind CSS', 'Google Maps API', 'HTML5', 'SPA'],
+      category: 'Web Development',
+      links: [
+        { type: 'live', url: 'https://www.jbadvisory.org/', icon: FaGlobe, title: 'Live Website' },
+      ],
+      delay: 400,
+    },
+    {
       id: 12,
       title: 'Takaramichi',
       image: '/images/portfolio/takaramichi/Takaramichi_Book.JPG',
