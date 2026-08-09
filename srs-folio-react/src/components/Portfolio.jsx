@@ -2,8 +2,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaYoutube, FaMedium, FaGlobe, FaArrowRight } from 'react-icons/fa';
 import { SiStreamlit, SiKaggle } from 'react-icons/si';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio = ({ featured = false }) => {
+  const { t } = useLanguage();
   const projects = [
     {
       id: 13,
@@ -187,7 +189,7 @@ const Portfolio = ({ featured = false }) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Portfolio</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">{t('portfolio.title')}</h2>
         </motion.div>
 
         {/* Portfolio Items */}
@@ -218,19 +220,20 @@ const Portfolio = ({ featured = false }) => {
                     <h5 className="text-2xl font-bold text-gray-800 mb-2 sm:mb-0">
                       {project.title}
                     </h5>
-                    <div className="flex gap-3">
+                    <div className="flex flex-wrap gap-2">
                       {project.links.map((link, linkIndex) => {
-                        const IconComponent = link.icon;
+                        const Icon = link.icon;
                         return (
                           <a
                             key={linkIndex}
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            title={link.title}
-                            className="text-2xl text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 text-sm font-medium rounded-md transition-colors"
+                            title={t(`items.portfolio.links.${link.title}`, link.title)}
                           >
-                            <IconComponent />
+                            <Icon className="w-4 h-4" />
+                            <span>{t(`items.portfolio.links.${link.title}`, link.title)}</span>
                           </a>
                         );
                       })}
@@ -239,12 +242,12 @@ const Portfolio = ({ featured = false }) => {
 
                   {/* Duration */}
                   <h6 className="text-sm font-bold text-gray-700 mb-3">
-                    Duration: {project.duration}
+                    {t('portfolio.duration', { duration: t(`items.portfolio.items.${project.id}.duration`, project.duration) })}
                   </h6>
 
                   {/* Description */}
                   <p className="text-gray-700 leading-relaxed mb-4 flex-grow">
-                    {project.description}
+                    {t(`items.portfolio.items.${project.id}.description`)}
                   </p>
 
                   {/* Technologies */}
@@ -280,12 +283,12 @@ const Portfolio = ({ featured = false }) => {
                   whileTap={{ scale: 0.95 }}
                   className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  View All {projects.length} Projects
+                  {t('portfolio.viewAll', { count: projects.length })}
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
               <p className="text-gray-500 mt-3 text-sm">
-                Showing {Math.min(6, projects.length)} of {projects.length} projects
+                {t('portfolio.showing', { filtered: Math.min(6, projects.length), total: projects.length })}
               </p>
             </motion.div>
           )}

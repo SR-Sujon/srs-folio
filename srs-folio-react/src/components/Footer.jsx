@@ -18,8 +18,10 @@ import {
 } from 'react-icons/si';
 import { useVisitorStats } from '../hooks/useVisitorStats';
 import { getCountryCode, formatNumber } from '../utils/countryData';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const { totalVisitors, countries, loading, error } = useVisitorStats();
 
   const socialLinks = [
@@ -123,7 +125,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg font-semibold text-gray-300 mb-8"
           >
-            Software Engineer | Full-Stack Developer | AI Researcher
+            {t('footer.subtitle')}
           </motion.p>
 
           {/* Social Links */}
@@ -190,7 +192,7 @@ const Footer = () => {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <FaGlobe className="text-blue-400 text-xl" />
                 <h4 className="text-lg font-semibold text-gray-300">
-                  Visitors from Around the World
+                  {t('footer.visitors')}
                 </h4>
               </div>
 
@@ -206,7 +208,7 @@ const Footer = () => {
                       animate={{ opacity: 1 }}
                       className="text-center text-sm text-gray-400 mb-4"
                     >
-                      Total Visitors: <span className="font-bold text-blue-400">{formatNumber(totalVisitors)}</span>
+                      {t('footer.totalVisitors')} <span className="font-bold text-blue-400">{formatNumber(totalVisitors)}</span>
                     </motion.p>
                   )}
 
@@ -274,9 +276,9 @@ const Footer = () => {
             className="text-gray-400 text-sm"
           >
             <p className="flex items-center justify-center gap-2 flex-wrap">
-              Copyright © {currentYear}, SR Sujon. All rights reserved.
+              {t('footer.copyright', { year: currentYear })}
               <span className="inline-flex items-center gap-1">
-                Made with <FaHeart className="text-red-500 text-xs animate-pulse" /> by SR Sujon
+                {t('footer.madeWith')} <FaHeart className="text-red-500 text-xs animate-pulse" /> {t('footer.by')}
               </span>
             </p>
             <p className="text-gray-500 text-xs mt-2">
@@ -296,7 +298,7 @@ const Footer = () => {
         whileHover={{ scale: 1.15, y: -3 }}
         whileTap={{ scale: 0.9 }}
         className="absolute bottom-6 right-6 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer z-20"
-        title="Back to Top"
+        title={t('footer.backToTop')}
       >
         <FaRocket className="transform group-hover:-translate-y-1 transition-transform duration-300" />
         <motion.div

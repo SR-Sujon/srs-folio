@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaCertificate, FaExternalLinkAlt, FaAward, FaUniversity, FaTrophy, FaArrowRight } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Certifications = ({ featured = false }) => {
+  const { t } = useLanguage();
   const certifications = {
     exam: [
       {
@@ -205,7 +207,7 @@ const Certifications = ({ featured = false }) => {
                   style={{ backgroundColor: achievement.color }}
                 >
                   <FaTrophy className="inline mr-1" />
-                  {achievement.label}
+                  {t(`items.certifications.badges.${achievement.label}`)}
                 </motion.div>
               ))}
             </div>
@@ -213,8 +215,7 @@ const Certifications = ({ featured = false }) => {
 
           {/* Description */}
           <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
-            <span className="font-semibold">Skills gained: </span>
-            {cert.description}
+            {t(`items.certifications.items.${cert.id}.description`, cert.description)}
           </p>
 
           {/* Certificate Links */}
@@ -230,10 +231,10 @@ const Certifications = ({ featured = false }) => {
                   whileTap={{ scale: 0.95 }}
                   className="group flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-white transition-all duration-300 hover:shadow-lg"
                   style={{ backgroundColor: certificate.color }}
-                  title={certificate.title}
+                  title={t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}
                 >
                   <FaCertificate className="text-sm" />
-                  <span className="hidden sm:inline">{certificate.title}</span>
+                  <span className="hidden sm:inline">{t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}</span>
                   <FaExternalLinkAlt className="text-xs opacity-70 group-hover:opacity-100" />
                 </motion.a>
               ))}
@@ -268,9 +269,9 @@ const Certifications = ({ featured = false }) => {
           >
             <FaAward className="text-6xl text-yellow-500 mx-auto" />
           </motion.div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Professional Certifications</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">{t('certifications.title')}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Continuous learning and professional development achievements
+            {t('certifications.subtitle')}
           </p>
         </motion.div>
 
@@ -283,7 +284,7 @@ const Certifications = ({ featured = false }) => {
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="h-1 w-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
-            <h3 className="text-2xl font-bold text-gray-800">Professional Exam Certifications</h3>
+            <h3 className="text-2xl font-bold text-gray-800">{t('certifications.categories.exam')}</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {(featured ? certifications.exam.slice(0, 1) : certifications.exam).map((cert, index) => (
@@ -301,7 +302,7 @@ const Certifications = ({ featured = false }) => {
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-            <h3 className="text-2xl font-bold text-gray-800">Professional Training Certifications</h3>
+            <h3 className="text-2xl font-bold text-gray-800">{t('certifications.categories.training')}</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {(featured ? certifications.training.slice(0, 2) : certifications.training).map((cert, index) => (
@@ -318,7 +319,7 @@ const Certifications = ({ featured = false }) => {
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="h-1 w-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full"></div>
-            <h3 className="text-2xl font-bold text-gray-800">Online Course Certifications</h3>
+            <h3 className="text-2xl font-bold text-gray-800">{t('certifications.categories.coursera')}</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(featured ? certifications.coursera.slice(0, 3) : certifications.coursera).map((cert, index) => (
@@ -342,7 +343,7 @@ const Certifications = ({ featured = false }) => {
                 whileTap={{ scale: 0.95 }}
                 className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                View All Certifications
+                {t('certifications.viewAll')}
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </Link>

@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowLeft, FaCertificate } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ExperiencePage = () => {
+  const { t } = useLanguage();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -133,9 +135,9 @@ const ExperiencePage = () => {
   return (
     <>
       <SEO 
-        title="Professional Experience - SR Sujon | Work History"
-        description="Detailed work experience of Saidur Rahman Sujon including Software Engineer at MASS HOLDINGS, Full Stack Developer, AI Engineer, and Data Science roles. Complete professional timeline with responsibilities and achievements."
-        keywords="work experience, software engineer, full stack developer, AI engineer, professional history, MASS HOLDINGS, Upwork freelancer, data science intern"
+        title={t('seo.experience.title')}
+        description={t('seo.experience.description')}
+        keywords={t('seo.experience.keywords')}
       />
 
       <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
@@ -144,15 +146,15 @@ const ExperiencePage = () => {
           <div className="container mx-auto max-w-6xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-              Back to Home
+              {t('common.backToHome')}
             </Link>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">Professional Experience</h1>
-              <p className="text-xl text-gray-100">Complete work history and professional journey</p>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4">{t('experience.title')}</h1>
+              <p className="text-xl text-gray-100">{t('experience.subtitle')}</p>
             </motion.div>
           </div>
         </div>
@@ -222,16 +224,16 @@ const ExperiencePage = () => {
 
                   {/* Position Details */}
                   <div className="md:col-span-2">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-2">{exp.position}</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-2">{t(`items.experience.${exp.id}.position`)}</h2>
                     <h3 className="text-xl font-semibold text-blue-600 mb-2">{exp.company}</h3>
-                    <p className="text-gray-600 mb-2">{exp.location}</p>
+                    <p className="text-gray-600 mb-2">{t(`items.experience.${exp.id}.location`)}</p>
                     <p className="flex items-center gap-3">
                       <span className="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-semibold border border-blue-100">
-                        {exp.duration}
+                        {t(`items.experience.${exp.id}.duration`)}
                       </span>
                       {exp.jobType && (
                         <span className="inline-flex items-center px-2 py-0.5 bg-gray-100 text-xs rounded-full text-gray-700 font-semibold border border-gray-200">
-                          {exp.jobType}
+                          {t(`items.experience.${exp.id}.jobType`)}
                         </span>
                       )}
                     </p>
@@ -239,12 +241,12 @@ const ExperiencePage = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-700 leading-relaxed mb-6">{exp.description}</p>
+                <p className="text-gray-700 leading-relaxed mb-6">{t(`items.experience.${exp.id}.description`)}</p>
 
                 {/* Responsibilities */}
                 <div className="space-y-4 mb-6">
-                  <h4 className="text-xl font-bold text-gray-800">Key Responsibilities:</h4>
-                  {exp.responsibilities.map((resp, idx) => (
+                  <h4 className="text-xl font-bold text-gray-800">{t('experience.responsibilities')}:</h4>
+                  {(t(`items.experience.${exp.id}.responsibilities`) || exp.responsibilities).map((resp, idx) => (
                     <div key={idx} className="bg-gray-50 rounded-xl p-5 border-l-4 border-blue-500">
                       <h5 className="font-bold text-gray-800 mb-2">{resp.title}</h5>
                       <p className="text-gray-700 leading-relaxed">{resp.details}</p>
@@ -254,7 +256,7 @@ const ExperiencePage = () => {
 
                 {/* Closing */}
                 {exp.closing && (
-                  <p className="text-gray-600 italic mb-6">{exp.closing}</p>
+                  <p className="text-gray-600 italic mb-6">{t(`items.experience.${exp.id}.closing`)}</p>
                 )}
 
                 {/* Certificates */}

@@ -29,6 +29,7 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 
 ### Core Features
 - **Featured Mode Pattern**: Components accept `featured={true}` prop to limit displayed items
+- **Multi-Language Support (i18n)**: Full English 🇺🇸 and Japanese 🇯🇵 localization with Navbar flag switcher
 - **Client-Side Routing**: Seamless navigation with React Router DOM 7.16
 - **Hybrid Navigation**: Hash-based section links + route-based page navigation
 - **Dynamic SEO**: Meta tags update per route with unique titles/descriptions
@@ -39,12 +40,13 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 - **Scroll-to-Top**: Animated rocket button for easy navigation
 
 ### Advanced Features
+- **Internationalization (i18n)**: `LanguageContext` provider with `localStorage` persistence, fallback string resolution, and localized inner content across all 11 sections
 - **Visitor Tracking**: Serverless analytics with country detection and top 10 display in footer
 - **Search & Filter**: Real-time filtering on Portfolio, Certifications, Research pages
 - **Category Filters**: Multi-category support with active state indicators
 - **Timeline Layout**: Professional experience with company logos and badges
 - **Certification Gallery**: Grid layout with exam/training/course categorization
-- **Publication Cards**: Research papers with DOI links and external sources
+- **Publication Cards**: Research papers (MonBarta ICSECS 2025, BSMDD, ELSEVIER) with ResearchGate, IEEE Xplore, Presenter Certificates, Slides, and DOI links
 - **Intersection Observer**: Navbar active state based on visible sections
 - **TypeScript-Ready**: Modern tooling with Vite 8 and ESLint
 
@@ -168,6 +170,8 @@ npm run test:report   # View HTML report
 
 ### ✅ Core Features
 - [x] React 19 + Vite 8 setup with Tailwind CSS
+- [x] Multi-Language Support (English 🇺🇸 & Japanese 🇯🇵)
+- [x] Flag-based Language Switcher Dropdown in Navbar
 - [x] Responsive Navbar with mobile menu
 - [x] Hero section with typing animation
 - [x] About section with skills grid
@@ -208,13 +212,14 @@ npm run test:report   # View HTML report
 
 ## 📊 Project Stats
 
-- **Version**: 2.1.1
+- **Version**: 3.2.7
+- **Supported Languages**: 2 (English 🇺🇸 & Japanese 🇯🇵 with Navbar switcher)
 - **Total Components**: 15+
 - **Total Pages**: 5 (1 landing + 4 dedicated)
-- **Projects Showcased**: 12
-- **Work Experience**: 3 positions
-- **Certifications**: 6+ credentials
-- **Research Papers**: 2 publications
+- **Projects Showcased**: 13
+- **Work Experience**: 4 positions
+- **Certifications**: 8 credentials
+- **Research Papers**: 3 publications
 - **Test Coverage**: 32 tests (100% passing)
 - **Dependencies**: 221 packages, 0 vulnerabilities
 

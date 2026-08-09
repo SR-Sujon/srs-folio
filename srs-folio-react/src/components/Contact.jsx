@@ -6,8 +6,10 @@ import {
   FaPaperPlane,
   FaWhatsapp
 } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,21 +21,21 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: FaEnvelope,
-      label: 'Email',
+      labelKey: 'email',
       value: 'sr.sujon.cyb@gmail.com',
       link: 'mailto:sr.sujon.cyb@gmail.com',
       color: '#EA4335'
     },
     {
       icon: FaWhatsapp,
-      label: 'WhatsApp',
+      labelKey: 'whatsapp',
       value: '+880-1729-545654',
       link: 'https://wa.me/8801729545654',
       color: '#25D366'
     },
     {
       icon: FaMapMarkerAlt,
-      label: 'Location',
+      labelKey: 'location',
       value: 'Tokyo, Japan',
       link: 'https://maps.google.com/?q=Tokyo,Japan',
       color: '#EA4335'
@@ -113,10 +115,10 @@ const Contact = () => {
             </div>
           </motion.div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-            Get In Touch
+            {t('contact.title')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Have a project in mind or just want to say hello? Feel free to reach out!
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -131,15 +133,15 @@ const Contact = () => {
           >
             <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border-2 border-gray-100">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Send me a message</h3>
-                <p className="text-gray-600">Fill out the form below and I'll get back to you as soon as possible.</p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">{t('contact.formTitle')}</h3>
+                <p className="text-gray-600">{t('contact.formSubtitle')}</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Field */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Name *
+                    {t('contact.name')}
                   </label>
                   <input
                     type="text"
@@ -149,14 +151,14 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300"
-                    placeholder="John Doe"
+                    placeholder={t('contact.namePlaceholder')}
                   />
                 </div>
 
                 {/* Email Field */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Email *
+                    {t('contact.email')}
                   </label>
                   <input
                     type="email"
@@ -166,14 +168,14 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300"
-                    placeholder="john@example.com"
+                    placeholder={t('contact.emailPlaceholder')}
                   />
                 </div>
 
                 {/* Message Field */}
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Message *
+                    {t('contact.message')}
                   </label>
                   <textarea
                     id="message"
@@ -183,7 +185,7 @@ const Contact = () => {
                     required
                     rows="6"
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 resize-none"
-                    placeholder="Tell me about your project..."
+                    placeholder={t('contact.messagePlaceholder')}
                   />
                 </div>
 
@@ -202,12 +204,12 @@ const Contact = () => {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      Sending...
+                      {t('contact.sending')}
                     </>
                   ) : (
                     <>
                       <FaPaperPlane />
-                      Send Message
+                      {t('contact.send')}
                     </>
                   )}
                 </motion.button>
@@ -219,7 +221,7 @@ const Contact = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="p-4 rounded-xl bg-green-100 border-2 border-green-500 text-green-700 font-medium"
                   >
-                    ✓ Message sent successfully! I'll get back to you soon.
+                    {t('contact.success')}
                   </motion.div>
                 )}
                 {submitStatus === 'error' && (
@@ -228,7 +230,7 @@ const Contact = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="p-4 rounded-xl bg-red-100 border-2 border-red-500 text-red-700 font-medium"
                   >
-                    ✗ Oops! Something went wrong. Please try again.
+                    {t('contact.error')}
                   </motion.div>
                 )}
               </form>
@@ -245,15 +247,15 @@ const Contact = () => {
           >
             {/* Let's Talk Section */}
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 border-2 border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Let's talk how I can help you!</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">{t('contact.talkTitle')}</h3>
               <div className="space-y-3 text-gray-700">
                 <p>
-                  If you like my work and want to avail my services then drop me a message using the contact form.
+                  {t('contact.talkP1')}
                 </p>
                 <p>
-                  Or get in touch using my email or WhatsApp number.
+                  {t('contact.talkP2')}
                 </p>
-                <p className="font-semibold text-blue-600">See you! 👋</p>
+                <p className="font-semibold text-blue-600">{t('contact.talkCta')}</p>
               </div>
             </div>
 
@@ -282,7 +284,7 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">
-                        {info.label}
+                        {t(`contact.labels.${info.labelKey}`)}
                       </div>
                       <div className="text-gray-800 font-semibold mt-1">
                         {info.value}

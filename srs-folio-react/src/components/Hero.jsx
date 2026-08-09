@@ -2,8 +2,11 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { FaPaperclip, FaPaperPlane } from 'react-icons/fa';
 import SocialLinks from './SocialLinks';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
+  const { t, language } = useLanguage();
+
   return (
     <section className="section bg-gray-50 relative" id="home">
       <div className="cover">
@@ -33,7 +36,7 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  Hi, Welcome to my website!
+                  {t('hero.welcome')}
                 </motion.p>
 
                 {/* Typing Animation Title */}
@@ -45,14 +48,15 @@ const Hero = () => {
                 >
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     <TypeAnimation
+                      key={language}
                       sequence={[
-                        "I'm Saidur Rahman Sujon",
+                        t('hero.typing.name'),
                         2000,
-                        "I'm a Software Engineer",
+                        t('hero.typing.role1'),
                         2000,
-                        "I'm a Full-Stack Developer",
+                        t('hero.typing.role2'),
                         2000,
-                        "I'm an AI Researcher",
+                        t('hero.typing.role3'),
                         2000,
                       ]}
                       wrapper="span"
@@ -69,7 +73,7 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.6 }}
                 >
-                  <strong>Software Engineer | Full-Stack Developer | AI Researcher</strong>
+                  <strong>{t('hero.subtitle')}</strong>
                 </motion.p>
 
                 {/* Social Links */}
@@ -95,14 +99,14 @@ const Hero = () => {
                     rel="noopener noreferrer"
                     className="btn-primary flex items-center gap-2"
                   >
-                    Download CV
+                    {t('hero.downloadCv')}
                     <FaPaperclip className="w-4 h-4" />
                   </a>
                   <a
                     href="#contact"
                     className="btn-primary flex items-center gap-2"
                   >
-                    Get In Touch
+                    {t('hero.getInTouch')}
                     <FaPaperPlane className="w-4 h-4" />
                   </a>
                 </motion.div>

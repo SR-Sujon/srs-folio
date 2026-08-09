@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaCertificate, FaSearch } from 'react-icons/fa';
+import { FaArrowLeft, FaAward, FaSearch, FaUniversity, FaCertificate } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const CertificationsPage = () => {
+  const { t } = useLanguage();
   const [filter, setFilter] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -98,9 +100,9 @@ const CertificationsPage = () => {
   return (
     <>
       <SEO 
-        title="Certifications - SR Sujon | Professional Credentials"
-        description="Complete list of certifications and professional training by Saidur Rahman Sujon including B-JET programs, ITEE certification, Coursera courses, and specialized training in AI, web development, and Japanese language."
-        keywords="certifications, professional training, B-JET, ITEE, Coursera, Japanese language, IT certifications, programming courses"
+        title={t('seo.certifications.title')}
+        description={t('seo.certifications.description')}
+        keywords={t('seo.certifications.keywords')}
       />
 
       <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
@@ -109,15 +111,15 @@ const CertificationsPage = () => {
           <div className="container mx-auto max-w-7xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-              Back to Home
+              {t('common.backToHome')}
             </Link>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">All Certifications</h1>
-              <p className="text-xl text-gray-100">Professional credentials and training programs</p>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4">{t('certifications.title')}</h1>
+              <p className="text-xl text-gray-100">{t('certifications.subtitle')}</p>
             </motion.div>
           </div>
         </div>
@@ -134,7 +136,7 @@ const CertificationsPage = () => {
             <div className="relative mb-6">
               <input
                 type="text"
-                placeholder="Search certifications..."
+                placeholder={t('common.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 text-gray-800"
@@ -169,7 +171,7 @@ const CertificationsPage = () => {
             transition={{ duration: 0.4 }}
             className="text-gray-600 mb-6 text-center"
           >
-            Showing {filteredCertifications.length} of {allCertifications.length} certifications
+            {t('certifications.showing', { filtered: filteredCertifications.length, total: allCertifications.length })}
           </motion.p>
 
           {/* Certifications Grid */}
@@ -194,7 +196,7 @@ const CertificationsPage = () => {
                   <p className="text-sm text-gray-500 mb-4">{cert.date}</p>
 
                   {/* Description */}
-                  <p className="text-gray-700 leading-relaxed mb-6">{cert.description}</p>
+                  <p className="text-gray-700 leading-relaxed mb-6">{t(`items.certifications.items.${cert.id}.description`, cert.description)}</p>
 
                   {/* Logos */}
                   {cert.logos && (
@@ -226,7 +228,7 @@ const CertificationsPage = () => {
                         style={{ backgroundColor: certificate.color }}
                       >
                         <FaCertificate className="text-lg" />
-                        {certificate.title}
+                        {t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}
                       </motion.a>
                     ))}
                   </div>

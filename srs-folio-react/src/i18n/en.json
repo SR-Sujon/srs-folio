@@ -1,0 +1,445 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "education": "Education",
+    "portfolio": "Portfolio",
+    "experience": "Experience",
+    "certifications": "Certifications",
+    "research": "Research",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Hi, Welcome to my website!",
+    "typing": {
+      "name": "I'm Saidur Rahman Sujon",
+      "role1": "I'm a Software Engineer",
+      "role2": "I'm a Full-Stack Developer",
+      "role3": "I'm an AI Researcher"
+    },
+    "subtitle": "Software Engineer | Full-Stack Developer | AI Researcher",
+    "downloadCv": "Download CV",
+    "getInTouch": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I'm a software engineer with 2+ years of experience building web applications end-to-end — from polished frontends to robust backend systems. I work primarily with React, Node.js, Java, and PostgreSQL, and I'm equally at home on both sides of the stack.",
+    "paragraph2": "Currently, I'm based in Tokyo, building and maintaining full-stack solutions for a logistics company — where reliability, scalability, and maintainability aren't afterthoughts, they're the baseline.",
+    "paragraph3": "Beyond my day job, I actively research AI — with a focus on NLP and generative AI. I've several publications in reputed journals & conferences and build AI-powered apps that go beyond demos into things that are actually useful. Ultimately, I believe technology has the power to reshape how humanity lives, works, and connects — and I want to be part of building that future.",
+    "photoCaption": "Mount Takao, Tokyo",
+    "whatIDo": {
+      "title": "What I Do",
+      "subtitle": "I build robust, full-stack web applications from end-to-end—specializing in the MERN stack, Java Spring Boot, and relational databases. Leveraging a strong background in AI research, I also design and implement intelligent machine learning pipelines and NLP solutions that bridge the gap between complex data and real-world utility.",
+      "fullStack": "Full Stack Development",
+      "research": "Research and Automation"
+    },
+    "services": {
+      "machineLearning": "Machine Learning",
+      "dataScience": "Data Science",
+      "generativeAI": "Generative AI",
+      "promptEngineering": "Prompt Engineering",
+      "frontEnd": "Front-End Development",
+      "backEnd": "Back-End Development",
+      "uiux": "UI/UX Design",
+      "appDev": "App Development"
+    }
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "Specialized in full-stack development and AI research with hands-on experience in modern technologies and frameworks",
+    "softwareEngineering": "Software Engineering",
+    "researchAI": "Research & AI",
+    "levels": {
+      "Beginner": "Beginner",
+      "Intermediate": "Intermediate",
+      "Advanced": "Advanced",
+      "Expert": "Expert",
+      "Master": "Master"
+    }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic foundation that shaped my technical expertise",
+    "achievements": "Key Achievements"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "A selection of my recent work",
+    "viewAll": "View All {count} Projects",
+    "showing": "Showing {filtered} of {total}",
+    "duration": "Duration: {duration}",
+    "noResults": "No projects found matching your criteria"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "subtitle": "My professional journey and career milestones",
+    "viewAll": "View All Experience",
+    "showing": "Showing {filtered} of {total}",
+    "present": "Present",
+    "responsibilities": "Key Responsibilities"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Professional certifications and achievements",
+    "viewAll": "View All Certifications",
+    "categories": {
+      "exam": "Professional Examination",
+      "training": "Training Programs",
+      "coursera": "Online Courses",
+      "conference": "Conference & Workshop"
+    }
+  },
+  "research": {
+    "title": "Research & Publications",
+    "subtitle": "Contributing to the advancement of AI and Natural Language Processing in Mental Health Research",
+    "viewAll": "View All Publications",
+    "showing": "Showing {filtered} of {total} publications",
+    "accessResources": "Access & Resources",
+    "impactTitle": "Research Impact",
+    "impactBody": "Our research contributes to the critical field of mental health detection using cutting-edge AI technologies. By developing novel approaches for detecting depression in Bengali social media text, we're helping bridge the gap in low-resource language NLP and making mental health detection more accessible globally.",
+    "filters": {
+      "all": "All",
+      "conference": "Conference",
+      "journal": "Journal",
+      "dataset": "Dataset"
+    },
+    "noResults": "No publications found matching your criteria"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind or just want to say hello? Feel free to reach out!",
+    "formTitle": "Send me a message",
+    "formSubtitle": "Fill out the form below and I'll get back to you as soon as possible.",
+    "name": "Your Name *",
+    "namePlaceholder": "John Doe",
+    "email": "Your Email *",
+    "emailPlaceholder": "john@example.com",
+    "message": "Your Message *",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "✓ Message sent successfully! I'll get back to you soon.",
+    "error": "✗ Oops! Something went wrong. Please try again.",
+    "talkTitle": "Let's talk how I can help you!",
+    "talkP1": "If you like my work and want to avail my services then drop me a message using the contact form.",
+    "talkP2": "Or get in touch using my email or WhatsApp number.",
+    "talkCta": "See you! 👋",
+    "labels": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "location": "Location"
+    }
+  },
+  "footer": {
+    "name": "Saidur Rahman Sujon",
+    "subtitle": "Software Engineer | Full-Stack Developer | AI Researcher",
+    "visitors": "Visitors from Around the World",
+    "totalVisitors": "Total Visitors:",
+    "copyright": "Copyright © {year}, SR Sujon. All rights reserved.",
+    "madeWith": "Made with",
+    "by": "by SR Sujon",
+    "backToTop": "Back to Top"
+  },
+  "seo": {
+    "home": {
+      "title": "SR Sujon - Software Engineer | Full Stack Developer | AI Researcher",
+      "description": "Saidur Rahman Sujon - Software Engineer with 2+ years of experience building full-stack web applications. Based in Tokyo, specializing in React, Node.js, Java, PostgreSQL, NLP, and Generative AI. Published AI researcher with industry experience in logistics technology.",
+      "keywords": "Saidur Rahman Sujon, SR Sujon, Software Engineer, Full Stack Developer, React, Node.js, Java, PostgreSQL, AI Researcher, NLP, Generative AI, Tokyo, Machine Learning, Web Development, MERN Stack, AI Engineer, Portfolio"
+    },
+    "portfolio": {
+      "title": "Portfolio - SR Sujon | All Projects & Work",
+      "description": "Explore all projects by Saidur Rahman Sujon including web applications, AI/ML projects, data analytics, hardware implementations, and game development. Full portfolio with live demos and source code.",
+      "keywords": "portfolio, projects, web development, AI projects, machine learning, MERN stack, React projects, data analytics, hardware projects"
+    },
+    "experience": {
+      "title": "Experience - SR Sujon | Professional Journey",
+      "description": "Professional experience of Saidur Rahman Sujon as a Software Engineer, AI Researcher, and Full-Stack Developer. Career journey from Bangladesh to Tokyo, Japan.",
+      "keywords": "experience, software engineer, full stack developer, AI researcher, career, professional journey"
+    },
+    "certifications": {
+      "title": "Certifications - SR Sujon | Professional Achievements",
+      "description": "Professional certifications and achievements by Saidur Rahman Sujon including ITEE, B-JET, Coursera courses, and more.",
+      "keywords": "certifications, ITEE, B-JET, Coursera, professional development, training programs"
+    },
+    "research": {
+      "title": "Research & Publications - SR Sujon | Academic Work",
+      "description": "Academic research and publications by Saidur Rahman Sujon in AI, NLP, and Mental Health. Published in ELSEVIER Natural Language Processing Journal, featuring Bengali depression detection using LLMs and BSMDD dataset.",
+      "keywords": "research publications, academic papers, AI research, NLP, mental health AI, ELSEVIER, Bengali NLP, depression detection, LLM research, BSMDD dataset"
+    }
+  },
+  "common": {
+    "backToHome": "Back to Home",
+    "searchPlaceholder": "Search...",
+    "showingOf": "Showing {filtered} of {total}",
+    "noResults": "No results found",
+    "searchPublications": "Search publications by title, tags, or description...",
+    "searchProjects": "Search projects by name, description, or technology..."
+  },
+  "items": {
+    "education": {
+      "1": {
+        "degree": "B.Sc. in Computer Science and Engineering (CSE)",
+        "institution": "Ahsanullah University of Science and Technology",
+        "achievements": [
+          "Completed Bachelor's degree in Computer Science and Engineering",
+          "Strong foundation in Software Development and Machine Learning",
+          "Participated in various technical workshops and projects"
+        ]
+      },
+      "2": {
+        "degree": "Higher Secondary School Certificate (H.S.C.)",
+        "institution": "Dhaka Imperial College",
+        "achievements": [
+          "Achieved perfect GPA of 5.00",
+          "Science background with focus on Mathematics and Physics",
+          "Developed strong analytical and problem-solving skills"
+        ]
+      }
+    },
+    "experience": {
+      "1": {
+        "position": "Software Engineer",
+        "location": "Tokyo, Japan",
+        "duration": "2025.4 - Present (1 year+)",
+        "jobType": "Full-time",
+        "description": "Working as a Software Engineer in the IT Solution and Development Department at the MASS HOLDINGS CO., LTD head office, developing and maintaining company's warehouse management systems. Contributing to solutions that handle daily order processing, integrating frontend interfaces with backend systems and automated label printing functionality.",
+        "responsibilities": [
+          {
+            "title": "Full Stack Development",
+            "details": "Developing and maintaining warehouse management applications using Java Spring Boot for backend APIs, React JS with Tailwind CSS for user interfaces, and PostgreSQL for data storage. Working with containerized deployments using Docker and Kubernetes for application deployment and management."
+          },
+          {
+            "title": "System Integration & Development",
+            "details": "Implementing order fulfillment workflows that connect frontend interfaces with backend services and automated printing systems. Contributing to legacy system updates through C# integration. Using development tools including WebStorm, Rider, DataGrip, DBeaver, and IntelliJ IDEA for daily development tasks."
+          }
+        ],
+        "closing": "Contributing to logistics technology solutions by developing and maintaining systems that support daily order processing and warehouse operations."
+      },
+      "2": {
+        "position": "Research Assistant",
+        "location": "Dhaka, Bangladesh",
+        "duration": "2024.11 - 2025.9 (10 months)",
+        "jobType": "Contract",
+        "description": "Worked as a Research Assistant under the AUST Internal Research Grant (AIRG) project developing PsychAI, a Bengali-supported mental health assistant powered by large language models. Contributed to advancing NLP and culturally-grounded AI research addressing mental health accessibility in underserved Bengali-speaking communities.",
+        "responsibilities": [
+          {
+            "title": "Chatbot Development & Mental Health Assessment",
+            "details": "Engineered a functional Bengali chatbot capable of analyzing text and audio input to detect signs of mental health conditions including depression, anxiety, PTSD, schizophrenia-related disorders, and trauma. Implemented conversational AI pipelines optimized for clinical relevance and user engagement."
+          },
+          {
+            "title": "Clinical Decision Support System",
+            "details": "Developed the PsychAI Analyzer Model (PAM) to assist psychologists in identifying potential mental disorder cases by generating comprehensive summary reports and evidence-based talking points from user interactions. Achieved 86.84% accuracy in symptom classification with an Average Human Evaluation Score of 4.34/5.0 by clinical psychologists."
+          },
+          {
+            "title": "Dataset Creation & Model Fine-tuning",
+            "details": "Created MonBarta, a synthetic dataset of 200 validated mental health conversations in Bengali using few-shot generation supervised by clinical psychologists. Fine-tuned large language models using methodologies optimized for low-resource languages and specialized mental health contexts."
+          },
+          {
+            "title": "Research Publication",
+            "details": "Published peer-reviewed research on PsychAI framework demonstrating how linguistically and culturally grounded AI can enable early mental health assessment in under-resourced communities. Research validates the effectiveness of LLM-based approaches for accessible psychological support in Bengali."
+          }
+        ],
+        "closing": "Delivered an end-to-end AI system bridging the mental health professional shortage in Bangladesh, combining rigorous clinical validation with practical chatbot deployment for early assessment and intervention."
+      },
+      "3": {
+        "position": "Full Stack Developer & AI Engineer",
+        "location": "Freelancer",
+        "duration": "2024.01 - 2024.12 (1 year)",
+        "jobType": "Part-Time",
+        "description": "Provided freelance software development and AI engineering services to global clients on Upwork. Delivered end-to-end web applications, custom LLM/RAG solutions, API integrations, and machine learning pipelines across diverse domains.",
+        "responsibilities": [
+          {
+            "title": "Client Consultation & Solution Architecture",
+            "details": "Collaborated directly with clients to translate business requirements into technical architectures. Designed scalable full-stack applications using React, Node.js, and cloud services while maintaining clear project milestones and technical documentation."
+          },
+          {
+            "title": "Generative AI & LLM Applications",
+            "details": "Developed custom GenAI tools including document QA assistants (RAG), automated text generation pipelines, and prompt engineering solutions using LangChain, OpenAI APIs, and vector databases."
+          }
+        ],
+        "closing": "Maintained 100% client satisfaction across freelance projects by delivering high-quality, production-ready applications on schedule."
+      },
+      "4": {
+        "position": "Data Science Intern",
+        "location": "Dhaka, Bangladesh",
+        "duration": "2022.09 - 2022.12 (4 months)",
+        "jobType": "Internship",
+        "description": "Completed an intensive data science internship at Brain Station 20 Limited, a leading software development company in Bangladesh. Gained practical experience in exploratory data analysis, machine learning model building, and deep learning for computer vision.",
+        "responsibilities": [
+          {
+            "title": "Exploratory Data Analysis & Predictive Modeling",
+            "details": "Analyzed complex datasets using Python (Pandas, NumPy, Matplotlib, Seaborn) to extract actionable insights. Built and evaluated machine learning classification and regression models using Scikit-learn."
+          },
+          {
+            "title": "Computer Vision & Deep Learning",
+            "details": "Implemented deep learning models for image processing and classification tasks using TensorFlow and Keras. Participated in team code reviews and technical knowledge-sharing sessions."
+          }
+        ],
+        "closing": "Gained foundational industry experience in applying data science methodologies to real-world software development workflows."
+      }
+    },
+    "portfolio": {
+      "categories": {
+        "All": "All",
+        "Web Development": "Web Development",
+        "AI & Machine Learning": "AI & Machine Learning",
+        "Data Analytics": "Data Analytics",
+        "Desktop Application": "Desktop Application",
+        "Hardware": "Hardware",
+        "Game Development": "Game Development"
+      },
+      "links": {
+        "Live Website": "Live Website",
+        "Live Site": "Live Site",
+        "See GitHub Repo": "See GitHub Repo",
+        "Read on Medium": "Read on Medium",
+        "Watch on YouTube": "Watch on YouTube",
+        "Use it on Streamlit CC": "Use it on Streamlit CC",
+        "Lets hover to Kaggle": "Lets hover to Kaggle",
+        "Lets Play the Game!": "Lets Play the Game!"
+      },
+      "items": {
+        "13": {
+          "duration": "2025.5 - 2025.7",
+          "description": "Explore the official digital portal for Japan Bangladesh Advisory, built on a modern React component architecture that delivers a fast, seamless single-page application experience. Styled with Tailwind CSS, the site features a sleek, mobile-responsive user interface with tailored layouts for corporate services, interactive hero carousels, downloadable resources, and expand-on-click FAQ sections. Built-in Google Maps API integration provides instant location details for the main corporate branch in Gulshan, Dhaka, while streamlined contact forms and direct WhatsApp connectivity allow instant client inquiry submissions."
+        },
+        "12": {
+          "duration": "2024.9 - 2024.10",
+          "description": "Takaramichi is a web application designed to streamline the management of inbound accommodation and ski rentals in the popular Japanese resorts of Nozawa Onsen and Hakuba Village. This user-friendly platform simplifies booking, rental management, and customer interactions, tailored specifically for businesses in these regions. Built with React js and Tailwind CSS."
+        },
+        "11": {
+          "duration": "2024.9 - 2024.10 (1 month)",
+          "description": "LlamaChirp is an innovative project enabling users to engage in dynamic conversations with PDFs to extract and comprehend information using locally hosted LLM variants of Ollama by integrating Retrieval-Augmented Generation (RAG) techniques. Experience seamless interaction, precise responses, and personalized conversational experiences with LlamaChirp."
+        },
+        "10": {
+          "duration": "2024.3 - 2024.4 (1 month)",
+          "description": "Chatter.AI is a web application that allows you to chat with websites and extract information from them. It uses the OpenAI API and LangChain library to process website data and provide intelligent responses. With a user-friendly interface powered by Streamlit, Chatter.AI makes website interaction intuitive and interactive with JSON format response along with QA format."
+        },
+        "9": {
+          "duration": "2023.10 - 2024.1 (3 months)",
+          "description": "Job-Lagbe is a complete Full-Stack Job Hunting and Hiring Web Portal designed to connect Job Seekers with Recruiters. Built with the MERN Stack (MongoDB, Express, React, Node.js) and styled with Tailwind CSS, this platform simplifies the hiring process by offering dedicated portals for both candidates and employers."
+        },
+        "8": {
+          "duration": "2023.1 - 2023.2 (1 month)",
+          "description": "RMA Agro is a modern and user-friendly agricultural website built with HTML5, CSS3, and a JavaScript framework. Designed to connect farmers directly with consumers, the platform provides fresh organic produce, agricultural insights, and sustainable farming solutions with responsive layout and smooth UI interactions."
+        },
+        "7": {
+          "duration": "2023.1 - 2023.4 (4 months)",
+          "description": "Performed in-depth exploratory data analysis and sentiment breakdown on social media datasets. Built statistical visual reports and interactive plots comparing DepGPT against fine-tuned BERT/BanglaBERT transformer models for Bengali depressive text detection."
+        },
+        "6": {
+          "duration": "2022.9 - 2022.12 (4 months)",
+          "description": "A collection of task-based data science and machine learning projects developed during The Sparks Foundation internship, covering predictive modeling, clustering, and interactive visual reporting using Python data science stack."
+        },
+        "5": {
+          "duration": "2021.9 - 2021.11 (3 months)",
+          "description": "Rubik's Realm is an interactive 3D Web Application and Game that brings the classic Rubik's Cube to life in your browser. Built with raw JavaScript and 3D web technologies, it features smooth cube rotations, interactive solving controls, and dynamic camera angles."
+        },
+        "4": {
+          "duration": "2021.1 - 2021.4 (4 months)",
+          "description": "BharaDibo is an Android Application designed to help users find, compare, and rent houses or apartments easily. Built natively in Java with Android Studio, featuring real-time location filtering and direct landlord contact."
+        },
+        "3": {
+          "duration": "2020.9 - 2020.12 (4 months)",
+          "description": "Weekend Music Store is a Desktop E-Commerce Management Application built with Java Swing and SQLite. Features full inventory tracking, customer order billing, and sales analytics."
+        },
+        "2": {
+          "duration": "2020.1 - 2020.4 (4 months)",
+          "description": "Designed and prototyped an autonomous Vacuum Cleaner Robot using Arduino microcontrollers, ultrasonic sensors, and motor drivers for obstacle-avoiding smart cleaning routines."
+        },
+        "1": {
+          "duration": "2019.9 - 2019.12 (4 months)",
+          "description": "Fullmetal Alchemist: Redemption is a 2D Action-Platformer Desktop Game developed in C++ using the iGraphics framework. Features custom sprite animations, multi-level mechanics, and boss fight dynamics."
+        }
+      }
+    },
+    "certifications": {
+      "categories": {
+        "exam": "Professional Exam Certifications",
+        "training": "Training Programs",
+        "coursera": "Online Course Certifications"
+      },
+      "badges": {
+        "Full-Passer": "Full-Passer",
+        "Half-Passer": "Half-Passer",
+        "High Performance Award": "High Performance Award",
+        "Perfect Attendance (100%)": "Perfect Attendance (100%)",
+        "Programming Contest Achievement": "Programming Contest Achievement"
+      },
+      "links": {
+        "April-2024 Govt Issued Certificate": "April-2024 Govt. Issued Certificate",
+        "April-2024 Govt. Issued Certificate": "April-2024 Govt. Issued Certificate",
+        "October-2023 Exam Result": "October-2023 Exam Result",
+        "Certificate of Completion": "Certificate of Completion",
+        "Confirmation of Completion": "Confirmation of Completion",
+        "Achievement & Attendance": "Achievement & Attendance",
+        "High Performance Award": "High Performance Award",
+        "Perfect Attendance (100%)": "Perfect Attendance (100%)",
+        "Programming Contest Achievement": "Programming Contest Achievement",
+        "Special Recognition Award": "Special Recognition Award"
+      },
+      "items": {
+        "1": {
+          "description": "Topics Covered: Programming, Logic, Data Structures (Lists/Arrays, Queues/Stacks, Trees/Graphs), Sorting/Searching, OOP, DevOps, Basic Linux, and Cyber Security."
+        },
+        "2": {
+          "description": "N4 to N3 (partial) level Japanese Language Proficiency, Japanese Traditions and Business Ethics, IT skills including Design Pattern Techniques, Cloud computing, CI/CD pipelines. Created video contents introducing Bangladeshi culture, Developed Nihongo project with Takachiho High School students."
+        },
+        "3": {
+          "description": "N5 to N4 level Japanese Language Proficiency, Japanese Culture and Business Manners, IT skills including Project Management techniques, Github collaboration, Developed a Full-Stack Online Learning Management System with Next.js, PostgreSQL and Microservice Architecture. Participated in B-JET Programming Contest."
+        },
+        "4": {
+          "description": "Prompt engineering, Utilizing Large Language Models (LLMs) like ChatGPT, Crafting prompt patterns, Zero-shot, Few-shot tactics, structured generative format."
+        },
+        "5": {
+          "description": "Fundamentals of Python, using databases with Python, accessing web data, data structures, DBMS, parsing JSON and XML, retrieving, processing, and visualizing data."
+        },
+        "6": {
+          "description": "Understanding encryption algorithms, authentication systems, differentiating between authentication and authorization, evaluating potential risks and security concepts."
+        },
+        "7": {
+          "description": "Computer networks using five-layer model, TCP/IP communication, network troubleshooting, DNS and DHCP management, cloud computing concepts and storage solutions."
+        },
+        "8": {
+          "description": "Foundational IT skills, understanding binary system, assembling computers, installing operating systems, problem-solving methodologies and communication skills."
+        }
+      }
+    },
+    "research": {
+      "links": {
+        "ResearchGate": "ResearchGate",
+        "IEEE Xplore": "IEEE Xplore",
+        "Presenter Certificate": "Presenter Certificate",
+        "Presentation Slides": "Presentation Slides",
+        "Mendeley Data": "Mendeley Data",
+        "Google Scholar": "Google Scholar",
+        "arXiv": "arXiv",
+        "GitHub": "GitHub",
+        "ELSEVIER": "ELSEVIER",
+        "Proof of Acceptance": "Proof of Acceptance",
+        "Video Demo": "Video Demo"
+      },
+      "items": {
+        "1": {
+          "title": "MonBarta: Deep Dive into Psychological Diagnosis of Mental Health Conversations Using LLM",
+          "venue": "2025 IEEE 9th International Conference on Software Engineering & Computer Systems (ICSECS) | IEEE",
+          "date": "Date of Conference: 15-16 October 2025 (Added to IEEE Xplore: 12 January 2026)",
+          "description": "To address the shortage of mental health professionals and cultural stigma in Bangladesh, this study introduces PsychAI, a Bengali-supported mental health assistant developed using Large Language Models (LLMs). The research presents MonBarta, a synthetic dataset comprising 200 validated Bengali mental health conversations generated via a few-shot approach and supervised by clinical psychologists. By fine-tuning LLMs, the authors developed the PsychAI Analyzer Model (PAM) to classify symptoms from client-assistant conversations—effectively identifying conditions like depression, anxiety, PTSD, and schizophrenia-related disorders with an accuracy of 86.84% and an Average Human Evaluation Score (AHES) of 4.34 out of 5."
+        },
+        "2": {
+          "title": "Bengali Social Media Depressive Dataset (BSMDD)",
+          "venue": "Mendeley Data",
+          "date": "Published: 14 October 2024",
+          "description": "Our dataset, BSMDD, was collected from various open social media platforms and translated and annotated by native Bengali speakers with expertise in both language and mental health. It contains 21,910 cleaned samples, including 10,961 labeled as Depressed and 10,949 as Non-Depressed. The dataset is publicly accessible, providing a valuable resource for further research in depression detection in Bengali social media content. The expert annotation process, conducted by professionals, ensures high validity, making BSMDD particularly important for advancing mental health research through social media analysis."
+        },
+        "3": {
+          "title": "Harnessing Large Language Models Over Transformer Models for Detecting Bengali Depressive Social Media Text: A Comprehensive Study",
+          "venue": "Natural Language Processing Journal | ELSEVIER",
+          "date": "Volume 7, June 2024, 100075",
+          "description": "This study focuses on early detection of depression, particularly in extroverted social media users, using LLMs such as GPT 3.5, GPT 4 and our proposed GPT 3.5 fine-tuned model DepGPT, as well as advanced Deep learning models(LSTM, Bi-LSTM, GRU, BiGRU) and Transformer models(BERT, BanglaBERT, SahajBERT, BanglaBERT-Base). The study categorized Reddit and X datasets into \"Depressive\" and \"Non-Depressive\" segments, translated into Bengali by native speakers with expertise in mental health, resulting in the creation of the Bengali Social Media Depressive Dataset (BSMDD)."
+        }
+      }
+    }
+  }
+}

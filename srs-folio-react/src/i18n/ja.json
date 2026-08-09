@@ -1,0 +1,445 @@
+{
+  "navbar": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "skills": "スキル",
+    "education": "学歴",
+    "portfolio": "ポートフォリオ",
+    "experience": "職歴",
+    "certifications": "資格",
+    "research": "研究",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "welcome": "ようこそ、私のウェブサイトへ！",
+    "typing": {
+      "name": "サイドゥル・ラフマン・スジョンです",
+      "role1": "ソフトウェアエンジニアです",
+      "role2": "フルスタック開発者です",
+      "role3": "AI研究者です"
+    },
+    "subtitle": "ソフトウェアエンジニア | フルスタック開発者 | AI研究者",
+    "downloadCv": "履歴書ダウンロード",
+    "getInTouch": "お問い合わせ"
+  },
+  "about": {
+    "title": "自己紹介",
+    "paragraph1": "2年以上のフルスタックWeb開発経験を持つソフトウェアエンジニアです。フロントエンドからバックエンドまで、React、Node.js、Java、PostgreSQLを中心に開発を行っています。",
+    "paragraph2": "現在は東京を拠点に、物流企業向けのフルスタックソリューションの開発・保守に携わっています。信頼性、拡張性、保守性を重視した開発を行っています。",
+    "paragraph3": "本業以外にも、NLPと生成AIを中心としたAI研究に積極的に取り組んでいます。国際学会やジャーナルに複数の論文を発表し、デモを超えた実用的なAIアプリケーションを開発しています。テクノロジーが人類の生活、仕事、つながりを変革する力を持つと信じており、その未来の構築に貢献したいと考えています。",
+    "photoCaption": "高尾山、東京",
+    "whatIDo": {
+      "title": "業務内容",
+      "subtitle": "MERNスタック、Java Spring Boot、リレーショナルデータベースを活用した堅牢なフルスタックWebアプリケーションの開発を得意としています。AI研究のバックグラウンドを活かし、機械学習パイプラインやNLPソリューションの設計・実装も行い、複雑なデータと実用性の橋渡しをしています。",
+      "fullStack": "フルスタック開発",
+      "research": "研究と自動化"
+    },
+    "services": {
+      "machineLearning": "機械学習",
+      "dataScience": "データサイエンス",
+      "generativeAI": "生成AI",
+      "promptEngineering": "プロンプトエンジニアリング",
+      "frontEnd": "フロントエンド開発",
+      "backEnd": "バックエンド開発",
+      "uiux": "UI/UXデザイン",
+      "appDev": "アプリ開発"
+    }
+  },
+  "skills": {
+    "title": "技術スキル",
+    "subtitle": "フルスタック開発とAI研究における実務経験と最新技術・フレームワークの専門知識",
+    "softwareEngineering": "ソフトウェアエンジニアリング",
+    "researchAI": "研究 & AI",
+    "levels": {
+      "Beginner": "初級",
+      "Intermediate": "中級",
+      "Advanced": "上級",
+      "Expert": "エキスパート",
+      "Master": "マスター"
+    }
+  },
+  "education": {
+    "title": "学歴",
+    "subtitle": "技術的専門性を形成した学術的基盤",
+    "achievements": "主な実績"
+  },
+  "portfolio": {
+    "title": "ポートフォリオ",
+    "subtitle": "最近の制作物のご紹介",
+    "viewAll": "全{count}件のプロジェクトを見る",
+    "showing": "{total}件中{filtered}件を表示",
+    "duration": "開発期間: {duration}",
+    "noResults": "条件に一致するプロジェクトが見つかりません"
+  },
+  "experience": {
+    "title": "職務経歴",
+    "subtitle": "これまでの職務経歴とキャリアの軌跡",
+    "viewAll": "全ての職歴を見る",
+    "showing": "{total}件中{filtered}件を表示",
+    "present": "現在",
+    "responsibilities": "主な職務内容"
+  },
+  "certifications": {
+    "title": "資格・認定",
+    "subtitle": "取得した専門資格と実績",
+    "viewAll": "全ての資格を見る",
+    "categories": {
+      "exam": "専門試験資格",
+      "training": "研修プログラム",
+      "coursera": "オンラインコース認定",
+      "conference": "学会・ワークショップ"
+    }
+  },
+  "research": {
+    "title": "研究 & 論文",
+    "subtitle": "メンタルヘルス研究におけるAIと自然言語処理の進化への貢献",
+    "viewAll": "全ての論文を見る",
+    "showing": "{total}件中{filtered}件の論文を表示",
+    "accessResources": "アクセス & リソース",
+    "impactTitle": "研究の社会的影響",
+    "impactBody": "当研究は、最先端のAI技術を活用し、メンタルヘルス検出という極めて重要な分野に貢献しています。ベンガル語ソーシャルメディアテキストにおけるうつ病検出の新規アプローチを開発することで、低資源言語NLPの格差を解消し、世界中でのメンタルヘルス早期発見のアクセシビリティ向上を目指しています。",
+    "filters": {
+      "all": "全て",
+      "conference": "学会論文",
+      "journal": "ジャーナル",
+      "dataset": "データセット"
+    },
+    "noResults": "条件に一致する論文が見つかりません"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "プロジェクトのご相談やお気軽なご挨拶など、お気にどうぞ！",
+    "formTitle": "メッセージを送る",
+    "formSubtitle": "以下のフォームにご記入ください。できるだけ早くご返信いたします。",
+    "name": "お名前 *",
+    "namePlaceholder": "山田 太郎",
+    "email": "メールアドレス *",
+    "emailPlaceholder": "taro@example.com",
+    "message": "メッセージ *",
+    "messagePlaceholder": "プロジェクトについてお聞かせください...",
+    "send": "メッセージを送信",
+    "sending": "送信中...",
+    "success": "✓ メッセージが正常に送信されました！近日中にご返信いたします。",
+    "error": "✗ 送信に失敗しました。もう一度お試しください。",
+    "talkTitle": "お気軽にご相談ください！",
+    "talkP1": "私の仕事に興味をお持ちいただけましたら、お問い合わせフォームからメッセージをお送りください。",
+    "talkP2": "メールまたはWhatsAppでもご連絡いただけます。",
+    "talkCta": "お待ちしております！ 👋",
+    "labels": {
+      "email": "メール",
+      "whatsapp": "WhatsApp",
+      "location": "所在地"
+    }
+  },
+  "footer": {
+    "name": "Saidur Rahman Sujon",
+    "subtitle": "ソフトウェアエンジニア | フルスタック開発者 | AI研究者",
+    "visitors": "世界中からの訪問者",
+    "totalVisitors": "総訪問者数:",
+    "copyright": "Copyright © {year}, SR Sujon. All rights reserved.",
+    "madeWith": "Made with",
+    "by": "by SR Sujon",
+    "backToTop": "トップへ戻る"
+  },
+  "seo": {
+    "home": {
+      "title": "SR Sujon - ソフトウェアエンジニア | フルスタック開発者 | AI研究者",
+      "description": "サイドゥル・ラフマン・スジョン - 2年以上のフルスタックWeb開発経験を持つソフトウェアエンジニア。東京を拠点に、React、Node.js、Java、PostgreSQL、NLP、生成AIを専門としています。物流テクノロジーの業界経験を持つAI研究者。",
+      "keywords": "サイドゥル・ラフマン・スジョン, SR Sujon, ソフトウェアエンジニア, フルスタック開発者, React, Node.js, Java, PostgreSQL, AI研究者, NLP, 生成AI, 東京, 機械学習, Web開発, MERN Stack, ポートフォリオ"
+    },
+    "portfolio": {
+      "title": "ポートフォリオ - SR Sujon | 全プロジェクト",
+      "description": "サイドゥル・ラフマン・スジョンの全プロジェクト。Webアプリケーション、AI/ML、データ分析、ハードウェア、ゲーム開発など。ライブデモとソースコード付き。",
+      "keywords": "ポートフォリオ, プロジェクト, Web開発, AI, 機械学習, MERN Stack, React, データ分析"
+    },
+    "experience": {
+      "title": "職歴 - SR Sujon | キャリア",
+      "description": "サイドゥル・ラフマン・スジョンのソフトウェアエンジニア、AI研究者、フルスタック開発者としての職務経歴。バングラデシュから東京へのキャリアの軌跡。",
+      "keywords": "職歴, ソフトウェアエンジニア, フルスタック開発者, AI研究者, キャリア"
+    },
+    "certifications": {
+      "title": "資格 - SR Sujon | 専門資格・実績",
+      "description": "サイドゥル・ラフマン・スジョンの専門資格と実績。ITEE、B-JET、Courseraコースなど。",
+      "keywords": "資格, ITEE, B-JET, Coursera, 専門資格, 研修プログラム"
+    },
+    "research": {
+      "title": "研究・論文 - SR Sujon | 学術研究",
+      "description": "サイドゥル・ラフマン・スジョンのAI、NLP、メンタルヘルス分野の学術研究と論文。ELSEVIER Natural Language Processing Journalなどに掲載。",
+      "keywords": "研究論文, 学術論文, AI研究, NLP, メンタルヘルスAI, ELSEVIER, ベンガル語NLP, LLM研究"
+    }
+  },
+  "common": {
+    "backToHome": "ホームに戻る",
+    "searchPlaceholder": "検索...",
+    "showingOf": "{total}件中{filtered}件を表示",
+    "noResults": "結果が見つかりません",
+    "searchPublications": "タイトル、タグ、説明で論文を検索...",
+    "searchProjects": "プロジェクト名、説明、技術で検索..."
+  },
+  "items": {
+    "education": {
+      "1": {
+        "degree": "コンピュータサイエンス＆エンジニアリング (CSE) 学士",
+        "institution": "アーサヌッラー科学技術大学 (AUST)",
+        "achievements": [
+          "コンピュータサイエンスとエンジニアリングの学士号を取得",
+          "ソフトウェア開発と機械学習の強固な基礎を習得",
+          "多様な技術ワークショップやプロジェクトに参加"
+        ]
+      },
+      "2": {
+        "degree": "高等二次教育修了証 (H.S.C.)",
+        "institution": "ダッカ・インペリアル・カレッジ",
+        "achievements": [
+          "最高評定GPA 5.00/5.00を達成",
+          "数学と物理を中心とする理数系専攻",
+          "優れた分析能力と問題解決能力を習得"
+        ]
+      }
+    },
+    "experience": {
+      "1": {
+        "position": "ソフトウェアエンジニア",
+        "location": "東京、日本",
+        "duration": "2025.4 - 現在 (1年以上)",
+        "jobType": "正社員",
+        "description": "MASS HOLDINGS株式会社の本社ITソリューション開発部にてソフトウェアエンジニアとして勤務。自社倉庫管理システム（WMS）の開発および保守を担当。日々の出荷・注文処理システム、フロントエンドとバックエンドの連携、自動ラベル印刷機能などの統合開発に従事。",
+        "responsibilities": [
+          {
+            "title": "フルスタック開発",
+            "details": "Java Spring BootによるバックエンドAPI、React JS + Tailwind CSSによるユーザーインターフェース、PostgreSQLデータベースを使用した倉庫管理アプリケーションの開発・保守。DockerおよびKubernetesを用いたコンテナ化デプロイ環境での運用管理。"
+          },
+          {
+            "title": "システム統合 & 開発",
+            "details": "フロントエンドとバックエンド、自動印刷システムを連携する注文履行ワークフローの実装。C#連携による既存レガシーシステムのアップデート。WebStorm、Rider、DataGrip、DBeaver、IntelliJ IDEA等の開発ツールを活用。"
+          }
+        ],
+        "closing": "日々の注文処理や倉庫業務を支える物流テクノロジーソリューションの開発・維持管理に貢献。"
+      },
+      "2": {
+        "position": "リサーチアシスタント（研究員）",
+        "location": "ダッカ、バングラデシュ",
+        "duration": "2024.11 - 2025.9 (10ヶ月)",
+        "jobType": "契約社員",
+        "description": "AUST学内研究助成金（AIRG）プロジェクトの研究員として、大規模言語モデルを活用したベンガル語対応メンタルヘルスアシスタント「PsychAI」の開発に従事。ベンガル語圏コミュニティにおけるメンタルヘルスアクセシビリティ向上を目指し、自然言語処理（NLP）と文化的背景を考慮したAI研究を推進。",
+        "responsibilities": [
+          {
+            "title": "チャットボット開発とメンタルヘルス評価",
+            "details": "テキストおよび音声入力から鬱、不安、PTSD、統合失調症関連障害、トラウマ等の兆候を検出するベンガル語チャットボットを設計・開発。臨床的有効性と対話性に最適化した対話型AIパイプラインを構築。"
+          },
+          {
+            "title": "臨床意思決定支援システム",
+            "details": "対話データから包括的な要約レポートや根拠に基づく分析結果を生成し、臨床心理士の診断を支援する「PsychAI Analyzer Model (PAM)」を開発。症状分類精度86.84%、臨床心理士による評価スコア（AHES）4.34/5.0を達成。"
+          },
+          {
+            "title": "データセット構築とモデルファインチューニング",
+            "details": "臨床心理士監修のもと、Few-shot生成手法を用いて検証済みメンタルヘルス対話データセット「MonBarta」（200会話）を構築。低資源言語およびメンタルヘルス領域に最適化された手法でLLMをファインチューニング。"
+          },
+          {
+            "title": "学会・論文発表",
+            "details": "言語的・文化的背景に根ざしたAIが低医療資源地域における早期メンタルヘルス評価をどのように可能にするかを実証した査読付き論文を発表。ベンガル語での心理的支援におけるLLMアプローチの有効性を検証。"
+          }
+        ],
+        "closing": "バングラデシュにおけるメンタルヘルス専門家不足を解消するため、厳格な臨床検証と対話型チャットボットを融合したエンドツーエンドのAIシステムを構築・導入。"
+      },
+      "3": {
+        "position": "フルスタックエンジニア & AIエンジニア",
+        "location": "フリーランス",
+        "duration": "2024.01 - 2024.12 (1年間)",
+        "jobType": "パートタイム / 副業",
+        "description": "Upworkにて世界中のクライアント向けにフリーランスのソフトウェア開発およびAIエンジニアリングサービスを提供。Webアプリケーション開発、カスタムLLM/RAGソリューション、API統合、機械学習パイプライン構築を完遂。",
+        "responsibilities": [
+          {
+            "title": "クライアント要件定義とソリューション設計",
+            "details": "海外クライアントと直接連携し、ビジネス要件を技術仕様へと転換。React、Node.js、クラウドサービスを用いた拡張性の高いフルスタック構成を設計し、明確な開発マイルストーンを管理。"
+          },
+          {
+            "title": "生成AI & LLM アプリケーション開発",
+            "details": "LangChain、OpenAI API、ベクトルデータベース等を活用し、ドキュメント質問応答システム（RAG）、テキスト自動生成パイプライン、プロンプトエンジニアリングツールを開発。"
+          }
+        ],
+        "closing": "高品質なプロダクション環境対応アプリを計画通り納品し、受託プロジェクト全般で高い評価と顧客満足度を達成。"
+      },
+      "4": {
+        "position": "データサイエンス・インターン",
+        "location": "ダッカ、バングラデシュ",
+        "duration": "2022.09 - 2022.12 (4ヶ月)",
+        "jobType": "インターンシップ",
+        "description": "バングラデシュを代表するソフトウェア開発企業Brain Station 20 Limitedにてデータサイエンス・インターンシップを修了。探索的データ解析（EDA）、機械学習モデル構築、コンピュータビジョン向けディープラーニングの実務経験を習得。",
+        "responsibilities": [
+          {
+            "title": "探索的データ解析 & 予測モデリング",
+            "details": "Python（Pandas、NumPy、Matplotlib、Seaborn）を用いて複雑なデータセットを解析し、実践的なインサイトを抽出。Scikit-learnを用いた機械学習の分類・回帰モデルの構築および評価を実施。"
+          },
+          {
+            "title": "コンピュータビジョン & ディープラーニング",
+            "details": "TensorFlowおよびKerasを活用し、画像処理や画像分類タスク向けのディープラーニングモデルを実装。チーム内でのコードレビューや技術共有セッションに参加。"
+          }
+        ],
+        "closing": "実際のソフトウェア開発現場におけるデータサイエンス手法の応用に関する基礎的な実務経験を獲得。"
+      }
+    },
+    "portfolio": {
+      "categories": {
+        "All": "全て",
+        "Web Development": "Web開発",
+        "AI & Machine Learning": "AI & 機械学習",
+        "Data Analytics": "データ分析",
+        "Desktop Application": "デスクトップアプリ",
+        "Hardware": "ハードウェア",
+        "Game Development": "ゲーム開発"
+      },
+      "links": {
+        "Live Website": "ライブWebサイト",
+        "Live Site": "ライブサイト",
+        "See GitHub Repo": "GitHubリポジトリを見る",
+        "Read on Medium": "Mediumで読む",
+        "Watch on YouTube": "YouTubeで見る",
+        "Use it on Streamlit CC": "Streamlit CCで利用",
+        "Lets hover to Kaggle": "Kaggleを見る",
+        "Lets Play the Game!": "ゲームをプレイ！"
+      },
+      "items": {
+        "13": {
+          "duration": "2025年5月 - 2025年7月",
+          "description": "Japan Bangladesh Advisoryの公式Webポータル。モダンなReactコンポーネント設計により高速かつシームレスなシングルページアプリケーション（SPA）を実現。Tailwind CSSによるレスポンシブデザイン、サービス紹介、FAQ機能、Google Maps API連携、問い合わせフォーム及びWhatsApp即時連携機能を搭載。"
+        },
+        "12": {
+          "duration": "2024年9月 - 2024年10月",
+          "description": "野沢温泉や白馬村などの日本の人気スキーリゾートにおけるインバウンド宿泊予約・スキーレンタル管理を効率化するWebアプリケーション。React.js、Node.js、MongoDB、Tailwind CSSで構築。"
+        },
+        "11": {
+          "duration": "2024年9月 - 2024年10月 (1ヶ月)",
+          "description": "ローカル環境で動作するOllamaのLLMとRAG（検索拡張生成）技術を統合し、PDFドキュメントと対話して情報を抽出・理解できる革新的なAIチャットツール。Chainlit、LangChain、ChromaDBを採用。"
+        },
+        "10": {
+          "duration": "2024年3月 - 2024年4月 (1ヶ月)",
+          "description": "Webサイトのコンテンツとチャットし情報を抽出できるWebアプリ。OpenAI APIとLangChainを活用し、Streamlitインターフェース上でJSONおよびQA形式の対話を実現。"
+        },
+        "9": {
+          "duration": "2023年10月 - 2024年1月 (3ヶ月)",
+          "description": "求職者と採用担当者をつなぐフルスタック求人ポータルサイト。MERNスタック（MongoDB, Express, React, Node.js）とTailwind CSSで構築。"
+        },
+        "8": {
+          "duration": "2023年1月 - 2023年2月 (1ヶ月)",
+          "description": "農家と消費者を直接つなぎ新鮮なオーガニック農産物を提供する農業Webポータル。レスポンシブUI、商品カタログ、注文システムを完備。"
+        },
+        "7": {
+          "duration": "2023年1月 - 2023年4月 (4ヶ月)",
+          "description": "ソーシャルメディアのデータセットに対する探索的データ解析（EDA）と感情分析。DepGPTや各種トランスフォーマーモデルの性能比較をビジュアル化したデータ分析プロジェクト。"
+        },
+        "6": {
+          "duration": "2022年9月 - 2022年12月 (4ヶ月)",
+          "description": "The Sparks Foundationインターン期間中に開発した、予測モデリング、クラスタリング、データ可視化を含むデータサイエンスおよび機械学習プロジェクト集。"
+        },
+        "5": {
+          "duration": "2021年9月 - 2021年11月 (3ヶ月)",
+          "description": "ブラウザ上でルービックキューブを立体的に操作・パズル解法を楽しめるインタラクティブな3D Webゲーム。JavaScriptと3Dグラフィックス技術で構築。"
+        },
+        "4": {
+          "duration": "2021年1月 - 2021年4月 (4ヶ月)",
+          "description": "賃貸物件の検索・比較・予約を容易にする住居賃貸モバイルアプリケーション。Java/Android Studioで開発。"
+        },
+        "3": {
+          "duration": "2020年9月 - 2020年12月 (4ヶ月)",
+          "description": "音楽CD・楽器の販売管理を行うデスクトップ型Eコマース管理システム。Java SwingとSQLiteで構築。"
+        },
+        "2": {
+          "duration": "2020年1月 - 2020年4月 (4ヶ月)",
+          "description": "Arduinoマイクロコントローラと超音波センサーを活用し、障害物回避・自律清掃を行うお掃除ロボットのハードウェア試作プロジェクト。"
+        },
+        "1": {
+          "duration": "2019年9月 - 2019年12月 (4ヶ月)",
+          "description": "C++とiGraphicsライブラリで開発された、人気アニメをモチーフにした2Dアクション・プラットフォーマーデスクトップゲーム。"
+        }
+      }
+    },
+    "certifications": {
+      "categories": {
+        "exam": "専門試験資格",
+        "training": "研修プログラム",
+        "coursera": "オンラインコース認定"
+      },
+      "badges": {
+        "Full-Passer": "全科目合格 (Full-Passer)",
+        "Half-Passer": "一部合格 (Half-Passer)",
+        "High Performance Award": "優秀成績賞",
+        "Perfect Attendance (100%)": "皆勤賞 (100%)",
+        "Programming Contest Achievement": "プログラミングコンテスト入賞"
+      },
+      "links": {
+        "April-2024 Govt Issued Certificate": "2024年4月 政府発行合格証書",
+        "April-2024 Govt. Issued Certificate": "2024年4月 政府発行合格証書",
+        "October-2023 Exam Result": "2023年10月 試験結果通知書",
+        "Certificate of Completion": "修了証書 (Certificate of Completion)",
+        "Confirmation of Completion": "修了確認書",
+        "Achievement & Attendance": "成績・出席証明書",
+        "High Performance Award": "優秀成績賞",
+        "Perfect Attendance (100%)": "皆勤賞 (100%)",
+        "Programming Contest Achievement": "プログラミングコンテスト入賞",
+        "Special Recognition Award": "特別賞"
+      },
+      "items": {
+        "1": {
+          "description": "学習分野: プログラミング、論理演算、データ構造（リスト/配列、キュー/スタック、木/グラフ）、ソート/探索アルゴリズム、オブジェクト指向設計、DevOps、Linux基礎、サイバーセキュリティ。"
+        },
+        "2": {
+          "description": "日本語能力N4〜N3（一部）レベル、日本のビジネスマナー・企業文化、ITスキル（デザインパターン、クラウドコンピューティング、CI/CDパイプライン）。バングラデシュ文化の紹介動画作成、高千穂高校生との日本語プロジェクト開発。"
+        },
+        "3": {
+          "description": "日本語能力N5〜N4レベル、日本の文化とビジネスマナー、ITスキル（プロジェクト管理手法、GitHubによるチーム開発）。Next.js、PostgreSQL、マイクロサービス設計を用いたフルスタックオンライン学習管理システム（LMS）の開発。B-JETプログラミングコンテスト出場。"
+        },
+        "4": {
+          "description": "LLM向け高度プロンプトエンジニアリング手法、パターンベースプロンプト、コンテキストウィンドウ管理、Zero/Few-shot指示設計を習得。"
+        },
+        "5": {
+          "description": "Pythonの基礎、Pythonによるデータベース利用、Webデータへのアクセス、データ構造、DBMS、JSON・XML解析、データの検索・処理・可視化。"
+        },
+        "6": {
+          "description": "暗号化アルゴリズム、認証システム、認証と認可の違いの理解、潜在的リスクとセキュリティ概念の評価。"
+        },
+        "7": {
+          "description": "5層モデルによるコンピュータネットワーク、TCP/IP通信、ネットワークトラブルシューティング、DNS・DHCP管理、クラウドコンピューティング概念とストレージソリューション。"
+        },
+        "8": {
+          "description": "ITの基礎スキル、2進法の理解、コンピュータの組み立て、OSのインストール、問題解決手法とコミュニケーションスキル。"
+        }
+      }
+    },
+    "research": {
+      "links": {
+        "ResearchGate": "ResearchGate",
+        "IEEE Xplore": "IEEE Xplore",
+        "Presenter Certificate": "発表者証明書",
+        "Presentation Slides": "発表スライド",
+        "Mendeley Data": "Mendeley Data",
+        "Google Scholar": "Google Scholar",
+        "arXiv": "arXiv",
+        "GitHub": "GitHub",
+        "ELSEVIER": "ELSEVIER",
+        "Proof of Acceptance": "採択証明書",
+        "Video Demo": "デモ動画"
+      },
+      "items": {
+        "1": {
+          "title": "MonBarta: Deep Dive into Psychological Diagnosis of Mental Health Conversations Using LLM",
+          "venue": "2025 IEEE 第9回 ソフトウェアエンジニアリング & コンピュータシステム国際会議 (ICSECS) | IEEE",
+          "date": "学会開催日: 2025年10月15-16日 (IEEE Xplore掲載: 2026年1月12日)",
+          "description": "バングラデシュにおける心理専門職不足と社会的偏見に対処するため、大規模言語モデル（LLM）を活用したベンガル語対応メンタルヘルスアシスタント「PsychAI」を提案。臨床心理士の監修のもとFew-shot手法で生成・検証した200件のベンガル語心理対話データセット「MonBarta」を構築。LLMのファインチューニングにより、相談会話から鬱、不安、PTSD、統合失調症関連障害等を精度86.84%、人間評価スコア（AHES）4.34/5.0で分類・特定する分析モデル（PAM）を開発。"
+        },
+        "2": {
+          "title": "ベンガル語ソーシャルメディアうつ病データセット (BSMDD)",
+          "venue": "Mendeley Data",
+          "date": "公開日: 2024年10月14日",
+          "description": "各種SNSプラットフォームから収集し、言語およびメンタルヘルスの専門知識を持つベンガル語ネイティブスピーカーによって翻訳・注釈付けされた公開データセット。クレンジング済みサンプル21,910件（うつ状態: 10,961件、非うつ状態: 10,949件）を収録。ベンガル語SNSテキストにおけるうつ病検知研究を前進させる貴重なリソース。"
+        },
+        "3": {
+          "title": "ベンガル語SNSテキストにおけるうつ病検知に向けたトランスフォーマーモデルに対する大規模言語モデルの活用に関する包括的研究",
+          "venue": "Natural Language Processing Journal | ELSEVIER",
+          "date": "第7巻, 2024年6月, 100075",
+          "description": "GPT 3.5、GPT 4および独自ファインチューニングモデル「DepGPT」、ならびにディープラーニング（LSTM, Bi-LSTM, GRU）やトランスフォーマーモデル（BanglaBERT等）を用いて、SNSユーザーにおけるうつ病の早期検知を研究。RedditおよびX（旧Twitter）のデータをベンガル語に翻訳・注釈付けしたBSMDDデータセットを活用。"
+        }
+      }
+    }
+  }
+}
