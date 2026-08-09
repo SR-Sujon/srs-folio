@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaGithub, FaYoutube, FaAward, FaSearch, FaDatabase, FaBookOpen} from 'react-icons/fa';
+import { FaArrowLeft, FaGithub, FaYoutube, FaAward, FaSearch, FaDatabase, FaBookOpen, FaDesktop } from 'react-icons/fa';
 import {  
   SiResearchgate, 
   SiGooglescholar, 
@@ -60,7 +60,10 @@ const ResearchPage = () => {
       description: 'To address the shortage of mental health professionals and cultural stigma in Bangladesh, this study introduces PsychAI, a Bengali-supported mental health assistant developed using Large Language Models (LLMs). The research presents MonBarta, a synthetic dataset comprising 200 validated Bengali mental health conversations generated via a few-shot approach and supervised by clinical psychologists. By fine-tuning LLMs, the authors developed the PsychAI Analyzer Model (PAM) to classify symptoms from client-assistant conversations—effectively identifying conditions like depression, anxiety, PTSD, and schizophrenia-related disorders with an accuracy of 86.84% and an Average Human Evaluation Score (AHES) of 4.34 out of 5.',
       tags: ['LLMs', 'Fine-tuning', 'Mental Health', 'Bengali NLP', 'Few-shot Learning', 'Psychology', 'Dataset Generation', 'GenAI'],
       links: [
-        { icon: SiIeee, title: 'IEEE Xplore', url: 'https://ieeexplore.ieee.org/document/11278934', color: '#00629B' }
+        { icon: SiResearchgate, title: 'ResearchGate', url: 'https://www.researchgate.net/publication/399698915_MonBarta_Deep_Dive_into_Psychological_Diagnosis_of_Mental_Health_Conversations_Using_LLM', color: '#00796B' },
+        { icon: SiIeee, title: 'IEEE Xplore', url: 'https://ieeexplore.ieee.org/document/11278934', color: '#00629B' },
+        { icon: FaAward, title: 'Presenter Certificate', url: '/files/research/icsecs25-best-presenter-certificate.pdf', color: '#D97706' },
+        { icon: FaDesktop, title: 'Presentation Slides', url: '/files/research/Mbarta-Conference-Presentation-Slides.pdf', color: '#2563EB' }
       ],
       gradient: 'from-green-500 via-teal-500 to-emerald-500'
     },
@@ -176,7 +179,8 @@ const ResearchPage = () => {
                   onClick={() => setFilter(type.value)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                  transition={{ duration: 0.15, ease: 'easeOut' }}
+                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-150 ${
                     filter === type.value
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                       : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-400'
@@ -206,7 +210,7 @@ const ResearchPage = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-100"
+                className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-150 overflow-hidden border-2 border-gray-100"
               >
                 {/* Gradient Top Bar */}
                 <div className={`h-3 bg-gradient-to-r ${pub.gradient}`}></div>
@@ -217,6 +221,7 @@ const ResearchPage = () => {
                     <div className="lg:col-span-1">
                       <motion.div
                         whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.15, ease: 'easeOut' }}
                         className="relative"
                       >
                         <div className={`absolute inset-0 bg-gradient-to-r ${pub.gradient} blur-xl opacity-30 rounded-2xl`}></div>
@@ -269,7 +274,7 @@ const ResearchPage = () => {
                         {pub.tags.map((tag, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium"
+                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors duration-150"
                           >
                             {tag}
                           </span>
@@ -288,7 +293,8 @@ const ResearchPage = () => {
                               rel="noopener noreferrer"
                               whileHover={{ scale: 1.05, y: -2 }}
                               whileTap={{ scale: 0.95 }}
-                              className="flex items-center gap-2 px-5 py-2.5 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
+                              transition={{ duration: 0.15, ease: 'easeOut' }}
+                              className="flex items-center gap-2 px-5 py-2.5 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-150"
                               style={{ backgroundColor: link.color }}
                             >
                               <Icon className="text-lg" />
