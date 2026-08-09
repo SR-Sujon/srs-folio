@@ -20,6 +20,7 @@ import {
   SiMendeley,
   SiIeee
 } from 'react-icons/si';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const getPublicationTypeMeta = (type) => {
   const normalizedType = String(type || '').toLowerCase();
@@ -49,6 +50,7 @@ const getPublicationTypeMeta = (type) => {
 };
 
 const Research = ({ featured = false }) => {
+  const { t } = useLanguage();
   const publications = [
     {
       id: 1,
@@ -156,10 +158,10 @@ const Research = ({ featured = false }) => {
             </div>
           </motion.div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-            Research & Publications
+            {t('research.title')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Contributing to the advancement of AI and Natural Language Processing in Mental Health Research
+            {t('research.subtitle')}
           </p>
         </motion.div>
 
@@ -233,7 +235,7 @@ const Research = ({ featured = false }) => {
                         className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4 leading-tight"
                         style={{ fontFamily: 'Georgia, serif' }}
                       >
-                        {pub.title}
+                        {t(`items.research.items.${pub.id}.title`)}
                       </motion.h3>
 
                       {/* Venue and Date */}
@@ -244,9 +246,9 @@ const Research = ({ featured = false }) => {
                         transition={{ delay: index * 0.2 + 0.3 }}
                         className="mb-4"
                       >
-                        <p className="text-lg font-semibold text-blue-600 mb-1">{pub.venue}</p>
+                        <p className="text-lg font-semibold text-blue-600 mb-1">{t(`items.research.items.${pub.id}.venue`)}</p>
                         <p className="text-sm text-gray-600">
-                          {pub.date} {pub.version && `| ${pub.version}`}
+                          {t(`items.research.items.${pub.id}.date`)} {pub.version && `| ${pub.version}`}
                         </p>
                         {pub.doi && (
                           <p className="text-sm text-gray-500 mt-1">
@@ -266,7 +268,7 @@ const Research = ({ featured = false }) => {
                         <div className="relative pl-6 border-l-4 border-blue-300">
                           <FaQuoteLeft className="absolute -left-2 -top-1 text-blue-300 text-xl" />
                           <p className="text-gray-700 leading-relaxed italic">
-                            {pub.description}
+                            {t(`items.research.items.${pub.id}.description`)}
                           </p>
                         </div>
                       </motion.div>
@@ -301,7 +303,7 @@ const Research = ({ featured = false }) => {
                         className="border-t-2 border-gray-100 pt-6"
                       >
                         <h4 className="text-sm font-semibold text-gray-600 mb-4 uppercase tracking-wide">
-                          Access & Resources
+                          {t('research.accessResources')}
                         </h4>
                         <div className="flex flex-wrap gap-3">
                           {pub.links.map((link, i) => {
@@ -317,10 +319,10 @@ const Research = ({ featured = false }) => {
                                 transition={{ duration: 0.15, ease: 'easeOut' }}
                                 className="group relative flex items-center gap-2 px-4 py-3 rounded-xl text-white font-medium text-sm transition-all duration-150 shadow-md hover:shadow-xl"
                                 style={{ backgroundColor: link.color }}
-                                title={link.title}
+                                title={t(`items.research.links.${link.title}`, link.title)}
                               >
                                 <Icon className="text-lg" />
-                                <span className="hidden sm:inline">{link.title}</span>
+                                <span className="hidden sm:inline">{t(`items.research.links.${link.title}`, link.title)}</span>
                                 <FaExternalLinkAlt className="text-xs opacity-70 group-hover:opacity-100" />
                                 
                                 {/* Shine effect on hover */}
@@ -366,12 +368,12 @@ const Research = ({ featured = false }) => {
                   transition={{ duration: 0.15, ease: 'easeOut' }}
                   className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-150"
                 >
-                  View All Publications
+                  {t('research.viewAll')}
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
               <p className="text-gray-500 mt-3 text-sm">
-                Showing {Math.min(2, publications.length)} of {publications.length} publications
+                {t('research.showing', { filtered: Math.min(2, publications.length), total: publications.length })}
               </p>
             </motion.div>
           )}
@@ -388,12 +390,10 @@ const Research = ({ featured = false }) => {
           <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl p-1">
             <div className="bg-white rounded-3xl p-8 lg:p-12">
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
-                Research Impact
+                {t('research.impactTitle')}
               </h3>
               <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Our research contributes to the critical field of mental health detection using cutting-edge AI technologies. 
-                By developing novel approaches for detecting depression in Bengali social media text, we're helping bridge 
-                the gap in low-resource language NLP and making mental health detection more accessible globally.
+                {t('research.impactBody')}
               </p>
             </div>
           </div>

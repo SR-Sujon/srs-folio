@@ -10,6 +10,7 @@ import {
   SiMendeley,
   SiIeee } from 'react-icons/si';
 import SEO from '../components/SEO';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const getPublicationTypeMeta = (type) => {
   const normalizedType = String(type || '').toLowerCase();
@@ -42,6 +43,7 @@ const getPublicationTypeMeta = (type) => {
 };
 
 const ResearchPage = () => {
+  const { t } = useLanguage();
   const [filter, setFilter] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -110,10 +112,10 @@ const ResearchPage = () => {
   ];
 
   const types = [
-    { label: 'All', value: 'All' },
-    { label: 'Conference', value: 'conference' },
-    { label: 'Journal', value: 'journal' },
-    { label: 'Dataset', value: 'dataset' },
+    { label: t('research.filters.all'), value: 'All' },
+    { label: t('research.filters.conference'), value: 'conference' },
+    { label: t('research.filters.journal'), value: 'journal' },
+    { label: t('research.filters.dataset'), value: 'dataset' },
   ];
 
   const filteredPublications = publications.filter(pub => {
@@ -127,9 +129,9 @@ const ResearchPage = () => {
   return (
     <>
       <SEO 
-        title="Research & Publications - SR Sujon | Academic Work"
-        description="Academic research and publications by Saidur Rahman Sujon in AI, NLP, and Mental Health. Published in ELSEVIER Natural Language Processing Journal, featuring Bengali depression detection using LLMs and BSMDD dataset."
-        keywords="research publications, academic papers, AI research, NLP, mental health AI, ELSEVIER, Bengali NLP, depression detection, LLM research, BSMDD dataset"
+        title={t('seo.research.title')}
+        description={t('seo.research.description')}
+        keywords={t('seo.research.keywords')}
       />
 
       <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
@@ -138,15 +140,15 @@ const ResearchPage = () => {
           <div className="container mx-auto max-w-7xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-              Back to Home
+              {t('common.backToHome')}
             </Link>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">Research & Publications</h1>
-              <p className="text-xl text-gray-100">Academic contributions to AI and NLP in Mental Health</p>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4">{t('research.title')}</h1>
+              <p className="text-xl text-gray-100">{t('research.subtitle')}</p>
             </motion.div>
           </div>
         </div>
@@ -163,7 +165,7 @@ const ResearchPage = () => {
             <div className="relative mb-6">
               <input
                 type="text"
-                placeholder="Search publications by title, tags, or description..."
+                placeholder={t('common.searchPublications')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 text-gray-800"
@@ -199,7 +201,7 @@ const ResearchPage = () => {
             transition={{ duration: 0.4 }}
             className="text-gray-600 mb-6 text-center"
           >
-            Showing {filteredPublications.length} of {publications.length} publications
+            {t('research.showing', { filtered: filteredPublications.length, total: publications.length })}
           </motion.p>
 
           {/* Publications */}
@@ -253,20 +255,20 @@ const ResearchPage = () => {
                     <div className="lg:col-span-3">
                       {/* Title */}
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-3 leading-tight">
-                        {pub.title}
+                        {t(`items.research.items.${pub.id}.title`)}
                       </h2>
 
                       {/* Venue & Date */}
                       <div className="mb-4">
-                        <p className="text-lg font-semibold text-blue-600">{pub.venue}</p>
-                        <p className="text-sm text-gray-600">{pub.date}</p>
+                        <p className="text-lg font-semibold text-blue-600">{t(`items.research.items.${pub.id}.venue`)}</p>
+                        <p className="text-sm text-gray-600">{t(`items.research.items.${pub.id}.date`)}</p>
                         {pub.version && <p className="text-sm text-gray-500">{pub.version}</p>}
                         {pub.doi && <p className="text-sm text-gray-500 font-mono">DOI: {pub.doi}</p>}
                       </div>
 
                       {/* Description */}
                       <p className="text-gray-700 leading-relaxed mb-6">
-                        {pub.description}
+                        {t(`items.research.items.${pub.id}.description`)}
                       </p>
 
                       {/* Tags */}
@@ -298,7 +300,7 @@ const ResearchPage = () => {
                               style={{ backgroundColor: link.color }}
                             >
                               <Icon className="text-lg" />
-                              {link.title}
+                              {t(`items.research.links.${link.title}`, link.title)}
                             </motion.a>
                           );
                         })}
@@ -318,8 +320,7 @@ const ResearchPage = () => {
               className="text-center py-20"
             >
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">No publications found</h3>
-              <p className="text-gray-600">Try adjusting your search or filter criteria</p>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">{t('research.noResults')}</h3>
             </motion.div>
           )}
         </div>

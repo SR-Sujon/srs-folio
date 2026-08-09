@@ -1,24 +1,27 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+
   const rdServices = [
     {
-      name: 'Machine Learning',
+      key: 'machineLearning',
       icon: '/images/services/ml.svg',
       delay: 100,
     },
     {
-      name: 'Data Science',
+      key: 'dataScience',
       icon: '/images/services/eda.svg',
       delay: 200,
     },
     {
-      name: 'Generative AI',
+      key: 'generativeAI',
       icon: '/images/services/gen-ai.png',
       delay: 300,
     },
     {
-      name: 'Prompt Engineering',
+      key: 'promptEngineering',
       icon: '/images/services/prompt.png',
       delay: 400,
     },
@@ -26,22 +29,22 @@ const About = () => {
 
   const ddServices = [
     {
-      name: 'Front-End Development',
+      key: 'frontEnd',
       icon: '/images/services/programming.svg',
       delay: 100,
     },
     {
-      name: 'Back-End Development',
+      key: 'backEnd',
       icon: '/images/services/back-end.svg',
       delay: 200,
     },
     {
-      name: 'UI/UX Design',
+      key: 'uiux',
       icon: '/images/services/designer.svg',
       delay: 300,
     },
     {
-      name: 'App Development',
+      key: 'appDev',
       icon: '/images/services/app.svg',
       delay: 400,
     },
@@ -60,18 +63,18 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-gray-800">
-              About Me
+              {t('about.title')}
             </h2>
             <div className="relative pl-8 pb-8 border-l-4 border-gray-300 italic">
               <span className="absolute -left-1 -top-4 text-7xl text-gray-300 font-serif leading-none">"</span>
               <p className="text-justify text-lg leading-relaxed text-gray-700">
-                I'm a software engineer with 2+ years of experience building web applications end-to-end — from polished frontends to robust backend systems. I work primarily with React, Node.js, Java, and PostgreSQL, and I'm equally at home on both sides of the stack.
+                {t('about.paragraph1')}
               </p>
               <p className="text-justify text-lg leading-relaxed text-gray-700 mt-4">
-                Currently, I'm based in Tokyo, building and maintaining full-stack solutions for a logistics company — where reliability, scalability, and maintainability aren't afterthoughts, they're the baseline.
+                {t('about.paragraph2')}
               </p>
               <p className="text-justify text-lg leading-relaxed text-gray-700 mt-4">
-                Beyond my day job, I actively research AI — with a focus on NLP and generative AI. I've several publications in reputed journals & conferences and build AI-powered apps that go beyond demos into things that are actually useful. Ultimately, I believe technology has the power to reshape how humanity lives, works, and connects — and I want to be part of building that future.
+                {t('about.paragraph3')}
               </p>
               <span className="absolute -right-5 -bottom-4 text-7xl text-gray-300 font-serif leading-none">"</span>
             </div>
@@ -95,7 +98,7 @@ const About = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
-                Mount Takao, Tokyo
+                {t('about.photoCaption')}
               </p>
             </div>
           </motion.div>
@@ -112,10 +115,10 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-              What I Do
+              {t('about.whatIDo.title')}
             </h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-700">
-              I build robust, full-stack web applications from end-to-end—specializing in the MERN stack, Java Spring Boot, and relational databases. Leveraging a strong background in AI research, I also design and implement intelligent machine learning pipelines and NLP solutions that bridge the gap between complex data and real-world utility.
+              {t('about.whatIDo.subtitle')}
             </p>
           </motion.div>
 
@@ -128,7 +131,7 @@ const About = () => {
             className="text-center mt-16 mb-8"
           >
             <h4 className="text-2xl lg:text-3xl font-semibold text-gray-800">
-              Full Stack Development
+              {t('about.whatIDo.fullStack')}
             </h4>
           </motion.div>
 
@@ -145,10 +148,10 @@ const About = () => {
                 <img
                   className="mb-4 h-24 w-24 object-contain"
                   src={service.icon}
-                  alt={service.name}
+                  alt={t(`about.services.${service.key}`)}
                 />
                 <div className="text-lg font-semibold text-gray-800">
-                  {service.name}
+                  {t(`about.services.${service.key}`)}
                 </div>
               </motion.div>
             ))}
@@ -163,7 +166,7 @@ const About = () => {
             className="text-center mt-12 mb-8"
           >
             <h4 className="text-2xl lg:text-3xl font-semibold text-gray-800">
-              Research and Automation
+              {t('about.whatIDo.research')}
             </h4>
           </motion.div>
 
@@ -180,10 +183,10 @@ const About = () => {
                 <img
                   className="mb-4 h-24 w-24 object-contain"
                   src={service.icon}
-                  alt={service.name}
+                  alt={t(`about.services.${service.key}`)}
                 />
                 <div className="text-lg font-semibold text-gray-800">
-                  {service.name}
+                  {t(`about.services.${service.key}`)}
                 </div>
               </motion.div>
             ))}

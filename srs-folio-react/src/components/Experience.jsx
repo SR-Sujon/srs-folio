@@ -5,8 +5,10 @@ import {
   FaBriefcase,
   FaArrowRight
 } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Experience = ({ featured = false }) => {
+  const { t } = useLanguage();
   const experiences = [
     {
       id: 1,
@@ -139,7 +141,7 @@ const Experience = ({ featured = false }) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Experience</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">{t('experience.title')}</h2>
         </motion.div>
 
         {/* Experience Content */}
@@ -266,10 +268,10 @@ const Experience = ({ featured = false }) => {
                       {/* Header */}
                       <div className="mb-4">
                         <div className="flex items-start justify-between mb-2">
-                          <h3 className="text-2xl font-bold text-gray-800">{exp.position}</h3>
+                          <h3 className="text-2xl font-bold text-gray-800">{t(`items.experience.${exp.id}.position`)}</h3>
                           {exp.isPresent && (
                             <span className="px-3 py-1 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-bold rounded-full shadow-md">
-                              CURRENT
+                              {t('experience.present')}
                             </span>
                           )}
                         </div>
@@ -277,16 +279,16 @@ const Experience = ({ featured = false }) => {
                           <p className="font-semibold text-lg text-blue-600">{exp.company}</p>
                           <p className="flex items-center gap-2">
                             <span>📍</span>
-                            {exp.location}
+                            {t(`items.experience.${exp.id}.location`)}
                           </p>
                           <p className="flex items-center gap-3">
                             <span>📅</span>
                             <span className="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-semibold border border-blue-100">
-                              {exp.duration}
+                              {t(`items.experience.${exp.id}.duration`)}
                             </span>
                             {exp.jobType && (
                               <span className="ml-2 inline-flex items-center px-2 py-0.5 bg-gray-100 text-xs rounded-full text-gray-700 font-semibold border border-gray-200">
-                                {exp.jobType}
+                                {t(`items.experience.${exp.id}.jobType`)}
                               </span>
                             )}
                           </p>
@@ -315,12 +317,12 @@ const Experience = ({ featured = false }) => {
 
                       {/* Description */}
                       <p className="text-gray-700 leading-relaxed mb-4 text-base">
-                        {exp.description}
+                        {t(`items.experience.${exp.id}.description`)}
                       </p>
 
                       {/* Responsibilities */}
                       <div className="space-y-3 mb-4">
-                        {exp.responsibilities.map((resp, respIndex) => (
+                        {(t(`items.experience.${exp.id}.responsibilities`) || exp.responsibilities).map((resp, respIndex) => (
                           <div
                             key={respIndex}
                             className="border-l-4 border-blue-500 pl-4 py-2 bg-gradient-to-r from-blue-50/50 to-transparent rounded-r"
@@ -334,7 +336,7 @@ const Experience = ({ featured = false }) => {
                       {/* Closing Statement */}
                       {exp.closing && (
                         <p className="text-gray-600 text-base leading-relaxed italic border-t pt-3 mt-auto">
-                          {exp.closing}
+                          {t(`items.experience.${exp.id}.closing`)}
                         </p>
                       )}
                     </div>
@@ -359,12 +361,12 @@ const Experience = ({ featured = false }) => {
                   whileTap={{ scale: 0.95 }}
                   className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  View All Experience
+                  {t('experience.viewAll')}
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
               <p className="text-gray-500 mt-3 text-sm">
-                Showing {Math.min(2, experiences.length)} of {experiences.length} experiences
+                {t('experience.showing', { filtered: Math.min(2, experiences.length), total: experiences.length })}
               </p>
             </motion.div>
           )}

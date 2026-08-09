@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaAward, FaCalendarAlt, FaUniversity } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Education = () => {
+  const { t } = useLanguage();
+
   const educationData = [
     {
       id: 1,
@@ -60,9 +63,9 @@ const Education = () => {
           >
             <FaGraduationCap className="text-6xl text-blue-600 mx-auto" />
           </motion.div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Education</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">{t('education.title')}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            My academic journey and qualifications
+            {t('education.subtitle')}
           </p>
         </motion.div>
 
@@ -130,7 +133,7 @@ const Education = () => {
                           transition={{ delay: index * 0.2 + 0.2 }}
                           className="text-2xl font-bold text-gray-800 mb-3"
                         >
-                          {edu.degree}
+                          {t(`items.education.${edu.id}.degree`)}
                         </motion.h3>
 
                         {/* Institution Name */}
@@ -142,7 +145,7 @@ const Education = () => {
                           className="flex items-center gap-2 text-gray-600 mb-2"
                         >
                           <FaUniversity className="text-blue-500" />
-                          <span className="font-medium">{edu.institution}</span>
+                          <span className="font-medium">{t(`items.education.${edu.id}.institution`)}</span>
                         </motion.div>
 
                         {/* Duration and Grade */}
@@ -172,7 +175,7 @@ const Education = () => {
                           className="mt-4"
                         >
                           <ul className="space-y-2">
-                            {edu.achievements.map((achievement, i) => (
+                            {(t(`items.education.${edu.id}.achievements`) || edu.achievements).map((achievement, i) => (
                               <motion.li
                                 key={i}
                                 initial={{ opacity: 0, x: -20 }}

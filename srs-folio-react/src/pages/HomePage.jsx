@@ -9,8 +9,11 @@ import Certifications from '../components/Certifications';
 import Research from '../components/Research';
 import Contact from '../components/Contact';
 import SEO from '../components/SEO';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HomePage = () => {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,9 +21,9 @@ const HomePage = () => {
   return (
     <>
       <SEO 
-        title="SR Sujon - Software Engineer | Full Stack Developer | AI Researcher"
-        description="Saidur Rahman Sujon - Software Engineer with 2+ years of experience building full-stack web applications. Based in Tokyo, specializing in React, Node.js, Java, PostgreSQL, NLP, and Generative AI. Published AI researcher with industry experience in logistics technology."
-        keywords="Saidur Rahman Sujon, SR Sujon, Software Engineer, Full Stack Developer, React, Node.js, Java, PostgreSQL, AI Researcher, NLP, Generative AI, Tokyo, Machine Learning, Web Development, MERN Stack, AI Engineer, Portfolio"
+        title={t('seo.home.title')}
+        description={t('seo.home.description')}
+        keywords={t('seo.home.keywords')}
       />
       <Hero />
       <About />

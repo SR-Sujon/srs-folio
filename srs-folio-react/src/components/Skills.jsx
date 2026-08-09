@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 import { 
   FaReact, 
   FaNodeJs, 
@@ -30,6 +31,7 @@ import {
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const { t } = useLanguage();
 
   const levelMap = {
     'Beginner': { value: 20, segments: 2 },
@@ -116,7 +118,7 @@ const Skills = () => {
                 className="text-xs text-white font-semibold px-2 py-0.5 rounded-full transition-all duration-300 group-hover:px-3 group-hover:shadow-lg" 
                 style={{ backgroundColor: skill.color }}
               >
-                {skill.level}
+                {t(`skills.levels.${skill.level}`)}
               </span>
             </div>
           </div>
@@ -184,10 +186,10 @@ const Skills = () => {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Technical Skills
+            {t('skills.title')}
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Specialized in full-stack development and AI research with hands-on experience in modern technologies and frameworks
+            {t('skills.subtitle')}
           </p>
         </div>
 
@@ -201,7 +203,7 @@ const Skills = () => {
             <div className="flex items-center gap-3 mb-6">
               <FaDatabase className="text-3xl text-blue-600" />
               <h3 className="text-2xl font-bold text-gray-800">
-                Software Engineering
+                {t('skills.softwareEngineering')}
               </h3>
             </div>
             <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
@@ -220,7 +222,7 @@ const Skills = () => {
             <div className="flex items-center gap-3 mb-6">
               <FaBrain className="text-3xl text-purple-600" />
               <h3 className="text-2xl font-bold text-gray-800">
-                Research & AI
+                {t('skills.researchAI')}
               </h3>
             </div>
             <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">

@@ -23,6 +23,7 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 
 ### Core Features
 - **Featured Mode Pattern**: Components accept `featured={true}` prop to limit displayed items
+- **Multi-Language Support (i18n)**: Full English 🇺🇸 and Japanese 🇯🇵 localization with Navbar flag switcher
 - **Client-Side Routing**: Seamless navigation with React Router DOM 7.16
 - **Hybrid Navigation**: Hash-based section links + route-based page navigation
 - **Dynamic SEO**: Meta tags update per route with unique titles/descriptions
@@ -33,12 +34,13 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 - **Scroll-to-Top**: Animated rocket button for easy navigation
 
 ### Advanced Features
+- **Internationalization (i18n)**: Custom `LanguageContext` provider with `localStorage` persistence, fallback resolution, and full inner content translations across all 11 sections
 - **Visitor Tracking**: Serverless visitor analytics with country detection and top 10 display
 - **Search & Filter**: Real-time filtering on Portfolio, Certifications, Research pages
 - **Category Filters**: Multi-category support with active state indicators
 - **Timeline Layout**: Professional experience with company logos and badges
 - **Certification Gallery**: Grid layout with exam/training/course categorization
-- **Publication Cards**: Research papers with DOI links and external sources
+- **Publication Cards**: Research papers with ResearchGate, IEEE Xplore, Presenter Certificates, Slides, and DOI links
 - **Intersection Observer**: Navbar active state based on visible sections
 - **TypeScript-Ready**: Modern tooling with Vite 8 and ESLint
 
@@ -140,7 +142,7 @@ srs-folio-react/
 │       └── CV/              # Resume/CV files
 ├── src/
 │   ├── components/          # Reusable components
-│   │   ├── Navbar.jsx       # Navigation with hybrid routing
+│   │   ├── Navbar.jsx       # Navigation with hybrid routing & language selector
 │   │   ├── Hero.jsx         # Hero section with typing animation
 │   │   ├── About.jsx        # About section
 │   │   ├── Skills.jsx       # Skills section
@@ -148,10 +150,15 @@ srs-folio-react/
 │   │   ├── Portfolio.jsx    # Portfolio with featured mode
 │   │   ├── Experience.jsx   # Work experience with featured mode
 │   │   ├── Certifications.jsx # Certifications with featured mode
-│   │   ├── Research.jsx     # Research with featured mode
+│   │   ├── Research.jsx     # Research with featured mode & MonBarta details
 │   │   ├── Contact.jsx      # Contact form
 │   │   ├── Footer.jsx       # Footer with visitor stats
 │   │   └── SEO.jsx          # Dynamic SEO meta tags
+│   ├── contexts/            # React contexts
+│   │   └── LanguageContext.jsx # i18n state & translation provider
+│   ├── i18n/                # Internationalization dictionaries
+│   │   ├── en.json          # English translations
+│   │   └── ja.json          # Japanese translations
 │   ├── pages/               # Route-based pages
 │   │   ├── HomePage.jsx     # Landing page (/)
 │   │   ├── PortfolioPage.jsx # Full portfolio (/portfolio)
@@ -201,15 +208,22 @@ Components support a `featured` prop to display limited items on the homepage:
 
 ```jsx
 // HomePage - Shows featured items
-<Portfolio featured={true} />  // Shows 6 of 12 projects
-<Experience featured={true} /> // Shows 3 of 3 positions
-<Certifications featured={true} /> // Shows 6 certifications
-<Research featured={true} />   // Shows 2 of 2 publications
+<Portfolio featured={true} />  // Shows 6 of 13 projects
+<Experience featured={true} /> // Shows 4 positions
+<Certifications featured={true} /> // Shows 6 of 8 certifications
+<Research featured={true} />   // Shows 2 of 3 publications
 
 // Dedicated Pages - Shows all items
-<Portfolio />  // Shows all 12 projects with filtering
-<Experience /> // Shows complete timeline
+<Portfolio />  // Shows all 13 projects with filtering
+<Experience /> // Shows complete timeline (4 positions)
 ```
+
+### Internationalization System (i18n)
+- **LanguageContext**: Custom React Context managing `en` and `ja` locales.
+- **Language Switcher**: Flag dropdown menu in `Navbar.jsx` (🇺🇸 English & 🇯🇵 日本語).
+- **LocalStorage Persistence**: Saves user language preference in `localStorage.setItem('srs-folio-lang', lang)`.
+- **Fallback Resolution**: Safe lookup fallback preventing missing string crashes or raw translation key outputs.
+- **Full Coverage**: 100% inner content localization across all 11 components & pages.
 
 ### Routing System
 **App.jsx** - Main router with 5 routes:
@@ -266,6 +280,7 @@ Uses `useLocation()` to detect current route and `IntersectionObserver` for acti
 - Responsive with mobile hamburger menu
 - Sticky header on scroll with backdrop blur
 - Active link highlighting (hash + route based)
+- Language selection dropdown with flags (🇺🇸 EN / 🇯🇵 JP)
 - Smooth scroll for section navigation
 - Desktop & mobile layouts with Tailwind breakpoints
 
@@ -278,57 +293,56 @@ Uses `useLocation()` to detect current route and `IntersectionObserver` for acti
 
 #### Portfolio (Featured Mode)
 - Grid layout with project cards
-- Category badges (Web Dev, AI/ML, Data Analytics, etc.)
-- Featured mode: Shows 6 of 12 projects
+- Category badges (Web Dev, AI/ML, Data Analytics, Desktop App, Hardware, Game Dev)
+- Featured mode: Shows 6 of 13 projects
 - View All button → navigates to `/portfolio`
 - Smooth animations on scroll
 
 #### PortfolioPage (Dedicated)
-- Full 12 projects with images and descriptions
+- Full 13 projects with images and descriptions
 - 7 category filters: All, Web Development, AI & ML, Data Analytics, Desktop App, Hardware, Game Dev
 - Real-time search by title/description
 - Responsive grid layout (1-2-3 columns)
 
 #### Experience (Featured Mode)
 - Timeline layout with company logos
-- "Present" badge with pulse animation for current role
+- "Present" badge with pulse animation for current role (Software Engineer at MASS HOLDINGS)
 - Responsibilities list and certificate links
-- Featured mode: Shows all 3 positions
+- Featured mode: Shows 4 positions
 - View All button → `/experience`
 
 #### ExperiencePage (Dedicated)
-- Complete work history timeline
-- Company details with locations
+- Complete work history timeline (4 positions: MASS HOLDINGS, Research Assistant, Freelancer, Brain Station 20)
+- Company details with locations (Tokyo, Japan & Dhaka, Bangladesh)
 - Expandable responsibility sections
-- Certificate download links
 - Professional layout with gradients
 
 #### Certifications (Featured Mode)
 - Grid gallery layout
-- Three categories: Exam, Training, Coursera
-- Featured mode: Shows 1 exam + 2 training + 3 coursera = 6 total
+- Three categories: Professional Examination, Training Programs, Online Courses
+- Featured mode: Shows 1 exam + 2 training + 3 coursera = 6 total (of 8 total)
 - Certification images with hover effects
 - View All button → `/certifications`
 
 #### CertificationsPage (Dedicated)
-- All credentials with category filtering
+- All 8 credentials with category filtering
 - 4 filters: All, Government Certification, Professional Training, Online Course
 - Search by certification name
-- Card layout with institution logos
+- Card layout with institution logos (BD-ITEC, North South University, University of Miyazaki, Vanderbilt University, University of Michigan, Google)
 - Details: Issue date, skills learned
 
 #### Research (Featured Mode)
 - Publication cards with journal info
-- Featured mode: Shows 2 publications
-- External links: DOI, ResearchGate, Google Scholar, arXiv, GitHub
+- Featured mode: Shows 2 publications (MonBarta ICSECS 2025, BSMDD)
+- External links: DOI, ResearchGate, IEEE Xplore, Presenter Certificate, Presentation Slides, Mendeley Data, Google Scholar, arXiv, GitHub, ELSEVIER, Proof of Acceptance, Video Demo
 - View All button → `/research`
 
 #### ResearchPage (Dedicated)
-- Full publication details
-- Type filters: All, Research Paper, Dataset
+- Full publication details (MonBarta ICSECS 2025, BSMDD, ELSEVIER Natural Language Processing Journal)
+- Type filters: All, Conference, Journal, Dataset
 - Search by title/description
 - Citation information
-- Multiple external source links
+- Multiple external source links including ResearchGate & PDF certificates
 
 #### Contact
 - Form with Formspree integration

@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaYoutube, FaMedium, FaGlobe, FaArrowLeft, FaSearch } from 'react-icons/fa';
 import { SiStreamlit, SiKaggle } from 'react-icons/si';
 import SEO from '../components/SEO';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const PortfolioPage = () => {
+  const { t } = useLanguage();
   const [filter, setFilter] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -210,9 +212,9 @@ const PortfolioPage = () => {
   return (
     <>
       <SEO 
-        title="Portfolio - SR Sujon | All Projects & Work"
-        description="Explore all projects by Saidur Rahman Sujon including web applications, AI/ML projects, data analytics, hardware implementations, and game development. Full portfolio with live demos and source code."
-        keywords="portfolio, projects, web development, AI projects, machine learning, MERN stack, React projects, data analytics, hardware projects"
+        title={t('seo.portfolio.title')}
+        description={t('seo.portfolio.description')}
+        keywords={t('seo.portfolio.keywords')}
       />
       
       <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
@@ -221,15 +223,15 @@ const PortfolioPage = () => {
           <div className="container mx-auto max-w-7xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-              Back to Home
+              {t('common.backToHome')}
             </Link>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">Complete Portfolio</h1>
-              <p className="text-xl text-gray-100 mb-2">Showcasing {projects.length} projects across multiple domains</p>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4">{t('portfolio.title')}</h1>
+              <p className="text-xl text-gray-100 mb-2">{t('portfolio.subtitle')}</p>
             </motion.div>
           </div>
         </div>
@@ -246,7 +248,7 @@ const PortfolioPage = () => {
             <div className="relative mb-6">
               <input
                 type="text"
-                placeholder="Search projects by name, description, or technology..."
+                placeholder={t('common.searchProjects')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 text-gray-800"
@@ -268,7 +270,7 @@ const PortfolioPage = () => {
                       : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-400'
                   }`}
                 >
-                  {category}
+                  {t(`items.portfolio.categories.${category}`)}
                 </motion.button>
               ))}
             </div>
@@ -281,7 +283,7 @@ const PortfolioPage = () => {
             transition={{ duration: 0.4 }}
             className="text-gray-600 mb-6 text-center"
           >
-            Showing {filteredProjects.length} of {projects.length} projects
+            {t('portfolio.showing', { filtered: filteredProjects.length, total: projects.length })}
           </motion.p>
 
           {/* Projects Grid */}
@@ -309,12 +311,12 @@ const PortfolioPage = () => {
                     <div>
                       {/* Category Badge */}
                       <span className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-3">
-                        {project.category}
+                        {t(`items.portfolio.categories.${project.category}`)}
                       </span>
                       
                       <h3 className="text-2xl font-bold text-gray-800 mb-2">{project.title}</h3>
-                      <p className="text-sm text-gray-500 mb-3">{project.duration}</p>
-                      <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+                      <p className="text-sm text-gray-500 mb-3">{t('portfolio.duration', { duration: t(`items.portfolio.items.${project.id}.duration`, project.duration) })}</p>
+                      <p className="text-gray-600 mb-4 leading-relaxed">{t(`items.portfolio.items.${project.id}.description`)}</p>
 
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-2 mb-4">
@@ -342,10 +344,10 @@ const PortfolioPage = () => {
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                             className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
-                            title={link.title}
+                            title={t(`items.portfolio.links.${link.title}`, link.title)}
                           >
                             <Icon className="text-lg" />
-                            {link.title}
+                            {t(`items.portfolio.links.${link.title}`, link.title)}
                           </motion.a>
                         );
                       })}

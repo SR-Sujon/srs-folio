@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,6 +11,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,15 +52,15 @@ const Navbar = () => {
   }, [isHomePage]);
 
   const navLinks = [
-    { name: 'Home', href: '#home', isSection: true },
-    { name: 'About', href: '#about', isSection: true },
-    { name: 'Skills', href: '#skills', isSection: true },
-    { name: 'Education', href: '#education', isSection: true },
-    { name: 'Portfolio', href: '/portfolio', isSection: false },
-    { name: 'Experience', href: '/experience', isSection: false },
-    { name: 'Certifications', href: '/certifications', isSection: false },
-    { name: 'Research', href: '/research', isSection: false },
-    { name: 'Contact', href: '#contact', isSection: true },
+    { name: t('navbar.home'), href: '#home', isSection: true },
+    { name: t('navbar.about'), href: '#about', isSection: true },
+    { name: t('navbar.skills'), href: '#skills', isSection: true },
+    { name: t('navbar.education'), href: '#education', isSection: true },
+    { name: t('navbar.portfolio'), href: '/portfolio', isSection: false },
+    { name: t('navbar.experience'), href: '/experience', isSection: false },
+    { name: t('navbar.certifications'), href: '/certifications', isSection: false },
+    { name: t('navbar.research'), href: '/research', isSection: false },
+    { name: t('navbar.contact'), href: '#contact', isSection: true },
   ];
 
   const isLinkActive = (link) => {
@@ -155,14 +158,24 @@ const Navbar = () => {
               );
             })}
           </ul>
+
+          {/* Language Switcher - Desktop */}
+          <div className="hidden lg:block lg:flex-shrink-0 lg:ml-4">
+            <LanguageSwitcher />
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
+            isMenuOpen ? 'max-h-[500px] pb-4' : 'max-h-0'
           }`}
         >
+          {/* Language Switcher - Mobile */}
+          <div className="flex justify-center mb-3">
+            <LanguageSwitcher />
+          </div>
+
           <ul className="flex flex-col space-y-3 items-center">
             {navLinks.map((link, index) => {
               const isActive = isLinkActive(link);
