@@ -134,9 +134,9 @@ const ResearchPage = () => {
         keywords={t('seo.research.keywords')}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-300">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white py-20">
           <div className="container mx-auto max-w-7xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
@@ -148,7 +148,7 @@ const ResearchPage = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-5xl font-bold mb-4">{t('research.title')}</h1>
-              <p className="text-xl text-gray-100">{t('research.subtitle')}</p>
+              <p className="text-xl text-gray-100 mb-2">{t('research.subtitle')}</p>
             </motion.div>
           </div>
         </div>
@@ -168,9 +168,9 @@ const ResearchPage = () => {
                 placeholder={t('common.searchPublications')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 text-gray-800"
+                className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 outline-none transition-all duration-300"
               />
-              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 text-xl" />
             </div>
 
             {/* Type Filters */}
@@ -181,11 +181,10 @@ const ResearchPage = () => {
                   onClick={() => setFilter(type.value)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.15, ease: 'easeOut' }}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-150 ${
+                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                     filter === type.value
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-400'
+                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400'
                   }`}
                 >
                   {type.label}
@@ -199,7 +198,7 @@ const ResearchPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="text-gray-600 mb-6 text-center"
+            className="text-gray-600 dark:text-gray-400 mb-6 text-center"
           >
             {t('research.showing', { filtered: filteredPublications.length, total: publications.length })}
           </motion.p>
@@ -212,7 +211,7 @@ const ResearchPage = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-150 overflow-hidden border-2 border-gray-100"
+                className="bg-white dark:bg-gray-800/90 rounded-3xl shadow-xl dark:shadow-gray-950/50 hover:shadow-2xl transition-all duration-150 overflow-hidden border-2 border-gray-100 dark:border-gray-700/80"
               >
                 {/* Gradient Top Bar */}
                 <div className={`h-3 bg-gradient-to-r ${pub.gradient}`}></div>
@@ -227,7 +226,7 @@ const ResearchPage = () => {
                         className="relative"
                       >
                         <div className={`absolute inset-0 bg-gradient-to-r ${pub.gradient} blur-xl opacity-30 rounded-2xl`}></div>
-                        <div className="relative bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100">
+                        <div className="relative bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border-2 border-gray-100 dark:border-gray-700">
                           <img 
                             src={pub.image} 
                             alt={pub.venue}

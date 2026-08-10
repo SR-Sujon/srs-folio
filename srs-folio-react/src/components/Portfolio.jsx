@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaYoutube, FaMedium, FaGlobe, FaArrowRight } from 'react-icons/fa';
@@ -6,6 +7,11 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio = ({ featured = false }) => {
   const { t } = useLanguage();
+  const [expandedProjects, setExpandedProjects] = useState({});
+
+  const toggleExpand = (id) => {
+    setExpandedProjects((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
   const projects = [
     {
       id: 13,
@@ -75,11 +81,12 @@ const Portfolio = ({ featured = false }) => {
     },
     {
       id: 7,
-      title: 'ML: Stock Market Price Prediction',
+      title: 'Stock Price Prediction Using News Sentiment & LSTM',
       image: '/images/portfolio/machine-learning/STMP.PNG',
       duration: '2023.11-2023.12 (1 month)',
-      description: 'Unveiling stock market trends thorugh news report analysis and price prediction using numerical and textual data. Machine Learning methods like Feature Engineering, Data Preprocessing, Modeling, Evaluation and Plotting etc. were implemented in this project. The final output shows the predicted trends with the testing close price with greater accuracy.',
-      technologies: ['Machine Learning', 'NLP', 'NumPy', 'Pandas', 'Seaborn', 'Matplotlib', 'Keras', 'NLTK'],
+      description: 'A hybrid stock forecasting model combining quantitative historical market data of Apple Inc. (AAPL) with qualitative news sentiment analysis. Features data integration using NLTK VADER sentiment analyzer, feature scaling with MinMaxScaler, and a multi-layer LSTM neural network trained with Adam optimizer and MSE loss to predict market trends.',
+      technologies: ['LSTM', 'Machine Learning', 'NLP', 'VADER', 'Python', 'Keras', 'NLTK', 'Pandas'],
+      category: 'AI & Machine Learning',
       links: [
         { type: 'youtube', url: 'https://youtu.be/ifHkbfKj4C0', icon: FaYoutube, title: 'Watch on YouTube' },
         { type: 'kaggle', url: 'https://www.kaggle.com/code/srsujon/stock-market-price-prediction-based-on-news', icon: SiKaggle, title: 'Lets hover to Kaggle' },
@@ -178,9 +185,11 @@ const Portfolio = ({ featured = false }) => {
     }
   ];
 
+  const displayedProjects = featured ? projects.slice(0, 6) : projects;
+
   return (
-    <section id="portfolio" className="section px-4 lg:px-8 pt-20 bg-gray-50">
-      <div className="container mx-auto max-w-7xl">
+    <section id="portfolio" className="section pt-16 px-4 lg:px-8 bg-white dark:bg-gray-950 transition-colors duration-300">
+      <div className="container-narrow max-w-6xl mx-auto">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -189,38 +198,48 @@ const Portfolio = ({ featured = false }) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">{t('portfolio.title')}</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+            {t('portfolio.title')}
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+            {t('portfolio.subtitle')}
+          </p>
         </motion.div>
 
-        {/* Portfolio Items */}
-        <div className="space-y-8">
-          {(featured ? projects.slice(0, 6) : projects).map((project, index) => (
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayedProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: project.delay / 1000 }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="flex"
             >
-              <div className="grid md:grid-cols-3 gap-6 p-6">
-                {/* Project Image */}
-                <div className="md:col-span-1">
+              <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800/80 rounded-xl shadow-lg dark:shadow-gray-950/40 overflow-hidden flex flex-col w-full hover:shadow-xl dark:hover:border-gray-700 transition-all duration-300">
+                {/* Image */}
+                <div className="relative overflow-hidden h-48 bg-gray-100 dark:bg-gray-800">
                   <img
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 md:h-full object-cover rounded-lg"
+                    alt={t(`items.portfolio.items.${project.id}.title`, project.title)}
                   />
+                  {project.category && (
+                    <span className="absolute top-3 right-3 max-w-[85%] truncate px-3 py-1 bg-black/75 backdrop-blur-md text-white text-xs font-semibold rounded-full shadow-md z-10" title={t(`items.portfolio.categories.${project.category}`, project.category)}>
+                      {t(`items.portfolio.categories.${project.category}`, project.category)}
+                    </span>
+                  )}
                 </div>
 
-                {/* Project Details */}
-                <div className="md:col-span-2 flex flex-col">
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
                   {/* Title and Links */}
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                    <h5 className="text-2xl font-bold text-gray-800 mb-2 sm:mb-0">
-                      {project.title}
-                    </h5>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="flex justify-between items-start mb-3 gap-2">
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                      {t(`items.portfolio.items.${project.id}.title`, project.title)}
+                    </h3>
+                    <div className="flex gap-2 shrink-0">
                       {project.links.map((link, linkIndex) => {
                         const Icon = link.icon;
                         return (
@@ -229,11 +248,10 @@ const Portfolio = ({ featured = false }) => {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 text-sm font-medium rounded-md transition-colors"
-                            title={t(`items.portfolio.links.${link.title}`, link.title)}
+                            className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                            title={link.title}
                           >
-                            <Icon className="w-4 h-4" />
-                            <span>{t(`items.portfolio.links.${link.title}`, link.title)}</span>
+                            <Icon className="w-5 h-5" />
                           </a>
                         );
                       })}
@@ -241,22 +259,49 @@ const Portfolio = ({ featured = false }) => {
                   </div>
 
                   {/* Duration */}
-                  <h6 className="text-sm font-bold text-gray-700 mb-3">
+                  <h6 className="text-sm font-bold text-gray-700 dark:text-gray-300 mb-3">
                     {t('portfolio.duration', { duration: t(`items.portfolio.items.${project.id}.duration`, project.duration) })}
                   </h6>
 
                   {/* Description */}
-                  <p className="text-gray-700 leading-relaxed mb-4 flex-grow">
-                    {t(`items.portfolio.items.${project.id}.description`)}
-                  </p>
+                  <div className="mb-4 flex-grow">
+                    {(() => {
+                      const fullDescription = t(`items.portfolio.items.${project.id}.description`, project.description);
+                      const isExpanded = expandedProjects[project.id];
+                      const isLong = fullDescription && fullDescription.length > 170;
+
+                      return (
+                        <>
+                          <motion.div
+                            layout
+                            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                            className="overflow-hidden"
+                          >
+                            <p className={`text-gray-700 dark:text-gray-300 text-sm leading-relaxed transition-all duration-300 ${!isExpanded ? 'line-clamp-4' : ''}`}>
+                              {fullDescription}
+                            </p>
+                          </motion.div>
+                          {isLong && (
+                            <button
+                              type="button"
+                              onClick={() => toggleExpand(project.id)}
+                              className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline focus:outline-none transition-colors"
+                            >
+                              {isExpanded ? t('portfolio.readLess', 'Show Less ▲') : t('portfolio.readMore', 'Read More ▼')}
+                            </button>
+                          )}
+                        </>
+                      );
+                    })()}
+                  </div>
 
                   {/* Technologies */}
                   <div className="mt-auto">
-                    <ul className="flex flex-wrap gap-2">
+                    <ul className="flex flex-wrap gap-1.5">
                       {project.technologies.map((tech, techIndex) => (
                         <li
                           key={techIndex}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full"
+                          className="px-2.5 py-0.5 bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 text-xs font-medium rounded-full border border-transparent dark:border-blue-800/40"
                         >
                           {tech}
                         </li>
@@ -275,7 +320,7 @@ const Portfolio = ({ featured = false }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center pt-8"
+              className="text-center pt-8 col-span-full"
             >
               <Link to="/portfolio">
                 <motion.button
@@ -287,7 +332,7 @@ const Portfolio = ({ featured = false }) => {
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
-              <p className="text-gray-500 mt-3 text-sm">
+              <p className="text-gray-500 dark:text-gray-400 mt-3 text-sm">
                 {t('portfolio.showing', { filtered: Math.min(6, projects.length), total: projects.length })}
               </p>
             </motion.div>

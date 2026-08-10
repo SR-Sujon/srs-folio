@@ -140,10 +140,10 @@ const ExperiencePage = () => {
         keywords={t('seo.experience.keywords')}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-300">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-          <div className="container mx-auto max-w-6xl px-4 lg:px-8">
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white py-20">
+          <div className="container mx-auto max-w-7xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
               {t('common.backToHome')}
@@ -154,21 +154,22 @@ const ExperiencePage = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-5xl font-bold mb-4">{t('experience.title')}</h1>
-              <p className="text-xl text-gray-100">{t('experience.subtitle')}</p>
+              <p className="text-xl text-gray-100 mb-2">{t('experience.subtitle')}</p>
             </motion.div>
           </div>
         </div>
 
-        {/* Content */}
-        <div className="container mx-auto max-w-6xl px-4 lg:px-8 py-16">
-          <div className="space-y-16">
+        <div className="container mx-auto max-w-7xl px-4 lg:px-8 py-12">
+          {/* Experience Cards */}
+          <div className="space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.id}
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:shadow-2xl transition-all duration-300"
+                className="bg-white dark:bg-gray-800/90 rounded-2xl shadow-xl dark:shadow-gray-950/50 p-8 border-2 border-gray-100 dark:border-gray-700/80 hover:shadow-2xl transition-all duration-300"
               >
                 {/* Year Badge & Present Indicator */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
@@ -218,7 +219,7 @@ const ExperiencePage = () => {
                     <img
                       src={exp.image}
                       alt={exp.company}
-                      className="w-full h-48 object-contain rounded-xl bg-gray-50 p-4"
+                      className="w-full h-48 object-contain rounded-xl bg-white border border-gray-200 dark:border-gray-700 shadow-sm p-4"
                     />
                   </div>
 

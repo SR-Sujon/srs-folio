@@ -39,11 +39,11 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="section px-4 lg:px-8 pt-20 pb-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="education" className="section px-4 lg:px-8 pt-20 pb-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-300 relative overflow-hidden">
       {/* Background Decorative Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100 dark:bg-blue-900/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-blob"></div>
+      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-100 dark:bg-purple-900/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-100 dark:bg-pink-900/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Title */}
@@ -58,13 +58,15 @@ const Education = () => {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, type: "spring" }}
-            className="inline-block mb-4"
+            transition={{ duration: 0.5 }}
+            className="inline-block p-4 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 mb-4"
           >
-            <FaGraduationCap className="text-6xl text-blue-600 mx-auto" />
+            <FaGraduationCap className="text-4xl" />
           </motion.div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">{t('education.title')}</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+            {t('education.title')}
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             {t('education.subtitle')}
           </p>
         </motion.div>
@@ -77,46 +79,32 @@ const Education = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative"
             >
-              {/* Timeline Connector */}
-              {index < educationData.length - 1 && (
-                <div className="hidden lg:block absolute left-1/2 top-full h-12 w-1 bg-gradient-to-b from-blue-400 to-purple-400 transform -translate-x-1/2 z-0"></div>
-              )}
-
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="relative"
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.2 }}
+                className="bg-white dark:bg-gray-800/90 rounded-2xl p-8 shadow-xl dark:shadow-gray-950/40 hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700/80 relative overflow-hidden"
               >
-                <div className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100`}>
-                  {/* Decorative Top Bar */}
-                  <div className={`h-2 bg-gradient-to-r ${edu.color}`}></div>
+                {/* Background Gradient Line */}
+                <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${edu.color}`}></div>
 
-                  <div className="p-8">
-                    <div className="flex flex-col lg:flex-row gap-6 items-start">
-                      {/* Left Side - Logo and Icon */}
-                      <div className="flex flex-col items-center gap-4 lg:w-48 shrink-0">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                  {/* Content Container */}
+                  <div className="lg:col-span-12">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
+                      {/* Logo and Badge */}
+                      <div className="flex flex-col items-center gap-3">
+                        <div className="w-24 h-24 rounded-2xl p-3 bg-white border border-gray-200 flex items-center justify-center shadow-md">
+                          <img
+                            src={edu.logo}
+                            alt={edu.institution}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
                         <motion.div
-                          whileHover={{ rotate: 360, scale: 1.1 }}
-                          transition={{ duration: 0.6 }}
-                          className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${edu.color} p-0.5 shadow-lg`}
-                        >
-                          <div className="w-full h-full bg-white rounded-2xl p-3 flex items-center justify-center">
-                            <img 
-                              src={edu.logo} 
-                              alt={`${edu.shortName} Logo`}
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
-                        </motion.div>
-
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: index * 0.2 + 0.3 }}
+                          whileHover={{ scale: 1.05 }}
                           className={`px-4 py-2 rounded-full bg-gradient-to-r ${edu.color} text-white text-sm font-semibold shadow-md`}
                         >
                           {edu.shortName}
@@ -131,7 +119,7 @@ const Education = () => {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: index * 0.2 + 0.2 }}
-                          className="text-2xl font-bold text-gray-800 mb-3"
+                          className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-3"
                         >
                           {t(`items.education.${edu.id}.degree`)}
                         </motion.h3>
@@ -142,9 +130,9 @@ const Education = () => {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: index * 0.2 + 0.3 }}
-                          className="flex items-center gap-2 text-gray-600 mb-2"
+                          className="flex items-center gap-2 text-gray-600 dark:text-gray-300 mb-2"
                         >
-                          <FaUniversity className="text-blue-500" />
+                          <FaUniversity className="text-blue-500 dark:text-blue-400" />
                           <span className="font-medium">{t(`items.education.${edu.id}.institution`)}</span>
                         </motion.div>
 
@@ -156,12 +144,12 @@ const Education = () => {
                           transition={{ delay: index * 0.2 + 0.4 }}
                           className="flex flex-wrap gap-4 mb-4"
                         >
-                          <div className="flex items-center gap-2 text-gray-600 bg-gray-50 px-4 py-2 rounded-lg">
-                            <FaCalendarAlt className="text-purple-500" />
+                          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 px-4 py-2 rounded-lg border border-transparent dark:border-gray-700/60">
+                            <FaCalendarAlt className="text-purple-500 dark:text-purple-400" />
                             <span className="text-sm font-medium">{edu.duration}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-gray-600 bg-gray-50 px-4 py-2 rounded-lg">
-                            <FaAward className="text-yellow-500" />
+                          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 px-4 py-2 rounded-lg border border-transparent dark:border-gray-700/60">
+                            <FaAward className="text-yellow-500 dark:text-yellow-400" />
                             <span className="text-sm font-bold">{edu.grade}</span>
                           </div>
                         </motion.div>
@@ -182,7 +170,7 @@ const Education = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.2 + 0.6 + i * 0.1 }}
-                                className="flex items-start gap-3 text-gray-600"
+                                className="flex items-start gap-3 text-gray-600 dark:text-gray-300"
                               >
                                 <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${edu.color} mt-2 shrink-0`}></div>
                                 <span className="text-base leading-relaxed">{achievement}</span>

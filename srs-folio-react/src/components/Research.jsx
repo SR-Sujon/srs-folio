@@ -9,7 +9,6 @@ import {
   FaQuoteLeft,
   FaAward,
   FaArrowRight,
-  FaArrowLeft,
   FaDesktop
 } from 'react-icons/fa';
 import { 
@@ -112,9 +111,9 @@ const Research = ({ featured = false }) => {
   ];
 
   return (
-    <section id="research" className="section px-4 lg:px-8 pt-20 pb-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section id="research" className="section px-4 lg:px-8 pt-20 pb-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-colors duration-300 relative overflow-hidden">
       {/* Academic Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: `repeating-linear-gradient(0deg, #000 0px, #000 1px, transparent 1px, transparent 40px),
                             repeating-linear-gradient(90deg, #000 0px, #000 1px, transparent 1px, transparent 40px)`,
@@ -122,8 +121,8 @@ const Research = ({ featured = false }) => {
       </div>
 
       {/* Floating Academic Elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
+      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 dark:bg-blue-950/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-64 h-64 bg-purple-200 dark:bg-purple-950/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Header */}
@@ -142,7 +141,7 @@ const Research = ({ featured = false }) => {
             className="inline-block mb-6"
           >
             <div className="relative">
-              <FaBookOpen className="text-6xl text-blue-600 mx-auto" />
+              <FaBookOpen className="text-6xl text-blue-600 dark:text-blue-400 mx-auto" />
               <motion.div
                 animate={{
                   scale: [1, 1.2, 1],
@@ -153,14 +152,14 @@ const Research = ({ featured = false }) => {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute -inset-4 bg-blue-400 rounded-full blur-xl"
+                className="absolute -inset-4 bg-blue-400 dark:bg-blue-600 rounded-full blur-xl"
               />
             </div>
           </motion.div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             {t('research.title')}
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
             {t('research.subtitle')}
           </p>
         </motion.div>
@@ -180,7 +179,7 @@ const Research = ({ featured = false }) => {
               <motion.div
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-150 overflow-hidden border-2 border-gray-100"
+                className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl dark:shadow-gray-950/40 hover:shadow-2xl transition-all duration-150 overflow-hidden border-2 border-gray-100 dark:border-gray-800"
               >
                 {/* Gradient Top Bar */}
                 <div className={`h-3 bg-gradient-to-r ${pub.gradient}`}></div>
@@ -195,7 +194,7 @@ const Research = ({ featured = false }) => {
                         className="relative"
                       >
                         <div className={`absolute inset-0 bg-gradient-to-r ${pub.gradient} blur-xl opacity-30 rounded-2xl`}></div>
-                        <div className="relative bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100">
+                        <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-2 border-gray-100 dark:border-gray-700">
                           <img 
                             src={pub.image} 
                             alt={pub.venue}
@@ -232,7 +231,7 @@ const Research = ({ featured = false }) => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.2 + 0.2 }}
-                        className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4 leading-tight"
+                        className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 leading-tight"
                         style={{ fontFamily: 'Georgia, serif' }}
                       >
                         {t(`items.research.items.${pub.id}.title`)}
@@ -246,12 +245,12 @@ const Research = ({ featured = false }) => {
                         transition={{ delay: index * 0.2 + 0.3 }}
                         className="mb-4"
                       >
-                        <p className="text-lg font-semibold text-blue-600 mb-1">{t(`items.research.items.${pub.id}.venue`)}</p>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-1">{t(`items.research.items.${pub.id}.venue`)}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">
                           {t(`items.research.items.${pub.id}.date`)} {pub.version && `| ${pub.version}`}
                         </p>
                         {pub.doi && (
-                          <p className="text-sm text-gray-500 mt-1">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                             <span className="font-semibold">DOI:</span> {pub.doi}
                           </p>
                         )}
@@ -265,9 +264,9 @@ const Research = ({ featured = false }) => {
                         transition={{ delay: index * 0.2 + 0.4 }}
                         className="mb-6"
                       >
-                        <div className="relative pl-6 border-l-4 border-blue-300">
-                          <FaQuoteLeft className="absolute -left-2 -top-1 text-blue-300 text-xl" />
-                          <p className="text-gray-700 leading-relaxed italic">
+                        <div className="relative pl-6 border-l-4 border-blue-300 dark:border-blue-700">
+                          <FaQuoteLeft className="absolute -left-2 -top-1 text-blue-300 dark:text-blue-600 text-xl" />
+                          <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic">
                             {t(`items.research.items.${pub.id}.description`)}
                           </p>
                         </div>
@@ -388,11 +387,11 @@ const Research = ({ featured = false }) => {
           className="mt-16 text-center"
         >
           <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl p-1">
-            <div className="bg-white rounded-3xl p-8 lg:p-12">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
+            <div className="bg-white dark:bg-gray-900 rounded-3xl p-8 lg:p-12 transition-colors duration-300">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                 {t('research.impactTitle')}
               </h3>
-              <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 {t('research.impactBody')}
               </p>
             </div>

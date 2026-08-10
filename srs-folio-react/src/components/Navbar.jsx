@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FiSearch } from 'react-icons/fi';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 
-const Navbar = () => {
+const Navbar = ({ onOpenCmdPalette }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -65,10 +67,8 @@ const Navbar = () => {
 
   const isLinkActive = (link) => {
     if (link.isSection) {
-      // For sections, check if we're on homepage and if the section is active
       return isHomePage && `#${activeSection}` === link.href;
     } else {
-      // For pages, check if the current route matches
       return location.pathname === link.href;
     }
   };
@@ -78,15 +78,12 @@ const Navbar = () => {
     setIsMenuOpen(false);
     
     if (isHomePage) {
-      // If on homepage, just scroll to section
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // If on another page, navigate to homepage then scroll to section
       navigate('/' + href);
-      // Small delay to ensure DOM is ready
       setTimeout(() => {
         const element = document.querySelector(href);
         if (element) {
@@ -98,41 +95,28 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className={`bg-gray-50 transition-all duration-300 ${
-        isScrolled ? 'fixed top-0 left-0 right-0 z-50 shadow-md' : ''
+      className={`bg-gray-50 dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300 ${
+        isScrolled ? 'fixed top-0 left-0 right-0 z-40 shadow-md dark:shadow-gray-950/50' : ''
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <nav className="container mx-auto px-4" role="navigation">
-        <div className="flex items-center justify-center lg:justify-between py-4">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="text-gray-800 text-xl font-bold hover:text-gray-600 transition-colors lg:flex-shrink-0 lg:border-r-2 lg:border-gray-300 lg:pr-8 lg:mr-4">
+          <Link to="/" className="text-gray-800 dark:text-gray-100 text-xl font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors flex-shrink-0 lg:border-r-2 lg:border-gray-300 dark:lg:border-gray-700 lg:pr-6 lg:mr-2">
             SR Sujon
           </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 rounded-md hover:bg-gray-200 transition-colors absolute right-4"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle navigation"
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`h-0.5 w-full bg-gray-800 transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`h-0.5 w-full bg-gray-800 transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`h-0.5 w-full bg-gray-800 transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-            </div>
-          </button>
-
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex lg:space-x-8 items-center lg:flex-1 lg:justify-center lg:ml-12">
+          <ul className="hidden lg:flex lg:space-x-6 items-center lg:flex-1 lg:justify-center lg:mx-4">
             {navLinks.map((link, index) => {
               const isActive = isLinkActive(link);
               const linkClasses = `transition-colors text-sm font-medium ${
                 isActive
-                  ? 'text-blue-600 font-extrabold underline underline-offset-4 decoration-2'
-                  : 'text-gray-700 hover:text-gray-900'
+                  ? 'text-blue-600 dark:text-blue-400 font-extrabold underline underline-offset-4 decoration-2'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               }`;
               
               return (
@@ -159,30 +143,62 @@ const Navbar = () => {
             })}
           </ul>
 
-          {/* Language Switcher - Desktop */}
-          <div className="hidden lg:block lg:flex-shrink-0 lg:ml-4">
-            <LanguageSwitcher />
+          {/* Right Action Tools - Desktop & Mobile */}
+          <div className="flex items-center space-x-2.5">
+            {/* Command Palette Button */}
+            <button
+              onClick={onOpenCmdPalette}
+              className="flex items-center space-x-1.5 px-3 py-1.5 text-xs rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-sm cursor-pointer"
+              title="Command Palette (Ctrl+K)"
+              aria-label="Open Command Palette"
+            >
+              <FiSearch className="w-3.5 h-3.5 text-blue-500 dark:text-blue-400" />
+              <span className="hidden sm:inline font-mono text-[11px] font-semibold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-1 py-0.5 rounded">
+                ⌘K
+              </span>
+            </button>
+
+            {/* Language Switcher */}
+            <div className="hidden sm:block">
+              <LanguageSwitcher />
+            </div>
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle navigation"
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`h-0.5 w-full bg-gray-800 dark:bg-gray-200 transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`h-0.5 w-full bg-gray-800 dark:bg-gray-200 transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`h-0.5 w-full bg-gray-800 dark:bg-gray-200 transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              </div>
+            </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isMenuOpen ? 'max-h-[500px] pb-4' : 'max-h-0'
+            isMenuOpen ? 'max-h-[500px] pb-4 border-t border-gray-200 dark:border-gray-800 pt-3' : 'max-h-0'
           }`}
         >
           {/* Language Switcher - Mobile */}
-          <div className="flex justify-center mb-3">
+          <div className="flex justify-center mb-3 sm:hidden">
             <LanguageSwitcher />
           </div>
 
           <ul className="flex flex-col space-y-3 items-center">
             {navLinks.map((link, index) => {
               const isActive = isLinkActive(link);
-              const linkClasses = `block transition-colors text-sm font-medium py-2 ${
+              const linkClasses = `block transition-colors text-sm font-medium py-1.5 ${
                 isActive
-                  ? 'text-blue-600 font-extrabold underline underline-offset-4 decoration-2'
-                  : 'text-gray-700 hover:text-gray-900'
+                  ? 'text-blue-600 dark:text-blue-400 font-extrabold underline underline-offset-4 decoration-2'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               }`;
               
               return (
@@ -215,3 +231,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

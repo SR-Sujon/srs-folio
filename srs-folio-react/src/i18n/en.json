@@ -10,6 +10,27 @@
     "research": "Research",
     "contact": "Contact"
   },
+  "theme": {
+    "switchToLight": "Switch to Light Mode",
+    "switchToDark": "Switch to Dark Mode",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "cmdPalette": {
+    "title": "Command Palette",
+    "placeholder": "Type a command or search sections...",
+    "navigation": "Navigation",
+    "actions": "Quick Actions",
+    "projects": "Projects",
+    "noResults": "No results found for",
+    "copyEmail": "Copy Contact Email",
+    "emailCopied": "Email address copied to clipboard!",
+    "downloadResume": "Download Resume",
+    "toggleTheme": "Toggle Dark / Light Theme",
+    "switchLang": "Switch Language",
+    "shortcut": "Press Ctrl+K or ⌘K anytime to open"
+  },
   "hero": {
     "welcome": "Hi, Welcome to my website!",
     "typing": {
@@ -69,7 +90,9 @@
     "viewAll": "View All {count} Projects",
     "showing": "Showing {filtered} of {total}",
     "duration": "Duration: {duration}",
-    "noResults": "No projects found matching your criteria"
+    "noResults": "No projects found matching your criteria",
+    "readMore": "Read More ▼",
+    "readLess": "Show Less ▲"
   },
   "experience": {
     "title": "Professional Experience",
@@ -121,10 +144,15 @@
     "sending": "Sending...",
     "success": "✓ Message sent successfully! I'll get back to you soon.",
     "error": "✗ Oops! Something went wrong. Please try again.",
-    "talkTitle": "Let's talk how I can help you!",
-    "talkP1": "If you like my work and want to avail my services then drop me a message using the contact form.",
-    "talkP2": "Or get in touch using my email or WhatsApp number.",
-    "talkCta": "See you! 👋",
+    "talkTitle": "Open for Strategic Roles & PhD Research Opportunities",
+    "talkSubtitle": "Whether you are seeking a high-impact Software Engineer in Tokyo or looking for a published AI researcher for academic collaboration, let's connect!",
+    "industryTitle": "For Recruiters & Engineering Leaders:",
+    "industryDesc": "Based in Tokyo, Japan. Open to full-time Software Engineer, Full-Stack Developer, and AI/ML Engineer positions. Specialized in building mission-critical enterprise platforms using Java Spring Boot, React, PostgreSQL, Docker, and Kubernetes.",
+    "industryBadge": "Download CV / Resume",
+    "academicTitle": "For PhD Supervisors & AI Researchers:",
+    "academicDesc": "Published AI Researcher (IEEE Xplore, Elsevier) with proven background in NLP, Large Language Models (LLMs), RAG architectures, and clinical text diagnosis. Open to PhD research assistantships, lab collaborations, and joint publications.",
+    "academicBadge": "Explore All Publications",
+    "talkCta": "Let's build innovative software systems & advance cutting-edge AI together! 🚀",
     "labels": {
       "email": "Email",
       "whatsapp": "WhatsApp",
@@ -301,54 +329,67 @@
       },
       "items": {
         "13": {
+          "title": "Japan Bangladesh Advisory",
           "duration": "2025.5 - 2025.7",
           "description": "Explore the official digital portal for Japan Bangladesh Advisory, built on a modern React component architecture that delivers a fast, seamless single-page application experience. Styled with Tailwind CSS, the site features a sleek, mobile-responsive user interface with tailored layouts for corporate services, interactive hero carousels, downloadable resources, and expand-on-click FAQ sections. Built-in Google Maps API integration provides instant location details for the main corporate branch in Gulshan, Dhaka, while streamlined contact forms and direct WhatsApp connectivity allow instant client inquiry submissions."
         },
         "12": {
+          "title": "Takaramichi",
           "duration": "2024.9 - 2024.10",
           "description": "Takaramichi is a web application designed to streamline the management of inbound accommodation and ski rentals in the popular Japanese resorts of Nozawa Onsen and Hakuba Village. This user-friendly platform simplifies booking, rental management, and customer interactions, tailored specifically for businesses in these regions. Built with React js and Tailwind CSS."
         },
         "11": {
+          "title": "LlamaChirp: Chat with PDF using Local LLMs",
           "duration": "2024.9 - 2024.10 (1 month)",
           "description": "LlamaChirp is an innovative project enabling users to engage in dynamic conversations with PDFs to extract and comprehend information using locally hosted LLM variants of Ollama by integrating Retrieval-Augmented Generation (RAG) techniques. Experience seamless interaction, precise responses, and personalized conversational experiences with LlamaChirp."
         },
         "10": {
+          "title": "Chatter AI: Chat with Website",
           "duration": "2024.3 - 2024.4 (1 month)",
           "description": "Chatter.AI is a web application that allows you to chat with websites and extract information from them. It uses the OpenAI API and LangChain library to process website data and provide intelligent responses. With a user-friendly interface powered by Streamlit, Chatter.AI makes website interaction intuitive and interactive with JSON format response along with QA format."
         },
         "9": {
+          "title": "Job-Lagbe: MERN Stack Job Portal",
           "duration": "2023.10 - 2024.1 (3 months)",
           "description": "Job-Lagbe is a complete Full-Stack Job Hunting and Hiring Web Portal designed to connect Job Seekers with Recruiters. Built with the MERN Stack (MongoDB, Express, React, Node.js) and styled with Tailwind CSS, this platform simplifies the hiring process by offering dedicated portals for both candidates and employers."
         },
         "8": {
+          "title": "RMA Agro: Agriculture E-Commerce Portal",
           "duration": "2023.1 - 2023.2 (1 month)",
           "description": "RMA Agro is a modern and user-friendly agricultural website built with HTML5, CSS3, and a JavaScript framework. Designed to connect farmers directly with consumers, the platform provides fresh organic produce, agricultural insights, and sustainable farming solutions with responsive layout and smooth UI interactions."
         },
         "7": {
-          "duration": "2023.1 - 2023.4 (4 months)",
-          "description": "Performed in-depth exploratory data analysis and sentiment breakdown on social media datasets. Built statistical visual reports and interactive plots comparing DepGPT against fine-tuned BERT/BanglaBERT transformer models for Bengali depressive text detection."
+          "title": "Stock Price Prediction Using News Sentiment & LSTM",
+          "duration": "2023.11 - 2023.12 (1 month)",
+          "description": "A hybrid stock forecasting model combining quantitative historical market data of Apple Inc. (AAPL) with qualitative news sentiment analysis. Features data integration using NLTK VADER sentiment analyzer, feature scaling with MinMaxScaler, and a multi-layer LSTM neural network trained with Adam optimizer and MSE loss to predict market trends."
         },
         "6": {
+          "title": "Data Science & ML Internship Projects",
           "duration": "2022.9 - 2022.12 (4 months)",
           "description": "A collection of task-based data science and machine learning projects developed during The Sparks Foundation internship, covering predictive modeling, clustering, and interactive visual reporting using Python data science stack."
         },
         "5": {
+          "title": "Rubik's Realm: 3D Rubik's Cube Game",
           "duration": "2021.9 - 2021.11 (3 months)",
           "description": "Rubik's Realm is an interactive 3D Web Application and Game that brings the classic Rubik's Cube to life in your browser. Built with raw JavaScript and 3D web technologies, it features smooth cube rotations, interactive solving controls, and dynamic camera angles."
         },
         "4": {
+          "title": "BharaDibo: Android House Rental App",
           "duration": "2021.1 - 2021.4 (4 months)",
           "description": "BharaDibo is an Android Application designed to help users find, compare, and rent houses or apartments easily. Built natively in Java with Android Studio, featuring real-time location filtering and direct landlord contact."
         },
         "3": {
+          "title": "Weekend Music Store: Desktop E-Commerce",
           "duration": "2020.9 - 2020.12 (4 months)",
           "description": "Weekend Music Store is a Desktop E-Commerce Management Application built with Java Swing and SQLite. Features full inventory tracking, customer order billing, and sales analytics."
         },
         "2": {
+          "title": "Vacuum Cleaner Robot: Arduino Prototype",
           "duration": "2020.1 - 2020.4 (4 months)",
           "description": "Designed and prototyped an autonomous Vacuum Cleaner Robot using Arduino microcontrollers, ultrasonic sensors, and motor drivers for obstacle-avoiding smart cleaning routines."
         },
         "1": {
+          "title": "Fullmetal Alchemist: Redemption (2D Game)",
           "duration": "2019.9 - 2019.12 (4 months)",
           "description": "Fullmetal Alchemist: Redemption is a 2D Action-Platformer Desktop Game developed in C++ using the iGraphics framework. Features custom sprite animations, multi-level mechanics, and boss fight dynamics."
         }
