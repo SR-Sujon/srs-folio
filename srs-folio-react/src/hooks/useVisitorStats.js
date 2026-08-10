@@ -55,15 +55,12 @@ export function useVisitorStats() {
           console.log('💡 To test with real data, use: vercel dev');
           
           if (mounted) {
-            // Simulate API delay
-            setTimeout(() => {
-              setStats({
-                totalVisitors: MOCK_DATA.totalVisitors,
-                countries: MOCK_DATA.countries,
-                loading: false,
-                error: null
-              });
-            }, 800);
+            setStats({
+              totalVisitors: MOCK_DATA.totalVisitors,
+              countries: MOCK_DATA.countries,
+              loading: false,
+              error: null
+            });
           }
           return;
         }
