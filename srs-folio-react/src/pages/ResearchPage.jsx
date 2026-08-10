@@ -253,20 +253,20 @@ const ResearchPage = () => {
                     {/* Right Side - Content */}
                     <div className="lg:col-span-3">
                       {/* Title */}
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-3 leading-tight">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3 leading-tight">
                         {t(`items.research.items.${pub.id}.title`)}
                       </h2>
 
                       {/* Venue & Date */}
                       <div className="mb-4">
-                        <p className="text-lg font-semibold text-blue-600">{t(`items.research.items.${pub.id}.venue`)}</p>
-                        <p className="text-sm text-gray-600">{t(`items.research.items.${pub.id}.date`)}</p>
-                        {pub.version && <p className="text-sm text-gray-500">{pub.version}</p>}
-                        {pub.doi && <p className="text-sm text-gray-500 font-mono">DOI: {pub.doi}</p>}
+                        <p className="text-lg font-semibold text-blue-600 dark:text-blue-400">{t(`items.research.items.${pub.id}.venue`)}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">{t(`items.research.items.${pub.id}.date`)}</p>
+                        {pub.version && <p className="text-sm text-gray-500 dark:text-gray-400">{pub.version}</p>}
+                        {pub.doi && <p className="text-sm text-gray-500 dark:text-gray-400 font-mono">DOI: {pub.doi}</p>}
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-700 leading-relaxed mb-6">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                         {t(`items.research.items.${pub.id}.description`)}
                       </p>
 
@@ -275,7 +275,7 @@ const ResearchPage = () => {
                         {pub.tags.map((tag, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors duration-150"
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-150"
                           >
                             {tag}
                           </span>

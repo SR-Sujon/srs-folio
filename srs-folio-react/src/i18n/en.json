@@ -289,22 +289,23 @@
         "closing": "Maintained 100% client satisfaction across freelance projects by delivering high-quality, production-ready applications on schedule."
       },
       "4": {
-        "position": "Data Science Intern",
-        "location": "Dhaka, Bangladesh",
-        "duration": "2022.09 - 2022.12 (4 months)",
+        "position": "Data Science & Business Analytics Intern (GRIP)",
+        "company": "The Sparks Foundation",
+        "location": "Singapore (Remote)",
+        "duration": "2023.11 - 2023.12 (1 month)",
         "jobType": "Internship",
-        "description": "Completed an intensive data science internship at Brain Station 20 Limited, a leading software development company in Bangladesh. Gained practical experience in exploratory data analysis, machine learning model building, and deep learning for computer vision.",
+        "description": "Participated in the Graduate Rotational Internship Program (GRIP) at The Sparks Foundation, a Singapore-headquartered non-profit organization founded in 2016 dedicated to bringing parity in education. Applied data science, exploratory data analysis (EDA), predictive modeling, and Power BI interactive dashboard design to real-world datasets.",
         "responsibilities": [
           {
-            "title": "Exploratory Data Analysis & Predictive Modeling",
-            "details": "Analyzed complex datasets using Python (Pandas, NumPy, Matplotlib, Seaborn) to extract actionable insights. Built and evaluated machine learning classification and regression models using Scikit-learn."
+            "title": "Data Science & Predictive Modeling",
+            "details": "Performed end-to-end data acquisition, data cleaning, and feature engineering using Python (Pandas, NumPy, Scikit-learn). Developed machine learning classification and regression algorithms for predictive modeling tasks."
           },
           {
-            "title": "Computer Vision & Deep Learning",
-            "details": "Implemented deep learning models for image processing and classification tasks using TensorFlow and Keras. Participated in team code reviews and technical knowledge-sharing sessions."
+            "title": "Business Analytics & Power BI Visualization",
+            "details": "Created interactive data visualizations, multi-metric slicers, and executive reporting dashboards in Power BI. Conducted exploratory data analysis (EDA) to communicate actionable business insights and data-driven recommendations."
           }
         ],
-        "closing": "Gained foundational industry experience in applying data science methodologies to real-world software development workflows."
+        "closing": "Gained hands-on experience through GRIP's global online internship framework, bridging theoretical data science with practical business analytics."
       }
     },
     "portfolio": {

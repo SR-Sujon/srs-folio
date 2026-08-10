@@ -251,7 +251,7 @@ const PortfolioPage = () => {
                 placeholder={t('common.searchProjects')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 outline-none transition-all duration-300"
+                className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 outline-none transition-all duration-300 shadow-sm"
               />
               <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 text-xl" />
             </div>
@@ -267,7 +267,7 @@ const PortfolioPage = () => {
                   className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                     filter === category
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-400'
+                      : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border-2 border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-400 shadow-sm'
                   }`}
                 >
                   {t(`items.portfolio.categories.${category}`)}
@@ -281,7 +281,7 @@ const PortfolioPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="text-gray-600 mb-6 text-center"
+            className="text-gray-600 dark:text-gray-400 mb-6 text-center"
           >
             {t('portfolio.showing', { filtered: filteredProjects.length, total: projects.length })}
           </motion.p>
@@ -294,7 +294,7 @@ const PortfolioPage = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-100"
+                className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg dark:shadow-gray-950/50 overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-800/80"
               >
                 <div className="grid md:grid-cols-3 gap-6 p-6">
                   {/* Project Image */}
@@ -302,7 +302,7 @@ const PortfolioPage = () => {
                     <img
                       src={project.image}
                       alt={t(`items.portfolio.items.${project.id}.title`, project.title)}
-                      className="w-full h-64 md:h-full object-cover rounded-xl"
+                      className="w-full h-64 md:h-full object-cover rounded-xl border border-gray-100 dark:border-gray-800"
                     />
                   </div>
 
@@ -310,14 +310,14 @@ const PortfolioPage = () => {
                   <div className="md:col-span-2 flex flex-col justify-between">
                     <div>
                       {/* Category Badge */}
-                      <span className="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold mb-3">
+                      <span className="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold mb-3 border border-transparent dark:border-blue-800/40">
                         {t(`items.portfolio.categories.${project.category}`, project.category)}
                       </span>
                       
                       <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                         {t(`items.portfolio.items.${project.id}.title`, project.title)}
                       </h3>
-                      <p className="text-sm text-gray-500 mb-3">{t('portfolio.duration', { duration: t(`items.portfolio.items.${project.id}.duration`, project.duration) })}</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{t('portfolio.duration', { duration: t(`items.portfolio.items.${project.id}.duration`, project.duration) })}</p>
                       <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{t(`items.portfolio.items.${project.id}.description`, project.description)}</p>
 
                       {/* Technologies */}
@@ -325,7 +325,7 @@ const PortfolioPage = () => {
                         {project.technologies.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium"
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700 rounded-lg text-sm font-medium"
                           >
                             {tech}
                           </span>
@@ -368,8 +368,8 @@ const PortfolioPage = () => {
               className="text-center py-20"
             >
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">No projects found</h3>
-              <p className="text-gray-600">Try adjusting your search or filter criteria</p>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">No projects found</h3>
+              <p className="text-gray-600 dark:text-gray-400">Try adjusting your search or filter criteria</p>
             </motion.div>
           )}
         </div>

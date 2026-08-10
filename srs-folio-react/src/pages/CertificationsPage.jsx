@@ -186,17 +186,17 @@ const CertificationsPage = () => {
               >
                 <div className="p-8">
                   {/* Type Badge */}
-                  <span className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                  <span className="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold mb-4 border border-transparent dark:border-blue-800/40">
                     {cert.type}
                   </span>
 
                   {/* Title & Institution */}
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{cert.title}</h3>
-                  <p className="text-lg text-blue-600 font-semibold mb-2">{cert.institution}</p>
-                  <p className="text-sm text-gray-500 mb-4">{cert.date}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">{cert.title}</h3>
+                  <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold mb-2">{cert.institution}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{cert.date}</p>
 
                   {/* Description */}
-                  <p className="text-gray-700 leading-relaxed mb-6">{t(`items.certifications.items.${cert.id}.description`, cert.description)}</p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">{t(`items.certifications.items.${cert.id}.description`, cert.description)}</p>
 
                   {/* Logos */}
                   {cert.logos && (

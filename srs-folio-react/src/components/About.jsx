@@ -90,16 +90,10 @@ const About = () => {
           >
             <div className="flex flex-col items-center">
               <img
-                className="rounded-lg shadow-lg dark:shadow-gray-900 w-full max-w-md object-cover border border-transparent dark:border-gray-800"
-                src="/images/about/Profile_1.png"
+                className="rounded-2xl shadow-2xl shadow-gray-400/30 dark:shadow-[0_0_40px_rgba(59,130,246,0.35)] w-full max-w-md object-cover border-2 border-gray-100 dark:border-blue-500/30 hover:scale-[1.02] dark:hover:shadow-[0_0_55px_rgba(147,51,234,0.45)] dark:hover:border-purple-500/40 transition-all duration-500"
+                src="/images/about/srs_portfolio_pl_1.jpeg"
                 alt="Saidur Rahman Sujon"
               />
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 italic flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                {t('about.photoCaption')}
-              </p>
             </div>
           </motion.div>
         </div>
