@@ -8,7 +8,7 @@ const Hero = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section className="section bg-gray-50 relative" id="home">
+    <section className="section bg-gray-50 dark:bg-gray-900 transition-colors duration-300 relative" id="home">
       <div className="cover">
         <div className="container mx-auto px-3 py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -31,7 +31,7 @@ const Hero = () => {
               <div className="mt-5 text-left">
                 {/* Welcome Text */}
                 <motion.p
-                  className="text-sm md:text-base uppercase mb-1 font-extrabold tracking-wide text-gray-700"
+                  className="text-sm md:text-base uppercase mb-1 font-extrabold tracking-wide text-gray-700 dark:text-gray-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
@@ -41,12 +41,12 @@ const Hero = () => {
 
                 {/* Typing Animation Title */}
                 <motion.h1
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.6 }}
                 >
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
                     <TypeAnimation
                       key={language}
                       sequence={[
@@ -68,7 +68,7 @@ const Hero = () => {
 
                 {/* Subtitle */}
                 <motion.p
-                  className="text-base md:text-lg font-normal mt-3 mb-3 text-gray-700"
+                  className="text-base md:text-lg font-normal mt-3 mb-3 text-gray-700 dark:text-gray-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.6 }}
@@ -115,7 +115,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="bg-home"></div>
+      <div className="bg-home dark:from-gray-900"></div>
     </section>
   );
 };

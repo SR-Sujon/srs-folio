@@ -23,22 +23,28 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 
 ### Core Features
 - **Featured Mode Pattern**: Components accept `featured={true}` prop to limit displayed items
+- **Dark & Light Mode System**: Full theme toggling with `ThemeContext`, persistent `localStorage` preference, and high-contrast dark styles across all sections and subpages (`<html class="dark">`)
+- **Spotlight Command Palette (`Ctrl+K` / `Cmd+K`)**: Fast keyboard-driven command palette for instant site search, section jumping, language switching, and dark mode toggling
+- **Dual-Pillar Opportunity Hub**: Redesigned Contact section targeting both Engineering Recruiters (CV download) and PhD Supervisors (IEEE publications)
 - **Multi-Language Support (i18n)**: Full English 🇺🇸 and Japanese 🇯🇵 localization with Navbar flag switcher
 - **Client-Side Routing**: Seamless navigation with React Router DOM 7.16
 - **Hybrid Navigation**: Hash-based section links + route-based page navigation
 - **Dynamic SEO**: Meta tags update per route with unique titles/descriptions
 - **Visitor Analytics**: Real-time visitor tracking by country with Redis backend
-- **Smooth Animations**: Framer Motion for scroll effects and transitions
+- **Smooth Animations**: Framer Motion for scroll effects, fluid layout transitions, and card expansion
 - **Responsive Design**: Mobile-first approach with Tailwind CSS utilities
 - **Form Integration**: Contact form with Formspree backend
 - **Scroll-to-Top**: Animated rocket button for easy navigation
 
 ### Advanced Features
+- **Dark / Light Theme System**: Instant theme switching with custom `ThemeContext`, smooth CSS transitions, soft 3D light shadows, and dark ambient glowing profile aura
+- **Command Palette Search**: Global modal dialog with fuzzy matching across sections, subpages, language switching, and theme controls
+- **Expandable Portfolio Cards**: Smooth Framer Motion `Read More ▼` / `Show Less ▲` layout animation on project cards
+- **Timeline & Company Logos**: Professional experience cards featuring official institute & company logos (MASS Holdings, AUST, Devskill, Upwork, Sparks Foundation)
 - **Internationalization (i18n)**: Custom `LanguageContext` provider with `localStorage` persistence, fallback resolution, and full inner content translations across all 11 sections
 - **Visitor Tracking**: Serverless visitor analytics with country detection and top 10 display
 - **Search & Filter**: Real-time filtering on Portfolio, Certifications, Research pages
 - **Category Filters**: Multi-category support with active state indicators
-- **Timeline Layout**: Professional experience with company logos and badges
 - **Certification Gallery**: Grid layout with exam/training/course categorization
 - **Publication Cards**: Research papers with ResearchGate, IEEE Xplore, Presenter Certificates, Slides, and DOI links
 - **Intersection Observer**: Navbar active state based on visible sections

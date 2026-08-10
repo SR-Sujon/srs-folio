@@ -141,7 +141,7 @@ const Certifications = ({ featured = false }) => {
       whileHover={{ y: -8, scale: 1.02 }}
       className="h-full"
     >
-      <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 h-full flex flex-col">
+      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg dark:shadow-gray-950/40 hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-800 h-full flex flex-col">
         {/* Decorative Header */}
         <div className={`h-2 ${
           category === 'exam' ? 'bg-gradient-to-r from-yellow-400 to-orange-500' :
@@ -172,27 +172,27 @@ const Certifications = ({ featured = false }) => {
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-bold text-gray-800 mb-2 leading-tight">
-            {cert.title}
+          <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-2 leading-tight">
+            {t(`items.certifications.items.${cert.id}.title`, cert.title)}
           </h3>
 
           {/* Institution */}
           <div className="flex items-start gap-2 mb-3">
             <FaUniversity className="text-blue-500 mt-1 shrink-0" />
-            <p className="text-sm text-gray-600 font-medium">
+            <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
               {cert.institution}
             </p>
           </div>
 
           {/* Instructor (if exists) */}
           {cert.instructor && (
-            <p className="text-sm text-gray-500 mb-2 italic">
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
               {cert.instructor}
             </p>
           )}
 
           {/* Date */}
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
             {cert.date}
           </p>
 
@@ -214,12 +214,12 @@ const Certifications = ({ featured = false }) => {
           )}
 
           {/* Description */}
-          <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
+          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4 flex-1">
             {t(`items.certifications.items.${cert.id}.description`, cert.description)}
           </p>
 
           {/* Certificate Links */}
-          <div className="border-t border-gray-100 pt-4 mt-auto">
+          <div className="border-t border-gray-100 dark:border-gray-800 pt-4 mt-auto">
             <div className="flex flex-wrap gap-2">
               {cert.certificates.map((certificate, i) => (
                 <motion.a
@@ -246,10 +246,10 @@ const Certifications = ({ featured = false }) => {
   );
 
   return (
-    <section id="certificate" className="section px-4 lg:px-8 pt-20 pb-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="certificate" className="section px-4 lg:px-8 pt-20 pb-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-colors duration-300 relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
+      <div className="absolute top-20 right-10 w-96 h-96 bg-yellow-100 dark:bg-yellow-950/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-100 dark:bg-blue-950/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Main Section Title */}
@@ -258,21 +258,19 @@ const Certifications = ({ featured = false }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, type: "spring" }}
-            className="inline-block mb-4"
+            transition={{ duration: 0.5 }}
+            className="inline-block p-4 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 mb-4"
           >
-            <FaAward className="text-6xl text-yellow-500 mx-auto" />
+            <FaCertificate className="text-4xl" />
           </motion.div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">{t('certifications.title')}</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            {t('certifications.subtitle')}
-          </p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t('certifications.title')}</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">{t('certifications.subtitle')}</p>
         </motion.div>
 
         {/* Professional Exam Certifications */}
@@ -284,7 +282,7 @@ const Certifications = ({ featured = false }) => {
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="h-1 w-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
-            <h3 className="text-2xl font-bold text-gray-800">{t('certifications.categories.exam')}</h3>
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{t('certifications.categories.exam')}</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {(featured ? certifications.exam.slice(0, 1) : certifications.exam).map((cert, index) => (
@@ -302,7 +300,7 @@ const Certifications = ({ featured = false }) => {
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-            <h3 className="text-2xl font-bold text-gray-800">{t('certifications.categories.training')}</h3>
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{t('certifications.categories.training')}</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {(featured ? certifications.training.slice(0, 2) : certifications.training).map((cert, index) => (
@@ -319,7 +317,7 @@ const Certifications = ({ featured = false }) => {
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="h-1 w-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full"></div>
-            <h3 className="text-2xl font-bold text-gray-800">{t('certifications.categories.coursera')}</h3>
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{t('certifications.categories.coursera')}</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(featured ? certifications.coursera.slice(0, 3) : certifications.coursera).map((cert, index) => (

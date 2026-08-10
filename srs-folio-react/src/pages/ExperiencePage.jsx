@@ -102,19 +102,24 @@ const ExperiencePage = () => {
       id: 4,
       year: '2023',
       isPresent: false,
-      position: 'Data Science and Business Analytics Intern',
+      position: 'Data Science & Business Analytics Intern (GRIP)',
       company: 'The Sparks Foundation',
-      location: 'Singapore | Remote',
+      location: 'Singapore (Remote)',
       duration: '2023.11 - 2023.12 (1 month)',
       jobType: 'Internship',
       image: '/images/experience/exp_tsf.jpg',
-      description: 'As an Intern, I was assigned to various real-world projects to extract meaningful insights from data and develop machine learning models for efficient and accurate predictions and create interactive data visualization using Power BI.',
+      description: 'Participated in the Graduate Rotational Internship Program (GRIP) at The Sparks Foundation, a Singapore-headquartered non-profit organization founded in 2016 dedicated to bringing parity in education. Applied data science, exploratory data analysis (EDA), predictive modeling, and Power BI interactive dashboard design to real-world datasets.',
       responsibilities: [
         {
-          title: 'Key Responsibilities',
-          details: 'Performing data acquisition, cleaning, and preparation using NumPy and Pandas to ensure high-quality input for analysis. Conducting exploratory data analysis (EDA) to identify patterns, trends, and anomalies in datasets. Applying statistical methods and machine learning algorithms for trend prediction, classification, and clustering tasks. Implementing feature engineering techniques to enhance model performance. Creating data visualizations and interactive reports using Power BI to effectively communicate findings. Collaborating with the team to optimize model accuracy, validate results, and derive actionable business insights.',
+          title: 'Data Science & Predictive Modeling',
+          details: 'Performed end-to-end data acquisition, data cleaning, and feature engineering using Python (Pandas, NumPy, Scikit-learn). Developed machine learning classification and regression algorithms for predictive modeling tasks.',
+        },
+        {
+          title: 'Business Analytics & Power BI Visualization',
+          details: 'Created interactive data visualizations, multi-metric slicers, and executive reporting dashboards in Power BI. Conducted exploratory data analysis (EDA) to communicate actionable business insights and data-driven recommendations.',
         },
       ],
+      closing: 'Gained hands-on experience through GRIP\'s global online internship framework, bridging theoretical data science with practical business analytics.',
       certificates: [
         {
           title: 'Certificate of Selection',
@@ -140,10 +145,10 @@ const ExperiencePage = () => {
         keywords={t('seo.experience.keywords')}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-300">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-          <div className="container mx-auto max-w-6xl px-4 lg:px-8">
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white py-20">
+          <div className="container mx-auto max-w-7xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
               {t('common.backToHome')}
@@ -154,21 +159,22 @@ const ExperiencePage = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-5xl font-bold mb-4">{t('experience.title')}</h1>
-              <p className="text-xl text-gray-100">{t('experience.subtitle')}</p>
+              <p className="text-xl text-gray-100 mb-2">{t('experience.subtitle')}</p>
             </motion.div>
           </div>
         </div>
 
-        {/* Content */}
-        <div className="container mx-auto max-w-6xl px-4 lg:px-8 py-16">
-          <div className="space-y-16">
+        <div className="container mx-auto max-w-7xl px-4 lg:px-8 py-12">
+          {/* Experience Cards */}
+          <div className="space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.id}
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:shadow-2xl transition-all duration-300"
+                className="bg-white dark:bg-gray-800/90 rounded-2xl shadow-xl dark:shadow-gray-950/50 p-8 border-2 border-gray-100 dark:border-gray-700/80 hover:shadow-2xl transition-all duration-300"
               >
                 {/* Year Badge & Present Indicator */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
@@ -218,22 +224,22 @@ const ExperiencePage = () => {
                     <img
                       src={exp.image}
                       alt={exp.company}
-                      className="w-full h-48 object-contain rounded-xl bg-gray-50 p-4"
+                      className="w-full h-48 object-contain rounded-xl bg-white border border-gray-200 dark:border-gray-700 shadow-sm p-4"
                     />
                   </div>
 
                   {/* Position Details */}
                   <div className="md:col-span-2">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-2">{t(`items.experience.${exp.id}.position`)}</h2>
-                    <h3 className="text-xl font-semibold text-blue-600 mb-2">{exp.company}</h3>
-                    <p className="text-gray-600 mb-2">{t(`items.experience.${exp.id}.location`)}</p>
+                    <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-2">{t(`items.experience.${exp.id}.position`, exp.position)}</h2>
+                    <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">{t(`items.experience.${exp.id}.company`, exp.company)}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-2">{t(`items.experience.${exp.id}.location`, exp.location)}</p>
                     <p className="flex items-center gap-3">
-                      <span className="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-semibold border border-blue-100">
-                        {t(`items.experience.${exp.id}.duration`)}
+                      <span className="inline-flex items-center px-3 py-1 bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 text-sm rounded-full font-semibold border border-blue-100 dark:border-blue-800/40">
+                        {t(`items.experience.${exp.id}.duration`, exp.duration)}
                       </span>
                       {exp.jobType && (
-                        <span className="inline-flex items-center px-2 py-0.5 bg-gray-100 text-xs rounded-full text-gray-700 font-semibold border border-gray-200">
-                          {t(`items.experience.${exp.id}.jobType`)}
+                        <span className="inline-flex items-center px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-xs rounded-full text-gray-700 dark:text-gray-300 font-semibold border border-gray-200 dark:border-gray-700">
+                          {t(`items.experience.${exp.id}.jobType`, exp.jobType)}
                         </span>
                       )}
                     </p>
@@ -241,29 +247,29 @@ const ExperiencePage = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-700 leading-relaxed mb-6">{t(`items.experience.${exp.id}.description`)}</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">{t(`items.experience.${exp.id}.description`, exp.description)}</p>
 
                 {/* Responsibilities */}
                 <div className="space-y-4 mb-6">
-                  <h4 className="text-xl font-bold text-gray-800">{t('experience.responsibilities')}:</h4>
+                  <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100">{t('experience.responsibilities')}:</h4>
                   {(t(`items.experience.${exp.id}.responsibilities`) || exp.responsibilities).map((resp, idx) => (
-                    <div key={idx} className="bg-gray-50 rounded-xl p-5 border-l-4 border-blue-500">
-                      <h5 className="font-bold text-gray-800 mb-2">{resp.title}</h5>
-                      <p className="text-gray-700 leading-relaxed">{resp.details}</p>
+                    <div key={idx} className="bg-gray-50 dark:bg-gray-900/60 rounded-xl p-5 border-l-4 border-blue-500 border-gray-100 dark:border-gray-800">
+                      <h5 className="font-bold text-gray-800 dark:text-gray-100 mb-2">{resp.title}</h5>
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{resp.details}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Closing */}
                 {exp.closing && (
-                  <p className="text-gray-600 italic mb-6">{t(`items.experience.${exp.id}.closing`)}</p>
+                  <p className="text-gray-600 dark:text-gray-400 italic mb-6">{t(`items.experience.${exp.id}.closing`, exp.closing)}</p>
                 )}
 
                 {/* Certificates */}
                 {exp.certificates.length > 0 && (
-                  <div className="border-t-2 border-gray-100 pt-6">
-                    <h4 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                      <FaCertificate className="text-blue-600" />
+                  <div className="border-t-2 border-gray-100 dark:border-gray-800 pt-6">
+                    <h4 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center gap-2">
+                      <FaCertificate className="text-blue-600 dark:text-blue-400" />
                       Certifications:
                     </h4>
                     <div className="flex flex-wrap gap-3">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaAward, FaSearch, FaUniversity, FaCertificate } from 'react-icons/fa';
+import { FaArrowLeft, FaSearch, FaCertificate } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -105,9 +105,9 @@ const CertificationsPage = () => {
         keywords={t('seo.certifications.keywords')}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-300">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white py-20">
           <div className="container mx-auto max-w-7xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
@@ -119,7 +119,7 @@ const CertificationsPage = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-5xl font-bold mb-4">{t('certifications.title')}</h1>
-              <p className="text-xl text-gray-100">{t('certifications.subtitle')}</p>
+              <p className="text-xl text-gray-100 mb-2">{t('certifications.subtitle')}</p>
             </motion.div>
           </div>
         </div>
@@ -139,9 +139,9 @@ const CertificationsPage = () => {
                 placeholder={t('common.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 text-gray-800"
+                className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 outline-none transition-all duration-300"
               />
-              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 text-xl" />
             </div>
 
             {/* Category Filters */}
@@ -155,7 +155,7 @@ const CertificationsPage = () => {
                   className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                     filter === category
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-400'
+                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400'
                   }`}
                 >
                   {category}
@@ -169,7 +169,7 @@ const CertificationsPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="text-gray-600 mb-6 text-center"
+            className="text-gray-600 dark:text-gray-400 mb-6 text-center"
           >
             {t('certifications.showing', { filtered: filteredCertifications.length, total: allCertifications.length })}
           </motion.p>
@@ -182,21 +182,21 @@ const CertificationsPage = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-100"
+                className="bg-white dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-gray-950/50 overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700/80"
               >
                 <div className="p-8">
                   {/* Type Badge */}
-                  <span className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                  <span className="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold mb-4 border border-transparent dark:border-blue-800/40">
                     {cert.type}
                   </span>
 
                   {/* Title & Institution */}
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{cert.title}</h3>
-                  <p className="text-lg text-blue-600 font-semibold mb-2">{cert.institution}</p>
-                  <p className="text-sm text-gray-500 mb-4">{cert.date}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">{cert.title}</h3>
+                  <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold mb-2">{cert.institution}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{cert.date}</p>
 
                   {/* Description */}
-                  <p className="text-gray-700 leading-relaxed mb-6">{t(`items.certifications.items.${cert.id}.description`, cert.description)}</p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">{t(`items.certifications.items.${cert.id}.description`, cert.description)}</p>
 
                   {/* Logos */}
                   {cert.logos && (

@@ -10,6 +10,27 @@
     "research": "研究",
     "contact": "お問い合わせ"
   },
+  "theme": {
+    "switchToLight": "ライトモードに切り替え",
+    "switchToDark": "ダークモードに切り替え",
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システム"
+  },
+  "cmdPalette": {
+    "title": "コマンドパレット",
+    "placeholder": "コマンドを入力またはセクションを検索...",
+    "navigation": "ナビゲーション",
+    "actions": "クイックアクション",
+    "projects": "プロジェクト",
+    "noResults": "該当する結果が見つかりません:",
+    "copyEmail": "メールアドレスをコピー",
+    "emailCopied": "メールアドレスをクリップボードにコピーしました！",
+    "downloadResume": "履歴書をダウンロード",
+    "toggleTheme": "ダーク/ライトテーマ切り替え",
+    "switchLang": "言語切り替え",
+    "shortcut": "Ctrl+K または ⌘K でいつでも開く"
+  },
   "hero": {
     "welcome": "ようこそ、私のウェブサイトへ！",
     "typing": {
@@ -69,7 +90,9 @@
     "viewAll": "全{count}件のプロジェクトを見る",
     "showing": "{total}件中{filtered}件を表示",
     "duration": "開発期間: {duration}",
-    "noResults": "条件に一致するプロジェクトが見つかりません"
+    "noResults": "条件に一致するプロジェクトが見つかりません",
+    "readMore": "続きを読む ▼",
+    "readLess": "折りたたむ ▲"
   },
   "experience": {
     "title": "職務経歴",
@@ -121,10 +144,15 @@
     "sending": "送信中...",
     "success": "✓ メッセージが正常に送信されました！近日中にご返信いたします。",
     "error": "✗ 送信に失敗しました。もう一度お試しください。",
-    "talkTitle": "お気軽にご相談ください！",
-    "talkP1": "私の仕事に興味をお持ちいただけましたら、お問い合わせフォームからメッセージをお送りください。",
-    "talkP2": "メールまたはWhatsAppでもご連絡いただけます。",
-    "talkCta": "お待ちしております！ 👋",
+    "talkTitle": "キャリア機会・PhD研究コラボレーションのご案内",
+    "talkSubtitle": "エンジニアリング採用のご相談から最先端AI研究プロジェクトまで、お気軽にご連絡ください。",
+    "industryTitle": "採用担当者・IT企業様へ:",
+    "industryDesc": "東京拠点。Java Spring Boot、React、PostgreSQL、Docker/Kubernetesを用いた大規模Webシステム開発及びAI/MLエンジニアのフルタイム機会を希望しています。",
+    "industryBadge": "履歴書/CVをダウンロード",
+    "academicTitle": "PhD指導教員・研究機関の皆様へ:",
+    "academicDesc": "IEEE XploreおよびElsevier掲載のAI/NLP研究者。LLM、RAG、自然言語処理、医療AI分野でのPhD研究員機会や共同研究プロジェクトを積極的に探しています。",
+    "academicBadge": "研究論文一覧を見る",
+    "talkCta": "革新的なシステム開発・最先端AI研究で未来を創造しましょう！ 🚀",
     "labels": {
       "email": "メール",
       "whatsapp": "WhatsApp",
@@ -261,22 +289,23 @@
         "closing": "高品質なプロダクション環境対応アプリを計画通り納品し、受託プロジェクト全般で高い評価と顧客満足度を達成。"
       },
       "4": {
-        "position": "データサイエンス・インターン",
-        "location": "ダッカ、バングラデシュ",
-        "duration": "2022.09 - 2022.12 (4ヶ月)",
+        "position": "データサイエンス・ビジネスアナリティクスインターン (GRIP)",
+        "company": "The Sparks Foundation",
+        "location": "シンガポール (リモート)",
+        "duration": "2023.11 - 2023.12 (1ヶ月)",
         "jobType": "インターンシップ",
-        "description": "バングラデシュを代表するソフトウェア開発企業Brain Station 20 Limitedにてデータサイエンス・インターンシップを修了。探索的データ解析（EDA）、機械学習モデル構築、コンピュータビジョン向けディープラーニングの実務経験を習得。",
+        "description": "2016年に設立されシンガポールに拠点を置く教育NPO「The Sparks Foundation」のGraduate Rotational Internship Program (GRIP)に参画。PythonデータサイエンススタックとPower BIを活用し、実データの探索的データ解析(EDA)、予測モデリング、および対話型ダッシュボード開発に従事。",
         "responsibilities": [
           {
-            "title": "探索的データ解析 & 予測モデリング",
-            "details": "Python（Pandas、NumPy、Matplotlib、Seaborn）を用いて複雑なデータセットを解析し、実践的なインサイトを抽出。Scikit-learnを用いた機械学習の分類・回帰モデルの構築および評価を実施。"
+            "title": "データサイエンス & 予測モデリング",
+            "details": "Python (Pandas, NumPy, Scikit-learn)を用いてデータ収集・前処理・特徴量エンジニアリングを実施。分類・回帰アルゴリズムを活用した機械学習予測モデルの構築と精度検証を担当。"
           },
           {
-            "title": "コンピュータビジョン & ディープラーニング",
-            "details": "TensorFlowおよびKerasを活用し、画像処理や画像分類タスク向けのディープラーニングモデルを実装。チーム内でのコードレビューや技術共有セッションに参加。"
+            "title": "ビジネスアナリティクス & Power BI可視化",
+            "details": "Power BIを用いた対話型データ可視化ダッシュボードおよび意思決定レポートを作成。探索的データ解析 (EDA) を通じて課題発見およびビジネス意思決定に資する分析インサイトを提供。"
           }
         ],
-        "closing": "実際のソフトウェア開発現場におけるデータサイエンス手法の応用に関する基礎的な実務経験を獲得。"
+        "closing": "GRIPのグローバルオンラインインターンシップを通じて、データサイエンスの理論と実務ビジネスアナリティクスを結びつける実践的経験を習得。"
       }
     },
     "portfolio": {
@@ -301,54 +330,67 @@
       },
       "items": {
         "13": {
+          "title": "ジャパン・バングラデシュ・アドバイザリー",
           "duration": "2025年5月 - 2025年7月",
           "description": "Japan Bangladesh Advisoryの公式Webポータル。モダンなReactコンポーネント設計により高速かつシームレスなシングルページアプリケーション（SPA）を実現。Tailwind CSSによるレスポンシブデザイン、サービス紹介、FAQ機能、Google Maps API連携、問い合わせフォーム及びWhatsApp即時連携機能を搭載。"
         },
         "12": {
+          "title": "宝道 (Takaramichi)",
           "duration": "2024年9月 - 2024年10月",
           "description": "野沢温泉や白馬村などの日本の人気スキーリゾートにおけるインバウンド宿泊予約・スキーレンタル管理を効率化するWebアプリケーション。React.js、Node.js、MongoDB、Tailwind CSSで構築。"
         },
         "11": {
+          "title": "LlamaChirp: ローカルLLM対話ツール",
           "duration": "2024年9月 - 2024年10月 (1ヶ月)",
           "description": "ローカル環境で動作するOllamaのLLMとRAG（検索拡張生成）技術を統合し、PDFドキュメントと対話して情報を抽出・理解できる革新的なAIチャットツール。Chainlit、LangChain、ChromaDBを採用。"
         },
         "10": {
+          "title": "Chatter AI: Webサイト対話AI",
           "duration": "2024年3月 - 2024年4月 (1ヶ月)",
           "description": "Webサイトのコンテンツとチャットし情報を抽出できるWebアプリ。OpenAI APIとLangChainを活用し、Streamlitインターフェース上でJSONおよびQA形式の対話を実現。"
         },
         "9": {
+          "title": "Job-Lagbe: MERN求人ポータル",
           "duration": "2023年10月 - 2024年1月 (3ヶ月)",
           "description": "求職者と採用担当者をつなぐフルスタック求人ポータルサイト。MERNスタック（MongoDB, Express, React, Node.js）とTailwind CSSで構築。"
         },
         "8": {
+          "title": "RMA Agro: 農業Eコマース",
           "duration": "2023年1月 - 2023年2月 (1ヶ月)",
           "description": "農家と消費者を直接つなぎ新鮮なオーガニック農産物を提供する農業Webポータル。レスポンシブUI、商品カタログ、注文システムを完備。"
         },
         "7": {
-          "duration": "2023年1月 - 2023年4月 (4ヶ月)",
-          "description": "ソーシャルメディアのデータセットに対する探索的データ解析（EDA）と感情分析。DepGPTや各種トランスフォーマーモデルの性能比較をビジュアル化したデータ分析プロジェクト。"
+          "title": "ニュース感情分析とLSTMを用いた株価予測",
+          "duration": "2023年11月 - 2023年12月 (1ヶ月)",
+          "description": "Apple社（AAPL）の過去の市場データとニュース報道の定性的な感情分析を組み合わせたハイブリッド型株価予測モデル。NLTKのVADER感情分析器によるスコア化、MinMaxScalerによる正規化、多層LSTM（Long Short-Term Memory）ニューラルネットワークを実装し、市場トレンドを予測。"
         },
         "6": {
+          "title": "データサイエンス＆MLインターンプロジェクト",
           "duration": "2022年9月 - 2022年12月 (4ヶ月)",
           "description": "The Sparks Foundationインターン期間中に開発した、予測モデリング、クラスタリング、データ可視化を含むデータサイエンスおよび機械学習プロジェクト集。"
         },
         "5": {
+          "title": "Rubik's Realm: 3Dルービックキューブ",
           "duration": "2021年9月 - 2021年11月 (3ヶ月)",
           "description": "ブラウザ上でルービックキューブを立体的に操作・パズル解法を楽しめるインタラクティブな3D Webゲーム。JavaScriptと3Dグラフィックス技術で構築。"
         },
         "4": {
+          "title": "BharaDibo: 賃貸不動産Androidアプリ",
           "duration": "2021年1月 - 2021年4月 (4ヶ月)",
           "description": "賃貸物件の検索・比較・予約を容易にする住居賃貸モバイルアプリケーション。Java/Android Studioで開発。"
         },
         "3": {
+          "title": "ウィークエンド・ミュージックストア",
           "duration": "2020年9月 - 2020年12月 (4ヶ月)",
           "description": "音楽CD・楽器の販売管理を行うデスクトップ型Eコマース管理システム。Java SwingとSQLiteで構築。"
         },
         "2": {
+          "title": "お掃除ロボット: Arduinoプロトタイプ",
           "duration": "2020年1月 - 2020年4月 (4ヶ月)",
           "description": "Arduinoマイクロコントローラと超音波センサーを活用し、障害物回避・自律清掃を行うお掃除ロボットのハードウェア試作プロジェクト。"
         },
         "1": {
+          "title": "鋼の錬金術師 Redemption: 2Dゲーム",
           "duration": "2019年9月 - 2019年12月 (4ヶ月)",
           "description": "C++とiGraphicsライブラリで開発された、人気アニメをモチーフにした2Dアクション・プラットフォーマーデスクトップゲーム。"
         }

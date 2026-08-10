@@ -111,7 +111,7 @@ const Skills = () => {
           />
           <div className="flex-1">
             <div className="flex items-center gap-2">
-              <span className="text-sm font-semibold text-gray-700 transition-colors duration-300 group-hover:text-gray-900">
+              <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
                 {skill.name}
               </span>
               <span 
@@ -135,7 +135,7 @@ const Skills = () => {
                   isFilled ? 'shadow-md group-hover:shadow-xl group-hover:scale-105' : 'shadow-inner'
                 }`}
                 style={{
-                  backgroundColor: isFilled ? skill.color : '#e5e7eb',
+                  backgroundColor: isFilled ? skill.color : (document.documentElement.classList.contains('dark') ? '#374151' : '#e5e7eb'),
                   transitionDelay: `${delay + index * 100 + segIndex * 50}ms`,
                   transform: isVisible && isFilled ? 'scaleY(1)' : 'scaleY(0)',
                   transformOrigin: 'bottom'
@@ -175,7 +175,7 @@ const Skills = () => {
   return (
     <section 
       id="skills" 
-      className="section pt-16 px-4 lg:px-8 bg-gray-50"
+      className="section pt-16 px-4 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
       ref={sectionRef}
     >
       <div className="max-w-6xl mx-auto">
@@ -185,10 +185,10 @@ const Skills = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             {t('skills.title')}
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t('skills.subtitle')}
           </p>
         </div>
@@ -196,13 +196,13 @@ const Skills = () => {
         <div className="space-y-12">
           {/* Software Engineering Section */}
           <div 
-            className={`bg-white rounded-lg shadow-md p-8 transition-all duration-1000 delay-300 ${
+            className={`bg-white dark:bg-gray-800/80 dark:border dark:border-gray-700/60 rounded-lg shadow-md p-8 transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             <div className="flex items-center gap-3 mb-6">
-              <FaDatabase className="text-3xl text-blue-600" />
-              <h3 className="text-2xl font-bold text-gray-800">
+              <FaDatabase className="text-3xl text-blue-600 dark:text-blue-400" />
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                 {t('skills.softwareEngineering')}
               </h3>
             </div>
@@ -215,13 +215,13 @@ const Skills = () => {
 
           {/* Research & AI Section */}
           <div 
-            className={`bg-white rounded-lg shadow-md p-8 transition-all duration-1000 delay-500 ${
+            className={`bg-white dark:bg-gray-800/80 dark:border dark:border-gray-700/60 rounded-lg shadow-md p-8 transition-all duration-1000 delay-500 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             <div className="flex items-center gap-3 mb-6">
-              <FaBrain className="text-3xl text-purple-600" />
-              <h3 className="text-2xl font-bold text-gray-800">
+              <FaBrain className="text-3xl text-purple-600 dark:text-purple-400" />
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                 {t('skills.researchAI')}
               </h3>
             </div>

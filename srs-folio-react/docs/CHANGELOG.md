@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.3.1] - 2026-08-11
+
+### Added
+- **Dark Mode System**:
+  - `ThemeContext` & `ThemeToggle` component supporting light/dark theme switching with persistent `localStorage` state.
+  - High-contrast dark styling across all 11 homepage sections and 4 subpages (`/portfolio`, `/experience`, `/certifications`, `/research`).
+  - White-background logo containers for transparent institute & company badges in dark mode.
+- **Spotlight Command Palette (`Ctrl+K` / `Cmd+K`)**:
+  - Keyboard shortcut & search button to launch global command palette for fast site search, section navigation, language selection, and theme controls.
+- **Dual-Pillar Opportunity Hub**:
+  - Redesigned Contact section into balanced Industry (full-stack CV download) and Academic (IEEE research publications) callout cards.
+- **Expandable Portfolio Cards**:
+  - Added smooth Framer Motion `Read More ▼` / `Show Less ▲` layout animation on project cards.
+- **Experience Company Logos & Content Updates**:
+  - Integrated official company/institute logo badges across experience cards.
+  - Refined **The Sparks Foundation (GRIP)** entry with accurate Singapore non-profit details, data science responsibilities, and Power BI visualization achievements.
+- **Visual Effects**:
+  - Updated profile picture to `srs_portfolio_pl_1.jpeg` with soft 3D elevation shadow in Light Mode and ambient blue/purple glowing aura in Dark Mode.
+
 ## [3.2.1] - 2026-06-03
 
 ### Added

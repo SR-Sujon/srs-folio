@@ -25,18 +25,18 @@ npm run version:major   # Breaking changes: 3.2.0 → 4.0.0
 
 ## Current Version
 
-**v3.2.1** - Visitor Analytics Enhancement
+**v3.3.1** - Dark Mode, Spotlight Command Palette & Subpage Renovations
 
 The version is displayed in the footer of the website and stored in `package.json`.
 
-### Latest Changes (v3.2.1)
-- Fixed critical API crashes from undefined environment variables
-- Added multi-API geolocation fallback system (ipapi.co, ip-api.com, ipwhois.io)
-- Added debug endpoint for troubleshooting IP detection and geolocation
-- Consolidated documentation: merged troubleshooting and version guides
-- Enhanced error handling with environment variable validation
-- Improved logging for better debugging
-- Resolved "Unknown" country issue from API rate limiting
+### Latest Changes (v3.3.1)
+- **Dark Mode System**: Implemented full Dark/Light theme switching (`ThemeContext`, persistent `localStorage` state, high-contrast dark styling across all 11 homepage sections and 4 subpages).
+- **Spotlight Command Palette (`Ctrl+K` / `Cmd+K`)**: Added keyboard-accessible global command search for navigation, section jumping, language selection, and theme toggling.
+- **Dual-Pillar Opportunity Hub**: Redesigned Contact section into balanced Industry (full-stack CV download) and Academic (IEEE publications) cards.
+- **Expandable Portfolio Cards**: Smooth Framer Motion `Read More ▼` / `Show Less ▲` layout animation on project cards.
+- **Experience Company Logos**: Added company/institute badges (MASS Holdings, AUST, Devskill, Upwork, The Sparks Foundation) with white-background containers in light and dark modes.
+- **Profile Photo & Visual Effects**: Updated profile photo to `srs_portfolio_pl_1.jpeg` with soft 3D elevation shadow in Light Mode and ambient blue/purple glowing aura in Dark Mode.
+- **The Sparks Foundation (GRIP)**: Refined experience entry with accurate Singapore non-profit background, data science responsibilities, and Power BI analytics achievements.
 
 ---
 

@@ -102,11 +102,11 @@ const PortfolioPage = () => {
     },
     {
       id: 7,
-      title: 'ML: Stock Market Price Prediction',
+      title: 'Stock Price Prediction Using News Sentiment & LSTM',
       image: '/images/portfolio/machine-learning/STMP.PNG',
       duration: '2023.11-2023.12 (1 month)',
-      description: 'Unveiling stock market trends thorugh news report analysis and price prediction using numerical and textual data. Machine Learning methods like Feature Engineering, Data Preprocessing, Modeling, Evaluation and Plotting etc. were implemented in this project. The final output shows the predicted trends with the testing close price with greater accuracy.',
-      technologies: ['Machine Learning', 'NLP', 'NumPy', 'Pandas', 'Seaborn', 'Matplotlib', 'Keras', 'NLTK'],
+      description: 'A hybrid stock forecasting model combining quantitative historical market data of Apple Inc. (AAPL) with qualitative news sentiment analysis. Features data integration using NLTK VADER sentiment analyzer, feature scaling with MinMaxScaler, and a multi-layer LSTM neural network trained with Adam optimizer and MSE loss to predict market trends.',
+      technologies: ['LSTM', 'Machine Learning', 'NLP', 'VADER', 'Python', 'Keras', 'NLTK', 'Pandas'],
       category: 'AI & Machine Learning',
       links: [
         { type: 'youtube', url: 'https://youtu.be/ifHkbfKj4C0', icon: FaYoutube, title: 'Watch on YouTube' },
@@ -217,9 +217,9 @@ const PortfolioPage = () => {
         keywords={t('seo.portfolio.keywords')}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-300">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white py-20">
           <div className="container mx-auto max-w-7xl px-4 lg:px-8">
             <Link to="/" className="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors mb-6 group">
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
@@ -251,9 +251,9 @@ const PortfolioPage = () => {
                 placeholder={t('common.searchProjects')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 text-gray-800"
+                className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 outline-none transition-all duration-300 shadow-sm"
               />
-              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 text-xl" />
             </div>
 
             {/* Category Filters */}
@@ -267,7 +267,7 @@ const PortfolioPage = () => {
                   className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                     filter === category
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-400'
+                      : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border-2 border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-400 shadow-sm'
                   }`}
                 >
                   {t(`items.portfolio.categories.${category}`)}
@@ -281,7 +281,7 @@ const PortfolioPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="text-gray-600 mb-6 text-center"
+            className="text-gray-600 dark:text-gray-400 mb-6 text-center"
           >
             {t('portfolio.showing', { filtered: filteredProjects.length, total: projects.length })}
           </motion.p>
@@ -294,15 +294,15 @@ const PortfolioPage = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-100"
+                className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg dark:shadow-gray-950/50 overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-800/80"
               >
                 <div className="grid md:grid-cols-3 gap-6 p-6">
                   {/* Project Image */}
                   <div className="md:col-span-1">
                     <img
                       src={project.image}
-                      alt={project.title}
-                      className="w-full h-64 md:h-full object-cover rounded-xl"
+                      alt={t(`items.portfolio.items.${project.id}.title`, project.title)}
+                      className="w-full h-64 md:h-full object-cover rounded-xl border border-gray-100 dark:border-gray-800"
                     />
                   </div>
 
@@ -310,20 +310,22 @@ const PortfolioPage = () => {
                   <div className="md:col-span-2 flex flex-col justify-between">
                     <div>
                       {/* Category Badge */}
-                      <span className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-3">
-                        {t(`items.portfolio.categories.${project.category}`)}
+                      <span className="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold mb-3 border border-transparent dark:border-blue-800/40">
+                        {t(`items.portfolio.categories.${project.category}`, project.category)}
                       </span>
                       
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2">{project.title}</h3>
-                      <p className="text-sm text-gray-500 mb-3">{t('portfolio.duration', { duration: t(`items.portfolio.items.${project.id}.duration`, project.duration) })}</p>
-                      <p className="text-gray-600 mb-4 leading-relaxed">{t(`items.portfolio.items.${project.id}.description`)}</p>
+                      <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
+                        {t(`items.portfolio.items.${project.id}.title`, project.title)}
+                      </h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{t('portfolio.duration', { duration: t(`items.portfolio.items.${project.id}.duration`, project.duration) })}</p>
+                      <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{t(`items.portfolio.items.${project.id}.description`, project.description)}</p>
 
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.technologies.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium"
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700 rounded-lg text-sm font-medium"
                           >
                             {tech}
                           </span>
@@ -366,8 +368,8 @@ const PortfolioPage = () => {
               className="text-center py-20"
             >
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">No projects found</h3>
-              <p className="text-gray-600">Try adjusting your search or filter criteria</p>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">No projects found</h3>
+              <p className="text-gray-600 dark:text-gray-400">Try adjusting your search or filter criteria</p>
             </motion.div>
           )}
         </div>
