@@ -239,15 +239,19 @@
           },
           {
             "title": "System Integration & Development",
-            "details": "Implementing order fulfillment workflows that connect frontend interfaces with backend services and automated printing systems. Contributing to legacy system updates through C# integration. Using development tools including WebStorm, Rider, DataGrip, DBeaver, and IntelliJ IDEA for daily development tasks."
+            "details": "Architecting dedicated microservices for thermal label printers to automate warehouse delivery slip generation and streamline order fulfillment workflows. Integrating frontend interfaces with backend services, modernizing legacy systems through C# integration, and utilizing WebStorm, Rider, DataGrip, DBeaver, and IntelliJ IDEA for daily development tasks."
+          },
+          {
+            "title": "Software Release & Deployment Management",
+            "details": "Orchestrating end-to-end software releases and production deployments for company warehouse management systems, maintaining release stability, version control, and seamless deployment workflows to minimize system downtime."
           }
         ],
         "closing": "Contributing to logistics technology solutions by developing and maintaining systems that support daily order processing and warehouse operations."
       },
       "2": {
-        "position": "Research Assistant",
+        "position": "Research Assistant (AIRG Grant)",
         "location": "Dhaka, Bangladesh",
-        "duration": "2024.11 - 2025.9 (10 months)",
+        "duration": "2024.11 - 2025.8 (10 months)",
         "jobType": "Contract",
         "description": "Worked as a Research Assistant under the AUST Internal Research Grant (AIRG) project developing PsychAI, a Bengali-supported mental health assistant powered by large language models. Contributed to advancing NLP and culturally-grounded AI research addressing mental health accessibility in underserved Bengali-speaking communities.",
         "responsibilities": [
