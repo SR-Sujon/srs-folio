@@ -45,7 +45,7 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 - **Search & Filter**: Real-time filtering on Portfolio, Certifications, Research pages
 - **Category Filters**: Multi-category support with active state indicators
 - **Timeline Layout**: Professional experience with company logos and badges
-- **Certification Gallery**: Grid layout with exam/training/course categorization
+- **Certification Gallery**: Grid layout with graduate credential (WorldQuant University Foundations of Financial Engineering), exam, training, and course categorization
 - **Publication Cards**: Research papers (MonBarta ICSECS 2025, BSMDD, ELSEVIER) with ResearchGate, IEEE Xplore, Presenter Certificates, Slides, and DOI links
 - **Intersection Observer**: Navbar active state based on visible sections
 - **TypeScript-Ready**: Modern tooling with Vite 8 and ESLint

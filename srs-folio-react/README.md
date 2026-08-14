@@ -45,7 +45,7 @@ This portfolio implements a **Featured + Archive Pattern** with dedicated pages 
 - **Visitor Tracking**: Serverless visitor analytics with country detection and top 10 display
 - **Search & Filter**: Real-time filtering on Portfolio, Certifications, Research pages
 - **Category Filters**: Multi-category support with active state indicators
-- **Certification Gallery**: Grid layout with exam/training/course categorization
+- **Certification Gallery**: Grid layout with graduate credential (WorldQuant University Foundations of Financial Engineering), exam, training, and course categorization
 - **Publication Cards**: Research papers with ResearchGate, IEEE Xplore, Presenter Certificates, Slides, and DOI links
 - **Intersection Observer**: Navbar active state based on visible sections
 - **TypeScript-Ready**: Modern tooling with Vite 8 and ESLint
