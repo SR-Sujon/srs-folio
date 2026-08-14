@@ -217,7 +217,7 @@ const Portfolio = ({ featured = false }) => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="flex"
             >
-              <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800/80 rounded-xl shadow-lg dark:shadow-gray-950/40 overflow-hidden flex flex-col w-full hover:shadow-xl dark:hover:border-gray-700 transition-all duration-300">
+              <div className="project-card bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800/80 rounded-xl shadow-lg dark:shadow-gray-950/40 overflow-hidden flex flex-col w-full hover:shadow-xl dark:hover:border-gray-700 transition-all duration-300">
                 {/* Image */}
                 <div className="relative overflow-hidden h-48 bg-gray-100 dark:bg-gray-800">
                   <img

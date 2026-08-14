@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.3.2] - 2026-08-15
+
+### Added
+- **WorldQuant University Graduate Credential**:
+  - Added WorldQuant University's **Foundations of Financial Engineering** (8 Graduate Credits) under a new **Graduate Credentials** category.
+  - Detailed curriculum breakdown covering **MScFE 560 (Financial Markets — 4 credits)** (credit risk, securitization, rates/derivatives, market structure, liquidity risk) and **MScFE 600 (Financial Data — 4 credits)** (FIX/PTP architecture, yield curves, SVD/PCA, Expected Shortfall, FinBERT NLP, geospatial data, HMM & GARCH modeling with Python/Jupyter).
+  - Integrated official WQU logo emblem and linked official graduate credential PDF (`FoundationsofFinancialEngineering20260814-21-g6cn7h.pdf`).
+  - Implemented dual-view description architecture: concise card summary for landing page and full detailed syllabus on dedicated `/certifications` page.
+  - Added **"Learn More"** direct anchor link (`/certifications#cert-9`) with smooth scrolling.
+  - Enhanced homepage brand logo container sizing for single rectangular logos.
+  - Full English (`en.json`) and Japanese (`ja.json`) i18n localization.
+
 ## [3.3.1] - 2026-08-11
 
 ### Added

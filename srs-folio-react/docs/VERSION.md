@@ -25,18 +25,16 @@ npm run version:major   # Breaking changes: 3.2.0 → 4.0.0
 
 ## Current Version
 
-**v3.3.1** - Dark Mode, Spotlight Command Palette & Subpage Renovations
+**v3.3.2** - WorldQuant University Graduate Credentials & Interactive Certification Nav
 
 The version is displayed in the footer of the website and stored in `package.json`.
 
-### Latest Changes (v3.3.1)
-- **Dark Mode System**: Implemented full Dark/Light theme switching (`ThemeContext`, persistent `localStorage` state, high-contrast dark styling across all 11 homepage sections and 4 subpages).
-- **Spotlight Command Palette (`Ctrl+K` / `Cmd+K`)**: Added keyboard-accessible global command search for navigation, section jumping, language selection, and theme toggling.
-- **Dual-Pillar Opportunity Hub**: Redesigned Contact section into balanced Industry (full-stack CV download) and Academic (IEEE publications) cards.
-- **Expandable Portfolio Cards**: Smooth Framer Motion `Read More ▼` / `Show Less ▲` layout animation on project cards.
-- **Experience Company Logos**: Added company/institute badges (MASS Holdings, AUST, Devskill, Upwork, The Sparks Foundation) with white-background containers in light and dark modes.
-- **Profile Photo & Visual Effects**: Updated profile photo to `srs_portfolio_pl_1.jpeg` with soft 3D elevation shadow in Light Mode and ambient blue/purple glowing aura in Dark Mode.
-- **The Sparks Foundation (GRIP)**: Refined experience entry with accurate Singapore non-profit background, data science responsibilities, and Power BI analytics achievements.
+### Latest Changes (v3.3.2)
+- **WorldQuant University Graduate Credential**: Added WQU **Foundations of Financial Engineering** (8 Graduate Credits) to graduate credentials category.
+- **Detailed MScFE Syllabus**: Comprehensive curriculum breakdown for **MScFE 560 (Financial Markets — 4 credits)** and **MScFE 600 (Financial Data — 4 credits)** covering credit risk, securitization, derivatives, SVD/PCA linear algebra, yield curves, Expected Shortfall, FinBERT NLP, geospatial data, and GARCH modeling.
+- **Dual-View Description & Learn More Anchor Navigation**: Implemented concise card summary on homepage with interactive **"Learn More →"** button linking directly to `/certifications#cert-9` on the dedicated page.
+- **Enhanced Brand Logo Sizing**: Optimized brand logo container height and width scaling for single rectangular logos on homepage cards.
+- **i18n Localization**: Complete English (`en.json`) and Japanese (`ja.json`) translations for titles, short/full descriptions, badges, links, and category headings.
 
 ---
 

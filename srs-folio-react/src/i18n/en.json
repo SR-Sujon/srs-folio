@@ -107,6 +107,7 @@
     "subtitle": "Professional certifications and achievements",
     "viewAll": "View All Certifications",
     "categories": {
+      "graduate": "Graduate Credentials",
       "exam": "Professional Examination",
       "training": "Training Programs",
       "coursera": "Online Courses",
@@ -187,8 +188,8 @@
     },
     "certifications": {
       "title": "Certifications - SR Sujon | Professional Achievements",
-      "description": "Professional certifications and achievements by Saidur Rahman Sujon including ITEE, B-JET, Coursera courses, and more.",
-      "keywords": "certifications, ITEE, B-JET, Coursera, professional development, training programs"
+      "description": "Professional certifications and achievements by Saidur Rahman Sujon including WorldQuant University MSc in Financial Engineering (Foundations), ITEE, B-JET, Coursera courses, and more.",
+      "keywords": "certifications, WorldQuant University, Financial Engineering, quantitative finance, ITEE, B-JET, Coursera, professional development, training programs"
     },
     "research": {
       "title": "Research & Publications - SR Sujon | Academic Work",
@@ -202,7 +203,9 @@
     "showingOf": "Showing {filtered} of {total}",
     "noResults": "No results found",
     "searchPublications": "Search publications by title, tags, or description...",
-    "searchProjects": "Search projects by name, description, or technology..."
+    "searchProjects": "Search projects by name, description, or technology...",
+    "searchCertifications": "Search certifications...",
+    "learnMore": "Learn More"
   },
   "items": {
     "education": {
@@ -239,15 +242,19 @@
           },
           {
             "title": "System Integration & Development",
-            "details": "Implementing order fulfillment workflows that connect frontend interfaces with backend services and automated printing systems. Contributing to legacy system updates through C# integration. Using development tools including WebStorm, Rider, DataGrip, DBeaver, and IntelliJ IDEA for daily development tasks."
+            "details": "Architecting dedicated microservices for thermal label printers to automate warehouse delivery slip generation and streamline order fulfillment workflows. Integrating frontend interfaces with backend services, modernizing legacy systems through C# integration, and utilizing WebStorm, Rider, DataGrip, DBeaver, and IntelliJ IDEA for daily development tasks."
+          },
+          {
+            "title": "Software Release & Deployment Management",
+            "details": "Orchestrating end-to-end software releases and production deployments for company warehouse management systems, maintaining release stability, version control, and seamless deployment workflows to minimize system downtime."
           }
         ],
         "closing": "Contributing to logistics technology solutions by developing and maintaining systems that support daily order processing and warehouse operations."
       },
       "2": {
-        "position": "Research Assistant",
+        "position": "Research Assistant (AIRG Grant)",
         "location": "Dhaka, Bangladesh",
-        "duration": "2024.11 - 2025.9 (10 months)",
+        "duration": "2024.11 - 2025.8 (10 months)",
         "jobType": "Contract",
         "description": "Worked as a Research Assistant under the AUST Internal Research Grant (AIRG) project developing PsychAI, a Bengali-supported mental health assistant powered by large language models. Contributed to advancing NLP and culturally-grounded AI research addressing mental health accessibility in underserved Bengali-speaking communities.",
         "responsibilities": [
@@ -398,6 +405,7 @@
     },
     "certifications": {
       "categories": {
+        "graduate": "Graduate Credentials",
         "exam": "Professional Exam Certifications",
         "training": "Training Programs",
         "coursera": "Online Course Certifications"
@@ -407,13 +415,16 @@
         "Half-Passer": "Half-Passer",
         "High Performance Award": "High Performance Award",
         "Perfect Attendance (100%)": "Perfect Attendance (100%)",
-        "Programming Contest Achievement": "Programming Contest Achievement"
+        "Programming Contest Achievement": "Programming Contest Achievement",
+        "8 Graduate Credits": "8 Graduate Credits",
+        "MSc in Financial Engineering": "MSc in Financial Engineering"
       },
       "links": {
         "April-2024 Govt Issued Certificate": "April-2024 Govt. Issued Certificate",
         "April-2024 Govt. Issued Certificate": "April-2024 Govt. Issued Certificate",
         "October-2023 Exam Result": "October-2023 Exam Result",
         "Certificate of Completion": "Certificate of Completion",
+        "Graduate Credential Certificate": "Graduate Credential Certificate",
         "Confirmation of Completion": "Confirmation of Completion",
         "Achievement & Attendance": "Achievement & Attendance",
         "High Performance Award": "High Performance Award",
@@ -445,6 +456,12 @@
         },
         "8": {
           "description": "Foundational IT skills, understanding binary system, assembling computers, installing operating systems, problem-solving methodologies and communication skills."
+        },
+        "9": {
+          "title": "Foundations of Financial Engineering",
+          "institution": "WorldQuant University",
+          "shortDescription": "The first two courses of WorldQuant University's MSc in Financial Engineering (8 Graduate Credits): Financial Markets (MScFE 560 — credit risk, securitization, derivatives & market structure) and Financial Data (MScFE 600 — SVD/PCA linear algebra, yield curves, risk analytics & alternative data with Python).",
+          "description": "Foundations of Financial Engineering\nWorldQuant University · 8 Graduate Credits · August 2026\n\nThe first two courses of WorldQuant University's MSc in Financial Engineering, taken as a stackable graduate credential. Together they establish the institutional context of financial markets and the data and mathematical infrastructure that quantitative finance is built on.\n\nFinancial Markets (MScFE 560 — 4 credits)\nAn introduction to professional finance as a system: markets, products, participants, and regulation, and the activities that run through them — trading, financing, brokering, pricing, hedging, optimizing, and managing risk.\n• Credit risk and financing — the mathematics of present and forward value, cash-flow discounting, return and volatility measurement, credit risk factors\n• Securitization and structured credit — collateral pools, LTV and debt-to-income statistics, the mortgage-to-MBS pipeline, moral hazard and the regulatory response\n• Rates, equity, and derivatives — instrument types across asset classes, share valuation, derivative terminology, function, valuation basics, and the specific risks each instrument carries\n• Market structure — buy side versus sell side, brokers, traders, market makers, asset managers; concentration and liquidity risk\n• Model failure and crisis — how sound models produce catastrophic outcomes when their assumptions stop holding\n\nFinancial Data (MScFE 600 — 4 credits)\nThe engineering and quantitative core: sourcing, validating, transforming, and extracting signal from financial and alternative data.\n• Data architecture and integrity — structured, semi-structured, and unstructured financial data; security identifiers (CUSIP, ISIN, SEDOL); transmission protocols (FIX, PTP); the four pillars of data quality; survivorship bias, corporate-action adjustment, and generic/rolled series\n• Fixed income and curve construction — bootstrapping and fitting yield curves via piecewise cubic spline interpolation (avoiding Runge's phenomenon) and the Nelson-Siegel parameterization, including its calibration limits under structural regime shifts\n• Linear algebra for finance — SVD and PCA from first principles: eigendecomposition, Cholesky factorization, full versus economy SVD and their memory/compute trade-offs, condition number and numerical stability, low-rank approximation under Eckart-Young, cumulative variance thresholds, and effective dimensionality via the participation ratio\n• Return and risk analytics — simple versus log returns and time additivity, geometric versus arithmetic means, Sharpe, Treynor and Jensen's alpha, semivariance and downside risk, Expected Shortfall versus VaR and why ES yields a convex optimization surface, normality testing\n• Market microstructure — tick data, VWAP, order-book mechanics, latent liquidity, market impact, spoofing detection\n• Alternative data — text — vector semantics and the distributional hypothesis, TF-IDF and its limits, word2vec embeddings, cosine and Minkowski distances, domain-specific models (FinBERT), Locality-Sensitive Hashing and minhashing for similarity at scale, sentiment pipelines over social and search data\n• Alternative data — news, geospatial, climate — GDELT tone and event data, Non-negative Matrix Factorization for topic modeling, remote sensing and Landsat band composition, NDVI, Geographically Weighted Regression, raster versus vector geodata\n• Preprocessing and modeling at scale — robust scaling versus standardization, outlier detection, sparse matrix formats (CSR), regime detection with Hidden Markov Models, GARCH and hybrid volatility modeling, multi-factor risk models\n\nTooling: Python (NumPy, Pandas, SciPy, scikit-learn, GeoPandas, Folium), Jupyter\nAssessment: graded module quizzes and collaborative group work projects."
         }
       }
     },
