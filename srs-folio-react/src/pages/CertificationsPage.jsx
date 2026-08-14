@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaSearch, FaCertificate } from 'react-icons/fa';
+import { FaArrowLeft, FaSearch, FaCertificate, FaTrophy, FaExternalLinkAlt } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -11,10 +11,67 @@ const CertificationsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      setTimeout(() => {
+        const id = window.location.hash.replace('#', '');
+        const elem = document.getElementById(id);
+        if (elem) {
+          elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const certData = {
+    graduate: [
+      {
+        id: 9,
+        title: 'Foundations of Financial Engineering',
+        institution: 'WorldQuant University',
+        date: 'August 2026',
+        logos: ['/images/certifications/WQU/wqu_logo.png'],
+        type: 'Graduate Credential',
+        achievements: [
+          { label: '8 Graduate Credits', color: '#0d9488' },
+          { label: 'MSc in Financial Engineering', color: '#4f46e5' }
+        ],
+        certificates: [
+          {
+            title: 'Graduate Credential Certificate',
+            url: '/images/certifications/WQU/FoundationsofFinancialEngineering20260814-21-g6cn7h.pdf',
+            color: '#0d9488'
+          }
+        ],
+        description: `Foundations of Financial Engineering
+WorldQuant University · 8 Graduate Credits · August 2026
+
+The first two courses of WorldQuant University's MSc in Financial Engineering, taken as a stackable graduate credential. Together they establish the institutional context of financial markets and the data and mathematical infrastructure that quantitative finance is built on.
+
+Financial Markets (MScFE 560 — 4 credits)
+An introduction to professional finance as a system: markets, products, participants, and regulation, and the activities that run through them — trading, financing, brokering, pricing, hedging, optimizing, and managing risk.
+• Credit risk and financing — the mathematics of present and forward value, cash-flow discounting, return and volatility measurement, credit risk factors
+• Securitization and structured credit — collateral pools, LTV and debt-to-income statistics, the mortgage-to-MBS pipeline, moral hazard and the regulatory response
+• Rates, equity, and derivatives — instrument types across asset classes, share valuation, derivative terminology, function, valuation basics, and the specific risks each instrument carries
+• Market structure — buy side versus sell side, brokers, traders, market makers, asset managers; concentration and liquidity risk
+• Model failure and crisis — how sound models produce catastrophic outcomes when their assumptions stop holding
+
+Financial Data (MScFE 600 — 4 credits)
+The engineering and quantitative core: sourcing, validating, transforming, and extracting signal from financial and alternative data.
+• Data architecture and integrity — structured, semi-structured, and unstructured financial data; security identifiers (CUSIP, ISIN, SEDOL); transmission protocols (FIX, PTP); the four pillars of data quality; survivorship bias, corporate-action adjustment, and generic/rolled series
+• Fixed income and curve construction — bootstrapping and fitting yield curves via piecewise cubic spline interpolation (avoiding Runge's phenomenon) and the Nelson-Siegel parameterization, including its calibration limits under structural regime shifts
+• Linear algebra for finance — SVD and PCA from first principles: eigendecomposition, Cholesky factorization, full versus economy SVD and their memory/compute trade-offs, condition number and numerical stability, low-rank approximation under Eckart-Young, cumulative variance thresholds, and effective dimensionality via the participation ratio
+• Return and risk analytics — simple versus log returns and time additivity, geometric versus arithmetic means, Sharpe, Treynor and Jensen's alpha, semivariance and downside risk, Expected Shortfall versus VaR and why ES yields a convex optimization surface, normality testing
+• Market microstructure — tick data, VWAP, order-book mechanics, latent liquidity, market impact, spoofing detection
+• Alternative data — text — vector semantics and the distributional hypothesis, TF-IDF and its limits, word2vec embeddings, cosine and Minkowski distances, domain-specific models (FinBERT), Locality-Sensitive Hashing and minhashing for similarity at scale, sentiment pipelines over social and search data
+• Alternative data — news, geospatial, climate — GDELT tone and event data, Non-negative Matrix Factorization for topic modeling, remote sensing and Landsat band composition, NDVI, Geographically Weighted Regression, raster versus vector geodata
+• Preprocessing and modeling at scale — robust scaling versus standardization, outlier detection, sparse matrix formats (CSR), regime detection with Hidden Markov Models, GARCH and hybrid volatility modeling, multi-factor risk models
+
+Tooling: Python (NumPy, Pandas, SciPy, scikit-learn, GeoPandas, Folium), Jupyter
+Assessment: graded module quizzes and collaborative group work projects.`
+      }
+    ],
     exam: [
       {
         id: 1,
@@ -23,6 +80,10 @@ const CertificationsPage = () => {
         date: 'April 2024',
         badge: '/images/certifications/exam.png',
         type: 'Government Certification',
+        achievements: [
+          { label: 'Full-Passer', color: '#1278c7' },
+          { label: 'Half-Passer', color: '#af3212' }
+        ],
         certificates: [
           { title: 'April-2024 Govt. Issued Certificate', url: 'https://drive.google.com/file/d/17CRZu6sF3Qb2m7LtsFolYxNfXidBWLn9/view', color: '#1278c7' },
           { title: 'October-2023 Exam Result', url: 'http://bditec.gov.bd/wp-content/uploads/2023/11/ITEE-Exam-Result-Oct-2023.pdf', color: '#af3212' }
@@ -38,6 +99,10 @@ const CertificationsPage = () => {
         date: 'October 21, 2024 - December 6, 2024',
         logos: ['/images/certifications/B-JET/North_South_University_Monogram.png', '/images/certifications/B-JET/bjet_logo_circle.png', '/images/certifications/B-JET/uni_of_miyazaki_logo.png'],
         type: 'Professional Training',
+        achievements: [
+          { label: 'High Performance Award', color: '#D97706' },
+          { label: 'Perfect Attendance (100%)', color: '#2f8d09' }
+        ],
         certificates: [
           { title: 'Certificate of Completion', url: 'https://drive.google.com/open?id=1x-V-zQe5LnwtL-n6AGP6Ti44l8u8XXZT&usp=drive_fs', color: '#1278c7' },
           { title: 'Achievement & Attendance', url: 'https://drive.google.com/open?id=1wsLJOWurhBIjiZhLIwUXBedKkltYOwBY&usp=drive_fs', color: '#be4820' },
@@ -53,6 +118,9 @@ const CertificationsPage = () => {
         date: 'June 3, 2024 - October 18, 2024',
         logos: ['/images/certifications/B-JET/North_South_University_Monogram.png', '/images/certifications/B-JET/bjet_logo_circle.png', '/images/certifications/B-JET/uni_of_miyazaki_logo.png'],
         type: 'Professional Training',
+        achievements: [
+          { label: 'Programming Contest Achievement', color: '#2c910d' }
+        ],
         certificates: [
           { title: 'Confirmation of Completion', url: 'https://drive.google.com/open?id=1x8o4sFkMD6YH00XeKSht1LljpdYiObml&usp=drive_fs', color: '#1674bd' },
           { title: 'Certificate of Completion', url: 'https://drive.google.com/open?id=1wuc7B5WDs2vT4-BCSpj6SY47qvjWu_2N&usp=drive_fs', color: '#156bad' },
@@ -82,12 +150,42 @@ const CertificationsPage = () => {
         logos: ['/images/certifications/python.png', '/images/certifications/Coursera/Michigan_university_Logo..png'],
         certificates: [{ title: 'Certificate of Completion', url: 'https://www.coursera.org/account/accomplishments/specialization/AG6LT49T5QJR', color: '#1278c7' }],
         description: 'Fundamentals of Python, using databases with Python, accessing web data, data structures, DBMS, parsing JSON and XML, retrieving, processing, and visualizing data.'
+      },
+      {
+        id: 6,
+        title: 'IT Security: Defense against the digital dark arts',
+        institution: 'Google',
+        platform: 'Coursera',
+        type: 'Online Course',
+        logos: ['/images/certifications/cyber-security.png', '/images/certifications/Coursera/google_logo.png'],
+        certificates: [{ title: 'Certificate of Completion', url: 'https://www.coursera.org/account/accomplishments/certificate/CGYEZ6PHJGNT', color: '#1278c7' }],
+        description: 'Understanding encryption algorithms, authentication systems, differentiating between authentication and authorization, evaluating potential risks and security concepts.'
+      },
+      {
+        id: 7,
+        title: 'The Bits and Bytes of Computer Networking',
+        institution: 'Google',
+        platform: 'Coursera',
+        type: 'Online Course',
+        logos: ['/images/certifications/computer-network.png', '/images/certifications/Coursera/google_logo.png'],
+        certificates: [{ title: 'Certificate of Completion', url: 'https://www.coursera.org/account/accomplishments/certificate/GZQZRYKBB7UQ', color: '#1278c7' }],
+        description: 'Computer networks using five-layer model, TCP/IP communication, network troubleshooting, DNS and DHCP management, cloud computing concepts and storage solutions.'
+      },
+      {
+        id: 8,
+        title: 'Technical Support Fundamentals',
+        institution: 'Google',
+        platform: 'Coursera',
+        type: 'Online Course',
+        logos: ['/images/certifications/technical-support.png', '/images/certifications/Coursera/google_logo.png'],
+        certificates: [{ title: 'Certificate of Completion', url: 'https://www.coursera.org/account/accomplishments/certificate/4NVYT3H9UKJR', color: '#1278c7' }],
+        description: 'Foundational IT skills, understanding binary system, assembling computers, installing operating systems, problem-solving methodologies and communication skills.'
       }
     ]
   };
 
-  const allCertifications = [...certData.exam, ...certData.training, ...certData.coursera];
-  const categories = ['All', 'Government Certification', 'Professional Training', 'Online Course'];
+  const allCertifications = [...certData.graduate, ...certData.exam, ...certData.training, ...certData.coursera];
+  const categories = ['All', 'Graduate Credential', 'Government Certification', 'Professional Training', 'Online Course'];
 
   const filteredCertifications = allCertifications.filter(cert => {
     const matchesCategory = filter === 'All' || cert.type === filter;
@@ -136,7 +234,7 @@ const CertificationsPage = () => {
             <div className="relative mb-6">
               <input
                 type="text"
-                placeholder={t('common.searchPlaceholder')}
+                placeholder={t('common.searchCertifications', 'Search certifications...')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full px-6 py-4 pl-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 outline-none transition-all duration-300"
@@ -179,10 +277,11 @@ const CertificationsPage = () => {
             {filteredCertifications.map((cert, index) => (
               <motion.div
                 key={cert.id}
+                id={`cert-${cert.id}`}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-gray-950/50 overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700/80"
+                className="bg-white dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-gray-950/50 overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700/80 scroll-mt-24"
               >
                 <div className="p-8">
                   {/* Type Badge */}
@@ -191,12 +290,32 @@ const CertificationsPage = () => {
                   </span>
 
                   {/* Title & Institution */}
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">{cert.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
+                    {t(`items.certifications.items.${cert.id}.title`, cert.title)}
+                  </h3>
                   <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold mb-2">{cert.institution}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{cert.date}</p>
 
+                  {/* Achievements badges (if exists) */}
+                  {cert.achievements && (
+                    <div className="mb-4 flex gap-2 flex-wrap">
+                      {cert.achievements.map((achievement, i) => (
+                        <div
+                          key={i}
+                          className="px-3 py-1 rounded-full text-xs font-semibold text-white inline-flex items-center gap-1 shadow-sm"
+                          style={{ backgroundColor: achievement.color }}
+                        >
+                          <FaTrophy className="inline text-xs" />
+                          <span>{t(`items.certifications.badges.${achievement.label}`, achievement.label)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                   {/* Description */}
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">{t(`items.certifications.items.${cert.id}.description`, cert.description)}</p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 whitespace-pre-line">
+                    {t(`items.certifications.items.${cert.id}.description`, cert.description)}
+                  </p>
 
                   {/* Logos */}
                   {cert.logos && (
@@ -228,7 +347,8 @@ const CertificationsPage = () => {
                         style={{ backgroundColor: certificate.color }}
                       >
                         <FaCertificate className="text-lg" />
-                        {t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}
+                        <span>{t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}</span>
+                        <FaExternalLinkAlt className="text-xs opacity-75" />
                       </motion.a>
                     ))}
                   </div>
@@ -256,3 +376,4 @@ const CertificationsPage = () => {
 };
 
 export default CertificationsPage;
+

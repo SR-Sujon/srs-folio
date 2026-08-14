@@ -6,6 +6,29 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Certifications = ({ featured = false }) => {
   const { t } = useLanguage();
   const certifications = {
+    graduate: [
+      {
+        id: 9,
+        title: 'Foundations of Financial Engineering',
+        institution: 'WorldQuant University',
+        date: 'August 2026',
+        logos: ['/images/certifications/WQU/wqu_logo.png'],
+        type: 'graduate',
+        achievements: [
+          { label: '8 Graduate Credits', color: '#0d9488' },
+          { label: 'MSc in Financial Engineering', color: '#4f46e5' }
+        ],
+        certificates: [
+          {
+            title: 'Graduate Credential Certificate',
+            url: '/images/certifications/WQU/FoundationsofFinancialEngineering20260814-21-g6cn7h.pdf',
+            color: '#0d9488'
+          }
+        ],
+        shortDescription: "The first two courses of WorldQuant University's MSc in Financial Engineering (8 Graduate Credits): Financial Markets (MScFE 560 — credit risk, securitization, derivatives & market structure) and Financial Data (MScFE 600 — SVD/PCA linear algebra, yield curves, risk analytics & alternative data with Python).",
+        description: "The first two courses of WorldQuant University's MSc in Financial Engineering (8 Graduate Credits): Financial Markets (MScFE 560 — credit risk, securitization, derivatives & market structure) and Financial Data (MScFE 600 — SVD/PCA linear algebra, yield curves, risk analytics & alternative data with Python)."
+      }
+    ],
     exam: [
       {
         id: 1,
@@ -132,6 +155,8 @@ const Certifications = ({ featured = false }) => {
     ]
   };
 
+  const totalCertsCount = (certifications.graduate?.length || 0) + certifications.exam.length + certifications.training.length + certifications.coursera.length;
+
   const CertificateCard = ({ cert, index, category }) => (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -144,6 +169,7 @@ const Certifications = ({ featured = false }) => {
       <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg dark:shadow-gray-950/40 hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-800 h-full flex flex-col">
         {/* Decorative Header */}
         <div className={`h-2 ${
+          category === 'graduate' ? 'bg-gradient-to-r from-emerald-500 to-teal-600' :
           category === 'exam' ? 'bg-gradient-to-r from-yellow-400 to-orange-500' :
           category === 'training' ? 'bg-gradient-to-r from-blue-500 to-purple-600' :
           'bg-gradient-to-r from-green-400 to-blue-500'
@@ -151,7 +177,7 @@ const Certifications = ({ featured = false }) => {
 
         <div className="p-6 flex-1 flex flex-col">
           {/* Logo Section */}
-          <div className="flex justify-center items-center mb-4 gap-2 flex-wrap min-h-[80px]">
+          <div className="flex justify-center items-center mb-4 gap-3 flex-wrap min-h-[80px]">
             {cert.badge && (
               <motion.img 
                 whileHover={{ scale: 1.1, rotate: 5 }}
@@ -163,10 +189,14 @@ const Certifications = ({ featured = false }) => {
             {cert.logos && cert.logos.map((logo, i) => (
               <motion.img 
                 key={i}
-                whileHover={{ scale: 1.1, rotate: i % 2 === 0 ? 5 : -5 }}
+                whileHover={{ scale: 1.08, rotate: cert.logos.length > 1 ? (i % 2 === 0 ? 5 : -5) : 0 }}
                 src={logo} 
                 alt="Logo" 
-                className="h-12 w-12 object-contain"
+                className={
+                  cert.logos.length === 1 
+                    ? "h-16 max-h-16 max-w-[240px] w-auto object-contain py-1" 
+                    : "h-12 w-12 object-contain"
+                }
               />
             ))}
           </div>
@@ -196,27 +226,36 @@ const Certifications = ({ featured = false }) => {
             {cert.date}
           </p>
 
-          {/* Achievements (for exam) */}
+          {/* Achievements (for graduate / exam / awards) */}
           {cert.achievements && (
             <div className="mb-4 flex gap-2 flex-wrap">
               {cert.achievements.map((achievement, i) => (
                 <motion.div
                   key={i}
                   whileHover={{ scale: 1.05 }}
-                  className="px-3 py-1 rounded-full text-xs font-semibold text-white"
+                  className="px-3 py-1 rounded-full text-xs font-semibold text-white flex items-center gap-1"
                   style={{ backgroundColor: achievement.color }}
                 >
-                  <FaTrophy className="inline mr-1" />
-                  {t(`items.certifications.badges.${achievement.label}`)}
+                  <FaTrophy className="inline" />
+                  <span>{t(`items.certifications.badges.${achievement.label}`, achievement.label)}</span>
                 </motion.div>
               ))}
             </div>
           )}
 
           {/* Description */}
-          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4 flex-1">
-            {t(`items.certifications.items.${cert.id}.description`, cert.description)}
-          </p>
+          <div className="mb-4 flex-1 flex flex-col justify-between">
+            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+              {t(`items.certifications.items.${cert.id}.shortDescription`, t(`items.certifications.items.${cert.id}.description`, cert.shortDescription || cert.description))}
+            </p>
+            <Link
+              to={`/certifications#cert-${cert.id}`}
+              className="inline-flex items-center gap-1.5 mt-2.5 text-xs font-semibold text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors group/learn w-fit"
+            >
+              <span>{t('common.learnMore', 'Learn More')}</span>
+              <FaArrowRight className="text-[10px] group-hover/learn:translate-x-1 transition-transform" />
+            </Link>
+          </div>
 
           {/* Certificate Links */}
           <div className="border-t border-gray-100 dark:border-gray-800 pt-4 mt-auto">
@@ -273,6 +312,26 @@ const Certifications = ({ featured = false }) => {
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">{t('certifications.subtitle')}</p>
         </motion.div>
 
+        {/* Graduate Credentials */}
+        {certifications.graduate && certifications.graduate.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-1 w-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full"></div>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{t('certifications.categories.graduate', 'Graduate Credentials')}</h3>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+              {(featured ? certifications.graduate.slice(0, 1) : certifications.graduate).map((cert, index) => (
+                <CertificateCard key={cert.id} cert={cert} index={index} category="graduate" />
+              ))}
+            </div>
+          </motion.div>
+        )}
+
         {/* Professional Exam Certifications */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -320,7 +379,7 @@ const Certifications = ({ featured = false }) => {
             <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{t('certifications.categories.coursera')}</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(featured ? certifications.coursera.slice(0, 3) : certifications.coursera).map((cert, index) => (
+            {(featured ? certifications.coursera.slice(0, 2) : certifications.coursera).map((cert, index) => (
               <CertificateCard key={cert.id} cert={cert} index={index} category="coursera" />
             ))}
           </div>
@@ -346,7 +405,7 @@ const Certifications = ({ featured = false }) => {
               </motion.button>
             </Link>
             <p className="text-gray-500 mt-3 text-sm">
-              Showing {Math.min(6, certifications.exam.length + certifications.training.length + certifications.coursera.length)} of {certifications.exam.length + certifications.training.length + certifications.coursera.length} certifications
+              Showing {Math.min(6, totalCertsCount)} of {totalCertsCount} certifications
             </p>
           </motion.div>
         )}

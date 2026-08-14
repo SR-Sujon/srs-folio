@@ -107,6 +107,7 @@
     "subtitle": "取得した専門資格と実績",
     "viewAll": "全ての資格を見る",
     "categories": {
+      "graduate": "大学院認定プログラム",
       "exam": "専門試験資格",
       "training": "研修プログラム",
       "coursera": "オンラインコース認定",
@@ -187,8 +188,8 @@
     },
     "certifications": {
       "title": "資格 - SR Sujon | 専門資格・実績",
-      "description": "サイドゥル・ラフマン・スジョンの専門資格と実績。ITEE、B-JET、Courseraコースなど。",
-      "keywords": "資格, ITEE, B-JET, Coursera, 専門資格, 研修プログラム"
+      "description": "サイドゥル・ラフマン・スジョンの専門資格と実績。WorldQuant University 金融工学修士課程（Foundations）、ITEE、B-JET、Courseraコースなど。",
+      "keywords": "資格, WorldQuant University, 金融工学, クオンツ, ITEE, B-JET, Coursera, 専門資格, 研修プログラム"
     },
     "research": {
       "title": "研究・論文 - SR Sujon | 学術研究",
@@ -202,7 +203,9 @@
     "showingOf": "{total}件中{filtered}件を表示",
     "noResults": "結果が見つかりません",
     "searchPublications": "タイトル、タグ、説明で論文を検索...",
-    "searchProjects": "プロジェクト名、説明、技術で検索..."
+    "searchProjects": "プロジェクト名、説明、技術で検索...",
+    "searchCertifications": "資格・認定を検索...",
+    "learnMore": "詳細を見る"
   },
   "items": {
     "education": {
@@ -402,6 +405,7 @@
     },
     "certifications": {
       "categories": {
+        "graduate": "大学院認定プログラム (Graduate Credentials)",
         "exam": "専門試験資格",
         "training": "研修プログラム",
         "coursera": "オンラインコース認定"
@@ -411,13 +415,16 @@
         "Half-Passer": "一部合格 (Half-Passer)",
         "High Performance Award": "優秀成績賞",
         "Perfect Attendance (100%)": "皆勤賞 (100%)",
-        "Programming Contest Achievement": "プログラミングコンテスト入賞"
+        "Programming Contest Achievement": "プログラミングコンテスト入賞",
+        "8 Graduate Credits": "大学院8単位取得 (8 Graduate Credits)",
+        "MSc in Financial Engineering": "金融工学修士課程 (MSc FE)"
       },
       "links": {
         "April-2024 Govt Issued Certificate": "2024年4月 政府発行合格証書",
         "April-2024 Govt. Issued Certificate": "2024年4月 政府発行合格証書",
         "October-2023 Exam Result": "2023年10月 試験結果通知書",
         "Certificate of Completion": "修了証書 (Certificate of Completion)",
+        "Graduate Credential Certificate": "大学院修了証書 (Graduate Credential Certificate)",
         "Confirmation of Completion": "修了確認書",
         "Achievement & Attendance": "成績・出席証明書",
         "High Performance Award": "優秀成績賞",
@@ -449,6 +456,12 @@
         },
         "8": {
           "description": "ITの基礎スキル、2進法の理解、コンピュータの組み立て、OSのインストール、問題解決手法とコミュニケーションスキル。"
+        },
+        "9": {
+          "title": "金融工学基礎 (Foundations of Financial Engineering)",
+          "institution": "WorldQuant University",
+          "shortDescription": "WorldQuant University（米国）金融工学修士課程（MSc in Financial Engineering）の最初の2コース（計8単位）で構成される大学院認定プログラム。金融市場論（MScFE 560: 信用リスク・証券化・デリバティブ・市場構造）および金融データ工学（MScFE 600: SVD/PCA線形代数・イールドカーブ構築・リスク分析・Pythonによるオルタナティブデータ）を修了。",
+          "description": "Foundations of Financial Engineering（金融工学基礎）\nWorldQuant University · 大学院8単位取得 · 2026年8月\n\nWorldQuant University（米国）の金融工学修士課程（MSc in Financial Engineering）における最初の2コース（計8単位）で構成されるスタッカブル大学院認定プログラム。金融市場の制度的枠組みと、計量ファイナンス（クオンツ）の基盤となる数学・データエンジニアリング基盤を体系的に確立。\n\n金融市場論（MScFE 560 — 4単位）\nプロフェッショナル金融システムの全体像（市場、金融商品、参加者、規制、トレーディング、ファイナンス、ブローカレッジ、プライシング、ヘッジ、最適化、リスク管理）の探求。\n• 信用リスクとファイナンス — 現在価値・将来価値の数学、キャッシュフロー割引、リターン・ボラティリティ測定、信用リスク要因\n• 証券化と構造化信用 — 担保プール、LTV・DTI統計、住宅ローンからMBSへのパイプライン、モラルハザードと規制対応\n• 金利・株式・デリバティブ — 資産クラス全般の金融商品、株式評価、デリバティブの用語・機能・評価基礎および各商品の固有リスク\n• 市場構造 — バイサイド vs セルサイド、ブローカー、トレーダー、マーケットメイカー、アセットマネージャー、集中度・流動性リスク\n• モデル破綻と危機 — 前提条件が崩れた際に堅牢なモデルがいかに破滅的な結果を生むかの検証\n\n金融データ工学（MScFE 600 — 4単位）\n金融データおよびオルタナティブデータからのシグナル抽出・検証・変換・モデリングを行う計量・データ工学のコア。\n• データアーキテクチャと完全性 — 構造化・半構造化・非構造化データ、証券識別コード（CUSIP、ISIN、SEDOL）、通信プロトコル（FIX、PTP）、データ品質の4本柱、生存者バイアス、コーポレートアクション調整、ロールオーバー系列\n• 確定利付証券とイールドカーブ構築 — 区分3次スプライン補間によるブートストラップとフィッティング（ルンゲ現象の回避）、Nelson-Siegelパラメータ推定と構造変化下でのキャリブレーション限界\n• 金融のための線形代数 — 第一原理からのSVDとPCA：固有値分解、コレスキー分解、フルSVD vs エコノミーSVDの計算コスト比較、条件数と数値安定性、Eckart-Youngの低ランク近似、累積寄与率閾値、Participation Ratioによる実効次元数\n• リターン・リスク分析 — 単純リターン vs 対数リターンと時間加法性、幾何平均 vs 算術平均、シャープレシオ、トレイナー指数、イェンセンのアルファ、下方偏差・セミバリアンス、Expected Shortfall vs VaR（凸最適化曲面）、正規性検定\n• 市場微視的構造 — ティックデータ、VWAP、オーダーブック（板情報）力学、潜在的流動性、マーケットインパクト、スプーフィング検知\n• オルタナティブデータ（テキスト） — ベクトル意味論と分布仮説、TF-IDFとその限界、word2vec埋め込み、コサイン/ミンコフスキー距離、ドメイン特化モデル（FinBERT）、Locality-Sensitive Hashing（LSH）とMinHashによる大規模類似度検索、感情分析パイプライン\n• オルタナティブデータ（ニュース・地理空間・気候） — GDELTトーン/イベントデータ、トピックモデル（NMF）、リモートセンシングとLandsatバンド合成、NDVI、地理的加重回帰（GWR）、ラスタ vs ベクタ地理データ\n• 大規模前処理とモデリング — Robust Scaling vs 標準化、外れ値検知、CSRスパース行列フォーマット、隠れマルコフモデル（HMM）レジーム検出、GARCH・ハイブリッドボラティリティモデリング、マルチファクターリスクモデル\n\n使用技術・ツール: Python (NumPy, Pandas, SciPy, scikit-learn, GeoPandas, Folium), Jupyter\n評価方法: 各モジュール採点クイズおよび共同グループワークプロジェクト"
         }
       }
     },
