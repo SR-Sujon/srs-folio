@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowLeft, FaSearch, FaCertificate, FaTrophy, FaExternalLinkAlt } from 'react-icons/fa';
+import { SiCredly } from 'react-icons/si';
 import SEO from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -42,6 +43,11 @@ const CertificationsPage = () => {
             title: 'Graduate Credential Certificate',
             url: '/images/certifications/WQU/FoundationsofFinancialEngineering20260814-21-g6cn7h.pdf',
             color: '#0d9488'
+          },
+          {
+            title: 'Credly Verification',
+            url: 'https://www.credly.com/badges/61fc280a-47d8-40d9-b28f-84ac51fe849b/public_url',
+            color: '#FF6B00'
           }
         ],
         description: `Foundations of Financial Engineering
@@ -335,22 +341,25 @@ Assessment: graded module quizzes and collaborative group work projects.`
 
                   {/* Certificates */}
                   <div className="flex flex-wrap gap-3">
-                    {cert.certificates.map((certificate, idx) => (
-                      <motion.a
-                        key={idx}
-                        href={certificate.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-5 py-2.5 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
-                        style={{ backgroundColor: certificate.color }}
-                      >
-                        <FaCertificate className="text-lg" />
-                        <span>{t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}</span>
-                        <FaExternalLinkAlt className="text-xs opacity-75" />
-                      </motion.a>
-                    ))}
+                    {cert.certificates.map((certificate, idx) => {
+                      const isCredly = certificate.title.toLowerCase().includes('credly') || certificate.url.includes('credly.com');
+                      return (
+                        <motion.a
+                          key={idx}
+                          href={certificate.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-2 px-5 py-2.5 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
+                          style={{ backgroundColor: certificate.color }}
+                        >
+                          {isCredly ? <SiCredly className="text-lg" /> : <FaCertificate className="text-lg" />}
+                          <span>{t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}</span>
+                          <FaExternalLinkAlt className="text-xs opacity-75" />
+                        </motion.a>
+                      );
+                    })}
                   </div>
                 </div>
               </motion.div>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaCertificate, FaExternalLinkAlt, FaAward, FaUniversity, FaTrophy, FaArrowRight } from 'react-icons/fa';
+import { SiCredly } from 'react-icons/si';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Certifications = ({ featured = false }) => {
@@ -23,6 +24,11 @@ const Certifications = ({ featured = false }) => {
             title: 'Graduate Credential Certificate',
             url: '/images/certifications/WQU/FoundationsofFinancialEngineering20260814-21-g6cn7h.pdf',
             color: '#0d9488'
+          },
+          {
+            title: 'Credly Verification',
+            url: 'https://www.credly.com/badges/61fc280a-47d8-40d9-b28f-84ac51fe849b/public_url',
+            color: '#FF6B00'
           }
         ],
         shortDescription: "The first two courses of WorldQuant University's MSc in Financial Engineering (8 Graduate Credits): Financial Markets (MScFE 560 — credit risk, securitization, derivatives & market structure) and Financial Data (MScFE 600 — SVD/PCA linear algebra, yield curves, risk analytics & alternative data with Python).",
@@ -260,23 +266,26 @@ const Certifications = ({ featured = false }) => {
           {/* Certificate Links */}
           <div className="border-t border-gray-100 dark:border-gray-800 pt-4 mt-auto">
             <div className="flex flex-wrap gap-2">
-              {cert.certificates.map((certificate, i) => (
-                <motion.a
-                  key={i}
-                  href={certificate.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-white transition-all duration-300 hover:shadow-lg"
-                  style={{ backgroundColor: certificate.color }}
-                  title={t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}
-                >
-                  <FaCertificate className="text-sm" />
-                  <span className="hidden sm:inline">{t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}</span>
-                  <FaExternalLinkAlt className="text-xs opacity-70 group-hover:opacity-100" />
-                </motion.a>
-              ))}
+              {cert.certificates.map((certificate, i) => {
+                const isCredly = certificate.title.toLowerCase().includes('credly') || certificate.url.includes('credly.com');
+                return (
+                  <motion.a
+                    key={i}
+                    href={certificate.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-white transition-all duration-300 hover:shadow-lg"
+                    style={{ backgroundColor: certificate.color }}
+                    title={t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}
+                  >
+                    {isCredly ? <SiCredly className="text-sm" /> : <FaCertificate className="text-sm" />}
+                    <span className="hidden sm:inline">{t(`items.certifications.links.${certificate.title.replace(/\./g, '')}`, certificate.title)}</span>
+                    <FaExternalLinkAlt className="text-xs opacity-70 group-hover:opacity-100" />
+                  </motion.a>
+                );
+              })}
             </div>
           </div>
         </div>
