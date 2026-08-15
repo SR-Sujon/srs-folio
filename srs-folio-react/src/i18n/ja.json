@@ -106,6 +106,7 @@
     "title": "資格・認定",
     "subtitle": "取得した専門資格と実績",
     "viewAll": "全ての資格を見る",
+    "showing": "{total}件中{filtered}件の資格を表示",
     "categories": {
       "graduate": "大学院認定プログラム",
       "exam": "専門試験資格",

@@ -106,6 +106,7 @@
     "title": "Certifications",
     "subtitle": "Professional certifications and achievements",
     "viewAll": "View All Certifications",
+    "showing": "Showing {filtered} of {total} certifications",
     "categories": {
       "graduate": "Graduate Credentials",
       "exam": "Professional Examination",
