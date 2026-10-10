@@ -26,7 +26,7 @@ const HomePage = () => {
         '@id': 'https://sr-sujon.com/#website',
         'url': 'https://sr-sujon.com/',
         'name': 'Saidur Rahman Sujon - Portfolio & Author',
-        'description': 'Software Engineer, Solution Architect, and Author of Architecting for Scale & Chaos',
+        'description': 'Software Engineer, Systems Architect, and Author of Architecting for Scale & Chaos',
         'publisher': {
           '@id': 'https://sr-sujon.com/#person'
         }
@@ -37,7 +37,7 @@ const HomePage = () => {
         'name': 'Saidur Rahman Sujon',
         'url': 'https://sr-sujon.com/',
         'image': 'https://sr-sujon.com/images/about/srs_portfolio_pl_1.jpeg',
-        'jobTitle': 'Software Engineer & Solution Architect',
+        'jobTitle': 'Software Engineer & Systems Architect',
         'sameAs': [
           'https://github.com/SR-Sujon',
           'https://sujoncyb.gumroad.com/l/the-solution-architects-handbook',
