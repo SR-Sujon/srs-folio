@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.0] - 2026-10-11
+
+### Added
+- **"Architecting for Scale & Chaos" Book Launch**:
+  - Published and spotlighted author Saidur Rahman Sujon's handbook on distributed systems resilience, fault tolerance, and chaos engineering (*"Architecting for Scale & Chaos"*).
+  - Created interactive `BookCard` showcase component featuring:
+    - **Interactive Cover Switcher:** Smooth preview toggle between front cover and back cover.
+    - **Lightbox Modal:** Full-screen inspection modal for crystal-clear artwork and back cover scenario text.
+    - **Key Metrics Grid:** Highlighting 16 in-depth chapters, 93 custom visual diagrams, 56 production incident post-mortems, and production-ready ADRs & readiness scorecards.
+    - **Gumroad Direct Buy Integration:** Styled Pay-What-You-Want button linking directly to Gumroad.
+    - **5-Part Architectural Journey:** Collapsible syllabus covering Think, Scale, Survive Failure, Apply End-to-End, and Operate with target audience personas.
+- **Dedicated Publications & Book Navigation**:
+  - Featured as #1 spotlight publication on the homepage (`/`) and in the dedicated catalog (`/research`).
+  - Added "Books & Handbooks" filter and keyword search functionality on `/research`.
+  - Added hero announcement pill banner linking to `#research`.
+  - Added quick-access action in Command Palette (`Ctrl+K` / `⌘K`).
+- **Comprehensive Search Engine Optimization (SEO)**:
+  - Injected `Schema.org/Book`, `Schema.org/Person`, and `Schema.org/BreadcrumbList` JSON-LD structured data for Google Search rich cards and knowledge graph indexing.
+  - Created `public/sitemap.xml` with Google Image Sitemap extensions for book covers.
+  - Created `public/robots.txt` crawler configuration.
+  - Open Graph (`og:type="book"`) and Twitter Card (`summary_large_image`) social sharing tags.
+- **Bilingual Localization**:
+  - Full English (`en.json`) and Japanese (`ja.json`) translations for all book contents, syllabus roadmap, and SEO metadata.
+
 ## [3.3.2] - 2026-08-15
 
 ### Added

@@ -1,21 +1,29 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaGithub, FaYoutube, FaAward, FaSearch, FaDatabase, FaBookOpen, FaDesktop } from 'react-icons/fa';
+import { FaArrowLeft, FaGithub, FaYoutube, FaAward, FaSearch, FaDatabase, FaBookOpen, FaBook, FaDesktop } from 'react-icons/fa';
 import {  
   SiResearchgate, 
   SiGooglescholar, 
   SiArxiv,
   SiElsevier,
   SiMendeley,
-  SiIeee } from 'react-icons/si';
+  SiIeee,
+  SiGumroad } from 'react-icons/si';
 import SEO from '../components/SEO';
+import BookCard from '../components/BookCard';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const getPublicationTypeMeta = (type) => {
   const normalizedType = String(type || '').toLowerCase();
 
   switch (normalizedType) {
+    case 'book':
+      return {
+        label: 'Book',
+        Icon: FaBook,
+        badgeClassName: 'bg-gradient-to-r from-amber-500 via-orange-500 to-rose-600 text-white',
+      };
     case 'conference':
       return {
         label: 'Conference',
@@ -52,6 +60,24 @@ const ResearchPage = () => {
   }, []);
 
   const publications = [
+    {
+      id: 'scale-and-chaos',
+      type: 'book',
+      title: 'Architecting for Scale & Chaos: The Solution Architect\'s Handbook on Distributed Systems, Fault Tolerance, and Real-World Resilience',
+      venue: 'Independent Publication | Tokyo, Japan',
+      date: 'First Edition • October 2026',
+      image: '/images/publications/arch_scale_and_chaos_cover_page_front_thumbnail.jpg',
+      frontCover: '/images/publications/arch_scale_and_chaos_cover_page_front.jpg',
+      backCover: '/images/publications/arch_scale_and_chaos_cover_page_back.jpg',
+      price: 'Pay-What-You-Want (Starting at ¥999 / ~$6.50)',
+      gumroadUrl: 'https://sujoncyb.gumroad.com/l/the-solution-architects-handbook',
+      description: 'A pragmatic, battle-tested handbook designed to rewire engineering intuition. Starts at 2:00 AM when dashboards turn red, teaching engineers how to build guarantees around inevitable failure across 16 in-depth chapters, 93 visual architectural blueprints, and 56 production incident post-mortems.',
+      tags: ['Distributed Systems', 'Fault Tolerance', 'Chaos Engineering', 'High Availability', 'Disaster Recovery', 'Solution Architecture', 'Robotics & Logistics', 'Production AI / RAG'],
+      links: [
+        { icon: SiGumroad, title: 'Gumroad', url: 'https://sujoncyb.gumroad.com/l/the-solution-architects-handbook', color: '#FF90E8' }
+      ],
+      gradient: 'from-amber-500 via-orange-500 to-rose-600'
+    },
     {
       id: 1,
       type: 'conference',
@@ -113,6 +139,7 @@ const ResearchPage = () => {
 
   const types = [
     { label: t('research.filters.all'), value: 'All' },
+    { label: t('research.filters.book'), value: 'book' },
     { label: t('research.filters.conference'), value: 'conference' },
     { label: t('research.filters.journal'), value: 'journal' },
     { label: t('research.filters.dataset'), value: 'dataset' },
@@ -126,12 +153,89 @@ const ResearchPage = () => {
     return matchesType && matchesSearch;
   });
 
+  const bookSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Book',
+        '@id': 'https://sr-sujon.com/research#book-scale-and-chaos',
+        'name': 'Architecting for Scale & Chaos',
+        'alternateName': "The Solution Architect's Handbook on Distributed Systems, Fault Tolerance, and Real-World Resilience",
+        'headline': "The Solution Architect's Handbook on Distributed Systems, Fault Tolerance, and Real-World Resilience",
+        'author': {
+          '@type': 'Person',
+          'name': 'Saidur Rahman Sujon',
+          'url': 'https://sr-sujon.com/',
+          'jobTitle': 'Solution Architect & Software Engineer',
+          'sameAs': [
+            'https://github.com/SR-Sujon',
+            'https://www.linkedin.com/in/sr-sujon',
+            'https://sujoncyb.gumroad.com'
+          ]
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Independent Publication (Tokyo, Japan)',
+          'location': {
+            '@type': 'Place',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Tokyo',
+              'addressCountry': 'JP'
+            }
+          }
+        },
+        'datePublished': '2026-10-01',
+        'inLanguage': 'en',
+        'bookFormat': 'https://schema.org/EBook',
+        'url': 'https://sr-sujon.com/research',
+        'image': 'https://sr-sujon.com/images/publications/arch_scale_and_chaos_cover_page_front.jpg',
+        'thumbnailUrl': 'https://sr-sujon.com/images/publications/arch_scale_and_chaos_cover_page_front_thumbnail.jpg',
+        'description': 'A pragmatic, battle-tested handbook on distributed systems, high throughput, and chaos engineering. Featuring 16 chapters, 93 visual architectural blueprints, 56 production incident post-mortems, and production-ready artifacts.',
+        'genre': ['Distributed Systems', 'Software Architecture', 'Chaos Engineering', 'Cloud Computing', 'Fault Tolerance'],
+        'offers': {
+          '@type': 'Offer',
+          'price': '999',
+          'priceCurrency': 'JPY',
+          'availability': 'https://schema.org/InStock',
+          'url': 'https://sujoncyb.gumroad.com/l/the-solution-architects-handbook',
+          'category': 'EBook',
+          'seller': {
+            '@type': 'Person',
+            'name': 'Saidur Rahman Sujon'
+          }
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Home',
+            'item': 'https://sr-sujon.com/'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Publications & Books',
+            'item': 'https://sr-sujon.com/research'
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <>
       <SEO 
         title={t('seo.research.title')}
         description={t('seo.research.description')}
         keywords={t('seo.research.keywords')}
+        ogImage="/images/publications/arch_scale_and_chaos_cover_page_front_thumbnail.jpg"
+        ogType="book"
+        canonicalUrl="https://sr-sujon.com/research"
+        schema={bookSchema}
       />
 
       <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-300">
@@ -205,14 +309,19 @@ const ResearchPage = () => {
 
           {/* Publications */}
           <div className="space-y-12">
-            {filteredPublications.map((pub, index) => (
-              <motion.article
-                key={pub.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white dark:bg-gray-800/90 rounded-3xl shadow-xl dark:shadow-gray-950/50 hover:shadow-2xl transition-all duration-150 overflow-hidden border-2 border-gray-100 dark:border-gray-700/80"
-              >
+            {filteredPublications.map((pub, index) => {
+              if (pub.type === 'book') {
+                return <BookCard key={pub.id} pub={pub} index={index} />;
+              }
+
+              return (
+                <motion.article
+                  key={pub.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="bg-white dark:bg-gray-800/90 rounded-3xl shadow-xl dark:shadow-gray-950/50 hover:shadow-2xl transition-all duration-150 overflow-hidden border-2 border-gray-100 dark:border-gray-700/80"
+                >
                 {/* Gradient Top Bar */}
                 <div className={`h-3 bg-gradient-to-r ${pub.gradient}`}></div>
 
@@ -308,7 +417,8 @@ const ResearchPage = () => {
                   </div>
                 </div>
               </motion.article>
-            ))}
+              );
+            })}
           </div>
 
           {/* No Results */}

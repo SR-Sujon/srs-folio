@@ -7,7 +7,7 @@
     "portfolio": "Portfolio",
     "experience": "Experience",
     "certifications": "Certifications",
-    "research": "Research",
+    "research": "Publications",
     "contact": "Contact"
   },
   "theme": {
@@ -27,19 +27,23 @@
     "copyEmail": "Copy Contact Email",
     "emailCopied": "Email address copied to clipboard!",
     "downloadResume": "Download Resume",
+    "bookAction": "Architecting for Scale & Chaos (Buy Book on Gumroad)",
     "toggleTheme": "Toggle Dark / Light Theme",
     "switchLang": "Switch Language",
     "shortcut": "Press Ctrl+K or ⌘K anytime to open"
   },
   "hero": {
+    "bookPillBadge": "NEW BOOK",
+    "bookPillText": "Architecting for Scale & Chaos • Available on Gumroad",
     "welcome": "Hi, Welcome to my website!",
     "typing": {
       "name": "I'm Saidur Rahman Sujon",
       "role1": "I'm a Software Engineer",
       "role2": "I'm a Full-Stack Developer",
-      "role3": "I'm an AI Researcher"
+      "role3": "I'm an AI Researcher",
+      "role4": "I'm a Technical Book Author"
     },
-    "subtitle": "Software Engineer | Full-Stack Developer | AI Researcher",
+    "subtitle": "Software Engineer | Solution Architect & Author | AI Researcher",
     "downloadCv": "Download CV",
     "getInTouch": "Get In Touch"
   },
@@ -116,15 +120,16 @@
     }
   },
   "research": {
-    "title": "Research & Publications",
-    "subtitle": "Contributing to the advancement of AI and Natural Language Processing in Mental Health Research",
+    "title": "Publications & Research",
+    "subtitle": "Author of 'Architecting for Scale & Chaos' on Distributed Systems & AI/NLP Researcher",
     "viewAll": "View All Publications",
     "showing": "Showing {filtered} of {total} publications",
     "accessResources": "Access & Resources",
-    "impactTitle": "Research Impact",
-    "impactBody": "Our research contributes to the critical field of mental health detection using cutting-edge AI technologies. By developing novel approaches for detecting depression in Bengali social media text, we're helping bridge the gap in low-resource language NLP and making mental health detection more accessible globally.",
+    "impactTitle": "Engineering & Research Impact",
+    "impactBody": "From authoring pragmatic architectural blueprints on distributed system resilience, fault tolerance, and chaos engineering to pioneering clinical mental health NLP pipelines using Large Language Models, our work bridges theoretical computer science with high-throughput production reality.",
     "filters": {
       "all": "All",
+      "book": "Books & Handbooks",
       "conference": "Conference",
       "journal": "Journal",
       "dataset": "Dataset"
@@ -193,9 +198,9 @@
       "keywords": "certifications, WorldQuant University, Financial Engineering, quantitative finance, ITEE, B-JET, Coursera, professional development, training programs"
     },
     "research": {
-      "title": "Research & Publications - SR Sujon | Academic Work",
-      "description": "Academic research and publications by Saidur Rahman Sujon in AI, NLP, and Mental Health. Published in ELSEVIER Natural Language Processing Journal, featuring Bengali depression detection using LLMs and BSMDD dataset.",
-      "keywords": "research publications, academic papers, AI research, NLP, mental health AI, ELSEVIER, Bengali NLP, depression detection, LLM research, BSMDD dataset"
+      "title": "Publications & Books - SR Sujon | Architecting for Scale & Chaos",
+      "description": "Explore publications and published book 'Architecting for Scale & Chaos' by Saidur Rahman Sujon. Pragmatic distributed systems architecture, chaos engineering, IEEE Xplore, and Elsevier AI research.",
+      "keywords": "Architecting for Scale & Chaos, distributed systems book, solution architect handbook, fault tolerance, chaos engineering, Gumroad, AI research, NLP, mental health AI, ELSEVIER, IEEE"
     }
   },
   "common": {
@@ -469,6 +474,7 @@
     },
     "research": {
       "links": {
+        "Gumroad": "Buy on Gumroad",
         "ResearchGate": "ResearchGate",
         "IEEE Xplore": "IEEE Xplore",
         "Presenter Certificate": "Presenter Certificate",
@@ -482,6 +488,52 @@
         "Video Demo": "Video Demo"
       },
       "items": {
+        "scale-and-chaos": {
+          "title": "Architecting for Scale & Chaos",
+          "subtitle": "The Solution Architect's Handbook on Distributed Systems, Fault Tolerance, and Real-World Resilience",
+          "author": "By Saidur Rahman Sujon • Published Independently (Tokyo, Japan)",
+          "venue": "Independent Publication | Tokyo, Japan",
+          "date": "First Edition • October 2026",
+          "editionBadge": "First Edition • October 2026",
+          "featuredBadge": "FEATURED BOOK",
+          "pricing": "Pay-What-You-Want (Starting at ¥999 / ~$6.50)",
+          "pricingShort": "From ¥999 / ~$6.50",
+          "gumroadUrl": "https://sujoncyb.gumroad.com/l/the-solution-architects-handbook",
+          "overview": "In distributed computing and physical logistics, software doesn't just shuffle bits—it orchestrates conveyor belts, autonomous robotic pickers, and millions of real-time transactions. When a database deadlocks or a race condition strikes at peak throughput, physical distribution stalls and business halts.\n\nArchitecting for Scale & Chaos is a pragmatic, battle-tested handbook designed to rewire engineering intuition. Rather than treating distributed systems as infallible, this book starts at 2:00 AM when the dashboards turn red, teaching engineers how to build guarantees around inevitable failure.",
+          "description": "A battle-tested handbook on distributed systems, high throughput, and chaos engineering. Progressing from foundational trade-off math to multi-region disaster recovery, featuring 16 in-depth chapters, 93 visual architectural blueprints, 56 production incident post-mortems (AWS, Meta, Cloudflare, TSE, Mizuho Bank), and production-ready artifacts like ADR templates and readiness scorecards.",
+          "stats": {
+            "chapters": {
+              "value": "16",
+              "label": "Chapters",
+              "detail": "Trade-off math to DR"
+            },
+            "diagrams": {
+              "value": "93",
+              "label": "Diagrams",
+              "detail": "Custom blueprints"
+            },
+            "outages": {
+              "value": "56",
+              "label": "Outages",
+              "detail": "AWS, Meta, TSE"
+            },
+            "artifacts": {
+              "value": "ADRs",
+              "label": "Artifacts",
+              "detail": "Scorecards & Playbook"
+            }
+          },
+          "journeyTitle": "The 5-Part Architectural Journey",
+          "whoItsForTitle": "Who It's For",
+          "viewFrontCover": "Front Cover",
+          "viewBackCover": "Back Cover",
+          "flipNotice": "Toggle to inspect back cover summary and scenarios",
+          "enlargeCover": "Enlarge",
+          "clickToEnlarge": "Click to enlarge",
+          "buyGumroad": "Get on Gumroad",
+          "toggleJourney": "Explore 5-Part Journey",
+          "hideJourney": "Hide 5-Part Journey"
+        },
         "1": {
           "title": "MonBarta: Deep Dive into Psychological Diagnosis of Mental Health Conversations Using LLM",
           "venue": "2025 IEEE 9th International Conference on Software Engineering & Computer Systems (ICSECS) | IEEE",

@@ -135,6 +135,16 @@ const CommandPalette = ({ isOpen, setIsOpen }) => {
       category: 'actions' 
     },
     { 
+      id: 'action-book', 
+      name: t('cmdPalette.bookAction') || 'Architecting for Scale & Chaos (Buy Book on Gumroad)', 
+      icon: FiBookOpen, 
+      action: () => {
+        window.open('https://sujoncyb.gumroad.com/l/the-solution-architects-handbook', '_blank');
+        setIsOpen(false);
+      }, 
+      category: 'actions' 
+    },
+    { 
       id: 'action-resume', 
       name: t('cmdPalette.downloadResume') || 'Download Resume', 
       icon: FiDownload, 

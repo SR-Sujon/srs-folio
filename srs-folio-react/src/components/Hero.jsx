@@ -30,6 +30,27 @@ const Hero = () => {
             {/* Right Side - Content */}
             <div className="order-1 lg:order-2">
               <div className="mt-5 text-left">
+                {/* Book Announcement Pill */}
+                <motion.a
+                  href="#research"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-3.5 rounded-full text-xs font-medium bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-rose-500/10 dark:from-amber-400/15 dark:via-orange-400/15 dark:to-rose-400/15 border border-amber-500/30 dark:border-amber-400/30 text-amber-900 dark:text-amber-200 hover:scale-[1.02] hover:border-amber-500/60 dark:hover:border-amber-400/60 transition-all shadow-sm group cursor-pointer"
+                >
+                  <span className="flex h-2 w-2 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                  </span>
+                  <span className="font-bold uppercase tracking-wider text-[10px] px-1.5 py-0.5 rounded bg-gradient-to-r from-amber-500 to-rose-500 text-white shadow-xs">
+                    {t('hero.bookPillBadge')}
+                  </span>
+                  <span className="font-semibold text-gray-800 dark:text-gray-100">
+                    {t('hero.bookPillText')}
+                  </span>
+                  <span className="text-amber-600 dark:text-amber-400 font-bold group-hover:translate-x-0.5 transition-transform">→</span>
+                </motion.a>
+
                 {/* Welcome Text */}
                 <motion.p
                   className="text-sm md:text-base uppercase mb-1 font-extrabold tracking-wide text-gray-700 dark:text-gray-300 transform-gpu"
@@ -58,6 +79,8 @@ const Hero = () => {
                         t('hero.typing.role2'),
                         2000,
                         t('hero.typing.role3'),
+                        2000,
+                        t('hero.typing.role4'),
                         2000,
                       ]}
                       wrapper="span"
