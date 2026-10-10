@@ -6,7 +6,7 @@ import {
   FaYoutube,
   FaMedium,
 } from 'react-icons/fa';
-import { SiLeetcode, SiKaggle, SiResearchgate, SiGooglescholar } from 'react-icons/si';
+import { SiLeetcode, SiKaggle, SiResearchgate, SiGooglescholar, SiGumroad } from 'react-icons/si';
 
 const SocialLinks = () => {
   const socialLinks = [
@@ -54,6 +54,11 @@ const SocialLinks = () => {
       name: 'YouTube',
       url: 'https://www.youtube.com/@craftedbysrs',
       icon: <FaYoutube className="w-5 h-5" />,
+    },
+    {
+      name: 'Gumroad',
+      url: 'https://sujoncyb.gumroad.com',
+      icon: <SiGumroad className="w-5 h-5" />,
     },
   ];
 
