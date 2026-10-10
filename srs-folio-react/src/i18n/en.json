@@ -39,11 +39,11 @@
     "typing": {
       "name": "I'm Saidur Rahman Sujon",
       "role1": "I'm a Software Engineer",
-      "role2": "I'm a Full-Stack Developer",
+      "role2": "I'm a Systems Architect",
       "role3": "I'm an AI Researcher",
-      "role4": "I'm a Technical Book Author"
+      "role4": "I'm a Full-Stack Developer"
     },
-    "subtitle": "Software Engineer | Solution Architect & Author | AI Researcher",
+    "subtitle": "Software Engineer | Distributed Systems & Applied AI",
     "downloadCv": "Download CV",
     "getInTouch": "Get In Touch"
   },
@@ -168,7 +168,7 @@
   },
   "footer": {
     "name": "Saidur Rahman Sujon",
-    "subtitle": "Software Engineer | Full-Stack Developer | AI Researcher",
+    "subtitle": "Software Engineer | Distributed Systems & Applied AI",
     "visitors": "Visitors from Around the World",
     "totalVisitors": "Total Visitors:",
     "copyright": "Copyright © {year}, SR Sujon. All rights reserved.",
@@ -178,29 +178,29 @@
   },
   "seo": {
     "home": {
-      "title": "SR Sujon - Software Engineer | Full Stack Developer | AI Researcher",
-      "description": "Saidur Rahman Sujon - Software Engineer with 2+ years of experience building full-stack web applications. Based in Tokyo, specializing in React, Node.js, Java, PostgreSQL, NLP, and Generative AI. Published AI researcher with industry experience in logistics technology.",
-      "keywords": "Saidur Rahman Sujon, SR Sujon, Software Engineer, Full Stack Developer, React, Node.js, Java, PostgreSQL, AI Researcher, NLP, Generative AI, Tokyo, Machine Learning, Web Development, MERN Stack, AI Engineer, Portfolio"
+      "title": "SR Sujon - Software Engineer | Distributed Systems & Applied AI",
+      "description": "Saidur Rahman Sujon - Software Engineer & Systems Architect based in Tokyo. Author of 'Architecting for Scale & Chaos'. Specializing in distributed systems, full-stack web applications, and applied AI research.",
+      "keywords": "Saidur Rahman Sujon, SR Sujon, Software Engineer, Systems Architect, Distributed Systems, Architecting for Scale & Chaos, Fault Tolerance, Chaos Engineering, Full Stack Developer, AI Researcher, Applied AI, NLP, React, Node.js, Java, Tokyo, Gumroad, Portfolio"
     },
     "portfolio": {
       "title": "Portfolio - SR Sujon | All Projects & Work",
-      "description": "Explore all projects by Saidur Rahman Sujon including web applications, AI/ML projects, data analytics, hardware implementations, and game development. Full portfolio with live demos and source code.",
-      "keywords": "portfolio, projects, web development, AI projects, machine learning, MERN stack, React projects, data analytics, hardware projects"
+      "description": "Explore all projects by Saidur Rahman Sujon including web applications, distributed systems, AI/ML models, data analytics, and full-stack solutions. Live demos and source code.",
+      "keywords": "portfolio, projects, web development, distributed systems, AI projects, machine learning, MERN stack, React projects, data analytics"
     },
     "experience": {
       "title": "Experience - SR Sujon | Professional Journey",
-      "description": "Professional experience of Saidur Rahman Sujon as a Software Engineer, AI Researcher, and Full-Stack Developer. Career journey from Bangladesh to Tokyo, Japan.",
-      "keywords": "experience, software engineer, full stack developer, AI researcher, career, professional journey"
+      "description": "Professional journey of Saidur Rahman Sujon as a Software Engineer, Systems Architect, and AI Researcher. Career spanning full-stack web platforms and enterprise logistics systems in Tokyo, Japan.",
+      "keywords": "experience, software engineer, systems architect, distributed systems, full stack developer, AI researcher, Tokyo, career, professional journey"
     },
     "certifications": {
       "title": "Certifications - SR Sujon | Professional Achievements",
-      "description": "Professional certifications and achievements by Saidur Rahman Sujon including WorldQuant University MSc in Financial Engineering (Foundations), ITEE, B-JET, Coursera courses, and more.",
+      "description": "Professional certifications and achievements by Saidur Rahman Sujon including WorldQuant University MSc in Financial Engineering (Foundations), ITEE, B-JET, and specialized systems credentials.",
       "keywords": "certifications, WorldQuant University, Financial Engineering, quantitative finance, ITEE, B-JET, Coursera, professional development, training programs"
     },
     "research": {
       "title": "Publications & Books - SR Sujon | Architecting for Scale & Chaos",
-      "description": "Explore publications and published book 'Architecting for Scale & Chaos' by Saidur Rahman Sujon. Pragmatic distributed systems architecture, chaos engineering, IEEE Xplore, and Elsevier AI research.",
-      "keywords": "Architecting for Scale & Chaos, distributed systems book, solution architect handbook, fault tolerance, chaos engineering, Gumroad, AI research, NLP, mental health AI, ELSEVIER, IEEE"
+      "description": "Publications and books by Saidur Rahman Sujon, including the distributed systems handbook 'Architecting for Scale & Chaos' (Gumroad), and IEEE/Elsevier AI research papers.",
+      "keywords": "Architecting for Scale & Chaos, distributed systems book, solution architect handbook, fault tolerance, chaos engineering, Saidur Rahman Sujon, Gumroad, AI research, NLP, IEEE, Elsevier"
     }
   },
   "common": {

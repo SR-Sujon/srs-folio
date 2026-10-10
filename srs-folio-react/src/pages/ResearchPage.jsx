@@ -166,7 +166,7 @@ const ResearchPage = () => {
           '@type': 'Person',
           'name': 'Saidur Rahman Sujon',
           'url': 'https://sr-sujon.com/',
-          'jobTitle': 'Solution Architect & Software Engineer',
+          'jobTitle': 'Systems Architect & Software Engineer',
           'sameAs': [
             'https://github.com/SR-Sujon',
             'https://www.linkedin.com/in/sr-sujon',

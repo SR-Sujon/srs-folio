@@ -14,7 +14,8 @@ import {
   SiLeetcode,
   SiKaggle,
   SiResearchgate,
-  SiGooglescholar
+  SiGooglescholar,
+  SiGumroad
 } from 'react-icons/si';
 import { useVisitorStats } from '../hooks/useVisitorStats';
 import { getCountryCode, formatNumber } from '../utils/countryData';
@@ -78,6 +79,12 @@ const Footer = () => {
       icon: FaYoutube,
       url: 'https://www.youtube.com/@craftedbysrs',
       color: '#FF0000'
+    },
+    {
+      name: 'Gumroad',
+      icon: SiGumroad,
+      url: 'https://sujoncyb.gumroad.com',
+      color: '#E03B7B'
     }
   ];
 
@@ -115,7 +122,7 @@ const Footer = () => {
             className="text-3xl lg:text-4xl font-bold mb-3"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            Saidur Rahman Sujon
+            {t('footer.name', 'Saidur Rahman Sujon')}
           </motion.h3>
           
           <motion.p
