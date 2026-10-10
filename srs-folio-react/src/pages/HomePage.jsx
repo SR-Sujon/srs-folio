@@ -40,6 +40,7 @@ const HomePage = () => {
         'jobTitle': 'Software Engineer & Systems Architect',
         'sameAs': [
           'https://github.com/SR-Sujon',
+          'https://linkedin.com/in/sr-sujon',
           'https://sujoncyb.gumroad.com/l/the-solution-architects-handbook',
           'https://scholar.google.com/citations?user=6_LoU_kAAAAJ'
         ],

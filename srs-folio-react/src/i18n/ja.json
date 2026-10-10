@@ -178,19 +178,19 @@
   },
   "seo": {
     "home": {
-      "title": "SR Sujon - ソフトウェアエンジニア | システムアーキテクト | AI研究者",
-      "description": "スジョン エムディ サイドゥル ラーマン（Saidur Rahman Sujon） - 2年以上のフルスタックWeb開発経験を持つソフトウェアエンジニア。東京を拠点に、React、Node.js、Java、PostgreSQL、NLP、生成AIを専門としています。物流テクノロジーの業界経験を持つAI研究者。",
-      "keywords": "スジョン エムディ サイドゥル ラーマン, スジョン・エムディ・サイドゥル・ラーマン, SR Sujon, Saidur Rahman Sujon, ソフトウェアエンジニア, システムアーキテクト, フルスタック開発者, React, Node.js, Java, PostgreSQL, AI研究者, NLP, 生成AI, 東京, 機械学習, Web開発, MERN Stack, ポートフォリオ"
+      "title": "SR Sujon - ソフトウェアエンジニア | 分散システム & 応用AI",
+      "description": "スジョン エムディ サイドゥル ラーマン（Saidur Rahman Sujon） - 東京を拠点とするソフトウェアエンジニア兼システムアーキテクト。『Architecting for Scale & Chaos』著者。分散システム、フルスタックWeb開発、応用AI研究（NLP・生成AI）を専門としています。",
+      "keywords": "スジョン エムディ サイドゥル ラーマン, スジョン・エムディ・サイドゥル・ラーマン, Saidur Rahman Sujon, SR Sujon, ソフトウェアエンジニア, システムアーキテクト, 分散システム, 応用AI, フルスタック開発者, Architecting for Scale & Chaos, 耐障害性, カオスエンジニアリング, AI研究者, NLP, 東京, ポートフォリオ, Gumroad"
     },
     "portfolio": {
       "title": "ポートフォリオ - SR Sujon | 全プロジェクト",
-      "description": "スジョン エムディ サイドゥル ラーマンの全プロジェクト。Webアプリケーション、AI/ML、データ分析、ハードウェア、ゲーム開発など。ライブデモとソースコード付き。",
-      "keywords": "ポートフォリオ, プロジェクト, Web開発, AI, 機械学習, MERN Stack, React, データ分析"
+      "description": "スジョン エムディ サイドゥル ラーマンの全プロジェクト。Webアプリケーション、分散システム、AI/ML、データ分析、フルスタック開発など。ライブデモとソースコード付き。",
+      "keywords": "ポートフォリオ, プロジェクト, Web開発, 分散システム, AI, 機械学習, MERN Stack, React, データ分析"
     },
     "experience": {
       "title": "職歴 - SR Sujon | キャリア",
-      "description": "スジョン エムディ サイドゥル ラーマンのソフトウェアエンジニア、AI研究者、フルスタック開発者としての職務経歴。バングラデシュから東京へのキャリアの軌跡。",
-      "keywords": "職歴, ソフトウェアエンジニア, フルスタック開発者, AI研究者, キャリア"
+      "description": "スジョン エムディ サイドゥル ラーマンの職歴。ソフトウェアエンジニア、システムアーキテクト、AI研究者、フルスタック開発者としてのキャリアの軌跡。物流システム開発とAI研究の実績。",
+      "keywords": "職歴, ソフトウェアエンジニア, システムアーキテクト, 分散システム, フルスタック開発者, AI研究者, キャリア, 東京"
     },
     "certifications": {
       "title": "資格 - SR Sujon | 専門資格・実績",
@@ -200,7 +200,7 @@
     "research": {
       "title": "出版著書 & 研究論文 - SR Sujon | Architecting for Scale & Chaos & AI研究",
       "description": "スジョン エムディ サイドゥル ラーマンの出版著書『Architecting for Scale & Chaos（分散システム・耐障害性ハンドブック）』およびIEEE国際学会、ELSEVIER学術論文誌のAI/NLP研究論文。",
-      "keywords": "Architecting for Scale & Chaos, 分散システム本, ソリューションアーキテクト, 耐障害性, カオスエンジニアリング, Gumroad, AI研究, NLP, メンタルヘルスAI, ELSEVIER, IEEE"
+      "keywords": "Architecting for Scale & Chaos, 分散システム本, ソリューションアーキテクト, 耐障害性, カオスエンジニアリング, スジョン エムディ サイドゥル ラーマン, Gumroad, AI研究, NLP, メンタルヘルスAI, ELSEVIER, IEEE"
     }
   },
   "common": {
