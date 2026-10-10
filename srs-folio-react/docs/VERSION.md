@@ -25,16 +25,31 @@ npm run version:major   # Breaking changes: 3.2.0 → 4.0.0
 
 ## Current Version
 
-**v3.3.2** - WorldQuant University Graduate Credentials & Interactive Certification Nav
+**v3.4.0** - "Architecting for Scale & Chaos" Book Launch & Publication SEO
 
 The version is displayed in the footer of the website and stored in `package.json`.
 
-### Latest Changes (v3.3.2)
-- **WorldQuant University Graduate Credential**: Added WQU **Foundations of Financial Engineering** (8 Graduate Credits) to graduate credentials category.
-- **Detailed MScFE Syllabus**: Comprehensive curriculum breakdown for **MScFE 560 (Financial Markets — 4 credits)** and **MScFE 600 (Financial Data — 4 credits)** covering credit risk, securitization, derivatives, SVD/PCA linear algebra, yield curves, Expected Shortfall, FinBERT NLP, geospatial data, and GARCH modeling.
-- **Dual-View Description & Learn More Anchor Navigation**: Implemented concise card summary on homepage with interactive **"Learn More →"** button linking directly to `/certifications#cert-9` on the dedicated page.
-- **Enhanced Brand Logo Sizing**: Optimized brand logo container height and width scaling for single rectangular logos on homepage cards.
-- **i18n Localization**: Complete English (`en.json`) and Japanese (`ja.json`) translations for titles, short/full descriptions, badges, links, and category headings.
+### Latest Changes (v3.4.0)
+- **"Architecting for Scale & Chaos" Book Launch**:
+  - Published and highlighted author Saidur Rahman Sujon's new handbook on distributed systems resilience, fault tolerance, and chaos engineering (*"Architecting for Scale & Chaos"*).
+  - Built interactive `BookCard` showcase component featuring:
+    - **Interactive Cover Switcher**: Smooth preview toggle between front cover and back cover.
+    - **Lightbox Modal**: Full-screen inspection modal for high-resolution cover artwork and back cover scenario text.
+    - **Key Metrics Grid**: Highlighting 16 chapters, 93 custom diagrams, 56 real incident post-mortems, and production ADRs & scorecards.
+    - **Gumroad Direct Buy Integration**: Pay-What-You-Want button linking directly to Gumroad.
+    - **5-Part Architectural Journey**: Collapsible syllabus covering Think, Scale, Survive Failure, Apply End-to-End, and Operate with target audience personas.
+- **Dedicated Publications & Book Navigation**:
+  - Featured as #1 spotlight publication on the homepage (`/`) and in the research catalog (`/research`).
+  - Added "Books & Handbooks" filter and keyword search functionality on `/research`.
+  - Added hero announcement pill badge linking to `#research`.
+  - Added quick-access action in Command Palette (`Ctrl+K` / `⌘K`).
+- **Comprehensive Search Engine Optimization (SEO)**:
+  - Injected `Schema.org/Book`, `Schema.org/Person`, and `Schema.org/BreadcrumbList` JSON-LD structured data for Google Search rich cards and knowledge graph indexing.
+  - Created `public/sitemap.xml` with Google Image Sitemap extensions for book covers.
+  - Created `public/robots.txt` crawler configuration.
+  - Enhanced Open Graph (`og:type="book"`) and Twitter Card (`summary_large_image`) social sharing tags.
+- **Bilingual Localization**:
+  - Complete English (`en.json`) and Japanese (`ja.json`) translations for all book contents, syllabus roadmap, and SEO metadata.
 
 ---
 

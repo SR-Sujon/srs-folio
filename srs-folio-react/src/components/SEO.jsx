@@ -1,54 +1,88 @@
 import { useEffect } from 'react';
 
-const SEO = ({ title, description, keywords, ogImage = '/images/og-image.jpg' }) => {
+const SEO = ({ 
+  title, 
+  description, 
+  keywords, 
+  ogImage = '/images/og-image.jpg',
+  ogType = 'website',
+  canonicalUrl,
+  schema
+}) => {
   useEffect(() => {
-    // Update document title
-    document.title = title;
-
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', description);
+    // 1. Update document title
+    if (title) {
+      document.title = title;
     }
 
-    // Update meta keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', keywords);
+    // Helper to set or create meta tag
+    const setMetaTag = (attribute, name, content) => {
+      if (!content) return;
+      let el = document.querySelector(`meta[${attribute}="${name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attribute, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+
+    // 2. Standard Meta Tags
+    setMetaTag('name', 'description', description);
+    setMetaTag('name', 'keywords', keywords);
+
+    // 3. Canonical Link
+    const currentCanonical = canonicalUrl || (typeof window !== 'undefined' ? window.location.href.split('?')[0] : 'https://sr-sujon.com/');
+    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (!canonicalTag) {
+      canonicalTag = document.createElement('link');
+      canonicalTag.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalTag);
+    }
+    canonicalTag.setAttribute('href', currentCanonical);
+
+    // 4. Open Graph Tags
+    const fullImageUrl = ogImage.startsWith('http') ? ogImage : `https://sr-sujon.com${ogImage}`;
+    setMetaTag('property', 'og:title', title);
+    setMetaTag('property', 'og:description', description);
+    setMetaTag('property', 'og:image', fullImageUrl);
+    setMetaTag('property', 'og:type', ogType);
+    setMetaTag('property', 'og:url', currentCanonical);
+
+    // 5. Twitter Card Tags
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
+    setMetaTag('name', 'twitter:title', title);
+    setMetaTag('name', 'twitter:description', description);
+    setMetaTag('name', 'twitter:image', fullImageUrl);
+
+    // 6. JSON-LD Structured Data
+    const scriptId = 'seo-dynamic-jsonld';
+    let scriptTag = document.getElementById(scriptId);
+
+    if (schema) {
+      if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.id = scriptId;
+        scriptTag.type = 'application/ld+json';
+        document.head.appendChild(scriptTag);
+      }
+      try {
+        scriptTag.text = JSON.stringify(schema);
+      } catch (e) {
+        console.error('Error stringifying JSON-LD schema:', e);
+      }
+    } else if (scriptTag) {
+      scriptTag.remove();
     }
 
-    // Update Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute('content', title);
-    }
-
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute('content', description);
-    }
-
-    const ogImageTag = document.querySelector('meta[property="og:image"]');
-    if (ogImageTag) {
-      ogImageTag.setAttribute('content', `https://sr-sujon.com${ogImage}`);
-    }
-
-    // Update Twitter Card tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute('content', title);
-    }
-
-    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDescription) {
-      twitterDescription.setAttribute('content', description);
-    }
-
-    const twitterImage = document.querySelector('meta[name="twitter:image"]');
-    if (twitterImage) {
-      twitterImage.setAttribute('content', `https://sr-sujon.com${ogImage}`);
-    }
-  }, [title, description, keywords, ogImage]);
+    return () => {
+      // Clean up dynamic script tag when unmounting or switching routes if desired
+      const el = document.getElementById(scriptId);
+      if (el) {
+        el.remove();
+      }
+    };
+  }, [title, description, keywords, ogImage, ogType, canonicalUrl, schema]);
 
   return null;
 };

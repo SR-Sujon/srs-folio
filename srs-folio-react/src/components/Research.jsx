@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
+  FaBook,
   FaBookOpen, 
   FaDatabase, 
   FaGithub, 
@@ -17,14 +18,21 @@ import {
   SiArxiv,
   SiElsevier,
   SiMendeley,
-  SiIeee
+  SiIeee,
+  SiGumroad
 } from 'react-icons/si';
 import { useLanguage } from '../contexts/LanguageContext';
+import BookCard from './BookCard';
 
 const getPublicationTypeMeta = (type) => {
   const normalizedType = String(type || '').toLowerCase();
 
   switch (normalizedType) {
+    case 'book':
+      return {
+        label: 'Book',
+        Icon: FaBook,
+      };
     case 'conference':
       return {
         label: 'Conference',
@@ -51,6 +59,24 @@ const getPublicationTypeMeta = (type) => {
 const Research = ({ featured = false }) => {
   const { t } = useLanguage();
   const publications = [
+    {
+      id: 'scale-and-chaos',
+      type: 'book',
+      title: 'Architecting for Scale & Chaos: The Solution Architect\'s Handbook on Distributed Systems, Fault Tolerance, and Real-World Resilience',
+      venue: 'Independent Publication | Tokyo, Japan',
+      date: 'First Edition • October 2026',
+      image: '/images/publications/arch_scale_and_chaos_cover_page_front_thumbnail.jpg',
+      frontCover: '/images/publications/arch_scale_and_chaos_cover_page_front.jpg',
+      backCover: '/images/publications/arch_scale_and_chaos_cover_page_back.jpg',
+      price: 'Pay-What-You-Want (Starting at ¥999 / ~$6.50)',
+      gumroadUrl: 'https://sujoncyb.gumroad.com/l/the-solution-architects-handbook',
+      description: 'A pragmatic, battle-tested handbook designed to rewire engineering intuition. Starts at 2:00 AM when dashboards turn red, teaching engineers how to build guarantees around inevitable failure across 16 in-depth chapters, 93 visual architectural blueprints, and 56 production incident post-mortems.',
+      tags: ['Distributed Systems', 'Fault Tolerance', 'Chaos Engineering', 'High Availability', 'Disaster Recovery', 'Solution Architecture', 'Robotics & Logistics', 'Production AI / RAG'],
+      links: [
+        { icon: SiGumroad, title: 'Gumroad', url: 'https://sujoncyb.gumroad.com/l/the-solution-architects-handbook', color: '#FF90E8' }
+      ],
+      gradient: 'from-amber-500 via-orange-500 to-rose-600'
+    },
     {
       id: 1,
       type: 'conference',
@@ -166,15 +192,20 @@ const Research = ({ featured = false }) => {
 
         {/* Publications Grid */}
         <div className="space-y-16">
-          {(featured ? publications.slice(0, 2) : publications).map((pub, index) => (
-            <motion.article
-              key={pub.id}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: index * 0.2 }}
-              className="relative"
-            >
+          {(featured ? publications.slice(0, 2) : publications).map((pub, index) => {
+            if (pub.type === 'book') {
+              return <BookCard key={pub.id} pub={pub} index={index} />;
+            }
+
+            return (
+              <motion.article
+                key={pub.id}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: index * 0.2 }}
+                className="relative"
+              >
               {/* Publication Card */}
               <motion.div
                 whileHover={{ y: -5 }}
@@ -349,7 +380,8 @@ const Research = ({ featured = false }) => {
                 className={`absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br ${pub.gradient} rounded-lg opacity-20`}
               />
             </motion.article>
-          ))}
+            );
+          })}
 
           {/* View All Button - Only shown in featured mode */}
           {featured && (

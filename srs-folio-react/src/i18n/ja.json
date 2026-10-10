@@ -7,7 +7,7 @@
     "portfolio": "ポートフォリオ",
     "experience": "職歴",
     "certifications": "資格",
-    "research": "研究",
+    "research": "出版・研究",
     "contact": "お問い合わせ"
   },
   "theme": {
@@ -27,19 +27,23 @@
     "copyEmail": "メールアドレスをコピー",
     "emailCopied": "メールアドレスをクリップボードにコピーしました！",
     "downloadResume": "履歴書をダウンロード",
+    "bookAction": "著書: Architecting for Scale & Chaos (Gumroadで購入)",
     "toggleTheme": "ダーク/ライトテーマ切り替え",
     "switchLang": "言語切り替え",
     "shortcut": "Ctrl+K または ⌘K でいつでも開く"
   },
   "hero": {
+    "bookPillBadge": "新刊著書",
+    "bookPillText": "Architecting for Scale & Chaos • Gumroadにて発売中",
     "welcome": "ようこそ、私のウェブサイトへ！",
     "typing": {
       "name": "サイドゥル・ラフマン・スジョンです",
       "role1": "ソフトウェアエンジニアです",
       "role2": "フルスタック開発者です",
-      "role3": "AI研究者です"
+      "role3": "AI研究者です",
+      "role4": "技術書著者（ソリューションアーキテクト）です"
     },
-    "subtitle": "ソフトウェアエンジニア | フルスタック開発者 | AI研究者",
+    "subtitle": "ソフトウェアエンジニア | ソリューションアーキテクト・著者 | AI研究者",
     "downloadCv": "履歴書ダウンロード",
     "getInTouch": "お問い合わせ"
   },
@@ -116,20 +120,21 @@
     }
   },
   "research": {
-    "title": "研究 & 論文",
-    "subtitle": "メンタルヘルス研究におけるAIと自然言語処理の進化への貢献",
-    "viewAll": "全ての論文を見る",
-    "showing": "{total}件中{filtered}件の論文を表示",
+    "title": "出版著書 & 研究論文",
+    "subtitle": "『Architecting for Scale & Chaos』著者（分散システム設計・障害耐性） & AI・自然言語処理研究者",
+    "viewAll": "すべての出版物・研究を見る",
+    "showing": "{total}件中{filtered}件の出版物・論文を表示",
     "accessResources": "アクセス & リソース",
-    "impactTitle": "研究の社会的影響",
-    "impactBody": "当研究は、最先端のAI技術を活用し、メンタルヘルス検出という極めて重要な分野に貢献しています。ベンガル語ソーシャルメディアテキストにおけるうつ病検出の新規アプローチを開発することで、低資源言語NLPの格差を解消し、世界中でのメンタルヘルス早期発見のアクセシビリティ向上を目指しています。",
+    "impactTitle": "研究・工学的インパクト",
+    "impactBody": "分散システムの耐障害性・カオスエンジニアリングに関する実践的アーキテクチャ設計書の執筆から、大規模言語モデルを活用した臨床メンタルヘルスNLPパイプラインの構築まで、理論的計算機科学と高スループット本番環境の架け橋となる成果を届けています。",
     "filters": {
-      "all": "全て",
+      "all": "すべて",
+      "book": "著書・ハンドブック",
       "conference": "学会論文",
       "journal": "ジャーナル",
       "dataset": "データセット"
     },
-    "noResults": "条件に一致する論文が見つかりません"
+    "noResults": "条件に一致する出版物が見つかりません"
   },
   "contact": {
     "title": "お問い合わせ",
@@ -193,9 +198,9 @@
       "keywords": "資格, WorldQuant University, 金融工学, クオンツ, ITEE, B-JET, Coursera, 専門資格, 研修プログラム"
     },
     "research": {
-      "title": "研究・論文 - SR Sujon | 学術研究",
-      "description": "サイドゥル・ラフマン・スジョンのAI、NLP、メンタルヘルス分野の学術研究と論文。ELSEVIER Natural Language Processing Journalなどに掲載。",
-      "keywords": "研究論文, 学術論文, AI研究, NLP, メンタルヘルスAI, ELSEVIER, ベンガル語NLP, LLM研究"
+      "title": "出版著書 & 研究論文 - SR Sujon | Architecting for Scale & Chaos & AI研究",
+      "description": "セイドゥル・ラーマン・スジョンの出版著書『Architecting for Scale & Chaos（分散システム・耐障害性ハンドブック）』およびIEEE国際学会、ELSEVIER学術論文誌のAI/NLP研究論文。",
+      "keywords": "Architecting for Scale & Chaos, 分散システム本, ソリューションアーキテクト, 耐障害性, カオスエンジニアリング, Gumroad, AI研究, NLP, メンタルヘルスAI, ELSEVIER, IEEE"
     }
   },
   "common": {
@@ -469,6 +474,7 @@
     },
     "research": {
       "links": {
+        "Gumroad": "Gumroadで購入",
         "ResearchGate": "ResearchGate",
         "IEEE Xplore": "IEEE Xplore",
         "Presenter Certificate": "発表者証明書",
@@ -482,6 +488,52 @@
         "Video Demo": "デモ動画"
       },
       "items": {
+        "scale-and-chaos": {
+          "title": "Architecting for Scale & Chaos",
+          "subtitle": "分散システム、フォールトトレランス、そして実践的レジリエンスに関するソリューションアーキテクト・ハンドブック",
+          "author": "セイドゥル・ラーマン・スジョン 著 • 個人出版（東京、日本）",
+          "venue": "個人出版（独立系） | 東京、日本",
+          "date": "初版 • 2026年10月",
+          "editionBadge": "初版 • 2026年10月",
+          "featuredBadge": "注目著書・新刊",
+          "pricing": "Pay-What-You-Want（¥999〜 / 約$6.50〜）",
+          "pricingShort": "¥999〜（約$6.50〜）",
+          "gumroadUrl": "https://sujoncyb.gumroad.com/l/the-solution-architects-handbook",
+          "overview": "分散コンピューティングや物理物流の世界において、ソフトウェアは単にビットを転送するだけではありません。コンベアベルトや自律型ロボットピッカー、数百万件のリアルタイムトランザクションを統合制御しています。ピーク時のスループットでデータベースのデッドロックや競合状態が発生すれば、物理的な流通網が麻痺し、ビジネスそのものが停止します。\n\n『Architecting for Scale & Chaos』は、エンジニアの直感を根本から再構築するために書かれた、実践的で修羅場をくぐり抜けたハンドブックです。分散システムを無謬のものとして扱うのではなく、ダッシュボードが真っ赤に染まる午前2時から出発し、避けられない障害を前提とした堅牢な設計保証をどのように構築するかを解き明かします。",
+          "description": "分散システム、高スループット、カオスエンジニアリングに関する実戦的ハンドブック。トレードオフの基礎計算からマルチリージョン災害復旧までを網羅し、16の徹底解説章、93のアーキテクチャ図解ブループリント、56件の実障害分析（AWS、Meta、Cloudflare、東京証券取引所、みずほ銀行）、そしてADRテンプレートや本番準備度スコアカードなどの実践的成果物を収録。",
+          "stats": {
+            "chapters": {
+              "value": "16",
+              "label": "徹底解説章",
+              "detail": "トレードオフ計算からDRまで"
+            },
+            "diagrams": {
+              "value": "93",
+              "label": "図解ブループリント",
+              "detail": "独自アーキテクチャ図"
+            },
+            "outages": {
+              "value": "56",
+              "label": "本番障害分析",
+              "detail": "AWS, Meta, 東証, みずほ"
+            },
+            "artifacts": {
+              "value": "ADR",
+              "label": "実戦用成果物",
+              "detail": "スコアカード・プレイブック"
+            }
+          },
+          "journeyTitle": "5部構成のアーキテクチャの旅（目次・ロードマップ）",
+          "whoItsForTitle": "本書の対象読者",
+          "viewFrontCover": "表紙を見る",
+          "viewBackCover": "裏表紙を見る",
+          "flipNotice": "表紙/裏表紙を切り替えて概要・シナリオを確認",
+          "enlargeCover": "拡大表示",
+          "clickToEnlarge": "クリックして拡大",
+          "buyGumroad": "Gumroadで購入する",
+          "toggleJourney": "5部構成のロードマップを見る",
+          "hideJourney": "ロードマップを閉じる"
+        },
         "1": {
           "title": "MonBarta: Deep Dive into Psychological Diagnosis of Mental Health Conversations Using LLM",
           "venue": "2025 IEEE 第9回 ソフトウェアエンジニアリング & コンピュータシステム国際会議 (ICSECS) | IEEE",
