@@ -37,7 +37,7 @@
     "bookPillText": "Architecting for Scale & Chaos • Gumroadにて発売中",
     "welcome": "ようこそ、私のウェブサイトへ！",
     "typing": {
-      "name": "サイドゥル・ラフマン・スジョンです",
+      "name": "スジョン エムディ サイドゥル ラーマンです",
       "role1": "ソフトウェアエンジニアです",
       "role2": "システムアーキテクトです",
       "role3": "AI研究者です",
@@ -178,28 +178,28 @@
   },
   "seo": {
     "home": {
-      "title": "SR Sujon - ソフトウェアエンジニア | フルスタック開発者 | AI研究者",
-      "description": "サイドゥル・ラフマン・スジョン - 2年以上のフルスタックWeb開発経験を持つソフトウェアエンジニア。東京を拠点に、React、Node.js、Java、PostgreSQL、NLP、生成AIを専門としています。物流テクノロジーの業界経験を持つAI研究者。",
-      "keywords": "サイドゥル・ラフマン・スジョン, SR Sujon, ソフトウェアエンジニア, フルスタック開発者, React, Node.js, Java, PostgreSQL, AI研究者, NLP, 生成AI, 東京, 機械学習, Web開発, MERN Stack, ポートフォリオ"
+      "title": "SR Sujon - ソフトウェアエンジニア | システムアーキテクト | AI研究者",
+      "description": "スジョン エムディ サイドゥル ラーマン（Saidur Rahman Sujon） - 2年以上のフルスタックWeb開発経験を持つソフトウェアエンジニア。東京を拠点に、React、Node.js、Java、PostgreSQL、NLP、生成AIを専門としています。物流テクノロジーの業界経験を持つAI研究者。",
+      "keywords": "スジョン エムディ サイドゥル ラーマン, スジョン・エムディ・サイドゥル・ラーマン, SR Sujon, Saidur Rahman Sujon, ソフトウェアエンジニア, システムアーキテクト, フルスタック開発者, React, Node.js, Java, PostgreSQL, AI研究者, NLP, 生成AI, 東京, 機械学習, Web開発, MERN Stack, ポートフォリオ"
     },
     "portfolio": {
       "title": "ポートフォリオ - SR Sujon | 全プロジェクト",
-      "description": "サイドゥル・ラフマン・スジョンの全プロジェクト。Webアプリケーション、AI/ML、データ分析、ハードウェア、ゲーム開発など。ライブデモとソースコード付き。",
+      "description": "スジョン エムディ サイドゥル ラーマンの全プロジェクト。Webアプリケーション、AI/ML、データ分析、ハードウェア、ゲーム開発など。ライブデモとソースコード付き。",
       "keywords": "ポートフォリオ, プロジェクト, Web開発, AI, 機械学習, MERN Stack, React, データ分析"
     },
     "experience": {
       "title": "職歴 - SR Sujon | キャリア",
-      "description": "サイドゥル・ラフマン・スジョンのソフトウェアエンジニア、AI研究者、フルスタック開発者としての職務経歴。バングラデシュから東京へのキャリアの軌跡。",
+      "description": "スジョン エムディ サイドゥル ラーマンのソフトウェアエンジニア、AI研究者、フルスタック開発者としての職務経歴。バングラデシュから東京へのキャリアの軌跡。",
       "keywords": "職歴, ソフトウェアエンジニア, フルスタック開発者, AI研究者, キャリア"
     },
     "certifications": {
       "title": "資格 - SR Sujon | 専門資格・実績",
-      "description": "サイドゥル・ラフマン・スジョンの専門資格と実績。WorldQuant University 金融工学修士課程（Foundations）、ITEE、B-JET、Courseraコースなど。",
+      "description": "スジョン エムディ サイドゥル ラーマンの専門資格と実績。WorldQuant University 金融工学修士課程（Foundations）、ITEE、B-JET、Courseraコースなど。",
       "keywords": "資格, WorldQuant University, 金融工学, クオンツ, ITEE, B-JET, Coursera, 専門資格, 研修プログラム"
     },
     "research": {
       "title": "出版著書 & 研究論文 - SR Sujon | Architecting for Scale & Chaos & AI研究",
-      "description": "セイドゥル・ラーマン・スジョンの出版著書『Architecting for Scale & Chaos（分散システム・耐障害性ハンドブック）』およびIEEE国際学会、ELSEVIER学術論文誌のAI/NLP研究論文。",
+      "description": "スジョン エムディ サイドゥル ラーマンの出版著書『Architecting for Scale & Chaos（分散システム・耐障害性ハンドブック）』およびIEEE国際学会、ELSEVIER学術論文誌のAI/NLP研究論文。",
       "keywords": "Architecting for Scale & Chaos, 分散システム本, ソリューションアーキテクト, 耐障害性, カオスエンジニアリング, Gumroad, AI研究, NLP, メンタルヘルスAI, ELSEVIER, IEEE"
     }
   },
@@ -491,7 +491,7 @@
         "scale-and-chaos": {
           "title": "Architecting for Scale & Chaos",
           "subtitle": "分散システム、フォールトトレランス、そして実践的レジリエンスに関するソリューションアーキテクト・ハンドブック",
-          "author": "セイドゥル・ラーマン・スジョン 著 • 個人出版（東京、日本）",
+          "author": "スジョン エムディ サイドゥル ラーマン 著 • 個人出版（東京、日本）",
           "venue": "個人出版（独立系） | 東京、日本",
           "date": "初版 • 2026年10月",
           "editionBadge": "初版 • 2026年10月",
