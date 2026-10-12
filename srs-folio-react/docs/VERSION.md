@@ -25,31 +25,24 @@ npm run version:major   # Breaking changes: 3.2.0 → 4.0.0
 
 ## Current Version
 
-**v3.4.0** - "Architecting for Scale & Chaos" Book Launch & Publication SEO
+**v3.4.1** - "Architecting for Scale & Chaos" 10-Page Preview, Interactive Zoom & Alignment Refinements
 
 The version is displayed in the footer of the website and stored in `package.json`.
 
-### Latest Changes (v3.4.0)
-- **"Architecting for Scale & Chaos" Book Launch**:
-  - Published and highlighted author Saidur Rahman Sujon's new handbook on distributed systems resilience, fault tolerance, and chaos engineering (*"Architecting for Scale & Chaos"*).
-  - Built interactive `BookCard` showcase component featuring:
-    - **Interactive Cover Switcher**: Smooth preview toggle between front cover and back cover.
-    - **Lightbox Modal**: Full-screen inspection modal for high-resolution cover artwork and back cover scenario text.
-    - **Key Metrics Grid**: Highlighting 16 chapters, 93 custom diagrams, 56 real incident post-mortems, and production ADRs & scorecards.
-    - **Gumroad Direct Buy Integration**: Pay-What-You-Want button linking directly to Gumroad.
-    - **5-Part Architectural Journey**: Collapsible syllabus covering Think, Scale, Survive Failure, Apply End-to-End, and Operate with target audience personas.
-- **Dedicated Publications & Book Navigation**:
-  - Featured as #1 spotlight publication on the homepage (`/`) and in the research catalog (`/research`).
-  - Added "Books & Handbooks" filter and keyword search functionality on `/research`.
-  - Added hero announcement pill badge linking to `#research`.
-  - Added quick-access action in Command Palette (`Ctrl+K` / `⌘K`).
-- **Comprehensive Search Engine Optimization (SEO)**:
-  - Injected `Schema.org/Book`, `Schema.org/Person`, and `Schema.org/BreadcrumbList` JSON-LD structured data for Google Search rich cards and knowledge graph indexing.
-  - Created `public/sitemap.xml` with Google Image Sitemap extensions for book covers.
-  - Created `public/robots.txt` crawler configuration.
-  - Enhanced Open Graph (`og:type="book"`) and Twitter Card (`summary_large_image`) social sharing tags.
-- **Bilingual Localization**:
-  - Complete English (`en.json`) and Japanese (`ja.json`) translations for all book contents, syllabus roadmap, and SEO metadata.
+### Latest Changes (v3.4.1)
+- **BookCard Interactive 10-Page Preview**:
+  - Integrated 10 high-resolution (300 DPI, 1800×2700) preview pages showcasing the book's roadmap, mental models, latency ladder, multi-tier caching, chaos blast-radius, real outage post-mortems, distributed locking, LLM token economics, and operational runbooks.
+  - Implemented intuitive 10-page thumbnail strip and numbered quick-navigation rail.
+- **Lightbox Reader Zoom & Legibility Enhancements**:
+  - Added dedicated header zoom control toolbar (`+` Zoom In up to 2.5x, `-` Zoom Out down to 1.0x, percentage indicator button and reset).
+  - Implemented double-click to toggle between normal view (1.0x) and enlarged reading view (1.6x) with dynamic `cursor-zoom-in` / `cursor-zoom-out` cues.
+  - Enlarged viewer modal width (`max-w-6xl`) and image display height (`max-h-[75vh]`) with smooth vertical scrolling for reading technical diagrams and formulas.
+  - Added full keyboard navigation: `+`/`=` to zoom in, `-` to zoom out, `0` to reset zoom, `←`/`→` arrow keys to navigate pages, `Escape` to close.
+- **Button Alignment & UX Polish**:
+  - Restored clean, symmetrical 2-button action layout (`[Get on Gumroad (flex-1)]` + `[Explore 5-Part Journey]`), removing redundant standalone preview buttons.
+  - Retained instant access to the full 10-page preview via the book card cover, switcher tabs, and expand icons.
+- **Asset Path Harmonization**:
+  - Centralized all book imagery into `/images/publications/books/arch_scale_chaos/` across `BookCard.jsx`, `Research.jsx`, `ResearchPage.jsx`, `index.html`, and `sitemap.xml`.
 
 ---
 

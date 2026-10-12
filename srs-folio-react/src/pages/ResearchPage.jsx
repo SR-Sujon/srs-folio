@@ -66,9 +66,9 @@ const ResearchPage = () => {
       title: 'Architecting for Scale & Chaos: The Solution Architect\'s Handbook on Distributed Systems, Fault Tolerance, and Real-World Resilience',
       venue: 'Independent Publication | Tokyo, Japan',
       date: 'First Edition • October 2026',
-      image: '/images/publications/arch_scale_and_chaos_cover_page_front_thumbnail.jpg',
-      frontCover: '/images/publications/arch_scale_and_chaos_cover_page_front.jpg',
-      backCover: '/images/publications/arch_scale_and_chaos_cover_page_back.jpg',
+      image: '/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_front_thumbnail.jpg',
+      frontCover: '/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_front.jpg',
+      backCover: '/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_back.jpg',
       price: 'Pay-What-You-Want (Starting at ¥999 / ~$6.50)',
       gumroadUrl: 'https://sujoncyb.gumroad.com/l/the-solution-architects-handbook',
       description: 'A pragmatic, battle-tested handbook designed to rewire engineering intuition. Starts at 2:00 AM when dashboards turn red, teaching engineers how to build guarantees around inevitable failure across 16 in-depth chapters, 93 visual architectural blueprints, and 56 production incident post-mortems.',
@@ -189,8 +189,8 @@ const ResearchPage = () => {
         'inLanguage': 'en',
         'bookFormat': 'https://schema.org/EBook',
         'url': 'https://sr-sujon.com/research',
-        'image': 'https://sr-sujon.com/images/publications/arch_scale_and_chaos_cover_page_front.jpg',
-        'thumbnailUrl': 'https://sr-sujon.com/images/publications/arch_scale_and_chaos_cover_page_front_thumbnail.jpg',
+        'image': 'https://sr-sujon.com/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_front.jpg',
+        'thumbnailUrl': 'https://sr-sujon.com/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_front_thumbnail.jpg',
         'description': 'A pragmatic, battle-tested handbook on distributed systems, high throughput, and chaos engineering. Featuring 16 chapters, 93 visual architectural blueprints, 56 production incident post-mortems, and production-ready artifacts.',
         'genre': ['Distributed Systems', 'Software Architecture', 'Chaos Engineering', 'Cloud Computing', 'Fault Tolerance'],
         'offers': {
@@ -232,7 +232,7 @@ const ResearchPage = () => {
         title={t('seo.research.title')}
         description={t('seo.research.description')}
         keywords={t('seo.research.keywords')}
-        ogImage="/images/publications/arch_scale_and_chaos_cover_page_front_thumbnail.jpg"
+        ogImage="/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_front_thumbnail.jpg"
         ogType="book"
         canonicalUrl="https://sr-sujon.com/research"
         schema={bookSchema}

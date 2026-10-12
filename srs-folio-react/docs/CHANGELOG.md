@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.1] - 2026-10-13
+
+### Added
+- **10-Page High-Resolution Book Preview**:
+  - Added public preview pages for *"Architecting for Scale & Chaos"* (Cover, Scope & Roadmap p. xxi, Latency Ladder p. 36, Caching Funnel p. 61, Blast Radius p. 110, Incident Post-Mortem p. 138, Distributed Locks p. 173, LLM Inference Gateway p. 227, Production Readiness Playbook p. 272, and Back Cover).
+  - Built interactive 10-page thumbnail strip and numbered quick-navigation rail.
+- **Interactive Lightbox Zoom & High-DPI Reader**:
+  - Added zoom-in and zoom-out toolbar buttons (1.0x to 2.5x in +0.25x increments) and zoom percentage indicator with quick reset.
+  - Double-click to toggle zoom (1.0x ↔ 1.6x) with smart `cursor-zoom-in` / `cursor-zoom-out` cues.
+  - Natural top-to-bottom scrollable viewport (`transformOrigin: 'top center'`) for reading detailed blueprints and tables.
+  - Keyboard shortcuts: `+`/`=` (zoom in), `-` (zoom out), `0` (reset), `←`/`→` (page navigation), `Escape` (close).
+  - Automatic zoom reset when navigating between pages.
+
+### Changed
+- **Action Button Layout**:
+  - Restored original clean, symmetrical 2-button layout in `BookCard` (`Get on Gumroad` + `Explore 5-Part Journey`).
+  - Enlarged preview modal viewport to `max-w-6xl` and `max-h-[75vh]` for immediate legibility.
+- **Image Asset Paths**:
+  - Synchronized and organized all book preview images and cover assets under `public/images/publications/books/arch_scale_chaos/`.
+  - Updated image references in `BookCard.jsx`, `Research.jsx`, `ResearchPage.jsx`, `index.html`, and `sitemap.xml`.
+
 ## [3.4.0] - 2026-10-11
 
 ### Added

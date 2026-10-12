@@ -13,17 +13,17 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://sr-sujon.com/images/publications/arch_scale_and_chaos_cover_page_front.jpg</image:loc>
+      <image:loc>https://sr-sujon.com/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_front.jpg</image:loc>
       <image:title>Architecting for Scale &amp; Chaos Front Cover</image:title>
       <image:caption>The Solution Architect's Handbook on Distributed Systems, Fault Tolerance, and Real-World Resilience by Saidur Rahman Sujon</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://sr-sujon.com/images/publications/arch_scale_and_chaos_cover_page_back.jpg</image:loc>
+      <image:loc>https://sr-sujon.com/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_back.jpg</image:loc>
       <image:title>Architecting for Scale &amp; Chaos Back Cover</image:title>
       <image:caption>Every system fails. Great architects decide how. 16 Chapters, 93 Diagrams, 56 Incident Breakdowns</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://sr-sujon.com/images/publications/arch_scale_and_chaos_cover_page_front_thumbnail.jpg</image:loc>
+      <image:loc>https://sr-sujon.com/images/publications/books/arch_scale_chaos/arch_scale_and_chaos_cover_page_front_thumbnail.jpg</image:loc>
       <image:title>Architecting for Scale &amp; Chaos Thumbnail Cover</image:title>
     </image:image>
   </url>
