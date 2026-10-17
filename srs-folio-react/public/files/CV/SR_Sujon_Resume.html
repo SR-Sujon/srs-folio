@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Saidur Rahman Sujon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and Base */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --clr-primary: #0f2744;
+      --clr-primary-dark: #0a192f;
+      --clr-accent: #1d4ed8;
+      --clr-accent-hover: #1e40af;
+      --clr-accent-soft: #eff6ff;
+      --clr-accent-border: #bfdbfe;
+      --clr-text: #1e293b;
+      --clr-text-secondary: #475569;
+      --clr-text-muted: #64748b;
+      --clr-border: #e2e8f0;
+      --clr-border-dark: #cbd5e1;
+      --clr-bg: #ffffff;
+      --badge-book-bg: #fef3c7;
+      --badge-book-txt: #92400e;
+      --badge-ieee-bg: #e0f2fe;
+      --badge-ieee-txt: #0369a1;
+      --badge-elsevier-bg: #ffedd5;
+      --badge-elsevier-txt: #c2410c;
+      --badge-dataset-bg: #f3e8ff;
+      --badge-dataset-txt: #7e22ce;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--clr-text);
+      background: #f1f5f9;
+      line-height: 1.29;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen Action Bar (hidden when printing) */
+    .screen-actions {
+      max-width: 210mm;
+      margin: 14px auto 0 auto;
+      padding: 10px 16px;
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      font-size: 13px;
+    }
+    .screen-actions .title {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .screen-actions .badge-tag {
+      background: #2563eb;
+      color: #fff;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .screen-actions .btn-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .screen-actions a, .screen-actions button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-back {
+      background: rgba(255,255,255,0.12);
+      color: #cbd5e1;
+    }
+    .btn-back:hover {
+      background: rgba(255,255,255,0.22);
+      color: #fff;
+    }
+    .btn-download {
+      background: #2563eb;
+      color: #fff;
+    }
+    .btn-download:hover {
+      background: #1d4ed8;
+    }
+    .btn-print {
+      background: #059669;
+      color: #fff;
+    }
+    .btn-print:hover {
+      background: #047857;
+    }
+
+    /* Page Container (Strict A4 Single-Page Fit) */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      overflow: hidden;
+      margin: 16px auto 30px auto;
+      background: var(--clr-bg);
+      box-shadow: 0 4px 28px rgba(0,0,0,0.12);
+      padding: 5.5mm 11mm 4mm 11mm;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 3.5px;
+      border-bottom: 2px solid var(--clr-primary);
+      margin-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .header-left h1 {
+      font-size: 19.5pt;
+      font-weight: 800;
+      color: var(--clr-primary);
+      letter-spacing: -0.028em;
+      line-height: 1.08;
+    }
+
+    .header-left .subtitle {
+      font-size: 9.2pt;
+      font-weight: 600;
+      color: var(--clr-accent);
+      margin-top: 1.5px;
+      letter-spacing: 0.01em;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 7.75pt;
+      color: var(--clr-text-secondary);
+      line-height: 1.40;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1.5px;
+    }
+
+    .header-line {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .header-right a {
+      color: var(--clr-accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      transition: color 0.15s;
+    }
+    .header-right a:hover {
+      color: var(--clr-accent-hover);
+      text-decoration: underline;
+    }
+
+    .header-icon {
+      width: 10px;
+      height: 10px;
+      fill: currentColor;
+      flex-shrink: 0;
+      opacity: 0.85;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .sep {
+      color: #94a3b8;
+      font-size: 7pt;
+      padding: 0 1px;
+    }
+
+    /* Two-Column Top-Aligned Layout with Vertical Divider */
+    .content {
+      display: flex;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .left-col {
+      flex: 1.34;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-right: 12px;
+      border-right: 1px solid var(--clr-border);
+    }
+
+    .right-col {
+      flex: 0.90;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    /* Section Styling with Natural Uniform Margins */
+    section {
+      margin-bottom: 3.5px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 9.2pt;
+      font-weight: 700;
+      color: var(--clr-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.055em;
+      border-bottom: 1.5px solid var(--clr-accent);
+      padding-bottom: 1.2px;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Professional Summary */
+    .summary-text {
+      font-size: 7.9pt;
+      color: var(--clr-text-secondary);
+      line-height: 1.31;
+      text-align: justify;
+    }
+
+    .summary-text strong {
+      color: var(--clr-text);
+      font-weight: 600;
+    }
+
+    /* Entries */
+    .entry {
+      margin-bottom: 2px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .entry-title {
+      font-size: 8.7pt;
+      font-weight: 700;
+      color: var(--clr-text);
+    }
+
+    .entry-title-link {
+      font-size: 8.7pt;
+      color: var(--clr-text);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.15s;
+    }
+    .entry-title-link:hover {
+      color: var(--clr-accent);
+      text-decoration: underline;
+    }
+
+    .entry-meta {
+      font-size: 7.55pt;
+      font-weight: 500;
+      color: var(--clr-text-muted);
+      white-space: nowrap;
+    }
+
+    .entry-company {
+      font-size: 7.9pt;
+      font-weight: 600;
+      color: var(--clr-text-secondary);
+      margin-bottom: 0.3px;
+    }
+
+    .entry-company em {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--clr-text-muted);
+    }
+
+    /* Bullet List Styling */
+    .bullet-list {
+      margin: 0;
+      padding-left: 11px;
+      list-style-type: disc;
+    }
+
+    .bullet-list li {
+      font-size: 7.85pt;
+      color: var(--clr-text-secondary);
+      line-height: 1.28;
+      margin-bottom: 0;
+      padding-left: 1px;
+    }
+
+    .bullet-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullet-list li strong {
+      color: var(--clr-text);
+      font-weight: 600;
+    }
+
+    .bullet-list li::marker {
+      color: var(--clr-accent);
+      font-size: 0.78em;
+    }
+
+    /* Inline Hyperlink Styling */
+    .inline-link {
+      color: var(--clr-accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .inline-link:hover {
+      color: var(--clr-accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Publication Entries with Badges */
+    .pub-entry {
+      margin-bottom: 2px;
+    }
+
+    .pub-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .pub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .pub-title-link {
+      font-size: 7.9pt;
+      font-weight: 600;
+      color: var(--clr-text);
+      line-height: 1.21;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .pub-title-link:hover {
+      color: var(--clr-accent);
+      text-decoration: underline;
+    }
+
+    .pub-venue {
+      font-size: 7.4pt;
+      color: var(--clr-text-muted);
+      font-style: italic;
+      margin-top: 0.3px;
+    }
+
+    /* Type Badges */
+    .badge {
+      display: inline-block;
+      font-size: 6.7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.5px 5px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .badge-book { background: var(--badge-book-bg); color: var(--badge-book-txt); border: 1px solid #fde68a; }
+    .badge-ieee { background: var(--badge-ieee-bg); color: var(--badge-ieee-txt); border: 1px solid #bae6fd; }
+    .badge-elsevier { background: var(--badge-elsevier-bg); color: var(--badge-elsevier-txt); border: 1px solid #fed7aa; }
+    .badge-dataset { background: var(--badge-dataset-bg); color: var(--badge-dataset-txt); border: 1px solid #e9d5ff; }
+    .badge-live { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .badge-gh { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+    .badge-kaggle { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
+
+    .badge-live:hover { background: #bbf7d0; }
+    .badge-gh:hover { background: #e2e8f0; }
+    .badge-kaggle:hover { background: #bae6fd; }
+
+    /* Project Tech Tags */
+    .project-tech {
+      font-size: 7.35pt;
+      color: var(--clr-accent);
+      font-weight: 500;
+      margin-bottom: 0.3px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Education */
+    .edu-entry {
+      margin-bottom: 2.5px;
+    }
+
+    .edu-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-degree {
+      font-size: 8.3pt;
+      font-weight: 700;
+      color: var(--clr-text);
+      line-height: 1.18;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-school {
+      font-size: 7.6pt;
+      color: var(--clr-text-secondary);
+      font-style: italic;
+      margin-bottom: 0.3px;
+    }
+
+    .edu-detail {
+      font-size: 7.65pt;
+      color: var(--clr-text-secondary);
+      line-height: 1.25;
+    }
+
+    /* Technical Skills */
+    .skills-group {
+      margin-bottom: 2px;
+    }
+
+    .skills-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-group-title {
+      font-size: 7.85pt;
+      font-weight: 700;
+      color: var(--clr-primary);
+      margin-bottom: 0.2px;
+    }
+
+    .skills-group p {
+      font-size: 7.55pt;
+      color: var(--clr-text-secondary);
+      line-height: 1.27;
+    }
+
+    /* Certifications & Awards */
+    .cert-entry {
+      margin-bottom: 2.2px;
+    }
+
+    .cert-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .cert-title {
+      font-size: 7.9pt;
+      font-weight: 700;
+      color: var(--clr-text);
+      line-height: 1.18;
+    }
+
+    .cert-meta {
+      font-size: 7.35pt;
+      color: var(--clr-text-muted);
+      font-style: italic;
+      margin-top: 0.2px;
+    }
+
+    .cert-detail {
+      font-size: 7.45pt;
+      color: var(--clr-text-secondary);
+      line-height: 1.23;
+      margin-top: 0.3px;
+    }
+
+    /* Languages */
+    .lang-item {
+      font-size: 7.75pt;
+      color: var(--clr-text-secondary);
+      margin-bottom: 1.2px;
+      line-height: 1.27;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .lang-item strong {
+      color: var(--clr-text);
+      font-weight: 600;
+    }
+
+    .lang-item .level {
+      font-size: 7.35pt;
+      color: var(--clr-text-muted);
+      font-style: italic;
+    }
+
+    /* Profiles & Links Badges / Pills */
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3.5px;
+      margin-top: 1px;
+    }
+
+    .tag-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 2.5px;
+      background: var(--clr-accent-soft);
+      color: var(--clr-accent);
+      font-size: 7.5pt;
+      font-weight: 600;
+      padding: 1.5px 6.5px;
+      border-radius: 4px;
+      border: 1px solid var(--clr-accent-border);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .tag-link:hover {
+      background: var(--clr-accent);
+      color: #ffffff;
+      border-color: var(--clr-accent);
+      text-decoration: none;
+    }
+
+    /* Print Styles (Strict Clean Output with Working Hyperlinks) */
+    @media print {
+      .screen-actions { display: none !important; }
+      body { background: white; margin: 0; padding: 0; }
+      .page {
+        margin: 0 !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        padding: 5.5mm 11mm 4mm 11mm !important;
+      }
+      .tag-link:hover {
+        background: var(--clr-accent-soft) !important;
+        color: var(--clr-accent) !important;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Toolbar (Only visible on browser view) -->
+  <div class="screen-actions">
+    <div class="title">
+      <span>Saidur Rahman Sujon</span>
+      <span class="badge-tag">1-Page Resume</span>
+    </div>
+    <div class="btn-group">
+      <a href="/" class="btn-back">
+        &larr; Portfolio
+      </a>
+      <a href="/files/CV/SR_Sujon_Resume.pdf" download="SR_Sujon_Resume.pdf" class="btn-download">
+        Download PDF
+      </a>
+      <button type="button" onclick="window.print()" class="btn-print">
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Saidur Rahman Sujon</h1>
+        <div class="subtitle">Software Engineer | Distributed Systems &amp; Applied AI</div>
+      </div>
+      <div class="header-right">
+        <div class="header-line">
+          <span>
+            <svg class="header-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Tokyo, Japan
+          </span>
+          <span class="sep">&middot;</span>
+          <a href="mailto:sr.sujon.cyb@gmail.com">
+            <svg class="header-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            sr.sujon.cyb@gmail.com
+          </a>
+          <span class="sep">&middot;</span>
+          <a href="https://sr-sujon.com" target="_blank" rel="noopener noreferrer">
+            <svg class="header-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            sr-sujon.com
+          </a>
+        </div>
+        <div class="header-line">
+          <a href="https://linkedin.com/in/sr-sujon" target="_blank" rel="noopener noreferrer">
+            <svg class="header-icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m1.4 9.74v-8.37H5.06v8.37z"/></svg>
+            linkedin.com/in/sr-sujon
+          </a>
+          <span class="sep">&middot;</span>
+          <a href="https://github.com/SR-Sujon" target="_blank" rel="noopener noreferrer">
+            <svg class="header-icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            github.com/SR-Sujon
+          </a>
+          <span class="sep">&middot;</span>
+          <a href="https://scholar.google.com/citations?user=6_LoU_kAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
+            <svg class="header-icon" viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+            Google Scholar
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- TWO-COLUMN CONTENT -->
+    <div class="content">
+
+      <!-- LEFT / MAIN COLUMN -->
+      <div class="left-col">
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <section>
+          <div class="section-title">Professional Summary</div>
+          <p class="summary-text">
+            Full-Stack Software Engineer and published AI Researcher with <strong>2+ years</strong> of experience architecting mission-critical enterprise systems and production NLP pipelines. Specialized in scalable microservices, warehouse management systems (<strong>Java Spring Boot</strong>, <strong>React</strong>, <strong>PostgreSQL</strong>, <strong>Docker/Kubernetes</strong>), and Large Language Model (LLM) fine-tuning. Author of <em>Architecting for Scale &amp; Chaos</em> and peer-reviewed researcher in <strong>IEEE Xplore</strong> and <strong>Elsevier</strong>.
+          </p>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section>
+          <div class="section-title">Professional Experience</div>
+
+          <!-- Role 1 -->
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">Software Engineer</span>
+              <span class="entry-meta">Apr 2025 &ndash; Present</span>
+            </div>
+            <div class="entry-company">MASS HOLDINGS CO., LTD &middot; Tokyo, Japan <em>(Full-time)</em></div>
+            <ul class="bullet-list">
+              <li>Engineer and maintain enterprise Warehouse Management Systems (WMS) handling high-volume daily order fulfillment using <strong>Java Spring Boot</strong>, <strong>React.js</strong>, <strong>Tailwind CSS</strong>, and <strong>PostgreSQL</strong>.</li>
+              <li>Architect dedicated microservices for thermal label printers to automate delivery slip generation, and modernize legacy logistics workflows through <strong>C#</strong> system integrations.</li>
+              <li>Orchestrate end-to-end software releases and containerized production deployments using <strong>Docker</strong> and <strong>Kubernetes</strong>, ensuring high availability and minimal system downtime.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">Research Assistant (AIRG Grant)</span>
+              <span class="entry-meta">Nov 2024 &ndash; Aug 2025</span>
+            </div>
+            <div class="entry-company">Ahsanullah University of Science and Technology &middot; Dhaka, Bangladesh</div>
+            <ul class="bullet-list">
+              <li>Engineered <em>PsychAI</em>, a Bengali-supported clinical mental health assistant powered by fine-tuned LLMs, achieving <strong>86.84% symptom classification accuracy</strong> and a <strong>4.34/5.0 Human Evaluation Score</strong> from clinical psychologists.</li>
+              <li>Curated <em>MonBarta</em>, a validated synthetic dataset of 200 clinical mental health conversations via clinician-supervised few-shot generation for low-resource NLP.</li>
+              <li>Co-authored and published peer-reviewed clinical AI and NLP research in <strong>IEEE ICSECS 2025</strong> and <strong>Elsevier's Natural Language Processing Journal</strong>.</li>
+            </ul>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">Full-Stack Developer &amp; AI Engineer</span>
+              <span class="entry-meta">Jan 2024 &ndash; Dec 2024</span>
+            </div>
+            <div class="entry-company">Freelance (Upwork &amp; Direct Clients) &middot; <em>Remote</em></div>
+            <ul class="bullet-list">
+              <li>Delivered production-grade full-stack web applications, custom RAG architectures, and automated ML pipelines for international clients using <strong>React.js</strong>, <strong>Node.js</strong>, <strong>LangChain</strong>, and <strong>OpenAI APIs</strong>.</li>
+              <li>Engineered <a href="https://takaramichi.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-link"><em>Takaramichi</em> ↗</a> (inbound resort &amp; ski rental management platform for Nozawa Onsen/Hakuba Village) and <a href="https://chatter-ai.streamlit.app/" target="_blank" rel="noopener noreferrer" class="inline-link"><em>Chatter AI</em> ↗</a>, maintaining a 100% client satisfaction rating.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- PUBLICATIONS & AUTHORSHIP (With Hyperlinks & Badges) -->
+        <section>
+          <div class="section-title">Publications &amp; Authorship</div>
+
+          <div class="pub-entry">
+            <div class="pub-header">
+              <a href="https://sujoncyb.gumroad.com/l/the-solution-architects-handbook" target="_blank" rel="noopener noreferrer" class="pub-title-link">
+                <strong>Architecting for Scale &amp; Chaos: The Solution Architect's Handbook</strong> ↗
+              </a>
+              <span class="badge badge-book">Book</span>
+            </div>
+            <div class="pub-venue">Distributed Systems, Fault Tolerance &amp; Real-World Resilience &middot; Oct 2026</div>
+            <ul class="bullet-list">
+              <li>Authored 16 chapters featuring 93 architectural blueprints, 56 production post-mortems, and battle-tested patterns for high availability, disaster recovery, and production RAG.</li>
+            </ul>
+          </div>
+
+          <div class="pub-entry">
+            <div class="pub-header">
+              <a href="https://ieeexplore.ieee.org/document/11278934" target="_blank" rel="noopener noreferrer" class="pub-title-link">
+                <strong>MonBarta: Deep Dive into Psychological Diagnosis of Mental Health Conversations Using LLM</strong> ↗
+              </a>
+              <span class="badge badge-ieee">IEEE Xplore</span>
+            </div>
+            <div class="pub-venue">IEEE 9th Intl. Conf. on Software Eng. &amp; Computer Systems (ICSECS) &middot; Oct 2025</div>
+          </div>
+
+          <div class="pub-entry">
+            <div class="pub-header">
+              <a href="https://www.sciencedirect.com/science/article/pii/S2949719124000232?via%3Dihub" target="_blank" rel="noopener noreferrer" class="pub-title-link">
+                <strong>Harnessing Large Language Models Over Transformer Models for Detecting Bengali Depressive Social Media Text</strong> ↗
+              </a>
+              <span class="badge badge-elsevier">Elsevier</span>
+            </div>
+            <div class="pub-venue">Natural Language Processing Journal &mdash; Elsevier &middot; Vol. 7, Jun 2024</div>
+          </div>
+
+          <div class="pub-entry">
+            <div class="pub-header">
+              <a href="https://data.mendeley.com/datasets/pdtyb7df6z/1" target="_blank" rel="noopener noreferrer" class="pub-title-link">
+                <strong>Bengali Social Media Depressive Dataset (BSMDD) &mdash; 21,910 Annotated Samples</strong> ↗
+              </a>
+              <span class="badge badge-dataset">Mendeley Data</span>
+            </div>
+            <div class="pub-venue">Mendeley Data (Elsevier) &middot; Oct 2024</div>
+          </div>
+        </section>
+
+        <!-- SELECTED PROJECTS (With Hyperlinks & Badges) -->
+        <section>
+          <div class="section-title">Selected Projects</div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <a href="https://www.jbadvisory.org/" target="_blank" rel="noopener noreferrer" class="entry-title-link">
+                Japan Bangladesh Advisory &mdash; Corporate Portal
+              </a>
+              <a href="https://www.jbadvisory.org/" target="_blank" rel="noopener noreferrer" class="badge badge-live">Live Site ↗</a>
+            </div>
+            <div class="project-tech">React.js &middot; Tailwind CSS &middot; Google Maps API &middot; SPA Architecture</div>
+            <ul class="bullet-list">
+              <li>Architected a high-performance, mobile-responsive single-page corporate portal featuring interactive service layouts, Google Maps integration, and automated inquiry routing.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <a href="https://github.com/SR-Sujon/llamachirp" target="_blank" rel="noopener noreferrer" class="entry-title-link">
+                LlamaChirp &mdash; Local LLM PDF Intelligence
+              </a>
+              <a href="https://github.com/SR-Sujon/llamachirp" target="_blank" rel="noopener noreferrer" class="badge badge-gh">GitHub ↗</a>
+            </div>
+            <div class="project-tech">Python &middot; LangChain &middot; Ollama &middot; ChromaDB &middot; Chainlit &middot; RAG</div>
+            <ul class="bullet-list">
+              <li>Built a privacy-first Retrieval-Augmented Generation (RAG) system enabling dynamic conversational querying over complex PDF documents using locally hosted LLMs.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <a href="https://www.kaggle.com/code/srsujon/stock-market-price-prediction-based-on-news" target="_blank" rel="noopener noreferrer" class="entry-title-link">
+                Stock Price Prediction &mdash; Sentiment &amp; LSTM
+              </a>
+              <a href="https://www.kaggle.com/code/srsujon/stock-market-price-prediction-based-on-news" target="_blank" rel="noopener noreferrer" class="badge badge-kaggle">Kaggle ↗</a>
+            </div>
+            <div class="project-tech">Python &middot; Keras &middot; TensorFlow &middot; NLTK (VADER) &middot; Pandas</div>
+            <ul class="bullet-list">
+              <li>Developed a quantitative forecasting pipeline combining historical equity market data with news sentiment analysis using multi-layer LSTM neural networks.</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT SIDEBAR COLUMN -->
+      <div class="right-col">
+
+        <!-- EDUCATION -->
+        <section>
+          <div class="section-title">Education</div>
+
+          <div class="edu-entry">
+            <div class="edu-degree">
+              <span>M.Sc. in Financial Engineering</span>
+              <span class="badge" style="background:#f1f5f9; color:#475569; font-weight:600; font-size:6.6pt;">Coursework</span>
+            </div>
+            <div class="edu-school">WorldQuant University &middot; 2026 &ndash; Present</div>
+            <ul class="bullet-list">
+              <li>Credential: Foundations of Financial Engineering (8 Graduate Credits &mdash; Financial Markets, SVD/PCA Risk Analytics &amp; Financial Data with Python, Aug 2026)</li>
+            </ul>
+          </div>
+
+          <div class="edu-entry">
+            <div class="edu-degree">
+              <span>B.Sc. in Computer Science &amp; Eng.</span>
+            </div>
+            <div class="edu-school">Ahsanullah University of Science &amp; Technology</div>
+            <div class="edu-detail">
+              <ul class="bullet-list">
+                <li>2019 &ndash; 2023 &middot; <strong>CGPA: 3.58 / 4.00</strong> (Graduated with Honors)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section>
+          <div class="section-title">Technical Skills</div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Languages</div>
+            <p>Java, Python, TypeScript, JavaScript, C#, C++, SQL, Cypher</p>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Backend &amp; Distributed Systems</div>
+            <p>Spring Boot, Node.js, Express.js, Microservices, REST APIs</p>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Frontend</div>
+            <p>React.js, Next.js, Tailwind CSS, HTML5/CSS3, SPA</p>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">AI, ML &amp; Quantitative Modeling</div>
+            <p>PyTorch, TensorFlow, LangChain, Ollama, RAG, Graph Neural Networks (GNNs), NLP, Scikit-learn, ARIMA, Pandas, NumPy</p>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Databases, DevOps &amp; Tools</div>
+            <p>PostgreSQL, Neo4j, MongoDB, Docker, Kubernetes, CI/CD, Git, Linux, IntelliJ IDEA</p>
+          </div>
+        </section>
+
+        <!-- CERTIFICATIONS & AWARDS -->
+        <section>
+          <div class="section-title">Certifications &amp; Awards</div>
+
+          <div class="cert-entry">
+            <div class="cert-title">ITEE Level-II: Fundamental IT Engineer Exam (FE)</div>
+            <div class="cert-meta">BD-ITEC (IPA Japan Standard) &middot; Full-Passer &middot; Apr 2024</div>
+          </div>
+
+          <div class="cert-entry">
+            <div class="cert-title">B-JET ICT Engineers Training (Basic &amp; Basic Plus)</div>
+            <div class="cert-meta">North South Univ. &amp; Univ. of Miyazaki &middot; Dec 2024</div>
+            <div class="cert-detail">
+              <ul class="bullet-list">
+                <li>High Performance Award, 100% Attendance &amp; Programming Contest Achievement</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cert-entry">
+            <div class="cert-title">Prompt Engineering for ChatGPT</div>
+            <div class="cert-meta">Vanderbilt University (Coursera) &middot; Verified Credential</div>
+          </div>
+        </section>
+
+        <!-- LANGUAGES -->
+        <section>
+          <div class="section-title">Languages</div>
+          <div class="lang-item">
+            <span><strong>English:</strong> Professional Working</span>
+            <span class="level">Full Professional</span>
+          </div>
+          <div class="lang-item">
+            <span><strong>Japanese:</strong> JLPT N4&ndash;N3</span>
+            <span class="level">Business &amp; Daily</span>
+          </div>
+          <div class="lang-item">
+            <span><strong>Bengali:</strong> Native</span>
+            <span class="level">Native / Bilingual</span>
+          </div>
+        </section>
+
+        <!-- PROFILES & LINKS (Interactive Clickable Pills) -->
+        <section>
+          <div class="section-title">Profiles &amp; Links</div>
+          <div class="tags-container">
+            <a href="https://www.researchgate.net/profile/Md-Saidur-Rahman-Sujon" target="_blank" rel="noopener noreferrer" class="tag-link">ResearchGate ↗</a>
+            <a href="https://www.kaggle.com/srsujon" target="_blank" rel="noopener noreferrer" class="tag-link">Kaggle ↗</a>
+            <a href="https://leetcode.com/srsuj0n/" target="_blank" rel="noopener noreferrer" class="tag-link">LeetCode ↗</a>
+            <a href="https://www.hackerrank.com/profile/sr_sujon_cyb" target="_blank" rel="noopener noreferrer" class="tag-link">HackerRank ↗</a>
+            <a href="https://sujoncyb.gumroad.com" target="_blank" rel="noopener noreferrer" class="tag-link">Gumroad ↗</a>
+            <a href="https://medium.com/@sr.sujon.cyb" target="_blank" rel="noopener noreferrer" class="tag-link">Medium ↗</a>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.2] - 2026-10-18
+
+### Added
+- **Single-Page Executive Resume (`SR_Sujon_Resume.pdf` & `.html`)**:
+  - Rebuilt a strictly fitted single-page A4 resume balancing full-stack engineering impact, AI research credentials, and distributed systems leadership.
+  - Implemented crisp inline SVG micro-icons across contact and professional links.
+  - Added editorial publisher and conference badges for all publications (`[BOOK]`, `[IEEE XPLORE]`, `[ELSEVIER]`, `[MENDELEY DATA]`).
+  - Added category badges for projects (`[LIVE SITE ↗]`, `[GITHUB ↗]`, `[KAGGLE ↗]`).
+  - Integrated active hyperlinks across all project showcases (*Japan Bangladesh Advisory*, *LlamaChirp*, *Stock Price Prediction*), freelance platforms (*Takaramichi*, *Chatter AI*), publications, and verified competitive programming & research profiles.
+- **Hero Resume Dropdown Menu**:
+  - Replaced the single "Download CV" action in `Hero.jsx` with an interactive, accessible dropdown menu featuring both the **1-Page Resume (PDF)** (primary) and the **Full Academic CV (PDF)**.
+  - Added click-outside dismissal and keyboard navigation support.
+- **Command Palette & Localization Integration**:
+  - Added distinct actions for 1-Page Resume and Full CV to the Command Palette (`Ctrl+K` / `⌘K`).
+  - Added bilingual translations in `en.json` and `ja.json`.
+
+### Changed
+- **Resume Layout & Typography Architecture**:
+  - Implemented clean two-column hierarchy separated by a subtle vertical border divider.
+  - Set natural top-aligned vertical rhythm ensuring strict 1-page fit (`PDF Page Count: 1`) without vertical stretching.
+
 ## [3.4.1] - 2026-10-13
 
 ### Added
