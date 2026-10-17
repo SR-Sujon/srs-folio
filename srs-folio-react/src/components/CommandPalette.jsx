@@ -91,7 +91,17 @@ const CommandPalette = ({ isOpen, setIsOpen }) => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/cv.pdf';
+    link.href = '/files/CV/SR_Sujon_Resume.pdf';
+    link.download = 'SR_Sujon_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setIsOpen(false);
+  };
+
+  const handleDownloadCv = () => {
+    const link = document.createElement('a');
+    link.href = '/files/CV/SRS_CVS_Latest.pdf';
     link.download = 'SR_Sujon_CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -146,9 +156,16 @@ const CommandPalette = ({ isOpen, setIsOpen }) => {
     },
     { 
       id: 'action-resume', 
-      name: t('cmdPalette.downloadResume') || 'Download Resume', 
+      name: t('cmdPalette.downloadResume') || 'Download Resume (1-Page)', 
       icon: FiDownload, 
       action: handleDownloadResume, 
+      category: 'actions' 
+    },
+    { 
+      id: 'action-cv', 
+      name: t('cmdPalette.downloadCv') || 'Download Full CV', 
+      icon: FiFileText, 
+      action: handleDownloadCv, 
       category: 'actions' 
     },
   ];

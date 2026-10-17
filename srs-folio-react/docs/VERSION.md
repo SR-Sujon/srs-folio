@@ -25,11 +25,26 @@ npm run version:major   # Breaking changes: 3.2.0 → 4.0.0
 
 ## Current Version
 
-**v3.4.1** - "Architecting for Scale & Chaos" 10-Page Preview, Interactive Zoom & Alignment Refinements
+**v3.4.2** - Executive Single-Page Resume Integration, Interactive Dropdown, and Showcase Hyperlinks
 
 The version is displayed in the footer of the website and stored in `package.json`.
 
-### Latest Changes (v3.4.1)
+### Latest Changes (v3.4.2)
+- **Executive Single-Page Resume (`SR_Sujon_Resume.pdf` & `.html`)**:
+  - Rebuilt a strict single-page A4 resume balancing engineering leadership, distributed systems (WMS, microservices, Docker/K8s), and published clinical AI research.
+  - Implemented crisp inline SVG micro-icons across contact methods (Tokyo, Email, Portfolio, LinkedIn, GitHub, Google Scholar).
+  - Added editorial badges for publications (`[BOOK]`, `[IEEE XPLORE]`, `[ELSEVIER]`, `[MENDELEY DATA]`).
+  - Added category badges for projects (`[LIVE SITE ↗]`, `[GITHUB ↗]`, `[KAGGLE ↗]`).
+  - Integrated active hyperlinks across all project showcases (*Japan Bangladesh Advisory*, *LlamaChirp*, *Stock Price Prediction*), freelance platforms (*Takaramichi*, *Chatter AI*), publications, and verified competitive programming & research profiles.
+  - Implemented two-column structure with subtle vertical border divider and verified exact 1-page fit (`PDF Page Count: 1`).
+- **Hero Resume Dropdown Menu**:
+  - Replaced the single "Download CV" button in `Hero.jsx` with an interactive, accessible dropdown menu featuring both the **1-Page Resume (PDF)** (primary) and the **Full Academic CV (PDF)**.
+  - Implemented click-outside dismissal and keyboard navigation support.
+- **Command Palette & Localization Integration**:
+  - Added distinct actions for 1-Page Resume and Full CV to the Command Palette (`Ctrl+K` / `⌘K`).
+  - Added bilingual translations in `en.json` and `ja.json`.
+
+### Previous Changes (v3.4.1)
 - **BookCard Interactive 10-Page Preview**:
   - Integrated 10 high-resolution (300 DPI, 1800×2700) preview pages showcasing the book's roadmap, mental models, latency ladder, multi-tier caching, chaos blast-radius, real outage post-mortems, distributed locking, LLM token economics, and operational runbooks.
   - Implemented intuitive 10-page thumbnail strip and numbered quick-navigation rail.
